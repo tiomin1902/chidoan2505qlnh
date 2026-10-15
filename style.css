@@ -218,3 +218,11 @@ tbody tr:hover{background:#fdf9f0}
 .noticeCard:last-child{margin-bottom:0}
 @media(max-width:650px){.homeNotices{right:12px!important;bottom:15px!important}.noticeToggle{width:52px;height:52px}.noticeDetails{bottom:64px;width:min(360px,calc(100vw - 24px))}.noticeCards{max-height:58dvh}.noticeHint{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.noticeHint{animation:none}.noticeToggle{transition:none}}
+
+/* TIẾN ĐỘ NHẬN PHIẾU CHI HỘI VÀ CHI ĐOÀN */
+.voteProgress{max-width:740px;margin:24px auto;padding:21px 23px;border:1px solid #d9e4ef;background:#f6faff;border-radius:18px;box-shadow:0 10px 25px rgba(27,65,112,.05);color:#25496b}
+.voteProgressHeader{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:16px}.voteProgressHeader strong{font-size:20px;color:#174d7d;font-variant-numeric:tabular-nums}
+.voteProgressTrack{height:12px;background:#e1eaf4;border-radius:999px;overflow:hidden;margin-top:15px}
+.voteProgressFill{height:100%;border-radius:inherit;background:linear-gradient(90deg,#28618f,#62a7d9);transition:width .35s ease}
+.voteProgressNote{font-size:13px!important;color:#58738e!important;margin:12px 0 0!important}
+@media(max-width:640px){.voteProgress{padding:16px}.voteProgressHeader strong{font-size:17px}}
