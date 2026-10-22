@@ -1,6 +1,7 @@
 'use strict';
 const $=id=>document.getElementById(id);let state=null,latestTime=0;const interval=Math.max(5000,Number(window.CLASS_REFRESH_MS)||15000);const API=window.CLASS_API_URL;
 document.body.setAttribute('data-current-page','home');
+const multiline=v=>html(v).replace(/\r\n?|\n/g,'\n').replace(/\n/g,'<br>');
 const html=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const bool=v=>v===true||String(v).toLowerCase()==='true';
 function nav(page){document.querySelectorAll('.page').forEach(n=>n.classList.toggle('current',n.id===page));document.body.setAttribute('data-current-page',page);$('drawer').classList.remove('open');$('shade').hidden=true;$('menuBtn').setAttribute('aria-expanded','false');window.scrollTo({top:0,behavior:'smooth'})}
@@ -14,7 +15,7 @@ function countdown(t){const ms=Date.parse(t)-Date.now();if(!Number.isFinite(ms))
 function table(columns,rows){return `<div class="scroll"><table><thead><tr>${columns.map(x=>`<th>${html(x[0])}</th>`).join('')}</tr></thead><tbody>${rows.length?rows.map(r=>`<tr>${columns.map(([,key])=>`<td>${html(r[key])}</td>`).join('')}</tr>`).join(''):`<tr><td colspan="${columns.length}">Chưa có dữ liệu</td></tr>`}</tbody></table></div>`}
 function renderCongress(branch,target){const c=state.config,p=branch==='ChiHoi'?'ch':'cd',container=$(target);if(!bool(c[p+'_hienThiDaiHoi'])){container.replaceChildren();return}const candidates=state.candidates.filter(v=>v.branch===branch),result=state.results&&state.results[branch],open=bool(c[p+'_moBauCu']),run=c[p+'_dotBauCu'];const oldBallot=container.querySelector('.ballotPanel');const active=oldBallot&&!oldBallot.hidden;const checked=active?[...oldBallot.querySelectorAll('input:checked')].map(x=>x.value):[];container.innerHTML=`<div class="congress"><div class="panel"><div class="eyebrow">CONGRESS · ${html(branch==='ChiHoi'?'CHI HỘI':'CHI ĐOÀN')}</div><h2>${html(c[p+'_tenDaiHoi']||'Đại hội')}</h2><p><b>Thời gian:</b> ${html(c[p+'_thoiGian']||'Chưa cập nhật')}<br><b>Địa điểm:</b> ${html(c[p+'_diaDiem']||'Chưa cập nhật')}</p><h3>Đếm ngược đến Đại hội</h3><div class="countdown" data-time="${html(c[p+'_thoiGian'])}">${countdown(c[p+'_thoiGian'])}</div><h3>Đề án nhân sự</h3>${table([['Họ và tên','name'],['Quê quán','home'],['Dân tộc','ethnicity'],['Tôn giáo','religion'],['Chức vụ hiện tại','role']],candidates)}${open&&candidates.length?`<button class="action voteOpen">BẮT ĐẦU BẦU CỬ</button>`:'<p class="muted">Cổng bầu cử chưa mở.</p>'}<div class="ballotPanel" hidden></div></div>${result?`<div class="panel"><h2>📊 Kết quả kiểm phiếu đã công bố</h2><p>Tổng phiếu thu: <b>${Number(result.total)||0}</b> · Đợt ${html(result.run)}</p>${table([['Ứng viên','name'],['Tín nhiệm','trusted'],['Không tín nhiệm','notTrusted'],['Số phiếu xét','total'],['Tỷ lệ tín nhiệm (%)','percent']],result.results||[])}<p class="resultsNote">Tỷ lệ được tính trên những phiếu có ứng viên tương ứng, bảo toàn lịch sử khi danh sách nhân sự đổi.</p></div>`:''}</div>`;const openBtn=container.querySelector('.voteOpen');if(openBtn)openBtn.onclick=()=>showBallot(branch,run,container,candidates);if(active&&openBtn){showBallot(branch,run,container,candidates);container.querySelectorAll('.ballotPanel input').forEach(x=>x.checked=checked.includes(x.value))}}
 function showBallot(branch,run,root,candidates){const panel=root.querySelector('.ballotPanel');panel.hidden=false;const key='voted_'+branch+'_'+run;const voted=localStorage.getItem(key)==='1';panel.innerHTML=`<h3>Phiếu bầu kín · ${html(branch==='ChiHoi'?'Chi Hội':'Chi Đoàn')}</h3><p class="muted">Tích “Không tín nhiệm” cho ít nhất một ứng viên. Các ứng viên không tích được tính là Tín nhiệm. Không yêu cầu họ tên hoặc MSSV.</p>${candidates.map(x=>`<div class="candidate"><div><b>${html(x.name)}</b><br><span>${html(x.role||'')}</span></div><label><input type="checkbox" value="${html(x.id)}" ${voted?'disabled':''}> Không tín nhiệm</label></div>`).join('')}<button class="action sendVote" ${voted?'disabled':''}>${voted?'THIẾT BỊ ĐÃ GỬI PHIẾU':'NỘP PHIẾU BẦU'}</button><p class="message" role="status">${voted?'Thiết bị này đã gửi phiếu trong đợt bầu cử này.':''}</p>`;panel.querySelector('.sendVote').onclick=async()=>{const rejected=[...panel.querySelectorAll('input:checked')].map(n=>n.value);const msg=panel.querySelector('.message');if(!rejected.length){msg.textContent='Bạn phải tích ít nhất một ô Không tín nhiệm.';msg.className='message red';return}if(!confirm('Xác nhận nộp phiếu? Không thể sửa phiếu sau khi nộp.'))return;const btn=panel.querySelector('.sendVote');btn.disabled=true;msg.textContent='Đang gửi phiếu và chờ xác nhận...';try{await write('vote',{branch,run,notTrusted:rejected});localStorage.setItem(key,'1');msg.textContent='Phiếu đã được ghi nhận thành công.';msg.className='message green';btn.textContent='ĐÃ GỬI PHIẾU';panel.querySelectorAll('input').forEach(x=>x.disabled=true)}catch(e){msg.textContent=e.message;msg.className='message red';btn.disabled=false}}}
-function status(a){const now=Date.now();if(now<Date.parse(a.opensAt))return ['Chưa mở','closed',false];if(now>=Date.parse(a.closesAt))return ['Đã đóng','closed',false];if(!a.unlimited&&(!a.limit||a.count>=a.limit))return ['Đã đủ số lượng','closed',false];return ['Đang mở đăng ký','',true]}
+function status(a){const now=Date.now();if(now<Date.parse(a.opensAt))return ['Chưa mở','closed',false];if(a.closesAt&&now>=Date.parse(a.closesAt))return ['Đã đóng','closed',false];if(!a.unlimited&&(!a.limit||a.count>=a.limit))return ['Đã đủ số lượng','closed',false];return ['Đang mở đăng ký','',true]}
 
 // Chuỗi hoạt động được hiển thị ngay trong #activityList (không cần sửa index.html).
 (function addActivitySeriesStyle(){
@@ -68,7 +69,7 @@ function renderActivities(){
   const children=Array.isArray(series.activities)?series.activities:[];
   if(!children.length)return;
   card.innerHTML=`<div class="seriesTop"><span class="seriesChip">CHUỖI HOẠT ĐỘNG</span><span class="tag ${st[1]}">${html(st[0])}</span></div>
-  <h2>${html(series.title)}</h2><p>${html(series.description)}</p>
+  <h2>${html(series.title)}</h2><p>${multiline(series.description)}</p>
   <p class="seriesMeta">🟢 Mở đăng ký: ${html(actVnTime(series.opensAt))}<br>⏰ Đóng toàn chuỗi: ${html(actVnTime(series.closesAt))}
    ${Date.now()<Date.parse(series.opensAt)?`<br><span class="countdown" data-time="${html(series.opensAt)}"></span>`:st[2]?`<br><span class="countdown" data-time="${html(series.closesAt)}"></span>`:''}</p>
   <form class="regForm seriesForm" data-id="${html('series:'+series.id)}">
@@ -92,9 +93,9 @@ function renderActivities(){
    row.innerHTML=`<div class="seriesChildTop"><div><span class="tag ${can?'': 'closed'}">${html(can?'Còn nhận đăng ký':(st[2]?stateChild[0]:st[0]))}</span>
     <h3>${html(a.title)}</h3></div>
     <label class="seriesSelect"><input data-choice type="checkbox" value="${html(a.id)}" ${can?'':'disabled'} ${can&&saved.choices?.includes(a.id)?'checked':''}> Tham gia</label></div>
-    <p>${html(a.description)}</p><p class="seriesMeta">🗓 ${html(a.eventTime||'Đang cập nhật')} · 📍 ${html(a.location||'Đang cập nhật')}<br>
-    ⏰ Hạn riêng: ${html(actVnTime(a.closesAt))}</p>
-    <p class="seriesNumbers">Đã đăng ký: ${a.count}${a.unlimited?' · Không giới hạn':' / '+a.limit}</p>
+    <p>${multiline(a.description)}</p><p class="seriesMeta">🗓 ${html(a.eventTime||'Đang cập nhật')} · 📍 ${html(a.location||'Đang cập nhật')}<br>
+    ⏰ Hạn đăng ký: ${html(actVnTime(a.closesAt||series.closesAt))}</p>
+    ${a.note?`<p class="seriesNoteText">${multiline(a.note)}</p>`:''}<p class="seriesNumbers">Đã đăng ký: ${a.count}${a.unlimited?' · Không giới hạn':' / '+a.limit}</p>
     ${a.unlimited?'':`<div class="seriesTrack"><span style="width:${progress}%"></span></div>`}
     <details><summary>Danh sách đã đăng ký (${a.count})</summary>
     ${table([['STT','index'],['Họ và tên','name'],['MSSV','studentId'],['Thời gian đăng ký','time']],(a.registrations||[]).map((r,i)=>({...r,index:i+1})))}</details>`;
@@ -121,7 +122,7 @@ function renderActivities(){
  // Giữ nguyên thẻ hoạt động riêng lẻ và hành vi đã có.
  solos.forEach(a=>{
   const st=status(a),card=document.createElement('article');card.className='itemCard';
-  card.innerHTML=`<span class="tag ${st[1]}">${html(st[0])}</span><h2>${html(a.title)}</h2><p>${html(a.description)}</p>
+  card.innerHTML=`<span class="tag ${st[1]}">${html(st[0])}</span><h2>${html(a.title)}</h2><p>${multiline(a.description)}</p>
   <div class="meta"><p>🗓 Diễn ra: ${html(a.eventTime)}<br>📍 Địa điểm: ${html(a.location)}<br>
   ⌛ Mở: ${html(actVnTime(a.opensAt))}<br>⌛ Hạn đăng ký: ${html(actVnTime(a.closesAt))}<br>
   👥 Đã đăng ký: ${a.count}${a.unlimited?' · Không giới hạn':' / '+a.limit}</p><p>${html(a.note)}</p></div>
