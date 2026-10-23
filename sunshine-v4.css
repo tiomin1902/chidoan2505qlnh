@@ -1,0 +1,66 @@
+/* 2505QLNH V4 — SUNSHINE POP EDITION
+   Giao dien tuoi sang. Chi thay doi trinh bay; khong sua API hoac du lieu. */
+:root{--v4-ink:#17344e;--v4-wine:#f15e61;--v4-gold:#ffbd37;--v4-cream:#fffdf7;--v4-sky:#ebf9ff;--v4-line:#dceef7;--v4-muted:#5c7183;--pop-blue:#288beb;--pop-teal:#06bea9;--pop-coral:#ff6a72;--pop-yellow:#ffc64a;--pop-violet:#8e72ef}
+html{background:#f7fcff}
+body{background:linear-gradient(145deg,#f3fbff 0%,#fffefa 45%,#fff5f7 100%)!important;color:#18394f!important}
+.top{background:rgba(255,255,255,.96)!important;border-bottom:1px solid #dbedf8!important;box-shadow:0 7px 25px #137eb00b!important}
+.brandEmblem{background:linear-gradient(135deg,#ff8a4b,#ff477e)!important;box-shadow:0 8px 21px #ff648e43!important}
+.brandText strong{color:#1772bb!important}.brandText small{color:#eb7890!important}
+#menuBtn{border-color:#cfe9f9!important;background:#f2fbff!important;box-shadow:0 4px 18px #35a9ec13!important}#menuBtn span{background:#1688d2!important}
+#drawer{background:#f9fdff!important}#drawer button[data-page]:hover{background:#dff6ff!important}
+#home{background:transparent!important}
+.hero{background:linear-gradient(115deg,#c3f4ff,#f1eaff 47%,#ffe2cb)!important;border-radius:0 0 38px 38px!important;box-shadow:0 28px 65px #1da9c41a!important}
+.heroImg{background:linear-gradient(90deg,rgba(10,116,186,.84) 0%,rgba(25,173,199,.54) 47%,rgba(255,196,104,.05) 100%),url('https://media.apag.edu.vn/Image/023ced82-d60e-9622-cc13-0ce98d1cef93/2025/10/3/Hinh-anh-Phan-hieu-c2f3e4f995.jpg') center/cover!important;filter:saturate(1.34) brightness(1.14)!important;opacity:.96}
+.heroImg:after{background:linear-gradient(0deg,rgba(16,96,154,.24),transparent 54%)!important}
+.hero:before{background:radial-gradient(circle at 90% 15%,#ffef8c65,transparent 42%)!important}
+.hero:after{border-color:#ffffffaa!important;box-shadow:0 0 0 90px #ffffff13,0 0 0 180px #ffffff0e!important}
+.hero .eyebrow{color:#fff3b4!important;text-shadow:0 2px 12px #08558e66}.heroLive{background:#ffe06b!important;box-shadow:0 0 0 5px #fff2a755!important}
+.hero h1{color:#fff!important;text-shadow:0 5px 18px #086ba977!important}.hero h1 span{color:#ffef94!important}.heroContent p{color:#fff!important;text-shadow:0 2px 9px #065c7a66!important}
+.heroActions .accent{background:linear-gradient(120deg,#ffd555,#ff936d)!important;border:1px solid #ffe38d!important;color:#633724!important;box-shadow:0 12px 27px #e07f3e3c!important}
+.heroActions .accent.secondary{background:#ffffffec!important;color:#1572a8!important;border:1px solid #fff!important;box-shadow:0 10px 24px #185b8522!important}
+.heroCorner{color:#fff!important}
+.miniLabel{color:#ef628b!important}.homeSectionHead h2{color:#147bad!important}.homeSectionHead p{color:#50778f!important}
+.homeLinks button{background:linear-gradient(140deg,#fff,#e7f9ff)!important;border:1px solid #cdeeff!important;box-shadow:0 12px 34px #079acc15!important}
+.homeLinks button:nth-child(4n+1){background:linear-gradient(135deg,#e6faff,#c9f2ff)!important;border-color:#a7e5fd!important}
+.homeLinks button:nth-child(4n+2){background:linear-gradient(135deg,#fff3dd,#ffe2bd)!important;border-color:#ffd49b!important}
+.homeLinks button:nth-child(4n+3){background:linear-gradient(135deg,#f2ebff,#e3d6ff)!important;border-color:#d4c1ff!important}
+.homeLinks button:nth-child(4n){background:linear-gradient(135deg,#e3fff4,#c9f7e8)!important;border-color:#a8ebd3!important}
+.homeLinks button:after{opacity:1!important;height:5px!important;background:linear-gradient(90deg,#30bdf6,#7a81f1,#fb72aa,#ffcc57)!important}
+.homeLinks button:hover{transform:translateY(-7px)!important;border-color:#87cdf2!important;box-shadow:0 24px 48px #158dc12a!important}
+.homeLinks b{color:#1687b4!important}.homeLinks b em{color:#f46e8c!important}.homeLinks strong{color:#205579!important}.homeLinks span{color:#557d97!important}
+.homeClosing{background:linear-gradient(100deg,#148fd4,#21b5b6 60%,#6b91ed)!important}.homeClosing>span{color:#fff9bc!important}.homeClosing p{color:#f1ffff!important}.homeClosing button{background:#fff!important;border:1px solid #fff!important;color:#167cbb!important}
+.page:not(#home){background:transparent!important}.sectionTitle .eyebrow{color:#ef6b86!important}.sectionTitle h1{color:#1878bf!important}.sectionTitle h1 i{color:#ff8b6d!important}.sectionTitle p{color:#607f97!important}
+.infoCard,.panel,.itemCard{background:#fff!important;border:1px solid #dcecf7!important;box-shadow:0 16px 38px #219ed00e!important}
+.infoCard{background:linear-gradient(145deg,#fff,#f5fbff)!important;border-top:4px solid #4cbcec!important}
+.infoCard:nth-child(4n+2){background:linear-gradient(145deg,#fff,#fff6e9)!important;border-top-color:#ffbf53!important}
+.infoCard:nth-child(4n+3){background:linear-gradient(145deg,#fff,#f5f0ff)!important;border-top-color:#a18bf5!important}
+.infoCard:nth-child(4n){background:linear-gradient(145deg,#fff,#effff8)!important;border-top-color:#38cdaa!important}
+.infoCard small{color:#578aab!important}.infoCard strong{color:#185b91!important}.panel h2,.itemCard h2,.panel h3{color:#185d96!important}.panel p,.itemCard p{color:#57778d!important}
+body[data-current-page=hoi],body[data-current-page=doan]{background:linear-gradient(145deg,#ebf8ff,#fff 65%,#edfdf9)!important}
+.page#hoi .sectionTitle h1,.page#doan .sectionTitle h1{color:#188bc5!important}.page#hoi .infoCard strong,.page#doan .infoCard strong{color:#2269a2!important}
+#hoi .infoCard,#hoi .panel,#doan .infoCard,#doan .panel{border-color:#d8effa!important;box-shadow:0 13px 40px #168fbe11!important}
+#activities #activityList .seriesCard{background:linear-gradient(150deg,#fff,#f4fcff)!important;border:1px solid #bde9f8!important;box-shadow:0 22px 52px #20acdc18!important}
+#activities #activityList .seriesCard>.seriesTop{border-bottom-color:#d8eff6!important}
+#activities #activityList .seriesChip{background:#ffe5ee!important;color:#d44c86!important}
+#activities #activityList .seriesCard>h2{color:#1773ae!important}
+#activities #activityList .seriesCard>.activityDescription{color:#55758d!important}
+#activities #activityList .seriesMeta.seriesDates{background:#eafbff!important;border-color:#d3f1fc!important}
+#activities #activityList .metaLine{color:#547b93!important}#activities #activityList .metaLine b{color:#1770aa!important}
+#activities #activityList .seriesCollapse{border-color:#cde9f9!important}#activities #activityList .seriesCollapse>summary{background:linear-gradient(90deg,#d6f3ff,#f2edff)!important;color:#1967a6!important}
+#activities #activityList .seriesChild{background:#fff!important;border-color:#d4edf9!important;border-left:5px solid #47bff3!important}
+#activities #activityList .seriesChild:nth-child(4n+2){border-left-color:#ffb45d!important}#activities #activityList .seriesChild:nth-child(4n+3){border-left-color:#a18afa!important}#activities #activityList .seriesChild:nth-child(4n){border-left-color:#36ceaa!important}
+#activities #activityList .seriesChild h3{color:#185e9c!important}#activities #activityList .seriesChild>.childMeta{background:#f0faff!important}#activities #activityList .seriesChild>.activityDescription{color:#507589!important}
+#activities #activityList .seriesChild>.activityNote,#activities #activityList .itemCard>.activityNote{background:#fff5df!important;color:#845e22!important;border-left:4px solid #ffc451!important}
+#activities #activityList .seriesTrack{background:#e0f3fb!important}#activities #activityList .seriesTrack span{background:linear-gradient(90deg,#2ab9e5,#21cfab,#ffd04f)!important}
+#activities #activityList .seriesSelect{background:#e8faff!important;border-color:#bceefa!important;color:#167fb5!important}#activities #activityList .seriesSelect input{accent-color:#16a6c6!important}
+#activities #activityList .itemCard{background:linear-gradient(150deg,#fff,#fffcf4)!important;border-color:#eedfcc!important}
+#activities #activityList .itemCard>.soloTop h2{color:#1775b2!important}#activities #activityList .itemCard>.soloMeta{background:#fff7e9!important;border-color:#ffe6bc!important}
+#activities #activityList .seriesPicked{background:#e8f9ff!important}#activities #activityList details.registrantDetails{border-top-color:#d8edf7!important}
+#activities #activityList details.registrantDetails>summary{color:#1682b9!important}
+.regForm label{color:#236b95!important}.regForm input{border-color:#cce9f8!important;background:#fff!important}
+.regForm .action,.action{background:linear-gradient(110deg,#168ede,#24c7bc)!important;color:#fff!important;border:0!important;box-shadow:0 9px 24px #149bd635!important}
+.action:hover:not(:disabled){background:linear-gradient(110deg,#087ac9,#0aa994)!important}.tag{background:#d9f9e9!important;color:#158457!important}.tag.closed{background:#ffe8e6!important;color:#cb5266!important}
+#activities .countdown,.congress .countdown{justify-content:center!important}.digit{background:linear-gradient(135deg,#1fa3e1,#328de7)!important;color:#fff!important;box-shadow:0 10px 22px #2097e335!important}.digit:nth-child(2){background:linear-gradient(135deg,#28c5b4,#11aabf)!important}.digit:nth-child(3){background:linear-gradient(135deg,#9b7ff5,#7a8eec)!important}.digit:nth-child(4){background:linear-gradient(135deg,#ff8a74,#ff6091)!important}.digit small{color:#fff6d7!important}
+.scroll{border-color:#d8eefa!important}th{background:#e8f7ff!important;color:#1776a7!important}td{color:#375c73!important;border-bottom-color:#e2f1f8!important}.candidate input{accent-color:#1ba8ca!important}
+footer{background:linear-gradient(110deg,#188fc7,#20b9b0)!important;color:#f5ffff!important}footer span{color:#f5ffff!important}
+@media(max-width:700px){.hero{border-radius:0 0 24px 24px!important}.heroImg{background-position:62% center!important}.homeLinks button{min-height:174px!important}.homeClosing{background:linear-gradient(140deg,#168ed4,#22bfad)!important}}
