@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 450" role="img" aria-labelledby="title desc">
+ <title id="title">Dấu ấn kiến trúc Thành phố Hồ Chí Minh</title><desc id="desc">Minh họa cách điệu Chợ Bến Thành, Dinh Độc Lập và tòa Landmark 81 với hoa văn trống đồng.</desc>
+ <defs>
+  <linearGradient id="gold" x2=".25" y2="1"><stop stop-color="#dfc18c"/><stop offset="1" stop-color="#b8894b"/></linearGradient>
+  <linearGradient id="wine" x2="0" y2="1"><stop stop-color="#9a4a45"/><stop offset="1" stop-color="#70352f"/></linearGradient>
+  <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r="1.4" fill="#c2a06a" opacity=".2"/></pattern>
+ </defs>
+ <rect width="1120" height="450" fill="url(#dots)" opacity=".36"/>
+ <g fill="none" stroke="#b78d53" opacity=".38">
+   <circle cx="920" cy="135" r="106" stroke-width="2"/><circle cx="920" cy="135" r="92"/><circle cx="920" cy="135" r="81"/><circle cx="920" cy="135" r="64"/><circle cx="920" cy="135" r="39"/>
+   <path d="M920 29V241M814 135h212M845 60l150 150M845 210L995 60" stroke-width="1"/>
+   <path d="M920 40l9 15-9 14-9-14zM920 202l9 14-9 14-9-14zM836 135l14-9 15 9-15 9zM974 135l15-9 15 9-15 9z" fill="#b68d55" stroke="none"/>
+ </g>
+ <path d="M24 351c210-23 440-18 570-6 162 13 309 5 503-21" stroke="#ba925b" stroke-width="4" fill="none" opacity=".48"/>
+ <path d="M24 369c190-16 335-12 540-5 173 6 326 1 533-14" stroke="#b88c57" stroke-width="1" fill="none" opacity=".58"/>
+ <!-- Ben Thanh market with iconic central clock tower, stylized -->
+ <g stroke="#8d633a" stroke-width="3" stroke-linejoin="round">
+  <path d="M100 340V254l30-20h213l27 20v86" fill="#f0ddbb"/>
+  <path d="M87 250h296l-19-18H108z" fill="url(#gold)"/>
+  <path d="M205 232V142h63v90" fill="#f5e5c5"/>
+  <path d="M193 143l45-57 42 57z" fill="url(#wine)"/>
+  <path d="M230 86V71" stroke-width="5"/>
+  <circle cx="237" cy="181" r="25" fill="#fff9eb" stroke="#a47b4b" stroke-width="5"/>
+  <path d="M237 163v18l11 8" fill="none" stroke="#7d4a3a" stroke-width="3" stroke-linecap="round"/>
+  <path d="M111 262h244M111 289h244" stroke="#b48c52" opacity=".38"/>
+  <path d="M125 339v-68h31v68M177 339v-68h32v68M261 339v-68h31v68M312 339v-68h31v68" fill="#f8ecd7"/>
+  <path d="M218 340v-51q20-30 39 0v51" fill="#af814d"/>
+ </g>
+ <!-- Independence Palace, horizontal facade -->
+ <g stroke="#98744c" stroke-width="3" stroke-linejoin="round">
+  <path d="M425 345v-145h346v145" fill="#f8edd6"/>
+  <path d="M404 205h388l-12-18H418z" fill="url(#gold)"/>
+  <path d="M440 223h319M440 245h319M440 267h319M440 289h319M440 310h319" stroke="#c49c61" opacity=".8"/>
+  <g fill="#d6b37e" stroke="none"><rect x="455" y="220" width="12" height="95"/><rect x="489" y="220" width="12" height="95"/><rect x="523" y="220" width="12" height="95"/><rect x="557" y="220" width="12" height="95"/><rect x="591" y="220" width="12" height="95"/><rect x="625" y="220" width="12" height="95"/><rect x="659" y="220" width="12" height="95"/><rect x="693" y="220" width="12" height="95"/><rect x="727" y="220" width="12" height="95"/></g>
+  <path d="M541 343v-30q50-28 98 0v30" fill="#91643c"/>
+  <path d="M585 188v-35" stroke-width="4"/><path d="M585 153v-17" stroke="#9a403b" stroke-width="4"/>
+  <path d="M585 134h28l-7 10h-21z" fill="#a9433f" stroke="#8c3935" stroke-width="1"/>
+ </g>
+ <!-- Landmark 81 architectural silhouette -->
+ <g stroke="#996e40" stroke-width="3" stroke-linejoin="round">
+  <path d="M876 342V118h31V86h31V56h34v74h26v213" fill="#d4b282"/>
+  <path d="M905 345V142h49V95h17v249" fill="#f4e3c3"/>
+  <path d="M971 56V24" stroke-width="4"/>
+  <path d="M885 162h106M885 185h106M885 208h106M885 231h106M885 254h106M885 277h106M885 300h106" stroke="#9c774a" opacity=".65"/>
+  <path d="M912 140V343M932 140V343M952 140V343" stroke="#b78c57" opacity=".65"/>
+ </g>
+ <!-- Fine line ornamental ground, trees, lotus bud details -->
+ <g fill="#b9915d" opacity=".7"><path d="M48 344q14-39 27 0h-27zm34 0q12-54 25 0H82zM800 344q15-42 30 0h-30zm28 0q11-36 22 0h-22z"/><circle cx="40" cy="61" r="4"/><circle cx="58" cy="61" r="4"/><circle cx="76" cy="61" r="4"/></g>
+ <g font-family="Georgia,serif" fill="#936d3d" text-anchor="middle" font-size="18" letter-spacing="2"><text x="238" y="405">CHỢ BẾN THÀNH</text><text x="598" y="405">DINH ĐỘC LẬP</text><text x="942" y="405">LANDMARK 81</text></g>
+</svg>

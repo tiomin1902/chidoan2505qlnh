@@ -1,0 +1,343 @@
+/* LỚP 2505QLNH | GOLD HERITAGE V9
+   Presentation layer only. Loaded LAST, after legacy styles.
+   No changes to Apps Script, OneSignal, IDs, form field names, or routing logic.
+*/
+:root {
+  --g9-white:#ffffff;
+  --g9-paper:#fdfaf4;
+  --g9-cream:#f5eddf;
+  --g9-cream-2:#fbf5e9;
+  --g9-gold:#b38b49;
+  --g9-gold-dark:#87632c;
+  --g9-gold-light:#ebd4a7;
+  --g9-red:#872c32;
+  --g9-red-deep:#642028;
+  --g9-ink:#312c27;
+  --g9-muted:#796e61;
+  --g9-border:#eadfca;
+  --g9-shadow:0 20px 55px rgba(89,56,29,.075),0 2px 8px rgba(89,56,29,.035);
+  --g9-radius:20px;
+  --g9-ease:cubic-bezier(.22,1,.36,1);
+}
+html {background:var(--g9-paper)!important;scroll-behavior:smooth;scroll-padding-top:92px}
+*,*::before,*::after {box-sizing:border-box}
+body {background:var(--g9-paper)!important;color:var(--g9-ink)!important;font-family:"Times New Roman",Georgia,serif!important;font-size:16px;overflow-x:hidden}
+body::before {content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 2% 22%,rgba(214,176,111,.09),transparent 27%),radial-gradient(circle at 98% 73%,rgba(174,81,64,.06),transparent 26%)}
+button,input,textarea,select {font-family:Arial,"Helvetica Neue",sans-serif!important}
+button {touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+button:not(:disabled),a,[role="button"] {transition:transform .23s var(--g9-ease),background-color .23s,border-color .23s,box-shadow .23s,color .23s}
+button:not(:disabled):active {transform:scale(.975)!important}
+:where(button,a,input,select,textarea,summary,[tabindex]):focus-visible {outline:3px solid #c5a368!important;outline-offset:3px!important}
+:where(p,li,td,th,label) {overflow-wrap:anywhere}
+[hidden] {display:none!important}
+/* GOLDEN TOP NAV — clear navigation hierarchy */
+.top {height:78px!important;padding:0 clamp(17px,5vw,84px)!important;background:rgba(255,252,246,.96)!important;backdrop-filter:blur(22px)!important;border-bottom:1px solid var(--g9-border)!important;box-shadow:0 5px 28px rgba(91,56,24,.055)!important}
+.top::after {content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#c8a567 25%,#ecddbd 52%,#b47e4d 75%,transparent);opacity:.75}
+.brand {gap:12px!important;min-width:0}
+.brandEmblem {background:linear-gradient(145deg,#a43f43,#68222a)!important;border:1px solid #d8ba7f!important;color:#ffe8b7!important;width:46px!important;height:46px!important;border-radius:15px!important;box-shadow:0 4px 15px #752e3326!important;font:bold 19px "Times New Roman",serif!important}
+.brandText {min-width:0}.brandText strong {font:700 clamp(16px,2vw,21px)/1.1 "Times New Roman",serif!important;color:var(--g9-red-deep)!important;letter-spacing:.02em!important}
+.brandText small {font:700 9px/1.5 Arial,sans-serif!important;letter-spacing:.13em!important;color:var(--g9-gold-dark)!important;white-space:normal}
+#menuBtn {background:#fff!important;border:1px solid #e3d2b4!important;border-radius:14px!important;width:47px!important;height:47px!important;box-shadow:0 5px 14px #8c693217!important}
+#menuBtn:hover {background:#fbf4e7!important;box-shadow:0 8px 23px #a77e4026!important}
+#menuBtn span {background:#7a3c38!important}
+#drawer {background:linear-gradient(155deg,#fffdf8,#f7eedf)!important;box-shadow:-23px 0 65px #3921162e!important;overscroll-behavior:contain}
+#drawer .drawerTop {border-bottom-color:#e7d5b9!important}
+#drawer .drawerHint {color:var(--g9-gold-dark)!important}
+#drawer .drawerTop strong {color:var(--g9-red-deep)!important}
+#drawer>[data-page] {color:#514333!important;border-radius:13px!important}
+#drawer>[data-page]:hover,#drawer>[data-page]:focus-visible {background:#f3e6d2!important;color:var(--g9-red)!important;transform:translateX(-3px)}
+#drawer .navIcon {background:#f4e8d6!important;color:#936a33!important}
+#closeBtn {color:var(--g9-red)!important}
+/* HOME AND HERO — warm cream/gold with Vietnam heritage illustration */
+#home {background:transparent!important}
+.hero {min-height:clamp(590px,75vh,740px)!important;background:linear-gradient(110deg,#f9f2e6,#f8eedc 62%,#efe0c5)!important;border-radius:0 0 34px 34px!important;overflow:hidden!important;box-shadow:inset 0 -1px #e1cead!important}
+.heroImg {background:linear-gradient(90deg,#fcf6eb 0%,rgba(252,245,233,.97) 38%,rgba(251,243,228,.78) 65%,rgba(250,238,218,.58) 100%),url('https://media.apag.edu.vn/Image/023ced82-d60e-9622-cc13-0ce98d1cef93/2025/10/3/Hinh-anh-Phan-hieu-c2f3e4f995.jpg') center/cover!important;filter:none!important;opacity:1!important}
+.heroImg::after {background:linear-gradient(0deg,#f8f0e2c5,transparent 45%)!important}
+.hero::before {content:""!important;position:absolute;left:-115px;top:-145px;width:490px;height:490px;border:1px solid #c7a66a42!important;border-radius:50%;background:radial-gradient(circle,transparent 34%,#bc99691c 35%,transparent 36%)!important;box-shadow:0 0 0 30px #d7b9850b,0 0 0 90px #bd99650a!important;pointer-events:none;animation:none!important}
+.hero::after {content:""!important;position:absolute;right:-150px;bottom:-310px;width:690px;height:690px;opacity:.95!important;background:radial-gradient(circle,#e5c99342 0%,transparent 63%)!important;border:0!important;box-shadow:none!important;pointer-events:none}
+.heroContent {position:relative;z-index:3;width:min(100%,1280px)!important;margin:0 auto;padding:clamp(98px,12vh,148px) clamp(23px,7vw,100px) 120px!important;text-align:left}
+.hero .eyebrow {font:700 11px/1.6 Arial,sans-serif!important;letter-spacing:.22em!important;color:#94703b!important;text-shadow:none!important;max-width:750px}
+.heroLive {background:#be9655!important;box-shadow:0 0 0 4px #d7b67528!important}
+.hero h1 {font:700 clamp(53px,7.3vw,99px)/1.02 "Times New Roman",Georgia,serif!important;letter-spacing:-.045em!important;color:var(--g9-red-deep)!important;text-shadow:none!important;margin:25px 0 23px!important;max-width:880px}
+.hero h1 span {color:#a47c36!important;text-shadow:none!important}
+.heroContent p {color:#635345!important;font:400 clamp(17px,2.1vw,21px)/1.75 "Times New Roman",serif!important;max-width:570px!important;text-shadow:none!important}
+.heroCorner {color:#946e3c!important;font:700 10px Arial,sans-serif!important;letter-spacing:.16em!important}
+.heroActions {gap:12px!important;align-items:center!important;margin-top:35px!important}
+.heroActions .accent {background:linear-gradient(115deg,#9c733a,#bc965c)!important;color:#fff!important;border:1px solid #a77f47!important;border-radius:999px!important;min-height:51px;box-shadow:0 12px 26px #a2793b30!important;padding:15px 26px!important;font:700 12px Arial,sans-serif!important;letter-spacing:.065em!important}
+.heroActions .accent.secondary {background:rgba(255,255,255,.85)!important;color:#7c3933!important;border:1px solid #d8bf98!important;box-shadow:0 8px 24px #ad854421!important}
+.heroActions .accent:hover {transform:translateY(-4px)!important;box-shadow:0 17px 31px #ab793e34!important}
+.g9HeroArt {position:absolute;z-index:2;right:max(2%,calc((100vw - 1300px)/2));bottom:22px;width:min(55vw,665px);opacity:.48;pointer-events:none;filter:drop-shadow(0 10px 20px #9a75401c)}
+.g9HeroArt img {display:block;width:100%;height:auto}
+/* HOME SECTIONS */
+.homeSectionHead {text-align:center!important;margin:0 auto!important;max-width:970px!important;padding:84px 22px 25px!important}
+.miniLabel,.news-overline,.homeSectionHead .miniLabel {color:#96703b!important;font:700 11px/1.5 Arial,sans-serif!important;letter-spacing:.18em!important}
+.homeSectionHead h2,.news-section-heading h2 {font:700 clamp(30px,3.9vw,46px)/1.2 "Times New Roman",Georgia,serif!important;letter-spacing:-.035em!important;color:var(--g9-red-deep)!important}
+.homeSectionHead p,.news-section-heading p {font:400 16px/1.8 "Times New Roman",serif!important;color:var(--g9-muted)!important}
+.homeLinks {max-width:1210px!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:18px!important;padding:19px clamp(18px,4vw,42px) 67px!important}
+.homeLinks button,.homeLinks button:nth-child(n) {position:relative;overflow:hidden;min-width:0;min-height:215px;background:linear-gradient(145deg,#fff,#fdfaf4)!important;border:1px solid var(--g9-border)!important;border-radius:20px!important;padding:26px!important;text-align:left!important;box-shadow:var(--g9-shadow)!important;transform:none!important}
+.homeLinks button::after {content:""!important;position:absolute;bottom:0;left:0;height:3px!important;width:100%;background:linear-gradient(90deg,#8d3538,#c59d5a)!important;opacity:.9!important}
+.homeLinks button:hover {transform:translateY(-7px)!important;border-color:#d9bc8e!important;box-shadow:0 25px 55px #6b4d2120!important}
+.homeLinks button b {font:700 11px Arial,sans-serif!important;color:#ba995e!important;letter-spacing:.12em!important}
+.homeLinks button strong {font:700 clamp(23px,2.15vw,28px)/1.15 "Times New Roman",serif!important;color:#71342f!important;margin:42px 0 12px!important}
+.homeLinks button span {font:400 14px/1.6 Arial,sans-serif!important;color:#796e62!important}
+.homeLinks button:nth-child(2)::after {background:#243e63!important}
+.homeLinks button:nth-child(2) strong {color:#203b64!important}
+.homeLinks button:nth-child(3)::after {background:#67aacf!important}
+.homeLinks button:nth-child(3) strong {color:#377da4!important}
+.homeLinks button:nth-child(4)::after {background:#b78d4e!important}
+/* Vietnam heritage strip: subtle original vector illustration */
+.g9Heritage {max-width:1200px;margin:0 auto 76px;padding:clamp(23px,3.5vw,39px);display:grid;grid-template-columns:.88fr 1.12fr;align-items:center;gap:20px;background:linear-gradient(115deg,#fffaf1,#f4e8d1)!important;border:1px solid #e5d1aa;border-radius:25px;box-shadow:var(--g9-shadow);overflow:hidden;position:relative}
+.g9Heritage::before {content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(#be9854,#8f3538)}
+.g9HeritageCopy {position:relative;z-index:1;padding:9px 10px}
+.g9HeritageCopy .eyebrow {color:#a07741!important;letter-spacing:.18em!important;font-size:10px!important}
+.g9Heritage h2 {font:700 clamp(27px,3vw,38px)/1.17 "Times New Roman",serif!important;color:#773831;margin:12px 0!important}
+.g9Heritage p {font:400 16px/1.75 "Times New Roman",serif;color:#736454;margin:0;max-width:440px}
+.g9HeritageArt {width:100%;max-height:280px;object-fit:contain;object-position:center}
+.g9HeritageFoot {display:block;color:#92784e;font:700 10px/1.6 Arial,sans-serif;letter-spacing:.14em;margin-top:18px}
+.push-home-notice {max-width:1160px!important;background:linear-gradient(110deg,#fff,#fcf6ea)!important;border:1px solid #e7d8bc!important;border-radius:20px!important;box-shadow:var(--g9-shadow)!important;padding:25px 30px!important}
+.push-home-notice strong {font:700 23px "Times New Roman",serif!important;color:#763831!important}
+.push-home-notice p {color:#81715f!important}
+.push-home-notice button,.push-buttons #pushEnable {background:linear-gradient(110deg,#91373b,#712b30)!important;color:#fff!important;border:1px solid #823036!important;border-radius:12px!important;min-height:47px}
+.push-home-notice button:hover,.push-buttons #pushEnable:hover {background:#682329!important}
+.homeNotices {max-width:1160px;margin:22px auto 0}
+.news-home {max-width:1210px!important;margin:40px auto 74px!important}
+.news-section-heading {align-items:center!important}
+.news-section-heading h2 {color:#733832!important}
+.news-more-btn {border:1px solid #d5bb92!important;background:#fffaf3!important;color:#824832!important;border-radius:100px!important;padding:14px 24px!important}
+.news-more-btn:hover {background:#f3e6cf!important}
+.news-grid {gap:22px!important}
+.news-card {background:#fff!important;border:1px solid #e8ddcc!important;border-radius:20px!important;box-shadow:var(--g9-shadow)!important;min-width:0}
+.news-card:hover {transform:translateY(-6px)!important;box-shadow:0 28px 62px #734d2b21!important;border-color:#d8b989!important}
+.news-card-body {padding:24px!important}
+.news-card h3 {font:700 clamp(20px,1.75vw,25px)/1.32 "Times New Roman",serif!important;color:#673a32!important}
+.news-excerpt,.news-card-bottom {color:#7e7469!important}
+.news-class,.news-card-arrow {color:#a67940!important}
+.news-important {background:#f4e7cd!important;color:#98692e!important}
+.news-image {background:#f3e8d6!important}
+.news-empty,.news-loading {background:#fcf7ed!important;border-color:#ead9bc!important;color:#7b6a55!important}
+.homeClosing {background:linear-gradient(120deg,#72282e,#542127)!important;border:1px solid #955d4f!important;border-radius:24px!important;box-shadow:0 22px 50px #602a302b!important}
+.homeClosing p,.homeClosing h2 {color:#fff6e8!important}
+.homeClosing>span {color:#e6c88f!important}
+.homeClosing button {background:#e3c389!important;color:#4b2624!important;border:0!important}
+/* CONTENT PAGES — consistent widths, centered headings, and clean panels */
+.page:not(#home) {max-width:1200px!important;padding:72px clamp(17px,4.4vw,58px) 96px!important;min-width:0}
+.sectionTitle {text-align:center!important;margin:0 auto 42px!important;max-width:930px!important;position:relative}
+.sectionTitle::after {content:"";display:block;width:66px;height:2px;background:linear-gradient(90deg,transparent,#bf9758,transparent);margin:24px auto 0}
+.sectionTitle h1,.sectionTitle h1 i {font:700 clamp(37px,5vw,58px)/1.12 "Times New Roman",Georgia,serif!important;letter-spacing:-.035em!important;color:#753731!important;text-align:center!important}
+.sectionTitle h1 i {color:#a78349!important;font-style:italic}
+.sectionTitle .eyebrow {font:700 11px/1.7 Arial,sans-serif!important;letter-spacing:.12em!important;color:#a67c45!important}
+.sectionTitle p {font:400 17px/1.75 "Times New Roman",serif!important;color:#796d60!important;margin:14px auto 0!important;max-width:700px!important}
+.grid {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:20px!important}
+.infoCard,.panel,.itemCard {min-width:0;background:linear-gradient(150deg,#fff,#fffdf9)!important;border:1px solid var(--g9-border)!important;border-radius:var(--g9-radius)!important;box-shadow:var(--g9-shadow)!important}
+.infoCard {padding:28px 25px!important;min-height:130px;text-align:center!important}
+.infoCard small {font:700 11px/1.65 Arial,sans-serif!important;letter-spacing:.14em!important;color:#9b8057!important}
+.infoCard strong {font:700 clamp(22px,2.5vw,28px)/1.35 "Times New Roman",serif!important;color:#733b34!important;white-space:pre-line}
+.panel,.itemCard {padding:clamp(22px,3.2vw,34px)!important}
+.panel h2,.panel h3,.itemCard h2 {font-family:"Times New Roman",serif!important;font-weight:700!important;color:#743d36!important;line-height:1.25!important;overflow-wrap:anywhere}
+.panel p,.itemCard p {color:#746759!important;line-height:1.82!important}
+#classIntroPanel,#doanIntroPanel,#hoiIntroPanel {text-align:center!important;padding:clamp(26px,4.5vw,48px)!important}
+#classIntroPanel p,#doanIntroPanel p,#hoiIntroPanel p {max-width:870px;margin-inline:auto;white-space:pre-line}
+/* Default class section: gold + cream */
+#class .infoCard {border-top:3px solid #cfad77!important}
+#class .infoCard:hover {transform:translateY(-3px);box-shadow:0 22px 48px #8b653514!important}
+/* Chi Đoàn: deep navy identity. Independent of Chi Hội. */
+body[data-current-page="doan"] {background:#f4f6fa!important}
+body[data-current-page="doan"] .top {background:#fbfcffed!important;border-color:#d9e1ef!important}
+body[data-current-page="doan"] .brandEmblem {background:linear-gradient(145deg,#1d3c69,#102745)!important;border-color:#9ab2cf!important}
+body[data-current-page="doan"] .brandText strong {color:#203e6c!important}
+#doan .sectionTitle h1,#doan .sectionTitle h1 i,#doan .infoCard strong,#doan .panel h2,#doan .panel h3,#doan .itemCard h2 {color:#183961!important}
+#doan .sectionTitle .eyebrow {color:#45698f!important}
+#doan .sectionTitle::after {background:linear-gradient(90deg,transparent,#254c7d,transparent)}
+#doan .infoCard,#doan .panel,#doan .itemCard {background:#fff!important;border-color:#dfe7f1!important;box-shadow:0 15px 40px #153a6310!important}
+#doan .infoCard {border-top:3px solid #345881!important}
+#doan .infoCard small {color:#657f9e!important}
+#doan .congress .digit,#doan .digit {background:linear-gradient(135deg,#16365a,#315981)!important;border-color:#446b99!important}
+#doan .action,#doan button.action,#doan .voteOpen {background:#1f416a!important;color:#fff!important}
+#doan .action:hover {background:#123354!important}
+#doan .tag:not(.closed) {background:#e8f1fa!important;color:#24527a!important}
+/* Chi Hội: sky blue + pure white */
+body[data-current-page="hoi"] {background:#f2faff!important}
+body[data-current-page="hoi"] .top {background:#fbfdffed!important;border-color:#d9eaf5!important}
+body[data-current-page="hoi"] .brandEmblem {background:linear-gradient(145deg,#64b2db,#2680b3)!important;border-color:#d2eefa!important}
+body[data-current-page="hoi"] .brandText strong {color:#2778a4!important}
+#hoi .sectionTitle h1,#hoi .sectionTitle h1 i,#hoi .infoCard strong,#hoi .panel h2,#hoi .panel h3,#hoi .itemCard h2 {color:#287ba7!important}
+#hoi .sectionTitle .eyebrow {color:#4b9dca!important}
+#hoi .sectionTitle::after {background:linear-gradient(90deg,transparent,#73c1e2,transparent)}
+#hoi .infoCard,#hoi .panel,#hoi .itemCard {background:#fff!important;border-color:#d5eaf4!important;box-shadow:0 16px 40px #2c8fc40b!important}
+#hoi .infoCard {border-top:3px solid #83c7e8!important}
+#hoi .infoCard small {color:#609abc!important}
+#hoi .congress .digit,#hoi .digit {background:linear-gradient(135deg,#267da9,#66b8d9)!important;border-color:#96d0e7!important}
+#hoi .action,#hoi button.action,#hoi .voteOpen {background:#308dbb!important;color:#fff!important}
+#hoi .action:hover {background:#197ba8!important}
+#hoi .tag:not(.closed) {background:#e4f5fc!important;color:#2281b0!important}
+/* Congress, election and official events — centrally aligned timer and CTAs */
+.congress,.v8-independent {max-width:1100px;margin:44px auto 0!important;min-width:0}
+.congress>.panel,.v8-independent>.panel {margin:0 0 21px!important}
+.countdown,#activities .countdown,.congress .countdown {display:flex!important;justify-content:center!important;align-items:stretch!important;flex-wrap:wrap!important;gap:11px!important;margin:23px auto!important;text-align:center!important;width:100%!important}
+.digit,.digit:nth-child(n) {min-width:79px!important;min-height:86px;border-radius:15px!important;padding:15px 12px!important;background:linear-gradient(145deg,#8f383b,#62262c)!important;color:#fff!important;border:1px solid #a76256!important;box-shadow:0 9px 20px #642a2c1c!important;font:700 27px/1.1 Arial,sans-serif!important;text-align:center!important}
+.digit small {font:700 10px/1.6 Arial,sans-serif!important;letter-spacing:.09em!important;color:#f6daa7!important;margin-top:7px!important}
+.congressDetails {display:grid!important;gap:10px!important;margin:22px auto!important;max-width:980px}
+.congressDetails>div {background:#fdf9f1;border:1px solid #eee0cb;border-radius:12px!important;padding:13px 16px!important;align-items:start!important;line-height:1.6!important}
+.congress .voteOpen {display:block!important;margin:24px auto!important;max-width:100%;text-align:center}
+.voteStatus {text-align:center!important}
+.candidate {align-items:center!important;gap:16px!important;flex-wrap:wrap;border-color:#eee2cf!important}
+.candidate label {white-space:normal!important;cursor:pointer}
+.candidate input {accent-color:#a4773d!important}
+.v8-results-table .v8-tied {background:#fdf0d6!important;box-shadow:inset 4px 0 #d3a763!important}
+/* Forms, activities and the series of sub-activities */
+#activities #activityList {display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:24px!important;max-width:1130px;margin:0 auto}
+#activities #activityList .seriesCard,#activities #activityList .itemCard {background:linear-gradient(160deg,#fff,#fffdf9)!important;border:1px solid #e7dac5!important;border-radius:23px!important;box-shadow:var(--g9-shadow)!important;max-width:100%!important;min-width:0!important;padding:clamp(20px,3.3vw,36px)!important}
+#activities #activityList .seriesCard>h2,#activities #activityList .itemCard>.soloTop h2 {font:700 clamp(24px,3vw,37px)/1.22 "Times New Roman",serif!important;color:#713b34!important}
+#activities #activityList .seriesCard>.activityDescription,#activities #activityList .seriesChild>.activityDescription,#activities #activityList .itemCard>.activityDescription {font:400 16px/1.8 "Times New Roman",serif!important;color:#786b5d!important}
+#activities #activityList .seriesChip {background:#f5e7cf!important;color:#916936!important;border-radius:99px!important}
+#activities #activityList .seriesMeta.seriesDates,#activities #activityList .itemCard>.soloMeta {background:#fbf7ef!important;border:1px solid #eddfc7!important;border-radius:15px!important}
+#activities #activityList .metaLine,#activities #activityList .metaLine b {color:#765d43!important}
+#activities #activityList .seriesCollapse {border-color:#e9d7bb!important;border-radius:15px!important}
+#activities #activityList .seriesCollapse>summary {background:#f8eedb!important;color:#794337!important;border-bottom-color:#eadac1!important;padding:19px 21px!important}
+#activities #activityList .seriesCollapse>summary:hover {background:#f3e4c9!important}
+#activities #activityList .seriesChild {background:#fff!important;border:1px solid #ebe0cf!important;border-left:3px solid #bd9457!important;box-shadow:0 6px 24px #6642200a!important;border-radius:15px!important;min-width:0!important;transition:transform .2s var(--g9-ease),box-shadow .2s}
+#activities #activityList .seriesChild:hover {transform:translateY(-2px)!important;box-shadow:0 12px 32px #8b65351b!important}
+#activities #activityList .seriesChild h3 {font:700 clamp(21px,2.5vw,27px) "Times New Roman",serif!important;color:#713e35!important}
+#activities #activityList .seriesChild>.childMeta {background:#fdf9f2!important;border:1px solid #efe5d4!important;border-radius:12px!important;gap:9px 16px!important;flex-wrap:wrap!important}
+#activities #activityList .seriesChild>.seriesNumbers {color:#846845!important}
+#activities #activityList .seriesTrack {background:#f0e7d7!important}
+#activities #activityList .seriesTrack span {background:linear-gradient(90deg,#ba9254,#874033)!important}
+#activities #activityList .seriesSelect {background:#fcf6eb!important;border-color:#e7d4b6!important;color:#8a6136!important}
+#activities #activityList .seriesSelect input {accent-color:#a6783d!important}
+#activities #activityList details.registrantDetails {color:#856a4b!important;border-color:#eee2d1!important}
+#activities #activityList details.registrantDetails>summary {color:#825d39!important}
+#activities #activityList .seriesChild>.activityNote,#activities #activityList .itemCard>.activityNote,.activityNote {background:#fdf7e9!important;border-left:4px solid #bf9758!important;border-radius:11px!important}
+#activities #activityList .seriesForm,#activities #activityList .regForm {min-width:0;width:100%}
+.regForm label {color:#665440!important}.regForm input {border:1px solid #decfb6!important;background:#fff!important;color:#3b332a!important}
+.regForm input:focus {border-color:#b6935a!important;box-shadow:0 0 0 3px #c6a36825!important}
+.action,.regForm .action {background:linear-gradient(125deg,#8b373c,#702830)!important;color:#fff!important;border:1px solid #87343a!important;box-shadow:0 8px 20px #7b393a26!important;border-radius:12px!important;font:700 12px/1.4 Arial,sans-serif!important;letter-spacing:.02em!important;min-height:46px}
+.action:hover:not(:disabled) {background:#652229!important;transform:translateY(-2px)!important}
+.action:disabled {opacity:.52!important;box-shadow:none!important}
+.tag {background:#eef5e9!important;color:#4e7540!important;border-radius:999px!important}
+.tag.closed {background:#f7eae5!important;color:#a34b48!important}
+.meta {border:1px solid #eadeca!important;background:#fdf8ee!important;color:#726049!important}
+/* Notifications and articles */
+.news-page-head {max-width:1100px!important}
+.news-tabs {margin:26px auto 20px!important;justify-content:center!important;border:1px solid #eadcc5!important;background:#f9f1e4!important;border-radius:13px!important}
+.news-tabs button {color:#896e4c!important;border-radius:10px!important}
+.news-tabs button.active {background:#fff!important;color:#814035!important;box-shadow:0 4px 16px #84613d1c!important}
+.news-filters {justify-content:center!important;gap:15px 24px!important}
+.news-kind-tabs button {border-color:#e5d5bc!important;background:#fff!important;color:#80654b!important}
+.news-kind-tabs button.active {background:#80353a!important;border-color:#80353a!important;color:#fff!important}
+.news-search {border-color:#e5d4b9!important;max-width:330px!important;color:#493b2e!important}
+.news-count {text-align:center;color:#827361!important}
+.news-bottom button,.news-back,.news-share {border-color:#dbc5a2!important;background:#fffaf3!important;color:#814736!important;border-radius:12px!important}
+.news-article-heading h1 {font:700 clamp(31px,4.5vw,54px)/1.25 "Times New Roman",serif!important;color:#773d34!important}
+.news-article-unit {color:#a57a3d!important}
+.news-article-content {font-family:"Times New Roman",serif!important;color:#403c36!important}
+.news-article-content h2,.news-article-content h3 {color:#7e4439!important}
+.news-article-content a,.news-external-link,.news-attachment-actions a {color:#916438!important}
+.news-external-link {background:#fcf7ee!important;border-color:#e9d9c1!important}
+.news-file-icon {background:#f6ead8!important;color:#9c6e36!important}
+/* Notification opt-in */
+.push-panel {background:#fff!important;border:1px solid var(--g9-border)!important;border-radius:24px!important;box-shadow:var(--g9-shadow)!important}
+.push-bell {background:#f8edda!important;color:#987140!important}
+.push-panel-top h2 {font:700 clamp(23px,3vw,29px) "Times New Roman",serif!important;color:#7c4038!important}
+.push-panel-top p,.push-small {color:#806f5c!important}
+.push-options label {background:#fdf9f2!important;border-color:#ecdfca!important;color:#574a3b!important}
+.push-options label:hover {border-color:#c8a678!important;background:#faf1e1!important}
+.push-options input {accent-color:#946d38!important}
+.push-buttons .push-secondary {background:#f6ebd8!important;border-color:#e6d5b8!important;color:#7d5630!important}
+.push-buttons .push-plain {color:#944e45!important;border-color:#ebd8d0!important}
+.push-ios-tip {background:#faf3e7!important;border-color:#e5d1b0!important}
+/* Tables and election ballots */
+.scroll {max-width:100%;overflow-x:auto!important;border-color:#eadbc6!important;border-radius:14px!important;-webkit-overflow-scrolling:touch}
+table {max-width:100%;border-collapse:collapse}
+th {background:#f8eddb!important;color:#795738!important;font:700 12px/1.5 Arial,sans-serif!important}
+td {color:#51473d!important;border-bottom-color:#efe5d6!important;line-height:1.5}
+tbody tr:hover {background:#fffbf3!important}
+#ballot .ballotHeading,#ballot .ballotTop {text-align:center!important}
+#ballot .ballotHeading h1 {color:#773831!important;font-family:"Times New Roman",serif!important}
+#ballot .ballotTop {max-width:1100px;margin:0 auto 22px}
+#ballot .ballotTop .backVote {float:left}
+#ballotContent {max-width:1100px;margin:0 auto}
+/* Close and footer */
+footer {background:linear-gradient(110deg,#5b252a,#793238)!important;color:#f4e8d4!important;border-top:2px solid #c7a267!important;padding:34px 18px!important}
+footer span {color:#f4e8d4!important}
+/* Tiny one-touch ripple, safe to layer over existing handlers */
+.g9Ripple {position:absolute;border-radius:50%;pointer-events:none;transform:scale(0);opacity:.34;animation:g9Ripple .55s ease-out forwards;background:currentColor;width:15px;height:15px}
+@keyframes g9Ripple {to {opacity:0;transform:scale(13)}}
+@keyframes g9Reveal {from{opacity:.01;transform:translateY(18px)}to{opacity:1;transform:none}}
+.g9Reveal {animation:g9Reveal .56s var(--g9-ease) both}
+/* Mobile, tablets and small landscape devices */
+@media(max-width:1080px) {
+  .homeLinks {grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:820px!important}
+  .g9HeroArt {right:-85px;bottom:15px;width:62vw;opacity:.36}
+  .g9Heritage {margin-inline:19px}
+}
+@media(max-width:750px) {
+  .top {height:72px!important;padding:0 15px!important}
+  .brandEmblem {width:41px!important;height:41px!important;font-size:17px!important}
+  .brandText strong {font-size:17px!important}
+  .brandText small {font-size:8px!important;letter-spacing:.045em!important}
+  .hero {min-height:640px!important;border-radius:0 0 24px 24px!important}
+  .heroImg {background:linear-gradient(0deg,rgba(251,244,231,.92),rgba(252,247,238,.98) 68%),url('https://media.apag.edu.vn/Image/023ced82-d60e-9622-cc13-0ce98d1cef93/2025/10/3/Hinh-anh-Phan-hieu-c2f3e4f995.jpg') center/cover!important}
+  .heroContent {padding:92px 23px 140px!important;text-align:center!important}
+  .hero .eyebrow {font-size:10px!important;letter-spacing:.11em!important;text-align:center}
+  .hero h1 {font-size:clamp(47px,11vw,68px)!important;margin:28px auto 20px!important;line-height:1.06!important}
+  .heroContent p {font-size:17px!important;margin:0 auto!important;max-width:420px!important;text-align:center!important}
+  .heroActions {flex-direction:column!important;justify-content:center!important;align-items:stretch!important;gap:12px!important;margin-inline:auto!important;max-width:380px!important}
+  .heroActions .accent {max-width:100%!important;width:100%!important}
+  .heroCorner {bottom:16px;right:20px;font-size:9px!important}
+  .g9HeroArt {width:min(86vw,530px);opacity:.24;right:-120px;bottom:-3px}
+  .homeSectionHead {padding:70px 20px 20px!important}
+  .homeLinks {grid-template-columns:1fr!important;gap:13px!important;max-width:600px!important;padding:15px 17px 58px!important}
+  .homeLinks button {min-height:155px!important;padding:22px!important}
+  .homeLinks button strong {margin:20px 0 10px!important;font-size:26px!important}
+  .g9Heritage {grid-template-columns:1fr;margin:0 17px 58px;padding:25px 20px!important;text-align:center;gap:8px}
+  .g9HeritageCopy {padding:0}
+  .g9Heritage p {margin:auto}
+  .g9HeritageFoot {margin-top:14px}
+  .g9HeritageArt {max-height:210px}
+  .news-section-heading {display:block!important;text-align:center!important}
+  .news-section-heading p {margin:12px auto!important}
+  .news-more-btn {margin-top:20px!important}
+  .news-home {margin:36px 16px 58px!important;padding:0!important}
+  .push-home-notice {display:block!important;margin:16px 17px 0!important;padding:21px!important;text-align:center!important}
+  .push-home-notice button {margin:18px 0 0!important;width:100%!important}
+  .page:not(#home) {padding:52px 16px 75px!important}
+  .sectionTitle {margin-bottom:32px!important}
+  .sectionTitle h1,.sectionTitle h1 i {font-size:clamp(36px,9vw,48px)!important}
+  .grid {grid-template-columns:1fr!important;gap:13px!important}
+  .infoCard {padding:23px!important;min-height:auto!important}
+  .panel,.itemCard {padding:21px!important}
+  .digit,.digit:nth-child(n) {min-width:68px!important;min-height:77px!important;padding:13px 8px!important;font-size:22px!important}
+  .congressDetails>div {grid-template-columns:1fr!important;gap:5px!important}
+  #activities #activityList .seriesCard,#activities #activityList .itemCard {padding:19px!important}
+  #activities #activityList .seriesChild {padding:17px!important}
+  #activities #activityList .seriesChild>.seriesChildTop {flex-direction:column;align-items:flex-start}
+  #activities #activityList .seriesChild>.childMeta {display:flex!important;flex-direction:column!important;align-items:stretch!important}
+  #activities #activityList .seriesCard .seriesForm {grid-template-columns:minmax(0,1fr)!important}
+  #activities #activityList .seriesForm>* {grid-column:1/-1!important}
+  #activities #activityList .seriesCollapse>form {padding:14px!important}
+  .news-tabs {width:100%!important;max-width:100%!important}
+  .news-tabs button {padding:11px 8px!important;flex:1!important;font-size:11px!important}
+  .news-filters {display:flex;flex-direction:column;align-items:stretch!important}
+  .news-kind-tabs {width:100%!important}
+  .news-kind-tabs button {flex:1}
+  .news-search {width:100%!important;max-width:100%!important;min-width:0!important}
+  .news-grid {grid-template-columns:1fr!important}
+  .news-detail-page {padding:22px 0 48px!important}
+  .push-panel-top {align-items:flex-start}
+  .push-buttons button {width:100%}
+  .homeClosing {margin-inline:16px!important}
+}
+@media(max-width:380px) {
+  .brandText small {max-width:165px}
+  .hero h1 {font-size:44px!important}
+  .hero .eyebrow {font-size:9px!important}
+  .countdown {gap:7px!important}
+  .digit,.digit:nth-child(n) {min-width:61px!important;font-size:20px!important}
+  .news-tabs button {font-size:10px!important}
+}
+@media(hover:none) {.news-card:hover,.homeLinks button:hover,#activities #activityList .seriesChild:hover {transform:none!important}}
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto!important}
+  *,*::before,*::after {animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .g9Reveal {animation:none!important}
+}
