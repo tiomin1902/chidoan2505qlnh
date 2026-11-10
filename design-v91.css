@@ -1,0 +1,125 @@
+/* 2505QLNH — GOLD HERITAGE V9.1 · RED & IVORY
+   Loaded after V9. Changes presentation only. Navy/sky blue sections preserved.
+*/
+:root {
+  --g9-paper:#fffdf4;
+  --g9-cream:#fffdf4;
+  --g9-cream-2:#fffef9;
+  --g9-red:#e11d2e;
+  --g9-red-deep:#bc1624;
+  --g9-gold:#c9a146;
+  --g9-gold-dark:#996e21;
+  --g9-border:#eee3cf;
+  --wine:#d91f29;
+  --wine2:#e11d2e;
+  --cream:#fffdf4;
+}
+html,body {background:#fffdf4!important}
+body::before {background:radial-gradient(circle at 0 10%,#e7bd4814,transparent 30%)!important}
+.top {background:rgba(255,253,244,.97)!important}
+.brandEmblem {background:linear-gradient(135deg,#ef3037,#d71925)!important;border-color:#f3ce77!important;color:#fff!important}
+.brandText strong,#drawer .drawerTop strong {color:#ca1925!important}
+#menuBtn span,#closeBtn {color:#d91f29!important;background-color:#d91f29}
+#closeBtn {background:#fff2f2!important}
+#drawer {background:linear-gradient(160deg,#fffef9,#fffdf4)!important}
+#drawer>[data-page]:hover {background:#fff1eb!important;color:#d91f29!important}
+#drawer .navIcon {background:#fff4ed!important;color:#c41c29!important}
+.hero {background:linear-gradient(114deg,#fffdf4,#fffaf0 65%,#fff7ea)!important}
+.heroImg {background:linear-gradient(90deg,#fffdf4 0%,rgba(255,253,244,.97) 38%,rgba(255,253,244,.76) 68%,rgba(255,253,244,.53) 100%),url('https://media.apag.edu.vn/Image/023ced82-d60e-9622-cc13-0ce98d1cef93/2025/10/3/Hinh-anh-Phan-hieu-c2f3e4f995.jpg') center/cover!important}
+.heroImg::after {background:linear-gradient(0deg,#fffdf4cc,transparent 56%)!important}
+.hero h1,.sectionTitle h1,.sectionTitle h1 i,.homeSectionHead h2,.news-section-heading h2,.g9Heritage h2,.homeLinks button strong {color:#bf1421!important}
+.hero h1 span,.sectionTitle h1 i {color:#c79737!important}
+.hero .eyebrow {color:#af7c2b!important}
+.heroActions .accent {background:linear-gradient(110deg,#e4202c,#d51b25)!important;color:#fff!important;border-color:#d21c27!important;box-shadow:0 13px 28px #b3152430!important}
+.heroActions .accent.secondary {background:#fffef8!important;color:#bc1825!important;border-color:#ecc875!important}
+.heroActions .accent:hover {box-shadow:0 16px 34px #bd20272f!important}
+.homeLinks button,.homeLinks button:nth-child(n),.news-card,.panel,.infoCard,.itemCard {background:#fffefb!important}
+.homeLinks button:first-child strong {color:#ce1825!important}
+.homeLinks button:first-child::after {background:linear-gradient(90deg,#ed333b,#c9a146)!important}
+.homeLinks button:nth-child(2) strong,#doan .panel h2,#doan .infoCard strong {color:#183961!important}
+.homeLinks button:nth-child(3) strong,#hoi .panel h2,#hoi .infoCard strong {color:#3185b8!important}
+.homeLinks button:nth-child(4) strong {color:#b27a22!important}
+.sectionTitle:not(#doan .sectionTitle):not(#hoi .sectionTitle) h1 {color:#c31925!important}
+#class .infoCard strong,#classIntroPanel h2,#activities .panel h2,#attendance .panel h2,#news .sectionTitle h1 {color:#b91925!important}
+.push-home-notice,.news-empty,.news-loading {background:#fffef8!important}
+.push-home-notice strong,.news-card h3 {color:#bd1b26!important}
+.push-home-notice button,.push-buttons #pushEnable {background:linear-gradient(110deg,#e32933,#d51c26)!important;border-color:#d51c26!important;color:#fff!important}
+.push-home-notice button:hover,.push-buttons #pushEnable:hover {background:#bd1420!important}
+.news-more-btn {background:#fffef8!important;color:#b51b25!important}
+.news-more-btn:hover {background:#fff8e9!important}
+.news-image {background:#fff9ed!important}
+.news-important {background:#fff1df!important;color:#ab641c!important}
+.homeClosing {background:linear-gradient(120deg,#e5242f,#bb1723)!important;border-color:#df313e!important}
+.homeClosing p {color:#fff!important}
+.homeClosing button {background:#ffe1a0!important;color:#9d1721!important}
+#activities #activityList .seriesCard,#activities #activityList .itemCard {background:#fffef9!important}
+/* Shared elements: replace remaining wine/brown colors with clear Vietnamese red */
+.congress:not(#doan .congress):not(#hoi .congress) .digit,
+.digit,.digit:nth-child(n){background:linear-gradient(140deg,#e12835,#b91622)!important;border-color:#e3464b!important;box-shadow:0 9px 20px #cf19252a!important}
+#activities #activityList .seriesCard>h2,
+#activities #activityList .itemCard>.soloTop h2,
+#activities #activityList .seriesChild h3,
+#ballot .ballotHeading h1 {color:#c31925!important}
+#activities #activityList .seriesMeta.seriesDates,
+#activities #activityList .itemCard>.soloMeta,
+#activities #activityList .seriesChild>.childMeta,
+#activities #activityList .seriesCollapse>summary,
+#activities #activityList .seriesSelect,
+#activities #activityList .seriesChip,
+.meta,th {background:#fffaf0!important}
+#activities #activityList .seriesCollapse>summary {color:#bb2830!important}
+#activities #activityList .seriesCollapse>summary:hover {background:#fff1d9!important}
+#activities #activityList .seriesTrack span {background:linear-gradient(90deg,#c79a37,#de2632)!important}
+.action,.regForm .action {background:linear-gradient(120deg,#e72b34,#c31926)!important;border-color:#ce1a27!important;box-shadow:0 8px 20px #d31e2a2b!important}
+.action:hover:not(:disabled) {background:#b91320!important}
+.news-tabs {background:#fffaf0!important}
+.news-tabs button.active {background:#fff!important;color:#c71926!important}
+.news-kind-tabs button.active {background:#d91f29!important;border-color:#d91f29!important}
+.news-article-heading h1,.news-article-content h2,.news-article-content h3 {color:#b71b26!important}
+.news-bottom button,.news-back,.news-share {background:#fffdf6!important;color:#ba1c27!important}
+.push-panel-top h2 {color:#bb1d29!important}
+.push-options label {background:#fffefa!important}
+.push-options label:hover {background:#fff9ee!important}
+.push-options input {accent-color:#db222f!important}
+.push-buttons .push-secondary {background:#fff8e9!important}
+.push-buttons .push-plain {color:#bf2630!important}
+.push-ios-tip {background:#fffdf5!important}
+.tag.closed {background:#fff2f0!important;color:#c72830!important}
+footer {background:linear-gradient(115deg,#dd2632,#bb1724)!important;color:#fffef5!important;border-top-color:#d7ad58!important}
+footer span {color:#fffdf4!important}
+/* Chi Đoàn & Chi Hội retain their own identity, overriding global red controls. */
+#doan .digit,#doan .digit:nth-child(n),#doan .congress .digit {background:linear-gradient(135deg,#16365a,#315981)!important;border-color:#446b99!important}
+#hoi .digit,#hoi .digit:nth-child(n),#hoi .congress .digit {background:linear-gradient(135deg,#267da9,#66b8d9)!important;border-color:#96d0e7!important}
+#doan .action,#doan .regForm .action {background:#214c7c!important;border-color:#254e80!important}
+#hoi .action,#hoi .regForm .action {background:#308dbb!important;border-color:#308dbb!important}
+#doan .panel h2,#doan .panel h3,#doan .itemCard h2,#doan .sectionTitle h1 {color:#183961!important}
+#hoi .panel h2,#hoi .panel h3,#hoi .itemCard h2,#hoi .sectionTitle h1 {color:#3185b8!important}
+/* Exact real photos, not SVG illustrations */
+.g9Heritage {grid-template-columns:.68fr 1.32fr!important;gap:clamp(12px,3vw,28px)!important;background:#fffef9!important;border-color:#e9d7b5!important}
+.g9Heritage::before {background:linear-gradient(#e5222e,#d1a443)!important}
+.g9HeritageCopy {align-self:center!important}
+.g9Heritage h2 {color:#be1925!important}
+.g91PhotoGrid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:stretch;min-width:0}
+.g91PhotoCard {margin:0;display:flex;flex-direction:column;min-width:0;border:1px solid #e7decb;border-radius:15px;overflow:hidden;background:#fff;box-shadow:0 8px 25px #67502b15;transition:transform .22s ease,box-shadow .22s ease}
+.g91PhotoCard:hover {transform:translateY(-4px);box-shadow:0 15px 34px #67502b24}
+.g91PhotoCard img {display:block;width:100%;aspect-ratio:3/3.5;min-height:160px;object-fit:cover;background:#f4f2eb}
+.g91PhotoCard figcaption {padding:10px 11px 12px;display:flex;flex-direction:column;gap:6px;line-height:1.35}
+.g91PhotoCard figcaption strong {font:700 15px 'Times New Roman',serif;color:#bd202a}
+.g91PhotoCard figcaption span,.g91PhotoCard figcaption a {font:400 10px/1.4 Arial,sans-serif;color:#706a60;text-decoration:none;overflow-wrap:anywhere}
+.g91PhotoCard figcaption a {text-decoration:underline;text-decoration-color:#d0bd9b;text-underline-offset:2px}
+.g91HeroPhoto {width:min(37vw,490px)!important;right:6%!important;bottom:8%!important;opacity:.66!important;filter:none!important;overflow:hidden;border-radius:20px!important;box-shadow:0 22px 46px #71572b24!important;transform:rotate(2deg)!important}
+.g91HeroPhoto img {width:100%;height:100%;aspect-ratio:1.4;object-fit:cover;display:block}
+/* A hidden gate has NO placeholder. The website JS entirely omits the gate card. */
+@media(max-width:930px) { .g9Heritage {grid-template-columns:1fr!important;text-align:center!important} .g91PhotoGrid{max-width:700px;margin:7px auto 0;width:100%} }
+@media(max-width:750px) {
+ .heroImg {background:linear-gradient(0deg,rgba(255,253,244,.94),rgba(255,253,244,.98) 65%),url('https://media.apag.edu.vn/Image/023ced82-d60e-9622-cc13-0ce98d1cef93/2025/10/3/Hinh-anh-Phan-hieu-c2f3e4f995.jpg') center/cover!important}
+ .g91HeroPhoto{display:none!important}
+ .g91PhotoGrid {grid-template-columns:repeat(3,minmax(0,1fr));gap:7px!important}
+ .g91PhotoCard img {min-height:110px;aspect-ratio:3/4}
+ .g91PhotoCard figcaption {padding:9px 7px}
+ .g91PhotoCard figcaption strong {font-size:12px}
+ .g91PhotoCard figcaption span,.g91PhotoCard figcaption a {font-size:9px}
+ .g9Heritage{padding:24px 14px!important}
+}
+@media(max-width:410px){.g91PhotoGrid{grid-template-columns:1fr 1fr}.g91PhotoCard:last-child{grid-column:1 / -1}.g91PhotoCard:last-child img{aspect-ratio:2.4;min-height:120px}}
+@media(prefers-reduced-motion:reduce){.g91PhotoCard{transition:none!important}}
