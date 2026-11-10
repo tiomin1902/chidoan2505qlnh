@@ -1,0 +1,60 @@
+/* 2505QLNH — ELEGANT LIGHT V4.1
+   White ivory / emerald / restrained champagne. Presentation only.
+   Loaded after premium-v4.css; keeps existing application logic. */
+:root{--v4-ink:#173d38;--v4-wine:#167a69;--v4-gold:#c4a266;--v4-cream:#fffefb;--v4-sky:#f6faf8;--v4-line:#e4ebe7;--v4-muted:#687b73}
+html{background:#fbfcf9!important}
+body{background:#fbfcf9!important;color:#273d38!important}
+.top{background:rgba(255,255,255,.97)!important;border-bottom:1px solid #e8ece7!important;box-shadow:0 5px 22px #1a513a08!important}
+.brandEmblem{background:#167765!important;border-radius:50%!important;box-shadow:0 6px 18px #12654e20!important}
+.brandText strong{color:#175b4c!important}.brandText small{color:#aa8b59!important}
+#menuBtn{background:#fff!important;border:1px solid #d9e8df!important;box-shadow:none!important}#menuBtn span{background:#176e5d!important}
+#drawer{background:#fff!important}#drawer button[data-page]:hover{background:#f1f8f4!important}
+#home{background:#fbfcf9!important}
+.hero{background:#e9f3ec!important;border-radius:0 0 28px 28px!important;box-shadow:none!important;min-height:620px!important}
+.heroImg{background:linear-gradient(90deg,rgba(248,252,246,.97) 0%,rgba(244,251,243,.91) 38%,rgba(236,247,238,.36) 70%,rgba(236,247,238,.1) 100%),url('https://media.apag.edu.vn/Image/023ced82-d60e-9622-cc13-0ce98d1cef93/2025/10/3/Hinh-anh-Phan-hieu-c2f3e4f995.jpg') center/cover!important;filter:saturate(.85)!important;opacity:1!important}
+.heroImg:after{background:linear-gradient(0deg,rgba(231,245,233,.3),transparent 40%)!important}
+.hero:before{animation:none!important;background:none!important}.hero:after{opacity:.14!important;border-color:#b0d1bc!important;box-shadow:none!important}
+.heroContent{width:min(100%,1060px)!important}.hero .eyebrow{color:#347c68!important;text-shadow:none!important;letter-spacing:.13em!important}
+.hero h1,.hero h1 span{color:#164e40!important;text-shadow:none!important}.hero h1 span{color:#bd9453!important}
+.heroContent p{color:#52766b!important;text-shadow:none!important;max-width:630px!important}
+.heroLive{background:#a88a51!important;box-shadow:0 0 0 4px #c6ae7c26!important}.heroCorner{color:#4f7465!important}
+.heroActions .accent{background:#147a65!important;border:1px solid #147a65!important;color:#fff!important;box-shadow:0 10px 24px #147a6519!important}
+.heroActions .accent.secondary{background:#fff!important;color:#176956!important;border:1px solid #bdd8cb!important;box-shadow:none!important}
+.miniLabel,.sectionTitle .eyebrow{color:#b18b4d!important}.homeSectionHead h2{color:#174b3d!important}.homeSectionHead p{color:#6c8177!important}
+.homeLinks{gap:18px!important}.homeLinks button,.homeLinks button:nth-child(n){background:#fff!important;border:1px solid #e1e9e2!important;border-radius:19px!important;box-shadow:0 9px 28px #1d604809!important;transform:none!important}
+.homeLinks button:after{height:2px!important;background:#d3b17c!important;opacity:.65!important}.homeLinks button:hover{border-color:#b9d9c9!important;box-shadow:0 14px 30px #205f4014!important;transform:translateY(-3px)!important}
+.homeLinks b,.homeLinks strong{color:#19604f!important}.homeLinks b em{color:#b18b4d!important}.homeLinks span{color:#71857b!important}
+.homeClosing{background:#e6f1e9!important;border:1px solid #d5e5d8!important;box-shadow:none!important}.homeClosing>span{color:#9b7842!important}.homeClosing h2,.homeClosing p{color:#1d5747!important}.homeClosing button{background:#176e5b!important;color:#fff!important;border:0!important}
+.page:not(#home){background:transparent!important}.sectionTitle h1,.sectionTitle h1 i{color:#185746!important}.sectionTitle h1 i{color:#b99662!important}.sectionTitle p{color:#718177!important}
+.infoCard,.panel,.itemCard{background:#fff!important;border:1px solid #e5eae6!important;border-radius:19px!important;box-shadow:0 12px 34px #245d3d09!important}
+.infoCard{border-top:1px solid #e5eae6!important;background:#fff!important}.infoCard small{color:#858d83!important}.infoCard strong{color:#1e604e!important}.panel h2,.panel h3,.itemCard h2{color:#1d5546!important}.panel p,.itemCard p{color:#677a70!important}
+body[data-current-page=hoi],body[data-current-page=doan]{background:#f7faf8!important}
+.page#hoi .sectionTitle h1,.page#doan .sectionTitle h1,.page#hoi .infoCard strong,.page#doan .infoCard strong{color:#1d6655!important}
+#hoi .infoCard,#hoi .panel,#doan .infoCard,#doan .panel{border-color:#e2ebe6!important;box-shadow:0 10px 30px #205b4309!important}
+#activities #activityList .seriesCard,#activities #activityList .itemCard{background:#fff!important;border:1px solid #dfe9e2!important;box-shadow:0 12px 37px #21513b0b!important}
+#activities #activityList .seriesCard>.seriesTop{border-color:#e7ece6!important}
+#activities #activityList .seriesChip{background:#eef5ee!important;color:#34775f!important}
+#activities #activityList .seriesCard>h2,#activities #activityList .itemCard>.soloTop h2,#activities #activityList .seriesChild h3{color:#205644!important}
+#activities #activityList .seriesCard>.activityDescription,#activities #activityList .seriesChild>.activityDescription{color:#68796c!important}
+#activities #activityList .seriesMeta.seriesDates,#activities #activityList .seriesChild>.childMeta,#activities #activityList .itemCard>.soloMeta{background:#f7faf7!important;border-color:#e5eee5!important}
+#activities #activityList .metaLine,#activities #activityList .metaLine b{color:#466b5a!important}
+#activities #activityList .seriesCollapse{border-color:#e0e8e0!important}
+#activities #activityList .seriesCollapse>summary{background:#f4f8f4!important;color:#256753!important}
+#activities #activityList .seriesChild{background:#fff!important;border:1px solid #e6ebe5!important;border-left:3px solid #9bbdaa!important;box-shadow:none!important}
+#activities #activityList .seriesChild>.activityNote,#activities #activityList .itemCard>.activityNote{background:#fcf8f0!important;border-left:3px solid #cfb17c!important;color:#796643!important}
+#activities #activityList .seriesTrack{background:#eaf0e9!important}
+#activities #activityList .seriesTrack span{background:#289079!important}
+#activities #activityList .seriesSelect{background:#f3f8f4!important;border-color:#ddeae1!important;color:#226f59!important}#activities #activityList .seriesSelect input{accent-color:#197d68!important}
+#activities #activityList .seriesPicked{background:#f2f8f3!important}
+#activities #activityList details.registrantDetails>summary{color:#245f4d!important}
+.regForm label{color:#315d4c!important}.regForm input{background:#fff!important;border-color:#d8e5da!important}
+.regForm .action,.action{background:#177865!important;color:#fff!important;box-shadow:none!important;border-radius:11px!important}
+.action:hover:not(:disabled){background:#0d6452!important}.tag{background:#eaf5ed!important;color:#327953!important}.tag.closed{background:#f7eded!important;color:#9e5656!important}
+#activities .countdown,.congress .countdown{justify-content:center!important}
+.digit,.digit:nth-child(n){background:#176b59!important;color:#fff!important;box-shadow:0 7px 17px #165c4920!important;border:1px solid #237862!important}
+.digit small{color:#e9d8b4!important}
+.scroll{border-color:#e3ebe3!important}th{background:#f2f7f2!important;color:#315f4e!important}td{color:#456555!important;border-bottom-color:#e7eee8!important}
+.candidate input{accent-color:#197c66!important}
+footer{background:#e9f2ea!important;color:#3d6554!important;border-top:1px solid #d6e6d8!important}footer span{color:inherit!important}
+@media(max-width:700px){.hero{min-height:600px!important}.heroImg{background:linear-gradient(90deg,rgba(247,251,246,.98),rgba(239,248,241,.82)),url('https://media.apag.edu.vn/Image/023ced82-d60e-9622-cc13-0ce98d1cef93/2025/10/3/Hinh-anh-Phan-hieu-c2f3e4f995.jpg') center/cover!important}.hero h1{font-size:clamp(42px,10vw,65px)!important}.homeLinks button{min-height:165px!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
