@@ -1,0 +1,94 @@
+/* V17.0 – editorial desktop, student companion mobile and private school utilities. */
+:root{--v17-wine:#842530;--v17-ink:#332c2e;--v17-cream:#fffaf4;--v17-stroke:#e7d9cc;--v17-muted:#786e6a}
+[hidden]{display:none!important}
+html.qlnh-guest [data-v17-student-only],html.qlnh-guest .v17-shortcuts,html.qlnh-guest .v17-bottom-nav,html.qlnh-guest #v17Upcoming,html.qlnh-guest #exams,html.qlnh-guest #documents{display:none!important}
+html:not(.qlnh-authenticated) [data-v17-student-only]{display:none!important}
+.desktopNav button{white-space:nowrap}
+.v17-drawer-caption{padding:18px 16px 6px;font-size:10px;letter-spacing:.15em;font-weight:800;color:#8b6763}
+.headerTools .headerNotice{display:none!important}
+.hero-wrap{max-width:1220px;padding:0 18px}
+.patriotic-hero{height:auto!important;display:flex!important;flex-direction:column!important;min-height:0!important;border-radius:0 0 21px 21px;overflow:hidden}
+.patriotic-hero:before,.hero-wave,.hero-ornaments,.hero-photo-label{display:none!important}
+.hero-copy{width:100%!important;height:auto!important;min-height:0!important;align-items:center!important;text-align:center!important;padding:56px 24px 31px!important;order:0;max-width:none!important}
+.hero-copy h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(40px,5.6vw,82px)!important;font-weight:700;line-height:1.01!important;letter-spacing:.03em!important;margin:4px 0 14px!important}
+.hero-copy h1 .v17-hero-line{display:block;white-space:normal!important;font-size:inherit!important;letter-spacing:.015em!important}
+.hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(49px,7.3vw,112px)!important;letter-spacing:-.045em!important}
+.hero-overline{letter-spacing:.16em}
+.hero-understroke{width:135px;height:2px;border:0;background:#c6a15e;transform:none;margin:2px 0 9px}
+.hero-slogan{font-size:clamp(16px,2.3vw,22px)!important}
+.hero-desc{max-width:670px!important;font-size:14px!important}
+.hero-actions{justify-content:center}
+.hero-visual{position:relative!important;inset:auto!important;width:100%!important;height:260px!important;min-height:260px!important;flex:none!important;order:1}
+.hero-photo:after{background:linear-gradient(0deg,#30192344,transparent 55%)!important}
+.custom-banner.hasBanner{opacity:1!important}
+.hero-photo img{object-fit:cover}
+.home-content{background:#fffaf5;padding:22px 28px 42px}
+.home-content .branch-tiles,.home-content .trust-strip{display:none!important}
+.home-shortcuts.v17-shortcuts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:11px;padding:0;margin:0 0 23px}
+.v17-shortcuts .shortcut{background:#fff;border:1px solid var(--v17-stroke);box-shadow:none;gap:9px;padding:15px 10px;min-height:98px;min-width:0;font:700 13px/1.3 Georgia,'Times New Roman',serif;text-align:center;color:var(--v17-ink)}
+.v17-shortcuts .shortcut:hover{border-color:#c9a870;box-shadow:0 6px 20px #3e25230f;transform:translateY(-2px)}
+.v17-shortcut-ico{font:700 25px Georgia,serif;color:var(--v17-wine)}
+.home-overview-grid{grid-template-columns:1fr!important;gap:16px}
+.home-overview-grid>section:has(#homeEvents){margin-bottom:0}
+.news-highlight .news-grid{display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(105px,auto));gap:12px}
+.news-highlight .news-card{border:1px solid var(--v17-stroke)!important;border-radius:13px;padding:0!important;display:flex;align-items:stretch;overflow:hidden;gap:0!important;min-height:118px!important}
+.news-highlight .news-card:first-child{grid-row:span 2;flex-direction:column;min-height:255px!important}
+.news-highlight .news-card:nth-child(n+4){display:none}
+.news-highlight .news-card .news-image{width:120px;height:auto;min-height:100%;border-radius:0}
+.news-highlight .news-card:first-child .news-image{width:100%;height:165px;min-height:165px}
+.news-highlight .news-card .news-card-body{padding:15px;display:flex;flex-direction:column;justify-content:center}
+.news-highlight .news-card:first-child .news-card-body{padding:22px}
+.news-highlight .news-card h3{font:700 17px/1.28 Georgia,'Times New Roman',serif;color:#412b2b}
+.news-highlight .news-card:first-child h3{font-size:clamp(21px,2.8vw,31px)}
+.news-highlight .news-card:first-child .news-excerpt{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13px;color:var(--v17-muted)}
+.v17-upcoming{margin:0 0 18px;padding:20px 24px;border:1px solid #dfcfc0;border-left:4px solid var(--v17-wine);border-radius:13px;background:#fff;box-shadow:0 8px 22px #38201b10}
+.v17-upcoming h3{font:700 23px Georgia,serif;color:var(--v17-wine);margin:9px 0}
+.v17-upcoming p{font-size:13px;color:#655752;margin:9px 0}
+.v17-upcoming button,.v17-card button,.v17-docitem button,.v17-form-actions button{border:0;border-radius:9px;background:var(--v17-wine);color:#fff;padding:11px 14px;cursor:pointer;font:700 13px system-ui}
+.v17-kicker{font:700 11px system-ui;letter-spacing:.1em;text-transform:uppercase;color:#9f5256}
+.v17-tag{display:inline-flex;align-items:center;border:1px solid #e3d5c4;border-radius:30px;background:#f7f1e9;color:#755c54;padding:5px 9px;font:600 11px system-ui;max-width:100%}
+.v17-tag.success{border-color:#bedccf;color:#236849;background:#ecf7f1}.v17-tag.warn{border-color:#efd5b2;color:#956323;background:#fff6e8}
+.v17-page{background:var(--v17-cream);min-height:68vh;color:var(--v17-ink)}
+.v17-page-head{max-width:1160px;margin:auto;padding:40px 28px 12px}
+.v17-page-head>span{font:750 11px system-ui;letter-spacing:.14em;color:#9c5e58}
+.v17-page-head h1{font:700 clamp(32px,5vw,58px) Georgia,'Times New Roman',serif;margin:12px 0;color:var(--v17-wine)}
+.v17-page-head p{font:400 15px/1.6 system-ui;color:var(--v17-muted)}
+.v17-body{max-width:1160px;margin:auto;padding:18px 28px 90px}
+.v17-body>h2{font:700 25px Georgia,serif;color:var(--v17-wine);margin:28px 0 15px}
+.v17-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.v17-tabs button{cursor:pointer;border:1px solid #e0d4ca;border-radius:20px;background:#fff;padding:9px 15px;color:#6f5751;font:700 12px system-ui}
+.v17-tabs button.selected{background:var(--v17-wine);color:#fff;border-color:var(--v17-wine)}
+.v17-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.v17-card,.v17-form,.v17-doc-detail{padding:23px;border:1px solid var(--v17-stroke);border-radius:15px;background:#fff;box-shadow:0 8px 25px #402c2a0c}
+.v17-card h3,.v17-doc-detail h2{font:700 26px/1.24 Georgia,serif;color:#3f2c2b;margin:9px 0}
+.v17-card p{font-size:13px;line-height:1.6;color:var(--v17-muted)}
+.v17-sbd{padding:13px;background:#f9f3ec;border-radius:8px;font:700 12px system-ui;color:#6d5050;display:flex;gap:14px;align-items:center;margin:15px 0}
+.v17-sbd strong{font:700 27px Georgia,serif;color:var(--v17-wine)}
+.v17-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:13px 0 17px}
+.v17-meta span{display:block;font-size:12px;color:#6d625c;line-height:1.55}
+.v17-report{background:#fff;border:1px solid var(--v17-stroke);border-radius:10px;padding:13px 16px;margin-bottom:9px;font-size:13px}
+.v17-report p{line-height:1.5;color:var(--v17-muted)}.v17-muted,.v17-empty{color:var(--v17-muted);font-size:14px}
+.v17-search{display:grid;gap:7px;font:700 13px system-ui;margin-bottom:17px}
+.v17-search input,.v17-form input,.v17-form textarea,.v17-form select{width:100%;box-sizing:border-box;border:1px solid #ddcfc4;border-radius:9px;padding:12px 13px;background:#fff;color:#342f2e;font:400 15px system-ui}
+.v17-form label{display:grid;gap:8px;margin:12px 0;font:650 13px system-ui}
+.v17-form-actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.v17-form-actions button.v17-secondary{background:#f7efe7;color:var(--v17-wine);border:1px solid #d8c7b9}
+.v17-docitem{display:grid;grid-template-columns:55px minmax(0,1fr) auto;align-items:center;gap:15px;border:1px solid var(--v17-stroke);border-radius:12px;background:#fff;padding:17px 20px;margin-bottom:10px}
+.v17-docitem .v17-docicon{height:48px;width:48px;display:grid;place-items:center;background:#f5efe8;color:var(--v17-wine);border-radius:11px;font:700 30px Georgia,serif}
+.v17-docitem h3{font:700 20px/1.3 Georgia,serif;margin:6px 0;color:#41302d}
+.v17-docitem p{font-size:12px;color:var(--v17-muted);margin:0}
+.v17-doc-detail{margin-top:18px}.v17-doc-detail p{line-height:1.65;white-space:pre-wrap}
+.v17-preview-frame{width:100%;height:min(75vh,850px);border:1px solid #ddd;border-radius:10px}.v17-preview-image{max-width:100%;height:auto;border-radius:9px}
+.v17-bottom-nav{display:none}
+@media(max-width:990px){.news-highlight .news-grid{grid-template-columns:1fr 1fr}.hero-copy{padding:48px 18px 22px!important}}
+@media(max-width:700px){
+ .hero-visual{height:194px!important;min-height:194px!important}.hero-copy{padding:36px 20px 23px!important}.hero-copy h1{font-size:37px!important}.hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(48px,12vw,72px)!important}
+ .hero-desc{font-size:12px!important}.hero-actions{gap:8px}.hero-actions button{min-height:40px}
+ .home-content{padding:16px 14px 24px}.home-shortcuts.v17-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.v17-shortcuts .shortcut{min-height:102px;padding:12px 10px;font-size:13px}
+ .news-highlight .news-grid{grid-template-columns:1fr;grid-template-rows:auto}.news-highlight .news-card:first-child{grid-row:span 1}.news-highlight .news-card:nth-child(n+4){display:none}
+ .v17-page-head{padding:29px 17px 9px}.v17-body{padding:14px 16px 110px}.v17-grid{grid-template-columns:1fr}.v17-card,.v17-doc-detail{padding:17px}.v17-card h3{font-size:24px}.v17-meta{grid-template-columns:1fr 1fr}
+ .v17-docitem{grid-template-columns:42px minmax(0,1fr);padding:14px;gap:10px}.v17-docitem .v17-docicon{width:40px;height:40px;font-size:24px}.v17-docitem h3{font-size:17px}.v17-docitem button{grid-column:2;justify-self:start}
+ .siteFooter{padding-bottom:95px}
+ html.qlnh-authenticated .v17-bottom-nav{position:fixed;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));left:0;right:0;bottom:0;padding:8px 8px calc(8px + env(safe-area-inset-bottom));z-index:1002;background:#fffdfb;border-top:1px solid #e0d3ca;box-shadow:0 -4px 22px #2819200e}
+ .v17-bottom-nav button{background:transparent;border:0;display:flex;flex-direction:column;align-items:center;gap:3px;color:#7c5353;font:700 22px/1 system-ui;min-height:44px;cursor:pointer}.v17-bottom-nav button span{font:650 10px system-ui;color:#6e5e59}
+}
