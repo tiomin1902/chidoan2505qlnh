@@ -251,7 +251,7 @@ function v8OpenDeepLink_(){
   setTimeout(()=>document.getElementById(p+'-'+section)?.scrollIntoView({behavior:'smooth',block:'start'}),150);
  }
 }
-async function refresh(silent=false,force=false){try{const data=await jsonp('publicData');if(!data.success)throw Error(data.message||'Máy chủ chưa sẵn sàng');const stamp=Date.parse(data.updatedAt);if(Number.isFinite(stamp))nuClockOffset=stamp-Date.now();state=data;latestTime=Date.now();if(force||(!document.querySelector('.regForm:focus-within')&&!document.querySelector('.ballotPanel input:focus')))render();else $('syncTime').textContent='Đã có bản cập nhật mới';v8OpenDeepLink_();}catch(e){if(!silent){
+async function refresh(silent=false,force=false){try{const data=await jsonp('publicData');if(!data.success)throw Error(data.message||'Máy chủ chưa sẵn sàng');const stamp=Date.parse(data.updatedAt);if(Number.isFinite(stamp))nuClockOffset=stamp-Date.now();state=data;window.QLNH_THEME2011_SET_PUBLIC_CONFIG?.(data.config);latestTime=Date.now();if(force||(!document.querySelector('.regForm:focus-within')&&!document.querySelector('.ballotPanel input:focus')))render();else $('syncTime').textContent='Đã có bản cập nhật mới';v8OpenDeepLink_();}catch(e){if(!silent){
   $('syncTime').textContent='Chưa tải được dữ liệu công khai: '+(e?.message||'Lỗi kết nối');
   if(window.QLNH_GUEST&&!state){
     ['classCards','doanCards','hoiCards'].forEach(id=>{
