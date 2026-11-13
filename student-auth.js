@@ -28,16 +28,16 @@
    async data(action,params={}){const q=new URLSearchParams({action});for(const [k,v] of Object.entries(params))q.set(k,String(v));return request((window.QLNH_GUEST?'/api/guest/data?':'/api/data?')+q,{credential:window.QLNH_GUEST?'':token})},
    async write(action,payload={}){if(window.QLNH_GUEST){requestStudentLogin('activities');throw Error('Vui lòng đăng nhập để sử dụng chức năng này');}return request('/api/write',{method:'POST',data:{...payload,action}})}
  };
- function showLogin(){if($('studentGuestBtn'))$('studentGuestBtn').hidden=false;document.getElementById('drawer')?.classList.remove('open');if(document.getElementById('shade'))document.getElementById('shade').hidden=true;window.QLNH_GUEST=false;document.documentElement.classList.remove('qlnh-authenticated','qlnh-guest','qlnh-session-pending');gate.hidden=false;loginForm.hidden=false;changeForm.hidden=true;btn.hidden=true;}
+ function showLogin(){if($('studentGuestBtn'))$('studentGuestBtn').hidden=false;document.getElementById('drawer')?.classList.remove('open');document.body.classList.remove('qlnh-drawer-open');if(document.getElementById('shade'))document.getElementById('shade').hidden=true;window.QLNH_GUEST=false;document.documentElement.classList.remove('qlnh-authenticated','qlnh-guest','qlnh-session-pending');gate.hidden=false;loginForm.hidden=false;changeForm.hidden=true;btn.hidden=true;}
  function showChange(){if($('studentGuestBtn'))$('studentGuestBtn').hidden=true;document.documentElement.classList.remove('qlnh-authenticated','qlnh-session-pending');gate.hidden=false;loginForm.hidden=true;changeForm.hidden=false;btn.hidden=false;say('Lần đầu đăng nhập: hãy tự đặt mật khẩu mới (tối thiểu 12 ký tự).');}
  async function loadApp(privateMode){
    const load=async src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=()=>reject(Error('Không tải được '+src));document.body.append(script);});
    if(!baseLoaded){
-     for(const src of ['./config.js','./app.js?v=16.3.1','./news.js?v=16.3.2','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=19.2.0','./v17-student.js?v=19.2.0','./qlnh-deeplink.js?v=19.2.0','./fund-student.js?v=19.6.0'])await load(src);
+     for(const src of ['./config.js','./app.js?v=19.7.0','./news.js?v=19.7.0','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=19.2.0','./v17-student.js?v=19.7.0','./qlnh-deeplink.js?v=19.2.0','./fund-student.js?v=19.7.0'])await load(src);
      baseLoaded=true;
    }
    if(privateMode&&!privateLoaded){
-     for(const src of ['./push-config.js','./push.js?v=19.1.0','./notification-center.js?v=16.3.1'])await load(src);
+     for(const src of ['./push-config.js','./push.js?v=19.1.0','./notification-center.js?v=19.7.0'])await load(src);
      privateLoaded=true;
    }
  }

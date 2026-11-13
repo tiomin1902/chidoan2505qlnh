@@ -3,15 +3,17 @@ const $=id=>document.getElementById(id);let state=null,latestTime=0,nuClockOffse
 const nuServerNow=()=>Date.now()+nuClockOffset;
 const interval=Math.max(60000,Number(window.CLASS_REFRESH_MS)||60000);const API=window.CLASS_API_URL;
 document.body.setAttribute('data-current-page','home');
-const viTime=v=>{if(!v)return 'Chưa cập nhật';const d=new Date(v);return Number.isFinite(d.getTime())?new Intl.DateTimeFormat('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit',year:'numeric',hour12:false}).format(d):String(v)};
+const viTime=v=>window.QLNH_FORMAT_TIME(v);
 const multiline=v=>html(v).replace(/\r\n?|\n/g,'\n').replace(/\n/g,'<br>');
 const html=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const bool=v=>v===true||String(v).toLowerCase()==='true';
 const hasInfo=v=>{const t=String(v??'').trim();return !!t&&!['đang cập nhật','chưa cập nhật','sẽ cập nhật','null','undefined'].includes(t.toLowerCase())};
+const newestRank=x=>{const d=Date.parse(x?.createdAt||x?.created||x?.updatedAt||x?.updated||x?.eventTime||x?.opensAt||'');return Number.isFinite(d)?d:0;};
 const metaLine=(label,value)=>hasInfo(value)?`<span class="metaLine"><b>${html(label)}</b>${html(value)}</span>`:'';
 
-function nav(page){if(window.QLNH_GUEST&&!['home','class','doan','hoi','news','newsDetail'].includes(page)){window.QLNH_GUEST_REQUIRE_LOGIN?.(page);return;}document.querySelectorAll('.page').forEach(n=>n.classList.toggle('current',n.id===page));document.body.setAttribute('data-current-page',page);$('drawer').classList.remove('open');$('shade').hidden=true;$('menuBtn').setAttribute('aria-expanded','false');window.scrollTo({top:0,behavior:'smooth'});window.QLNH_V17_PAGE?.(page);window.QLNH_FUND_PAGE?.(page)}
-$('menuBtn').onclick=()=>{$('drawer').classList.add('open');$('shade').hidden=false;$('menuBtn').setAttribute('aria-expanded','true')};$('closeBtn').onclick=()=>$('shade').click();$('shade').onclick=()=>nav(document.querySelector('.page.current').id);document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{if(window.QLNH_GUEST&&b.dataset.guestPrivate){window.QLNH_GUEST_REQUIRE_LOGIN?.(b.dataset.page);return;}nav(b.dataset.page)});
+function closeMenu(){const d=$('drawer'),shade=$('shade'),btn=$('menuBtn');d?.classList.remove('open');document.body.classList.remove('qlnh-drawer-open');if(shade)shade.hidden=true;btn?.setAttribute('aria-expanded','false');}
+function nav(page){if(window.QLNH_GUEST&&!['home','class','doan','hoi','news','newsDetail'].includes(page)){window.QLNH_GUEST_REQUIRE_LOGIN?.(page);return;}document.querySelectorAll('.page').forEach(n=>n.classList.toggle('current',n.id===page));document.body.setAttribute('data-current-page',page);closeMenu();window.scrollTo({top:0,behavior:'smooth'});window.QLNH_V17_PAGE?.(page);window.QLNH_FUND_PAGE?.(page)}
+$('menuBtn').onclick=()=>{$('drawer').classList.add('open');document.body.classList.add('qlnh-drawer-open');$('shade').hidden=false;$('menuBtn').setAttribute('aria-expanded','true');$('closeBtn')?.focus();};$('closeBtn').onclick=closeMenu;$('shade').onclick=closeMenu;document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{if(window.QLNH_GUEST&&b.dataset.guestPrivate){window.QLNH_GUEST_REQUIRE_LOGIN?.(b.dataset.page);return;}nav(b.dataset.page)});
 // V15: no public JSONP or unauthenticated POST. All data uses secure Worker.
 function jsonp(action,params={}){return window.QLNH.data(action,params)}
 async function write(action,payload){return window.QLNH.write(action,payload)}
@@ -32,7 +34,7 @@ function renderHomeEvents(){
  const solo=Array.isArray(state.activities)?state.activities:[];
  const groups=Array.isArray(state.series)?state.series:[];
  const arr=[...solo.map(x=>({title:x.title,date:x.eventTime||x.opensAt,location:x.location,opensAt:x.opensAt,closesAt:x.closesAt,limit:x.limit,count:x.count,unlimited:x.unlimited})),
-   ...groups.map(x=>({title:x.title,date:x.opensAt,location:'Chuỗi hoạt động',opensAt:x.opensAt,closesAt:x.closesAt,unlimited:true,count:0}))].filter(x=>hasInfo(x.title));
+   ...groups.map(x=>({title:x.title,date:x.opensAt,location:'Chuỗi hoạt động',opensAt:x.opensAt,closesAt:x.closesAt,unlimited:true,count:0}))].filter(x=>hasInfo(x.title)).sort((a,b)=>(Date.parse(b.date)||0)-(Date.parse(a.date)||0));
  if(!arr.length){target.innerHTML='<p class="loadingLine">Hiện tại chưa có hoạt động nào để đăng ký.</p>';return}
  const humanDate=v=>{const d=new Date(v);return Number.isFinite(d.valueOf())?{d:new Intl.DateTimeFormat('vi-VN',{day:'2-digit',timeZone:'Asia/Ho_Chi_Minh'}).format(d),m:new Intl.DateTimeFormat('vi-VN',{month:'2-digit',year:'numeric',timeZone:'Asia/Ho_Chi_Minh'}).format(d)}:{d:'•',m:'SẮP DIỄN RA'}};
  const fragment=document.createDocumentFragment();arr.slice(0,3).forEach(x=>{const date=humanDate(x.date);const item=document.createElement('article');item.className='homeEventItem';item.innerHTML=`<div class="homeEventDate">${html(date.d)}<small>${html(date.m)}</small></div><div><h3>${html(x.title)}</h3><p>${html(x.location||status(x)[0])}</p></div>`;const button=document.createElement('button');button.type='button';button.textContent='XEM CHI TIẾT ↗';button.onclick=()=>nav('activities');item.append(button);fragment.append(item)});target.replaceChildren(fragment);
@@ -110,7 +112,7 @@ function status(a){const now=nuServerNow();if(now<Date.parse(a.opensAt))return [
 /* V12: hệ stylesheet mới thống nhất, không còn chèn CSS chuỗi hoạt động lúc chạy. */
 function actVnTime(value){
  const d=new Date(value);
- return Number.isFinite(d.getTime())?d.toLocaleString('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit',year:'numeric',hour12:false}):'Chưa cập nhật';
+ return Number.isFinite(d.getTime())?window.QLNH_FORMAT_TIME(value):'Chưa cập nhật';
 }
 function nuRegistrants_(a){
  const people=Array.isArray(a?.registrants)?a.registrants:[];
@@ -128,8 +130,8 @@ function existingRegState_(list){
 }
 function renderActivities(){
  const list=$('activityList');
- const solos=Array.isArray(state.activities)?state.activities:[];
- const groups=Array.isArray(state.series)?state.series:[];
+ const solos=(Array.isArray(state.activities)?state.activities:[]).slice().sort((a,b)=>newestRank(b)-newestRank(a));
+ const groups=(Array.isArray(state.series)?state.series:[]).slice().sort((a,b)=>newestRank(b)-newestRank(a));
  if(!solos.length&&!groups.length){list.innerHTML='<div class="panel">Hiện chưa có hoạt động được hiển thị.</div>';return;}
  const existing=existingRegState_(list);const expanded=new Set([...list.querySelectorAll('details.registrantDetails[open]')].map(x=>x.dataset.activity));const openSoloForms=new Set([...list.querySelectorAll('.itemCard .eventRegistration[open]')].map(x=>x.closest('.itemCard')?.dataset.activityId));list.replaceChildren();
  groups.forEach(series=>{

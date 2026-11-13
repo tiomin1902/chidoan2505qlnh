@@ -20,7 +20,7 @@
  }}catch(e){console.warn('Sử dụng trạng thái thông báo lưu trên thiết bị',e);}}
  const labels={qlnh_news_feed:'Bản tin',qlnh_notice:'Thông báo chung',qlnh_news_lop:'Lớp',qlnh_news_doan:'Chi đoàn',qlnh_news_hoi:'Chi hội',qlnh_activity:'Hoạt động',qlnh_reminder:'Nhắc lịch',qlnh_congress_doan:'Đại hội Chi đoàn',qlnh_congress_hoi:'Đại hội Chi hội',qlnh_election:'Bầu cử',doc:'Tài liệu',doc_batch:'Tài liệu',withdrawn:'Tài liệu',exam:'Lịch thi',exam_batch:'Lịch thi',exam_group:'Kỳ thi',reminder:'Nhắc thi',report:'Phản ánh thi'};
  function selected(){try{return JSON.parse(localStorage.getItem('qlnh_device_push_choices')||'{}');}catch(e){return {}}}
- function visible(){return items.filter(n=>!local.hidden.includes(n.id));}
+ function visible(){return items.filter(n=>!local.hidden.includes(n.id)).slice().sort((a,b)=>(Date.parse(b.time)||0)-(Date.parse(a.time)||0));}
  function render(){const shown=visible(),unread=shown.filter(x=>!local.read.includes(x.id)).length;
    count.textContent=unread>99?'99+':String(unread);count.hidden=!unread;list.replaceChildren();
    if(!shown.length){const p=document.createElement('p');p.className='loadingLine';p.textContent='Chưa có thông báo nào để hiển thị.';list.append(p);return;}
@@ -28,7 +28,7 @@
      const article=document.createElement('article');article.className='nuInboxItem'+(local.read.includes(n.id)?'':' nuUnread');
      const head=document.createElement('div');head.className='nuInboxHead';
      const title=document.createElement('strong');title.textContent=n.title;
-     const meta=document.createElement('small');const d=new Date(n.time);meta.textContent=(labels[n.target]||'Thông báo')+' · '+(Number.isFinite(d.getTime())?d.toLocaleString('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit',year:'numeric',hour12:false}):'');
+     const meta=document.createElement('small');const d=new Date(n.time);meta.textContent=(labels[n.target]||'Thông báo')+' · '+(Number.isFinite(d.getTime())?window.QLNH_FORMAT_TIME(n.time):'');
      head.append(title,meta);
      const body=document.createElement('p');body.textContent=n.body;
      const actions=document.createElement('div');actions.className='nuInboxActions';

@@ -5,7 +5,7 @@ const U={Lop:'LỚP',ChiDoan:'CHI ĐOÀN',ChiHoi:'CHI HỘI'};
 const K={BanTin:'BẢN TIN',ThongBao:'THÔNG BÁO'};
 let unit='all',kind='all',q='',page=1,more=false,searchTimer=0,loadedHome=false,lastList=[];
 const $n=id=>document.getElementById(id);
-const dateTime=v=>{const d=new Date(v);return Number.isFinite(d.getTime())?d.toLocaleString('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):'';};
+const dateTime=v=>window.QLNH_FORMAT_TIME(v,'');
 const safeURL=url=>typeof url==='string'&&url.length<=2000&&(/^(https:\/\/[^\s]+)$/i.test(url)||/^\/(?!\/)[^\s]*$/.test(url));
 function el(tag,className,text){const n=document.createElement(tag);if(className)n.className=className;if(text!==undefined)n.textContent=String(text);return n;}
 function imageFrom(media,alt){
@@ -26,7 +26,7 @@ function openCard(item){if(item.openMode==='LINK'&&safeURL(item.mainUrl))goLink(
 async function loadHome(){
  const box=$n('newsHomeCards');if(!box)return;
  try{const r=await jsonp('newsList',{unit:'all',kind:'all',limit:6,page:1,home:1});if(!r.success)throw Error(r.message||'Không tải được bản tin');
- box.replaceChildren(...(r.items||[]).map(card));if(!r.items.length)box.append(el('p','news-empty','Hiện chưa có bản tin hoặc thông báo được công bố.'));
+ box.replaceChildren(...(r.items||[]).slice().sort((a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0)).map(card));if(!r.items.length)box.append(el('p','news-empty','Hiện chưa có bản tin hoặc thông báo được công bố.'));
  loadedHome=true;
  }catch(e){box.replaceChildren(el('p','news-empty','Chưa thể tải bản tin công khai: '+(e?.message||'Lỗi kết nối')+'. Hãy thử tải lại trang.'));}
 }
@@ -35,7 +35,7 @@ async function loadList(append=false){
  try{const r=await jsonp('newsList',{unit,kind,q,page,limit:6});if(!r.success)throw Error(r.message||'Không tải được bản tin');
  if(!append)box.replaceChildren();
  if(!r.items.length&&!append)box.append(el('p','news-empty','Chưa có bản tin phù hợp với lựa chọn này.'));
- else (r.items||[]).forEach(x=>box.append(card(x)));
+ else (r.items||[]).slice().sort((a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0)).forEach(x=>box.append(card(x)));
  lastList=append?lastList.concat(r.items):r.items;more=!!r.hasMore;$n('newsLoadMore').hidden=!more;
  $n('newsTotal').textContent=r.total+' bài viết';
  }catch(e){if(!append)box.replaceChildren(el('p','news-empty','Không tải được bản tin: '+(e?.message||'Vui lòng kiểm tra kết nối')+'.'));}
