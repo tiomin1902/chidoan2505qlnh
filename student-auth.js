@@ -37,31 +37,20 @@
      baseLoaded=true;
    }
    if(privateMode&&!privateLoaded){
-     for(const src of ['./push-config.js','./push.js?v=17.0.1','./notification-center.js?v=16.3.1'])await load(src);
+     for(const src of ['./push-config.js','./push.js?v=19.1.0','./notification-center.js?v=16.3.1'])await load(src);
      privateLoaded=true;
    }
  }
- // If this device once opted in, cancel its existing push subscription without
- // initializing OneSignal or requesting permission in guest mode.
- async function disableOldPushForGuest(){
-   if(!('serviceWorker' in navigator))return;
-   try{
-     const regs=await navigator.serviceWorker.getRegistrations();
-     for(const reg of regs){
-       const src=reg.active?.scriptURL||'';
-       if(!/OneSignalSDKWorker\.js(?:\?|$)/.test(src))continue;
-       const sub=await reg.pushManager?.getSubscription();
-       if(sub)await sub.unsubscribe();
-     }
-   }catch(e){console.warn('Không thể kiểm tra đăng ký Push cũ khi vào chế độ khách',e);}
- }
+ // V19.1: Entering guest mode must NEVER unsubscribe this browser from Web Push.
+ // Guest does not load the private push module, read private data or bind any student.
+ // A push subscription is browser-level state and survives normal GitHub deployments.
+ // Account-targeted delivery is controlled by the authenticated Cloudflare mapping.
  async function openGuest(){
    if(token){showLogin();return;}
    window.QLNH_GUEST=true;window.QLNH_STUDENT=null;
    document.documentElement.classList.remove('qlnh-authenticated','qlnh-session-pending');
    document.documentElement.classList.add('qlnh-guest');gate.hidden=true;btn.hidden=true;
    try{localStorage.setItem(GUEST_PREF,'1');}catch(_){}
-   await disableOldPushForGuest();
    await loadApp(false);
    // Guest must actually fetch public content (not merely reveal empty sections).
    // Retry once after scripts have loaded; no student token, Push SDK or private API.
@@ -95,7 +84,7 @@
  $('guestAuthConfirm')?.addEventListener('click',()=>{$('guestAuthDialog').hidden=true;showLogin();$('studentMssv')?.focus();});
  $('drawerGuestLogin')?.addEventListener('click',()=>{pendingTarget=null;showLogin();});
  $('guestHeaderLogin')?.addEventListener('click',()=>{pendingTarget=null;showLogin();});
- $('studentGuestBtn')?.addEventListener('click',async()=>{try{token='';me=null;storageDrop();await openGuest();}catch(e){showLogin();say(e.message,true);}});
+ $('studentGuestBtn')?.addEventListener('click',async()=>{try{if(token){say('Thiết bị còn phiên đăng nhập; vui lòng đăng xuất trước khi dùng chế độ khách.',true);return;}me=null;storageDrop();await openGuest();}catch(e){showLogin();say(e.message,true);}});
  async function restore(){
    if(restoring)return;
    token=storageGet();if(!token){let useGuest=false;try{useGuest=localStorage.getItem(GUEST_PREF)==='1'}catch(_){}if(useGuest){try{await openGuest()}catch(e){showLogin();say(e.message,true)}}else showLogin();return;}
@@ -120,7 +109,8 @@
    }finally{restoring=false;}
  }
  if($('studentAuthRetry'))$('studentAuthRetry').addEventListener('click',restore);
- if($('studentAuthForgetDevice'))$('studentAuthForgetDevice').addEventListener('click',()=>{
+ if($('studentAuthForgetDevice'))$('studentAuthForgetDevice').addEventListener('click',async()=>{
+   if(token){await logout();return;} // Explicitly detach before clearing an active session.
    token='';me=null;storageDrop();showLogin();say('Đã chuyển sang đăng nhập tài khoản khác.');
  });
  window.addEventListener('online',()=>{
@@ -136,12 +126,31 @@
    const button=changeForm.querySelector('button[type=submit]');button.disabled=true;
    try{await request('/api/password',{method:'POST',data:{password:a}});changeForm.reset();const r=await request('/api/me');await openApp(r.student);}catch(err){say(err.message,true)}finally{button.disabled=false;}
  });
- async function logout(){try{if(typeof window.QLNH_V17_UNBIND_DEVICE==='function')await window.QLNH_V17_UNBIND_DEVICE();const sub=window.OneSignal?.User?.PushSubscription?.id;
-   if(sub&&token)await request('/api/v17/push-device',{method:'POST',data:{action:'unbind',subscriptionId:sub}});
-   if(window.OneSignal?.User?.PushSubscription)await window.OneSignal.User.PushSubscription.optOut();}catch(e){}
+ async function logout(){
+   // Logout detaches account delivery on the server, but retains the browser's
+   // already-granted Web Push subscription. Do NOT optOut()/unsubscribe() here.
+   window.QLNH_PUSH_LOGGING_OUT=true;
+   try{
+     if(typeof window.QLNH_V17_UNBIND_DEVICE==='function'){
+       await window.QLNH_V17_UNBIND_DEVICE();
+     }else{
+       const sid=(window.OneSignal?.User?.PushSubscription?.id||
+         localStorage.getItem('qlnh_push_bound_subscription_v19_1')||'');
+       if(sid&&token)await request('/api/v17/push-device',{method:'POST',data:{action:'unbind',subscriptionId:sid}});
+     }
+     try{localStorage.removeItem('qlnh_push_bound_subscription_v19_1');}catch(_){}
+   }catch(e){
+     // Fail closed: never leave this device bound to a previous student account
+     // when local session is cleared without server confirmation.
+     window.QLNH_PUSH_LOGGING_OUT=false;
+     say('Chưa thể tách thiết bị khỏi tài khoản để đăng xuất an toàn. Kiểm tra mạng rồi thử lại.',true);
+     return;
+   }
    try{await request('/api/logout',{method:'POST',data:{}})}catch(e){}
-   token='';me=null;storageDrop();window.QLNH_STUDENT=null;window.QLNH_GUEST=false;try{localStorage.removeItem(GUEST_PREF)}catch(_){}
-   // Clear loaded private HTML from DOM, then reload into the locked login shell.
+   token='';me=null;storageDrop();window.QLNH_STUDENT=null;window.QLNH_GUEST=false;
+   try{localStorage.removeItem(GUEST_PREF)}catch(_){}
+   // Explicitly logged-out users no longer receive targeted student notifications;
+   // an existing browser permission is preserved for their next authorized login.
    location.replace(location.pathname);
  }
  document.querySelectorAll('[data-student-logout]').forEach(b=>b.addEventListener('click',logout));
