@@ -15,7 +15,7 @@
  function renderExams(){
  const box=$('v17ExamsList');if(!box)return;
  const list=selectExams();
- const card=x=>`<article class="v17-card"><div class="v17-kicker">${esc(x.type||'Kỳ thi')} · ${x.dateStatus==='official'?'Chính thức':'Dự kiến'}</div><h3>${esc(x.course)}</h3>${badge(x)}<p><strong>Lịch chung:</strong> ${viDate(x.commonDate||x.assignmentDueAt)}</p>${x.personal?.sbd?`<div class="v17-sbd">SBD <strong>${esc(x.personal.sbd)}</strong></div>`:x.personal?.revoked?.sbd?'<span class="v17-tag warn">SBD đang được đính chính</span>':''}<div class="v17-meta"><span><b>Phòng:</b> ${esc(x.personal?.revoked?.room?'Đang đính chính':x.personal?.room||'Đang cập nhật')}</span><span><b>Ca:</b> ${esc(x.personal?.revoked?.shift?'Đang đính chính':x.personal?.shift?.label||'Chưa phân ca')}</span><span><b>Giờ cá nhân:</b> ${x.personal?.confirmed?viDate(x.personal.shift.start):'Chờ phân công'}</span></div>${x.notes?`<p>${esc(x.notes)}</p>`:''}${x.reportOpen?`<button type="button" data-exam-report="${esc(x.id)}">Báo thiếu hoặc sai thông tin</button>`:''}</article>`;
+ const card=x=>`<article class="v17-card" data-qlnh-exam-id="${esc(x.id)}"><div class="v17-kicker">${esc(x.type||'Kỳ thi')} · ${x.dateStatus==='official'?'Chính thức':'Dự kiến'}</div><h3>${esc(x.course)}</h3>${badge(x)}<p><strong>Lịch chung:</strong> ${viDate(x.commonDate||x.assignmentDueAt)}</p>${x.personal?.sbd?`<div class="v17-sbd">SBD <strong>${esc(x.personal.sbd)}</strong></div>`:x.personal?.revoked?.sbd?'<span class="v17-tag warn">SBD đang được đính chính</span>':''}<div class="v17-meta"><span><b>Phòng:</b> ${esc(x.personal?.revoked?.room?'Đang đính chính':x.personal?.room||'Đang cập nhật')}</span><span><b>Ca:</b> ${esc(x.personal?.revoked?.shift?'Đang đính chính':x.personal?.shift?.label||'Chưa phân ca')}</span><span><b>Giờ cá nhân:</b> ${x.personal?.confirmed?viDate(x.personal.shift.start):'Chờ phân công'}</span></div>${x.notes?`<p>${esc(x.notes)}</p>`:''}${x.reportOpen?`<button type="button" data-exam-report="${esc(x.id)}">Báo thiếu hoặc sai thông tin</button>`:''}</article>`;
  const groups=new Map(),singles=[];
  for(const x of list){if(x.groupId&&x.groupName){if(!groups.has(x.groupId))groups.set(x.groupId,{name:x.groupName,items:[]});groups.get(x.groupId).items.push(x);}else singles.push(x);}
  box.innerHTML=list.length?[...groups.values()].map(g=>`<section class="v19-student-group"><div class="v19-student-heading"><span>KỲ THI LỚN</span><h2>${esc(g.name)}</h2><p>${g.items.length} môn thi đã công bố</p></div><div class="v19-student-grid">${g.items.map(card).join('')}</div></section>`).join('')+(singles.length?`<section class="v19-student-group"><div class="v19-student-heading"><span>LỊCH THI RIÊNG</span><h2>Môn thi độc lập</h2></div><div class="v19-student-grid">${singles.map(card).join('')}</div></section>`:''):'<p class="v17-empty">Chưa có lịch thi phù hợp.</p>';
@@ -38,11 +38,39 @@
  if(!res.ok){const data=await res.json().catch(()=>({}));throw Error(data.message||'Không thể mở tài liệu');}
  return res.blob();
  }
- async function openDoc(id){const area=$('v17DocDetail');if(!area||!authorized())return;try{const r=await api('doc?id='+encodeURIComponent(id));const d=r.item;state.doc=d;area.hidden=false;area.innerHTML=`<div class="v17-kicker">${esc(d.group)} · ${esc(d.category)}</div><h2>${esc(d.title)}</h2><p>${esc(d.description||'')}</p>${d.archived?'<p class="v17-tag warn">Tài liệu lưu trữ</p>':''}<div class="v17-meta"><span><b>Nguồn ban hành:</b> ${esc(d.issuer||'Chưa cung cấp')}</span><span><b>Số, ký hiệu:</b> ${esc(d.number||'Không có')}</span><span><b>Học phần:</b> ${esc(d.course||'Không áp dụng')}</span><span><b>Tình trạng hiệu lực:</b> ${esc(d.effect||'Chưa xác định')}</span></div><div class="v17-form-actions">${d.preview?'<button type="button" id="v17Preview">Xem trước</button>':''}${d.download?'<button type="button" id="v17Download">Tải về</button>':''}<button type="button" class="v17-secondary" id="v17DocClose">Đóng</button></div><div id="v17FileArea" aria-live="polite"></div>`;
+ async function openDoc(id,opts={}){const area=$('v17DocDetail');if(!area||!authorized())return;try{const r=await api('doc?id='+encodeURIComponent(id));const d=r.item;if(!r?.success||!d)throw Error(r?.message||'Tài liệu không khả dụng hoặc bạn không có quyền xem.');state.doc=d;area.hidden=false;area.innerHTML=`<div class="v17-kicker">${esc(d.group)} · ${esc(d.category)}</div><h2>${esc(d.title)}</h2><p>${esc(d.description||'')}</p>${d.archived?'<p class="v17-tag warn">Tài liệu lưu trữ</p>':''}<div class="v17-meta"><span><b>Nguồn ban hành:</b> ${esc(d.issuer||'Chưa cung cấp')}</span><span><b>Số, ký hiệu:</b> ${esc(d.number||'Không có')}</span><span><b>Học phần:</b> ${esc(d.course||'Không áp dụng')}</span><span><b>Tình trạng hiệu lực:</b> ${esc(d.effect||'Chưa xác định')}</span></div><div class="v17-form-actions">${d.preview?'<button type="button" id="v17Preview">Xem trước</button>':''}${d.download?'<button type="button" id="v17Download">Tải về</button>':''}<button type="button" class="v17-secondary" id="v17DocClose">Đóng</button></div><div id="v17FileArea" aria-live="polite"></div>`;
  $('v17DocClose').onclick=()=>{area.hidden=true;area.replaceChildren();};if(d.preview)$('v17Preview').onclick=()=>showFile(d,'preview');if(d.download)$('v17Download').onclick=()=>showFile(d,'download');area.scrollIntoView({behavior:'smooth',block:'start'});
+ if(opts.preview&&d.preview)await showFile(d,'preview');
  }catch(e){setStatus('v17DocsStatus',e.message);}}
- async function showFile(d,mode){const zone=$('v17FileArea');zone.textContent='Đang mở file...';try{const blob=await rawFile(d,mode);const url=URL.createObjectURL(blob);if(mode==='preview'&&blob.type==='application/pdf'){zone.replaceChildren();const frame=document.createElement('iframe');frame.src=url;frame.title='Xem trước '+d.title;frame.className='v17-preview-frame';frame.onload=()=>setTimeout(()=>URL.revokeObjectURL(url),120000);zone.append(frame);}else if(mode==='preview'&&blob.type.startsWith('image/')){zone.replaceChildren();const img=document.createElement('img');img.src=url;img.alt=d.title;img.className='v17-preview-image';zone.append(img);img.onload=()=>setTimeout(()=>URL.revokeObjectURL(url),120000);}else{if(mode==='preview')zone.textContent='Định dạng này cần mở bằng ứng dụng phù hợp; nếu được phép tải, hãy dùng nút Tải về.';else{const a=document.createElement('a');a.href=url;const suffix=({'application/pdf':'.pdf','application/vnd.openxmlformats-officedocument.wordprocessingml.document':'.docx','application/vnd.openxmlformats-officedocument.presentationml.presentation':'.pptx','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':'.xlsx','image/png':'.png','image/jpeg':'.jpg','text/plain':'.txt'})[blob.type]||'';a.download=d.title.replace(/[\\/:*?"<>|]/g,'_').slice(0,100)+(suffix&&!d.title.toLowerCase().endsWith(suffix)?suffix:'');document.body.append(a);a.click();a.remove();zone.textContent='Đã yêu cầu tải file.';}setTimeout(()=>URL.revokeObjectURL(url),60000);}}
- catch(e){zone.textContent=e.message||'Không thể mở file';}}
+ async function showFile(d,mode){
+ const zone=$('v17FileArea');zone.textContent='Đang mở file...';
+ try{
+  const blob=await rawFile(d,mode);
+  if(mode==='preview'){
+   zone.textContent='';
+   if(typeof window.QLNH_V192_VIEW_DOCUMENT!=='function')throw Error('Trình xem tài liệu chưa tải được. Vui lòng tải lại ứng dụng.');
+   await window.QLNH_V192_VIEW_DOCUMENT(blob,{title:d.title,mime:blob.type});
+   return;
+  }
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;
+  const suffix=({'application/pdf':'.pdf','application/vnd.openxmlformats-officedocument.wordprocessingml.document':'.docx','application/vnd.openxmlformats-officedocument.presentationml.presentation':'.pptx','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':'.xlsx','image/png':'.png','image/jpeg':'.jpg','text/plain':'.txt'})[blob.type]||'';
+  a.download=d.title.replace(/[\\/:*?"<>|]/g,'_').slice(0,100)+(suffix&&!d.title.toLowerCase().endsWith(suffix)?suffix:'');
+  document.body.append(a);a.click();a.remove();
+  zone.textContent='Đã yêu cầu tải file.';
+  setTimeout(()=>URL.revokeObjectURL(url),60000);
+ }catch(e){zone.textContent=e.message||'Không thể mở file';}
+ }
+ // One authenticated document ID from push / notification center / shared link.
+ window.QLNH_V192_OPEN_DOC=(id,opts)=>openDoc(id,opts||{});
+ // Focus exam after loading private schedule without disclosing another student's assignments.
+ window.QLNH_V192_FOCUS_EXAM=async id=>{
+  if(!authorized())return;
+  await loadExams();
+  const card=[...document.querySelectorAll('[data-qlnh-exam-id]')].find(x=>x.dataset.qlnhExamId===id);
+  if(card){card.scrollIntoView({behavior:'smooth',block:'center'});card.classList.add('v192-highlight');setTimeout(()=>card.classList.remove('v192-highlight'),2400);}
+  else setStatus('v17ExamsStatus','Môn thi này chưa được công bố hoặc không còn khả dụng.');
+ };
  function onPage(page){if(!authorized())return;if(page==='exams')loadExams();if(page==='documents')loadDocs();if(page==='home')loadExams();}
  window.QLNH_V17_PAGE=onPage;
  const setup=()=>{document.querySelectorAll('[data-v17-examtab]').forEach(b=>b.onclick=()=>{state.examTab=b.dataset.v17Examtab;document.querySelectorAll('[data-v17-examtab]').forEach(x=>x.classList.toggle('selected',x===b));renderExams();});$('v17DocSearch')?.addEventListener('input',e=>{state.search=e.target.value.trim();renderDocs();});};

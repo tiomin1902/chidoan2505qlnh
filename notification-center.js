@@ -18,7 +18,7 @@
    local.hidden=[...entries].filter(([,state])=>state==='hidden').map(([id])=>id);
    persist();
  }}catch(e){console.warn('Sử dụng trạng thái thông báo lưu trên thiết bị',e);}}
- const labels={qlnh_news_feed:'Bản tin',qlnh_notice:'Thông báo chung',qlnh_news_lop:'Lớp',qlnh_news_doan:'Chi đoàn',qlnh_news_hoi:'Chi hội',qlnh_activity:'Hoạt động',qlnh_reminder:'Nhắc lịch',qlnh_congress_doan:'Đại hội Chi đoàn',qlnh_congress_hoi:'Đại hội Chi hội',qlnh_election:'Bầu cử'};
+ const labels={qlnh_news_feed:'Bản tin',qlnh_notice:'Thông báo chung',qlnh_news_lop:'Lớp',qlnh_news_doan:'Chi đoàn',qlnh_news_hoi:'Chi hội',qlnh_activity:'Hoạt động',qlnh_reminder:'Nhắc lịch',qlnh_congress_doan:'Đại hội Chi đoàn',qlnh_congress_hoi:'Đại hội Chi hội',qlnh_election:'Bầu cử',doc:'Tài liệu',doc_batch:'Tài liệu',withdrawn:'Tài liệu',exam:'Lịch thi',exam_batch:'Lịch thi',exam_group:'Kỳ thi',reminder:'Nhắc thi',report:'Phản ánh thi'};
  function selected(){try{return JSON.parse(localStorage.getItem('qlnh_device_push_choices')||'{}');}catch(e){return {}}}
  function visible(){return items.filter(n=>!local.hidden.includes(n.id));}
  function render(){const shown=visible(),unread=shown.filter(x=>!local.read.includes(x.id)).length;
@@ -32,7 +32,7 @@
      head.append(title,meta);
      const body=document.createElement('p');body.textContent=n.body;
      const actions=document.createElement('div');actions.className='nuInboxActions';
-     const open=document.createElement('button');open.type='button';open.textContent='Xem chi tiết';open.onclick=()=>{if(!local.read.includes(n.id))local.read.push(n.id);persist();syncState(n.id,'read');render();const u=new URL(n.url,location.origin);if(u.origin===location.origin)location.href=u.href;};
+     const open=document.createElement('button');open.type='button';open.textContent='Xem chi tiết';open.onclick=()=>{if(!local.read.includes(n.id))local.read.push(n.id);persist();syncState(n.id,'read');render();Promise.resolve(window.QLNH_V192_OPEN_NOTIFICATION?.(n.url)).then(ok=>{if(!ok)console.warn('Liên kết thông báo không hợp lệ');}).catch(console.warn);};
      const mark=document.createElement('button');mark.type='button';mark.textContent=local.read.includes(n.id)?'Đánh dấu chưa đọc':'Đã đọc';mark.className='nuSecondary';mark.onclick=()=>{if(local.read.includes(n.id))local.read=local.read.filter(x=>x!==n.id);else local.read.push(n.id);persist();syncState(n.id,local.read.includes(n.id)?'read':'unread');render();};
      const hide=document.createElement('button');hide.type='button';hide.textContent='Xóa khỏi danh sách';hide.className='nuSecondary';hide.onclick=()=>{local.hidden.push(n.id);persist();syncState(n.id,'hidden');render();};
      actions.append(open,mark,hide);article.append(head,body,actions);list.append(article);
