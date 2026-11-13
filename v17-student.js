@@ -3,7 +3,7 @@
  const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const authorized=()=>!window.QLNH_GUEST&&!!window.QLNH?.authToken;
  const api=(p,o)=>window.QLNH.request('/api/v17/'+p,o||{});
- const viDate=s=>{if(!s)return 'Chưa cập nhật';const d=new Date(s);return Number.isNaN(d.valueOf())?esc(s):d.toLocaleString('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',dateStyle:'medium',timeStyle:'short'});};
+ const viDate=s=>{if(!s)return 'Chưa cập nhật';const d=new Date(s);if(!Number.isFinite(d.getTime()))return esc(s);const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Ho_Chi_Minh',hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit',year:'numeric',hourCycle:'h23'}).formatToParts(d).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));return `${p.hour}:${p.minute} ${p.day}/${p.month}/${p.year}`;};
  const state={exams:[],reports:[],docs:[],groups:['Học tập','Lớp','Chi đoàn','Chi hội','Nhà trường'],cat:'Tất cả',search:'',examTab:'upcoming',doc:null};
  const setStatus=(id,msg)=>{const el=$(id);if(el)el.textContent=msg;};
  async function loadExams(){if(!authorized())return;try{const [e,r]=await Promise.all([api('exams'),api('reports')]);state.exams=e.items||[];state.reports=r.items||[];renderExams();renderUpcoming();}catch(e){setStatus('v17ExamsStatus',e.message||'Không tải được Lịch thi');}}

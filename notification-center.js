@@ -28,7 +28,7 @@
      const article=document.createElement('article');article.className='nuInboxItem'+(local.read.includes(n.id)?'':' nuUnread');
      const head=document.createElement('div');head.className='nuInboxHead';
      const title=document.createElement('strong');title.textContent=n.title;
-     const meta=document.createElement('small');const d=new Date(n.time);meta.textContent=(labels[n.target]||'Thông báo')+' · '+(Number.isFinite(d.getTime())?d.toLocaleString('vi-VN',{timeZone:'Asia/Ho_Chi_Minh'}):'');
+     const meta=document.createElement('small');const d=new Date(n.time);meta.textContent=(labels[n.target]||'Thông báo')+' · '+(Number.isFinite(d.getTime())?d.toLocaleString('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit',year:'numeric',hour12:false}):'');
      head.append(title,meta);
      const body=document.createElement('p');body.textContent=n.body;
      const actions=document.createElement('div');actions.className='nuInboxActions';
