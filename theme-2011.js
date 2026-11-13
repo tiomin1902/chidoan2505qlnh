@@ -10,7 +10,7 @@ function bindWords(){
   document.querySelectorAll('[data-theme-tagline]').forEach(el=>el.textContent=String(config.tagline||defaults.tagline));
   document.querySelectorAll('[data-theme-wish]').forEach(el=>el.textContent=config.publicWish===false?'':String(config.wish||defaults.wish));
   const hasGreeting=config.publicWish!==false;
-  if($('teacherTribute'))$('teacherTribute').hidden=!document.documentElement.classList.contains('theme-2011')||!hasGreeting;
+  if($('teacherTribute'))$('teacherTribute').hidden=!document.documentElement.classList.contains('theme-2011');
   if($('advisorSpotlight'))$('advisorSpotlight').hidden=!document.documentElement.classList.contains('theme-2011');
   document.querySelectorAll('.theme-login-wish').forEach(el=>el.hidden=!hasGreeting);
   document.querySelectorAll('.theme-advisor-letter').forEach(el=>el.hidden=!hasGreeting);

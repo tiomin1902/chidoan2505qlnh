@@ -1,90 +1,213 @@
-/* V19.9 / NGÀY NHÀ GIÁO VIỆT NAM · All visual changes scoped to one root class. */
+/* V20.0 – full visual redesign for 20/11. All seasonal overrides are gated by
+   html.theme-2011. Typography is the sole permanent bug fix. No treasury CSS changed. */
+:root{--serif:'Playfair Display',Georgia,serif;--sans:'Be Vietnam Pro','Segoe UI',Arial,sans-serif;--qlnh-type-ui:'Be Vietnam Pro','Segoe UI',Arial,sans-serif;--qlnh-type-display:'Playfair Display',Georgia,serif}
+html body,html body :is(button,input,textarea,select,option,label,summary,table,td,th,p,span,small,strong,b,i,em,a,h1,h2,h3,h4,div,li){font-family:var(--qlnh-type-ui)!important}
+html.theme-2011{--red:#742f46;--red-bright:#a6526d;--red-dark:#552338;--red-wine:#36232e;--gold:#d8b47b;--yellow:#edc996;--cream:#fff9f1;--ivory:#f5e5e7;--surface:#fffdfb;--ink:#36232e;--navy:#742f46;--navy-dark:#54243c;--sky:#b96d80;--blue-light:#fff0f2;--line:#e8ced2;--muted:#775f6a;--shadow:0 17px 48px #54233a13;
+--th-burgundy:#742f46;--th-deep:#36232e;--th-rose:#b96d80;--th-gold:#d8b47b;--th-ivory:#fff9f1;--th-pink:#f5e5e7}
+html.theme-2011 body{color:var(--th-deep);background:linear-gradient(180deg,#fff9f1 0%,#f8edf0 48%,#fffaf4 100%)}
+html.theme-2011 body::before{background:radial-gradient(circle at 0 30%,#dfacba2e,transparent 37%),radial-gradient(circle at 100% 80%,#d8b47b25,transparent 40%)}
+html.theme-2011 :is(.page-ribbon h1,.content-page-head h1,.section-title h2,.panel-heading h2,.news-article-heading h1,.branch-banner h1,.branch-tile strong,.footer-brand strong){font-family:var(--qlnh-type-display)!important}
+html.theme-2011 button:focus-visible,html.theme-2011 a:focus-visible,html.theme-2011 input:focus-visible,html.theme-2011 summary:focus-visible{outline-color:#d8b47b}
+/* Hide seasonal elements when disabled; leave original home hero intact. */
 .theme-teacher-home,.theme-advisor-panel,.theme-auth-heading,.theme-footer-greeting,.theme-menu-advisor{display:none!important}
-html.theme-2011{--theme-cream:#fffaf0;--theme-rose:#8f3447;--theme-petal:#dd9e99;--theme-gold:#b68b47;--theme-ink:#382b35}
-html.theme-2011 body{background:linear-gradient(180deg,#fff9f0 0%,#fffdf9 52%,#fff9f0 100%)}
+.theme-login-form-block{min-width:0}
 html.theme-2011 .theme-teacher-home:not([hidden]),html.theme-2011 .theme-advisor-panel:not([hidden]){display:block!important}
 html.theme-2011 .theme-auth-heading,html.theme-2011 .theme-footer-greeting{display:block!important}
 html.theme-2011 .theme-menu-advisor{display:flex!important}
-html.theme-2011 .theme-eyebrow{font:700 11px/1.55 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#a46c5d}
-html.theme-2011 .brandSeal{position:relative}
-html.theme-2011 .brandSeal::after{content:'❀';position:absolute;right:-8px;top:-6px;font:15px Georgia,serif;color:#d4a3a9;text-shadow:0 1px 3px #fff}
-html.theme-2011 .top{border-bottom-color:#d8b6af}
-html.theme-2011 .page:not(.home-page) .page-ribbon{background-image:radial-gradient(circle at 100% 0%,#f9d9d354,transparent 28%)}
-html.theme-2011 .page .surface-panel,html.theme-2011 .page .infoCard{border-color:#e9d6c9}
-html.theme-2011 .theme-advisor-letter[hidden]{display:none!important}
-html.theme-2011 .hero-wrap{position:relative}
-html.theme-2011 .hero-wrap::after{content:'❀ 20 / 11 · TRI ÂN THẦY CÔ ❀';display:block;text-align:center;background:#fff8ed;color:#9a4f56;padding:10px 12px;font:700 12px/1.4 system-ui,sans-serif;letter-spacing:.13em;border-bottom:1px solid #ead9be}
-html.theme-2011 .patriotic-hero{box-shadow:inset 0 -14px 45px #7d313715}
-html.theme-2011 .home-content{background:linear-gradient(180deg,#fffaf4 0%,transparent 45%)}
-html.theme-2011 .theme-teacher-home{max-width:1180px;margin:34px auto 36px;overflow:hidden;border-radius:25px;background:linear-gradient(115deg,#fffdf8 0%,#fff7ed 55%,#f7e9df 100%);border:1px solid #e9d6bb;box-shadow:0 26px 76px #55352618;position:relative;color:var(--theme-ink)}
-html.theme-2011 .theme-teacher-home::after{content:'';position:absolute;inset:10px;border:1px solid #b9935d59;border-radius:17px;pointer-events:none}
-html.theme-2011 .theme-edition-note{display:flex;justify-content:space-between;align-items:center;padding:18px 36px 10px;gap:14px;color:#a37359;font:700 11px/1.5 system-ui,sans-serif;letter-spacing:.14em}
-html.theme-2011 .theme-edition-note span:first-child{font-size:15px;letter-spacing:.08em;color:#7d394b}
-html.theme-2011 .theme-tribute-layout{display:grid;grid-template-columns:minmax(240px,.83fr) minmax(0,1.5fr);gap:5px;align-items:center;padding:14px 52px 48px 20px}
-html.theme-2011 .theme-bloom-art{position:relative;width:min(100%,340px);aspect-ratio:1;margin:auto;isolation:isolate;display:grid;place-items:center}
-html.theme-2011 .theme-bloom-art::before{content:'';position:absolute;inset:9%;border:1px solid #bb855f70;border-radius:50%;background:radial-gradient(circle,#fbe6c9 0%,#f7dcd0 33%,#e9c6c8 34%,transparent 65%);box-shadow:0 0 0 22px #bd986320}
-html.theme-2011 .theme-bloom-art::after{content:'❀';font-family:Georgia,serif;font-size:264px;color:#d9979f6b;position:absolute;line-height:1;z-index:-1;transform:rotate(-24deg)}
-html.theme-2011 .theme-bloom-centre{z-index:2;text-align:center;color:#7d394b;font:500 clamp(68px,8vw,116px)/.91 Georgia,serif;letter-spacing:-.075em;text-shadow:0 2px 8px #fff9;transform:translateY(-2px)}
-html.theme-2011 .theme-bloom-centre span{display:block;letter-spacing:.24em;margin-top:10px;color:#a27362;font:700 12px/1.4 system-ui,sans-serif}
-html.theme-2011 .theme-bloom-petal{position:absolute;background:#d59aa267;border:1px solid #ca929c8c;width:56px;height:78px;clip-path:ellipse(35% 48% at 50% 50%);transform:rotate(35deg)}
-html.theme-2011 .petal-one{top:12%;left:15%;transform:rotate(-40deg)}html.theme-2011 .petal-two{top:14%;right:12%;transform:rotate(32deg)}html.theme-2011 .petal-three{bottom:10%;left:18%;transform:rotate(38deg)}html.theme-2011 .petal-four{bottom:14%;right:12%;transform:rotate(-32deg)}
-html.theme-2011 .theme-tribute-copy{position:relative;z-index:1}
-html.theme-2011 .theme-tribute-copy h2{font:500 clamp(44px,4.7vw,72px)/1.04 Georgia,'Times New Roman',serif;letter-spacing:-.035em;color:#63394a;margin:13px 0 16px}
-html.theme-2011 .theme-tribute-copy h2 em{font-style:italic;color:#ad6d75}
-html.theme-2011 .theme-recipient{font-size:14px;color:#88514e;font-weight:650;letter-spacing:.02em;border-left:3px solid #c59e66;padding-left:11px;margin:0 0 20px}
-html.theme-2011 .theme-greeting-title{font-size:16px;line-height:1.5;color:#643c46;letter-spacing:.02em;margin:0 0 15px;text-transform:none}
-html.theme-2011 .theme-wish-text{font:15px/1.8 'Times New Roman',Georgia,serif;white-space:pre-line;color:#574b4b;max-width:72ch;overflow-wrap:anywhere;margin:0}
-html.theme-2011 .theme-card-sign{display:flex;flex-direction:column;gap:4px;padding:18px 0 18px;margin-top:18px;border-top:1px solid #d7beaf;font:italic 14px/1.4 Georgia,serif;color:#8d6064}
-html.theme-2011 .theme-card-sign strong{font:700 12px/1.6 system-ui,sans-serif;letter-spacing:.12em;color:#71404c}
-html.theme-2011 .theme-advisor-link{border:1px solid #975c61;border-radius:100px;padding:11px 20px;background:#88495c;color:#fff;font:650 13px/1.5 system-ui,sans-serif;cursor:pointer;min-height:43px;box-shadow:0 6px 14px #88495c20}
-html.theme-2011 .theme-advisor-link:hover{background:#6b3548}
-html.theme-2011 #class .page-ribbon{border-bottom:2px solid #d9b287}
-html.theme-2011 .theme-advisor-panel{max-width:1120px;margin:12px auto 36px;padding:clamp(22px,4vw,44px);background:linear-gradient(135deg,#fffdf8,#f9ece5);border:1px solid #e4cab5;border-radius:24px;box-shadow:0 20px 60px #704b3515;position:relative;scroll-margin-top:90px;color:#4d3a40}
-html.theme-2011 .theme-advisor-grid{display:grid;grid-template-columns:minmax(210px,.85fr) minmax(0,1.6fr);gap:clamp(23px,4vw,52px);align-items:start;margin-top:26px}
-html.theme-2011 .theme-advisor-portrait{min-height:300px;aspect-ratio:4/5;position:relative;border-radius:190px 190px 23px 23px;background:radial-gradient(circle at 50% 38%,#fff4e2,#edc2c6 58%,#d9a88d);display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;border:7px solid #fff9f1;box-shadow:0 0 0 1px #bd9973,0 15px 25px #7653471c}
-html.theme-2011 .theme-advisor-portrait span{font:120px/1 Georgia,serif;color:#b36c7b}
-html.theme-2011 .theme-advisor-portrait small{color:#76445b;font:italic 13px Georgia,serif}
+/* Shell – actual recoloring beyond a single banner. */
+html.theme-2011 .official-mini{background:#482237;color:#f3dfcb}
+html.theme-2011 .official-mini :is(button,span){color:#f3dfcb}
+html.theme-2011 .top{background:linear-gradient(110deg,#54243c,#742f46 53%,#8f455f);color:#fff8ec;border-bottom:1px solid #e1b69070;box-shadow:0 7px 26px #3c152839}
+html.theme-2011 .brand{color:#fff8ec}html.theme-2011 .brandSeal{color:#f6dcab;background:linear-gradient(140deg,#a95a75,#57263d);border-color:#eac48c80}
+html.theme-2011 .brandCopy small{color:#e8c5a8}html.theme-2011 .desktopNav button{color:#fff2e9}
+html.theme-2011 .desktopNav :is(button:hover,button.is-active){background:#f4dce522;color:#fff}
+html.theme-2011 .desktopNav button.is-active{box-shadow:inset 0 -2px #e7c08a}
+html.theme-2011 :is(.headerNotice,.mobileMenuButton,.nuBell){color:#fff2e8;background:#ffffff14;border-color:#ffffff40}
+html.theme-2011 .guest-header-login{background:#fff3e9;border-color:#e8c5b9;color:#6e304b}
+html.theme-2011 #shade{background:#2b1624b3}
+html.theme-2011 #drawer{background:linear-gradient(180deg,#fffaf5,#f8eaf0);border-left:1px solid #e4cad1}
+html.theme-2011 :is(.drawerHeader,.drawerHeader button,.drawerHeader strong){color:#742f46}
+html.theme-2011 #drawer .drawerScroll button{color:#542e3c;border-color:#ecd7dc}
+html.theme-2011 #drawer .drawerScroll button:hover{background:#f4e1e6}
+html.theme-2011 #drawer .theme-menu-advisor{color:#823951!important;background:linear-gradient(100deg,#fbe7e9,#fff7e9)!important;border:1px solid #e9cbd0!important;border-radius:13px!important;margin:6px 0 10px!important}
+html.theme-2011 .drawerFooter{background:#fffaf5}
+html.theme-2011 .drawerFooter .drawerLogout{background:#742f46;color:#fff}
+html.theme-2011 .siteFooter{background:linear-gradient(120deg,#4c2437,#702d47 67%,#8e4762);border-top:3px solid #d8b47b;color:#fff5e7}
+html.theme-2011 .siteFooter .footer-brand strong{color:#fff7f0}
+html.theme-2011 .theme-footer-greeting{color:#efcb9d;font-size:12px;font-weight:700;letter-spacing:.035em}
+/* New 20/11 visual hero replaces the ORIGINAL hero, only while the theme is on. */
+html.theme-2011 #home{background:linear-gradient(180deg,#fff9f1,#fffaf7 40%,#f7e8ed)}
+html.theme-2011 #home>.hero-wrap{display:none!important}
+html.theme-2011 .theme-v2-hero{position:relative;isolation:isolate;overflow:hidden;max-width:var(--max);min-height:570px;margin:0 auto 18px;padding:0 38px;color:#fff8ef;border-radius:0 0 31px 31px;background:radial-gradient(ellipse at 17% 24%,#ad6c855e,transparent 43%),radial-gradient(ellipse at 89% 76%,#ce8c7066,transparent 42%),linear-gradient(132deg,#552339 0%,#742f46 54%,#993e5d 100%);box-shadow:0 26px 66px #5d2d4436}
+html.theme-2011 .theme-v2-hero::before{content:"";position:absolute;inset:14px;border:1px solid #f4d8b25b;border-radius:0 0 23px 23px;pointer-events:none;z-index:4}
+html.theme-2011 .theme-v2-hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;background:repeating-linear-gradient(93deg,transparent 0 72px,#ffffff05 72px 73px,transparent 73px 145px);z-index:-1}
+html.theme-2011 .theme-v2-edition{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:26px 4px 0;color:#f2d5b0;font-weight:750;font-size:11px;letter-spacing:.18em}
+html.theme-2011 .theme-v2-edition span:first-child{display:inline-flex;gap:9px;align-items:center}
+html.theme-2011 .theme-v2-edition i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e9bd86;box-shadow:0 0 0 5px #d8b47b23}
+html.theme-2011 .theme-v2-content{position:relative;z-index:3;min-height:465px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:35px 5px 32px}
+html.theme-2011 .theme-v2-kicker{margin:0 0 14px;letter-spacing:.3em;color:#f6dcae;font-size:11px;font-weight:750}
+html.theme-2011 .theme-v2-classname{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;max-width:100%;margin:0;color:#fff8f0;text-shadow:0 12px 30px #3e142e38;line-height:1}
+html.theme-2011 .theme-v2-word{font-family:var(--qlnh-type-display)!important;font-size:clamp(51px,6vw,94px);font-style:italic;font-weight:500;letter-spacing:-.085em;line-height:1.05;color:#f5dcbb;transform:translateX(-.05em);animation:th-rise .75s both}
+html.theme-2011 .theme-v2-number{font-family:var(--qlnh-type-ui)!important;font-size:clamp(63px,10.2vw,150px);font-weight:800;letter-spacing:-.095em;line-height:1.06;white-space:nowrap;animation:th-rise .85s .13s both}
+html.theme-2011 .theme-v2-rule{width:210px;max-width:65%;display:flex;align-items:center;gap:12px;margin:13px auto 17px;color:#d8b47b}
+html.theme-2011 .theme-v2-rule::before,html.theme-2011 .theme-v2-rule::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#ecc998)}
+html.theme-2011 .theme-v2-rule::after{transform:rotate(180deg)}
+html.theme-2011 .theme-v2-theme{font-family:var(--qlnh-type-display)!important;font-size:clamp(21px,2.65vw,38px);font-weight:500;color:#f5d4b6;letter-spacing:.004em;margin:0 0 10px;max-width:850px}
+html.theme-2011 .theme-v2-shortwish{max-width:660px;margin:0 auto 6px;color:#fff5e9;font-size:clamp(12px,1.1vw,14px);line-height:1.85;font-weight:450}
+html.theme-2011 .theme-v2-greeting{max-width:720px;margin:2px auto 0;color:#f5d5d3;font-size:11px;line-height:1.7;font-weight:600;letter-spacing:.02em}
+html.theme-2011 .theme-v2-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin:25px 0 3px}
+html.theme-2011 .theme-v2-actions button{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:45px;border-radius:100px;padding:10px 22px;font-weight:750;font-size:12px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+html.theme-2011 .theme-v2-main-action{border:1px solid #eac694;background:#edcb9c;color:#452239;box-shadow:0 9px 22px #39172d33}
+html.theme-2011 .theme-v2-secondary-action{border:1px solid #fcead68a;background:transparent;color:#fff9f1}
+html.theme-2011 .theme-v2-main-action:hover{background:#ffdfae;transform:translateY(-2px)}
+html.theme-2011 .theme-v2-secondary-action:hover{background:#ffffff1e;transform:translateY(-2px)}
+html.theme-2011 .theme-v2-bottom{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #efd2b950;padding:12px 5px 17px;font-size:10px;letter-spacing:.15em;color:#f2cfae;font-weight:650}
+html.theme-2011 .theme-v2-anniversary{font-family:var(--qlnh-type-display)!important;font-size:18px;letter-spacing:0;color:#f7d9a9}
+html.theme-2011 .theme-v2-anniversary small{font-family:var(--qlnh-type-display)!important;color:#e7b992}
+/* Rotating outlines and translucent flower glyphs, deliberately non-interactive. */
+html.theme-2011 .theme-v2-art{position:absolute;z-index:1;pointer-events:none;border:1px solid #e5b48d5c;border-radius:50%;display:grid;place-items:center;animation:th-orbit 36s linear infinite}
+html.theme-2011 .theme-v2-art::before,html.theme-2011 .theme-v2-art::after{content:"";position:absolute;inset:12%;border:1px solid #f6d6b455;border-radius:50%}
+html.theme-2011 .theme-v2-art::after{inset:-10%;border-style:dashed;opacity:.4}
+html.theme-2011 .theme-v2-art span{font-family:Georgia,serif!important;font-size:clamp(200px,28vw,400px);line-height:1;color:#e1a0ad27;transform:rotate(-20deg)}
+html.theme-2011 .theme-v2-art-a{width:390px;height:390px;left:-225px;top:50px}
+html.theme-2011 .theme-v2-art-b{width:320px;height:320px;right:-160px;bottom:-120px;animation-direction:reverse}
+@keyframes th-orbit{to{transform:rotate(360deg)}}
+@keyframes th-rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+/* Home utility panels and all page modules share a coherent warm system. */
+html.theme-2011 .home-content{background:linear-gradient(180deg,#fff8f2,#f9edf0 75%,#fffaf7)}
+html.theme-2011 .home-shortcuts{margin-top:23px}
+html.theme-2011 :is(.shortcut,.surface-panel,.infoCard,.personCard,.news-card,.seriesCard,.itemCard,.panel,.congress .panel){border-color:#e8cfd1!important;box-shadow:0 10px 26px #54233a0a}
+html.theme-2011 :is(.shortcut,.surface-panel,.infoCard,.personCard,.news-card,.seriesCard,.itemCard){background:#fffdfb}
+html.theme-2011 .shortcut:hover{border-color:#c48b9e!important;box-shadow:0 10px 28px #742f4625;transform:translateY(-2px)}
+html.theme-2011 :is(.shortcut-icon,.v17-shortcut-ico,.branch-glyph){color:#9d4564}
+html.theme-2011 .panel-heading h2,html.theme-2011 .section-title h2{color:#652f46}
+html.theme-2011 .home-alert{border-color:#e5cbd1;background:#fff8ef}
+html.theme-2011 .homeEventDate{color:#7d354d;background:#f6e7e8}
+html.theme-2011 .branch-tile{border-color:#e8ced2;box-shadow:0 9px 24px #652c4411}
+html.theme-2011 .branch-tile-doan{background:linear-gradient(115deg,#fff1ec,#f4dfe1)}
+html.theme-2011 .branch-tile-hoi{background:linear-gradient(110deg,#fff6ea,#f7e4dd)}
+html.theme-2011 .branch-tile-event{background:linear-gradient(110deg,#faebef,#f1d9e2)}
+html.theme-2011 .trust-strip{background:#eed6da;color:#632a40}
+html.theme-2011 .trust-strip :is(strong,small){color:#652f45}
+html.theme-2011 .page-ribbon{background:linear-gradient(120deg,#57243a,#8d3f5c);border-bottom:3px solid #e6bd87;color:#fff8ed}
+html.theme-2011 .page-ribbon :is(h1,p,small){color:#fff5e7}
+html.theme-2011 .content-page-head{background:linear-gradient(120deg,#f9e2e3,#fff5e7);border-bottom:1px solid #edcbd1}
+html.theme-2011 .content-page-head h1{color:#6d2d45}
+html.theme-2011 .content-page-body,html.theme-2011 .organization-content{background:#fffaf7}
+html.theme-2011 .branch-banner{background:linear-gradient(112deg,#6b2e49,#a55b72)}
+html.theme-2011 .branch-banner-copy :is(h1,p,small){color:#fff8ee}
+html.theme-2011 .branch-subnav{background:#fff7f5;border-color:#ebd4d4}
+html.theme-2011 .branch-subnav button{color:#72364d}
+html.theme-2011 .branch-subnav button.active{color:#fff;background:#853b55}
+html.theme-2011 .news-page .content-page-head{background:linear-gradient(135deg,#f9e6e9,#fff5e9)}
+html.theme-2011 .news-page .content-page-head h1,html.theme-2011 .news-page .news-card h3{color:#77374f}
+html.theme-2011 :is(.news-toolbar,.newsToolbar,.news-tabs button,.news-kind-tabs button){border-color:#e9d2d5}
+html.theme-2011 :is(.news-tabs button.active,.news-kind-tabs button.active){background:#742f46;color:white}
+html.theme-2011 :is(.hero-primary,.mini-link,.news-bottom button,.news-share){border-color:#bc8595;color:#742f46}
+html.theme-2011 .hero-primary{background:#742f46;color:#fff9f1}
+html.theme-2011 .section-title,html.theme-2011 .panel-heading{border-color:#ecd6d4}
+html.theme-2011 :is(input,select,textarea){accent-color:#8c4860}
+/* Keep financial/status semantic colors unmodified. No generic status/badge override. */
+/* Dedicated advisor identity and collapsed long letter. */
+html.theme-2011 .theme-advisor-panel{position:relative;max-width:1160px;margin:15px auto 35px;padding:clamp(24px,4vw,52px);border-radius:25px;scroll-margin-top:85px;background:linear-gradient(125deg,#fffefb,#f8e4e8);border:1px solid #e2c3cb;box-shadow:0 19px 50px #742f461b;color:#523541}
+html.theme-2011 .theme-advisor-panel::before{content:'20 / 11';position:absolute;right:25px;top:24px;color:#d9adb5;font-family:var(--qlnh-type-display)!important;font-size:24px}
+html.theme-2011 .theme-eyebrow{font-size:10px;letter-spacing:.19em;font-weight:800;color:#8b445d}
+html.theme-2011 .theme-advisor-grid{display:grid;grid-template-columns:minmax(195px,.72fr) minmax(0,1.6fr);gap:clamp(26px,4.5vw,58px);align-items:center;margin-top:22px}
+html.theme-2011 .theme-advisor-portrait{width:100%;aspect-ratio:4/5;min-height:0;position:relative;border-radius:190px 190px 18px 18px;background:radial-gradient(circle at 55% 34%,#f9dfd5,#e3a5b4 61%,#ac617d);border:7px solid #fff9f2;outline:1px solid #bd8e9c;box-shadow:0 15px 30px #6a2b4722;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center}
+html.theme-2011 .theme-advisor-portrait span{font-size:clamp(75px,9vw,130px);color:#f9e4dd}
+html.theme-2011 .theme-advisor-portrait small{font-size:12px;color:#73374c}
 html.theme-2011 .theme-advisor-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-html.theme-2011 .theme-advisor-panel h2{font:500 clamp(38px,4vw,56px)/1.15 Georgia,serif;color:#613e4d;margin:0 0 14px}
-html.theme-2011 .theme-advisor-panel h2 em{color:#ae767b}
-html.theme-2011 .theme-advisor-name{font:700 16px system-ui,sans-serif;color:#81515d;margin:0 0 13px}
-html.theme-2011 .theme-advisor-quote{font:italic 19px/1.65 Georgia,serif;color:#785c54;margin:0 0 23px}
-html.theme-2011 .theme-advisor-letter{background:#ffffffb8;border-left:3px solid #be9674;border-radius:3px 14px 14px 3px;padding:21px 24px}
-html.theme-2011 .theme-advisor-letter h3{color:#693f4b;font:600 21px Georgia,serif;margin:0 0 14px}
-html.theme-2011 .theme-advisor-letter strong{display:block;font:650 11px system-ui,sans-serif;letter-spacing:.11em;margin-top:17px;color:#96656c}
-html.theme-2011 #drawer .theme-menu-advisor{color:#984450!important;background:#fff3ef!important;border:1px solid #f0d4d0!important;border-radius:11px!important;margin:7px 0 4px!important}
-html.theme-2011 .theme-footer-greeting{color:#b9767c;font:650 12px/1.45 system-ui,sans-serif}
-html.theme-2011 .student-auth-gate{background:radial-gradient(circle at 85% 10%,#f9d9db77,transparent 45%),linear-gradient(145deg,#fff8f1,#f5e1dd 85%)}
-html.theme-2011 .student-auth-card{border:1px solid #e5c8b8;box-shadow:0 25px 70px #72495b24;position:relative;overflow:hidden}
-html.theme-2011 .student-auth-card::before{content:'❀';position:absolute;right:-10px;top:-58px;color:#e2a6a72e;font:200px/1 Georgia,serif;pointer-events:none}
-html.theme-2011 .theme-auth-heading{position:relative;border-bottom:1px solid #ebd3c5;padding-bottom:18px;margin-bottom:20px;text-align:center}
-html.theme-2011 .theme-auth-flower{display:block;margin:0 auto 12px;font:39px Georgia,serif;color:#bd8a93}
-html.theme-2011 .theme-auth-heading>strong{display:block;margin:9px auto 12px;font:500 29px/1.2 Georgia,serif;color:#693e50}
-html.theme-2011 .theme-auth-heading>strong em{font-style:italic;color:#ab697c}
-html.theme-2011 .theme-auth-heading>p{font:13px/1.6 Georgia,serif;color:#805e64;margin:0}
-html.theme-2011 .theme-login-wish{background:#fffaf5;border:1px solid #eedacc;border-radius:11px;padding:9px 12px;margin-top:15px;text-align:left}
-html.theme-2011 .theme-login-wish summary{color:#975464;font:700 12px/1.6 system-ui,sans-serif;cursor:pointer}
-html.theme-2011 .theme-login-wish summary span{float:right}
-html.theme-2011 .theme-login-wish-content{max-height:190px;overflow-y:auto;padding:12px 0 4px;font:14px/1.65 Georgia,serif}
-html.theme-2011 .theme-signature{font:italic 12px Georgia,serif!important;margin:7px 0 0!important}
-html.theme-2011 .student-auth-mark{background:#8c4860;box-shadow:0 6px 18px #8c486055}
-html.theme-2011 .student-auth-form button{background:#8c4860}
-html.theme-2011 .student-auth-form button:hover{background:#72354b}
-html.theme-2011 .student-guest-entry{background:#fff8f3;border-color:#d1a6a1;color:#7e3c4d}
-@media(max-width:800px){
- html.theme-2011 .theme-teacher-home{margin:16px 12px 24px;border-radius:20px}
- html.theme-2011 .theme-edition-note{padding:17px 23px 0;flex-direction:column;gap:3px;align-items:flex-start}
- html.theme-2011 .theme-tribute-layout{grid-template-columns:1fr;padding:4px 26px 28px;gap:2px}
- html.theme-2011 .theme-bloom-art{width:175px;height:175px;min-height:0}
- html.theme-2011 .theme-bloom-art::after{font-size:165px}
- html.theme-2011 .theme-bloom-centre{font-size:65px}
- html.theme-2011 .theme-tribute-copy h2{font-size:47px;margin:5px 0 13px}
- html.theme-2011 .theme-wish-text{font-size:15px;line-height:1.7}
- html.theme-2011 .theme-advisor-panel{margin:12px 10px 22px;padding:22px}
- html.theme-2011 .theme-advisor-grid{grid-template-columns:1fr;gap:20px}
- html.theme-2011 .theme-advisor-portrait{width:210px;height:245px;min-height:0;margin:auto}
- html.theme-2011 .theme-advisor-panel h2{font-size:41px}
- html.theme-2011 .theme-advisor-letter{padding:17px}
+html.theme-2011 .theme-advisor-panel h2{font-family:var(--qlnh-type-display)!important;font-size:clamp(33px,4vw,58px);font-weight:500;color:#74324a;margin:0 0 12px;line-height:1.18}
+html.theme-2011 .theme-advisor-panel h2 em{font-family:var(--qlnh-type-display)!important;color:#aa6177}
+html.theme-2011 .theme-advisor-name{font-weight:750;font-size:15px;color:#71384d;margin:0 0 12px}
+html.theme-2011 .theme-advisor-quote{font-size:17px;line-height:1.75;color:#775b64;margin:0 0 19px}
+html.theme-2011 .theme-advisor-letter{border:1px solid #e0c0c6;background:#fffaf8;border-radius:16px;overflow:hidden}
+html.theme-2011 .theme-advisor-letter summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:11px;padding:17px 20px;color:#71354b;font-size:14px;font-weight:750}
+html.theme-2011 .theme-advisor-letter summary::-webkit-details-marker{display:none}
+html.theme-2011 .theme-advisor-letter summary span:first-child{color:#a05d75;font-size:20px}
+html.theme-2011 .theme-advisor-letter summary span:last-child{margin-left:auto}
+html.theme-2011 .theme-advisor-letter[open] summary{border-bottom:1px solid #ead5d8;background:#fcf0f1}
+html.theme-2011 .theme-advisor-letter-body{padding:22px 23px 25px}
+html.theme-2011 .theme-advisor-letter-body h3{font-family:var(--qlnh-type-display)!important;color:#723e50;font-size:22px;margin:0 0 13px}
+html.theme-2011 .theme-wish-text{white-space:pre-line;font-size:14px;line-height:1.85;color:#604a54;overflow-wrap:anywhere}
+html.theme-2011 .theme-advisor-letter-body strong{display:block;color:#934f64;font-size:11px;letter-spacing:.07em;margin-top:20px}
+/* Login redesigned as responsive split editorial landing, not an oversized card. */
+html.theme-2011 .student-auth-gate{background:radial-gradient(circle at 10% 10%,#c287a443,transparent 30%),linear-gradient(130deg,#f9e9ec,#fff9f1 60%,#e9d1d4);padding:clamp(16px,4vw,44px)}
+html.theme-2011 .student-auth-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);width:min(980px,100%);max-width:980px;padding:0;overflow:hidden;background:#fffefb;border:1px solid #dcbfbd;border-radius:24px;box-shadow:0 27px 80px #4f23343a;align-items:stretch}
+html.theme-2011 .theme-auth-heading{position:relative;isolation:isolate;min-height:490px;padding:55px 42px;display:flex!important;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff8ed;background:radial-gradient(circle at 90% 15%,#a4668077,transparent 42%),linear-gradient(140deg,#512239,#79354d 65%,#a0526c)}
+html.theme-2011 .theme-auth-heading::before{content:'✳';position:absolute;left:-60px;top:-90px;font-size:370px;line-height:1;color:#f5d2b91a;transform:rotate(-14deg);z-index:-1;pointer-events:none}
+html.theme-2011 .theme-auth-heading .theme-eyebrow{font-size:10px;color:#f4d5aa;letter-spacing:.18em;line-height:1.7}
+html.theme-2011 .theme-auth-flower{font-size:34px;color:#eac699;margin-bottom:18px}
+html.theme-2011 .theme-auth-heading strong{display:flex;flex-direction:column;align-items:center;font-weight:700;line-height:1}
+html.theme-2011 .theme-auth-heading strong span{font-family:var(--qlnh-type-display)!important;font-size:clamp(40px,5vw,64px);font-style:italic;font-weight:500;color:#efcfb0;line-height:1.15}
+html.theme-2011 .theme-auth-heading strong em{font-family:var(--qlnh-type-ui)!important;font-size:clamp(36px,4.4vw,60px);font-weight:800;letter-spacing:-.07em;color:#fffaf3;font-style:normal}
+html.theme-2011 .theme-auth-line{height:1px;width:140px;margin:25px auto 17px;background:linear-gradient(90deg,transparent,#e5bd91,transparent)}
+html.theme-2011 .theme-auth-heading h2{font-family:var(--qlnh-type-display)!important;font-weight:500;font-size:28px;color:#f5d7b4;margin:0 0 15px}
+html.theme-2011 .theme-auth-heading p{font-size:13px;color:#fff6eb;line-height:1.8;max-width:350px;margin:0}
+html.theme-2011 .theme-auth-date{font-size:10px;color:#f0ceac;letter-spacing:.12em;font-weight:700;margin-top:35px}
+html.theme-2011 .theme-login-form-block{padding:clamp(28px,4vw,55px);display:flex;flex-direction:column;align-items:stretch;justify-content:center;background:#fffefb}
+html.theme-2011 .student-auth-mark{background:#742f46;box-shadow:0 8px 19px #742f4630;color:#f5d4ac}
+html.theme-2011 .student-auth-card h1{color:#652d44;font-size:28px;line-height:1.25;font-weight:750;margin:0 0 8px}
+html.theme-2011 .student-auth-card .theme-login-form-block>p{color:#7b646f;font-size:12px}
+html.theme-2011 .student-auth-form label{color:#60374c;font-weight:650}
+html.theme-2011 .student-auth-form input{background:#fffbf9;border:1px solid #dfcbd2;border-radius:11px}
+html.theme-2011 .student-auth-form input:focus{border-color:#a65c75;outline:3px solid #dfb7c477}
+html.theme-2011 .student-auth-form button{background:#742f46;color:#fff8f1;box-shadow:0 7px 18px #742f4626}
+html.theme-2011 .student-auth-form button:hover{background:#5b263c}
+html.theme-2011 .student-auth-note{color:#816d77}
+html.theme-2011 .student-guest-entry{color:#71364d;background:#fdf0f0;border-color:#dbb7c5}
+/* Gentle motion with accessible opt out. */
+html.theme-2011 .surface-panel,html.theme-2011 .shortcut{transition:box-shadow .2s ease,transform .2s ease,border-color .2s ease}
+@media(max-width:990px){
+ html.theme-2011 .theme-v2-hero{min-height:520px;padding:0 26px}
+ html.theme-2011 .theme-v2-edition{padding-top:20px}
+ html.theme-2011 .theme-v2-content{min-height:430px}
+ html.theme-2011 .theme-v2-number{font-size:clamp(62px,10.8vw,100px)}
 }
-@media(max-width:420px){html.theme-2011 .theme-tribute-layout{padding:4px 19px 25px}html.theme-2011 .theme-teacher-home::after{inset:6px}html.theme-2011 .theme-edition-note{padding-left:19px}html.theme-2011 .theme-bloom-art{height:145px;width:145px}html.theme-2011 .theme-bloom-art::after{font-size:133px}html.theme-2011 .theme-bloom-centre{font-size:52px}html.theme-2011 .theme-tribute-copy h2{font-size:42px}html.theme-2011 .student-auth-card{padding:22px 19px}html.theme-2011 .theme-auth-heading>strong{font-size:25px}}
-@media(prefers-reduced-motion:reduce){html.theme-2011 *{scroll-behavior:auto!important;animation-duration:.001ms!important;transition-duration:.001ms!important}}
+@media(max-width:700px){
+ html.theme-2011 .theme-v2-hero{min-height:0;margin:0 0 15px;padding:0 19px;border-radius:0 0 22px 22px}
+ html.theme-2011 .theme-v2-hero::before{inset:7px;border-radius:0 0 16px 16px}
+ html.theme-2011 .theme-v2-edition{padding-top:19px;font-size:8px;letter-spacing:.09em;align-items:flex-start}
+ html.theme-2011 .theme-v2-edition span:last-child{max-width:130px;text-align:right}
+ html.theme-2011 .theme-v2-content{padding:45px 0 26px;min-height:0}
+ html.theme-2011 .theme-v2-kicker{font-size:9px;letter-spacing:.12em;margin-bottom:14px}
+ html.theme-2011 .theme-v2-word{font-size:clamp(48px,14vw,68px)}
+ html.theme-2011 .theme-v2-number{font-size:clamp(43px,11.6vw,75px);letter-spacing:-.085em}
+ html.theme-2011 .theme-v2-rule{margin:14px auto}
+ html.theme-2011 .theme-v2-theme{font-size:clamp(22px,6.4vw,28px);line-height:1.23;max-width:360px}
+ html.theme-2011 .theme-v2-shortwish{font-size:12px;line-height:1.8;max-width:330px}
+ html.theme-2011 .theme-v2-greeting{font-size:10px;line-height:1.6;max-width:330px}
+ html.theme-2011 .theme-v2-actions{margin-top:21px;gap:9px}
+ html.theme-2011 .theme-v2-actions button{font-size:11px;padding:10px 14px;min-height:43px;gap:7px}
+ html.theme-2011 .theme-v2-bottom{font-size:8px;letter-spacing:.04em;padding:10px 0 16px}
+ html.theme-2011 .theme-v2-bottom span:first-child{max-width:110px}
+ html.theme-2011 .theme-v2-bottom span:last-child{max-width:95px;text-align:right}
+ html.theme-2011 .theme-v2-art-a{width:220px;height:220px;left:-175px;top:80px}
+ html.theme-2011 .theme-v2-art-b{width:200px;height:200px;right:-165px;bottom:-45px}
+ html.theme-2011 .theme-advisor-panel{margin:12px 12px 28px;padding:24px 20px}
+ html.theme-2011 .theme-advisor-panel::before{display:none}
+ html.theme-2011 .theme-advisor-grid{grid-template-columns:1fr;gap:21px}
+ html.theme-2011 .theme-advisor-portrait{max-width:190px;max-height:250px;margin:auto}
+ html.theme-2011 .theme-advisor-panel h2{font-size:38px}
+ html.theme-2011 .student-auth-card{display:flex;flex-direction:column;max-width:470px}
+ html.theme-2011 .theme-auth-heading{min-height:0;padding:30px 24px 29px}
+ html.theme-2011 .theme-auth-heading .theme-eyebrow{font-size:9px}
+ html.theme-2011 .theme-auth-flower{font-size:26px;margin-bottom:7px}
+ html.theme-2011 .theme-auth-heading strong span{font-size:38px}
+ html.theme-2011 .theme-auth-heading strong em{font-size:clamp(38px,10vw,50px)}
+ html.theme-2011 .theme-auth-line{margin:16px auto 11px}
+ html.theme-2011 .theme-auth-heading h2{font-size:23px;margin-bottom:9px}
+ html.theme-2011 .theme-auth-heading p{font-size:11px;max-width:305px}
+ html.theme-2011 .theme-auth-date{font-size:9px;margin-top:15px}
+ html.theme-2011 .theme-login-form-block{padding:24px 24px 27px}
+ html.theme-2011 .student-auth-mark{width:42px;height:42px;margin-bottom:12px;font-size:20px}
+ html.theme-2011 .student-auth-card h1{font-size:22px}
+}
+@media(max-width:360px){
+ html.theme-2011 .theme-v2-hero{padding:0 14px}
+ html.theme-2011 .theme-v2-number{font-size:clamp(39px,11.5vw,48px)}
+ html.theme-2011 .theme-v2-actions{flex-direction:column;align-items:stretch;max-width:270px;width:100%}
+ html.theme-2011 .theme-v2-actions button{width:100%}
+ html.theme-2011 .theme-login-form-block{padding:20px}
+}
+@media(prefers-reduced-motion:reduce){html.theme-2011 .theme-v2-art,html.theme-2011 .theme-v2-word,html.theme-2011 .theme-v2-number{animation:none!important}html.theme-2011 *{scroll-behavior:auto!important;transition-duration:.001ms!important;animation-duration:.001ms!important}}
