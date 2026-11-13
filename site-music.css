@@ -1,0 +1,18 @@
+/* LỚP 2505QLNH · V20.9. Compact music player, independent of 20/11 theme state. */
+.qlnh-music-widget{position:fixed;right:max(15px,env(safe-area-inset-right));bottom:calc(20px + env(safe-area-inset-bottom));z-index:500;max-width:calc(100vw - 30px);font-family:'Be Vietnam Pro',system-ui,sans-serif}
+.qlnh-music-widget[hidden],.qlnh-music-panel[hidden]{display:none!important}
+.qlnh-music-actions{display:flex;gap:6px;justify-content:flex-end;align-items:center}
+.qlnh-music-widget button{cursor:pointer;touch-action:manipulation;font:inherit}
+.qlnh-music-toggle{display:flex;align-items:center;gap:9px;min-height:45px;max-width:min(240px,calc(100vw - 95px));border:1px solid #d9a5b9!important;background:#fff7fa!important;color:#723e54!important;border-radius:28px!important;box-shadow:0 4px 22px #6730472b;padding:9px 15px!important;font-size:12px!important;font-weight:700!important}
+.qlnh-music-toggle[aria-pressed="true"]{background:#f9dce8!important;border-color:#c786a0!important}
+.qlnh-music-toggle span:last-child{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.qlnh-music-settings{display:grid;place-items:center;width:43px;height:43px;min-width:43px;border-radius:50%!important;background:#fff9fc!important;border:1px solid #e5b9cb!important;color:#6e475c!important;box-shadow:0 4px 18px #6730471f;padding:0!important}
+.qlnh-music-panel{margin-bottom:8px;margin-left:auto;width:min(290px,calc(100vw - 36px));padding:15px;background:#fffafc;color:#4b3442;border:1px solid #e7bfd0;box-shadow:0 13px 40px #492a3f29;border-radius:17px}
+.qlnh-music-panel strong{display:block;font-size:13px;margin-bottom:7px;overflow-wrap:anywhere}
+.qlnh-music-panel p{font-size:11px;color:#785c70;margin:0 0 10px;line-height:1.5}
+.qlnh-music-volume{display:flex;align-items:center;gap:12px;font-size:12px}
+.qlnh-music-volume input{flex:1;min-width:30px;accent-color:#b97592}
+.qlnh-music-status{font-size:11px!important;margin:9px 0 0!important;min-height:1em}
+.qlnh-music-note{font-size:17px;line-height:1}
+@media(max-width:650px){.qlnh-music-widget{bottom:calc(81px + env(safe-area-inset-bottom));right:12px}.qlnh-music-toggle{max-width:178px}.qlnh-music-panel{width:min(270px,calc(100vw - 24px))}}
+@media(prefers-reduced-motion:reduce){.qlnh-music-widget *{animation:none!important;transition:none!important}}
