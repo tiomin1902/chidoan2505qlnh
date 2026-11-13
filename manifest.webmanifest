@@ -7,20 +7,26 @@
   "start_url": "/chidoan2505qlnh/",
   "scope": "/chidoan2505qlnh/",
   "display": "standalone",
-  "background_color": "#fbfcf9",
-  "theme_color": "#176b59",
+  "background_color": "#FFF8FA",
+  "theme_color": "#EEC3D3",
   "icons": [
     {
-      "src": "./icon-192.png",
+      "src": "./icon-2011-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icon-512.png",
+      "src": "./icon-2011-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "./icon-2011-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
