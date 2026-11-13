@@ -1,0 +1,40 @@
+/* LỚP 2505QLNH — V21.1 Motion Design. Presentation only, no hidden content on page load. */
+:root {--qlnh-motion-factor:1;--qlnh-motion-ease:cubic-bezier(.2,.76,.28,1);--qlnh-motion-lift:18px}
+html.qlnh-motion-active.qlnh-motion-low {--qlnh-motion-factor:.7;--qlnh-motion-lift:10px}
+html.qlnh-motion-active.qlnh-motion-high {--qlnh-motion-factor:1.18;--qlnh-motion-lift:23px}
+@keyframes qlnh-soft-drop {from{opacity:.05;transform:translate3d(0,-23px,0);filter:blur(3px)}to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}}
+@keyframes qlnh-soft-rise {from{opacity:.02;transform:translate3d(0,18px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes qlnh-petal-float {0%,100%{transform:translate3d(0,0,0) rotate(-1deg)}50%{transform:translate3d(0,-9px,0) rotate(1deg)}}
+@keyframes qlnh-hover-ink {from{opacity:.3}to{opacity:1}}
+html.qlnh-motion-active.theme-2011 body[data-current-page="home"] .theme-v2-hero .theme-v2-kicker{animation:qlnh-soft-drop calc(560ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease) both}
+html.qlnh-motion-active.theme-2011 body[data-current-page="home"] .theme-v2-hero .theme-v2-word{animation:qlnh-soft-drop calc(690ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease) .09s both}
+html.qlnh-motion-active.theme-2011 body[data-current-page="home"] .theme-v2-hero .theme-v2-number{animation:qlnh-soft-rise calc(690ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease) .19s both}
+html.qlnh-motion-active.theme-2011 body[data-current-page="home"] .theme-v2-hero .theme-v2-theme{animation:qlnh-soft-rise calc(670ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease) .28s both}
+html.qlnh-motion-active.theme-2011 body[data-current-page="home"] .theme-v2-hero .theme-v2-actions{animation:qlnh-soft-rise calc(620ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease) .38s both}
+html.qlnh-motion-active.qlnh-motion-flowers.theme-2011 .theme-v2-hero .theme-v2-art{animation:qlnh-petal-float 9s ease-in-out infinite;will-change:transform}
+html.qlnh-motion-active.qlnh-motion-flowers.theme-2011 .theme-v2-hero .theme-v2-art-b{animation-duration:11s;animation-delay:-3s}
+/* The observer adds pending only after it is active. Never hide sections in raw HTML. */
+html.qlnh-motion-active.qlnh-motion-scroll .qlnh-motion-pending{opacity:.01;transform:translate3d(0,var(--qlnh-motion-lift),0);filter:blur(2px);transition:opacity calc(530ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease),transform calc(530ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease),filter calc(530ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease);transition-delay:var(--qlnh-motion-delay,0ms)}
+html.qlnh-motion-active.qlnh-motion-scroll .qlnh-motion-pending.qlnh-motion-visible{opacity:1;transform:none;filter:none}
+html.qlnh-motion-active .theme-v2-kicker.qlnh-typing::after{content:'|';display:inline-block;margin-left:3px;animation:qlnh-hover-ink .55s ease-in-out alternate infinite}
+/* The original theme retains color, structure, and all business styles. */
+@media (hover:hover) and (pointer:fine){
+ html.qlnh-motion-active :is(.shortcut,.branch-tile,.surface-panel,.news-card,.theme-advisor-panel,.theme-v2-actions button,.theme-v2-hero .theme-v2-main-action,.fund-card,.v17-upcoming):not([disabled]){transition:transform calc(220ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease),box-shadow 220ms ease,border-color 220ms ease,background-color 220ms ease}
+ html.qlnh-motion-active :is(.shortcut,.branch-tile,.surface-panel,.news-card,.theme-advisor-panel,.fund-card):hover{transform:translate3d(0,-3px,0);box-shadow:0 13px 26px rgba(138,69,98,.13)}
+ html.qlnh-motion-active :is(.shortcut,.branch-tile,.theme-v2-actions button):hover{border-color:#d597b2}
+}
+html.qlnh-motion-active button,html.qlnh-motion-active [role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:rgba(186,107,141,.17)}
+html.qlnh-motion-active button:active:not([disabled]),html.qlnh-motion-active [role="button"]:active{transform:scale(.98);transition:transform 120ms ease-out}
+html.qlnh-motion-active :is(input,select,textarea,button):focus-visible{outline:2px solid #ab6686;outline-offset:3px}
+html.qlnh-motion-active #drawer{transition:transform calc(290ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease),opacity 200ms ease}
+html.qlnh-motion-active #shade{transition:opacity 220ms ease}
+html.qlnh-motion-active .theme-advisor-letter[open] > :not(summary){animation:qlnh-soft-rise .32s ease-out both}
+/* Functionality, accessibility and iOS scroll come before decoration. */
+@media (prefers-reduced-motion:reduce){
+ html.qlnh-motion-active *,html.qlnh-motion-active *::before,html.qlnh-motion-active *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+ html .qlnh-motion-pending{opacity:1!important;transform:none!important;filter:none!important}
+}
+/* The login and new module headers share the same gentle entrance language. */
+html.qlnh-motion-active #studentAuthGate:not([hidden]) .student-auth-card h1{animation:qlnh-soft-drop calc(670ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease) both}
+html.qlnh-motion-active #studentAuthGate:not([hidden]) .student-auth-card .student-auth-form:not([hidden]){animation:qlnh-soft-rise calc(570ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease) .12s both}
+html.qlnh-motion-active #siteMain .page.current > :is(.page-ribbon,.v17-page-head,.content-page-head){animation:qlnh-soft-drop calc(520ms * var(--qlnh-motion-factor)) var(--qlnh-motion-ease) both}
