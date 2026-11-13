@@ -2,7 +2,10 @@
 (()=>{'use strict';
 const DEFAULT_WISH='Nhân ngày Nhà giáo Việt Nam 20/11, tập thể LỚP 2505QLNH xin gửi đến cô những lời chúc tốt đẹp và chân thành nhất.\n\nChúng em kính chúc cô luôn mạnh khỏe, hạnh phúc, tràn đầy niềm vui và luôn giữ mãi ngọn lửa nhiệt huyết với sự nghiệp trồng người.\n\nCảm ơn cô vì sự quan tâm, tận tình hướng dẫn, đồng hành và dìu dắt chúng em trên hành trình học tập, trưởng thành.\n\nSự tận tâm và những lời chỉ bảo của cô luôn là nguồn động viên quý giá đối với tập thể lớp.\n\nKính chúc cô có một ngày 20/11 thật ấm áp, ngập tràn yêu thương và những kỷ niệm đẹp!';
 const defaults={mode:'auto',start:'2026-11-13T00:00',end:'2026-11-20T23:59',title:'KÍNH CHÚC CÔ NGÀY NHÀ GIÁO VIỆT NAM 20/11 THẬT Ý NGHĨA!',tagline:'Tôn sư trọng đạo – Tri ân người lái đò',wish:DEFAULT_WISH,publicWish:true,photoUrl:''};
-let config=defaults,appConfig=null;
+const cacheKey='qlnh_theme2011_public_state_v207';
+// Respect the state that was already applied before first paint.
+const bootstrap=window.QLNH_THEME2011_BOOT&&typeof window.QLNH_THEME2011_BOOT==='object'?window.QLNH_THEME2011_BOOT:defaults;
+let config={...defaults,...bootstrap},appConfig=null;
 const $=id=>document.getElementById(id);
 function isActive(o){if(o.mode==='off')return false;if(o.mode==='on')return true;const now=Date.now(),start=Date.parse(String(o.start||'')+':00+07:00'),end=Date.parse(String(o.end||'')+':59+07:00');return Number.isFinite(start)&&Number.isFinite(end)&&now>=start&&now<=end;}
 function bindWords(){
@@ -23,11 +26,14 @@ function bindWords(){
   if(portrait){const old=portrait.querySelector('img');if(old)old.remove();if(/^https:\/\//i.test(String(config.photoUrl||''))){const img=document.createElement('img');img.src=config.photoUrl;img.alt='Ảnh cô cố vấn học tập được quản trị viên cho phép công khai';img.loading='lazy';img.onerror=()=>img.remove();portrait.prepend(img);}}
 }
 function apply(value){config={...defaults,...value};const active=typeof value?.active==='boolean'?value.active:isActive(config);document.documentElement.classList.toggle('theme-2011',!!active);const bar=document.querySelector('meta[name="theme-color"]');if(bar)bar.content=active?'#F1C6D7':'#FFF9F1';bindWords();}
-async function load(){const api=String(window.QLNH_GATEWAY_URL||'').replace(/\/+$/,'');if(!/^https:\/\//i.test(api)){apply(defaults);return;}
+async function load(){const api=String(window.QLNH_GATEWAY_URL||'').replace(/\/+$/,'');if(!/^https:\/\//i.test(api)){apply(config);return;}
  try{const ctrl=new AbortController();const timeout=setTimeout(()=>ctrl.abort(),6500);
  let result;try{const resp=await fetch(api+'/api/guest/data?action=theme2011',{cache:'no-store',credentials:'omit',signal:ctrl.signal});if(!resp.ok)throw Error('Theme endpoint unavailable');result=await resp.json();}finally{clearTimeout(timeout);}
- if(result?.success!==true)throw Error('Theme format invalid');apply(result);
- }catch(e){console.warn('Không tải được cấu hình 20/11; ẩn chủ đề để tôn trọng cài đặt Admin.',e);apply({...defaults,mode:'off'});}
+ if(result?.success!==true)throw Error('Theme format invalid');
+ // Cache public presentation settings so the next visit renders the right theme before network.
+ try{localStorage.setItem(cacheKey,JSON.stringify({mode:result.mode,start:result.start,end:result.end}));}catch(_){ }
+ apply(result);
+ }catch(e){console.warn('Chưa đồng bộ được chủ đề 20/11; tiếp tục dùng cấu hình công khai đã lưu hoặc lịch mặc định.',e);apply(config);}
 }
 window.QLNH_THEME2011_SET_PUBLIC_CONFIG=c=>{appConfig=c&&typeof c==='object'?c:null;bindWords();};
 $('themeGoAdvisor')?.addEventListener('click',()=>{if(typeof window.nav==='function')window.nav('class');else document.querySelector('[data-page="class"]')?.click();setTimeout(()=>$('advisorSpotlight')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}),70);});
