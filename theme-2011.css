@@ -211,3 +211,129 @@ html.theme-2011 .surface-panel,html.theme-2011 .shortcut{transition:box-shadow .
  html.theme-2011 .theme-login-form-block{padding:20px}
 }
 @media(prefers-reduced-motion:reduce){html.theme-2011 .theme-v2-art,html.theme-2011 .theme-v2-word,html.theme-2011 .theme-v2-number{animation:none!important}html.theme-2011 *{scroll-behavior:auto!important;transition-duration:.001ms!important;animation-duration:.001ms!important}}
+
+
+/* V20.1 – BLUSH ROSE REFINEMENT. Keep structural V20 layout; all visual edits
+   are gated by html.theme-2011. No changes to security, treasury, or private data. */
+html.theme-2011{
+ --red:#AF5C7D;--red-bright:#D88FAE;--red-dark:#8D3E60;--red-wine:#764459;
+ --gold:#C99C66;--yellow:#F5DCB9;--cream:#FFF9FB;--ivory:#FCEAF0;
+ --surface:#FFFCFD;--ink:#593746;--navy:#8E4968;--navy-dark:#753853;
+ --sky:#EDBCD0;--blue-light:#FFF1F6;--line:#EAD1DB;--muted:#795D6B;
+ --th-burgundy:#A95377;--th-deep:#563443;--th-rose:#E2A2BB;
+ --th-gold:#C99C66;--th-ivory:#FFF9FB;--th-pink:#F9DDE7;
+ color-scheme:light;
+}
+html.theme-2011 body{background:linear-gradient(170deg,#FFF9FB 0%,#FCECF2 46%,#FFF9F7 100%);color:#593746}
+html.theme-2011 body::before{background:radial-gradient(circle at 3% 29%,#E6ADBF38,transparent 34%),radial-gradient(circle at 97% 83%,#E7C7A63B,transparent 36%)}
+/* Main interface shell – gentle pastel surfaces, rich legible text. */
+html.theme-2011 .official-mini{background:#EFC9D8;color:#64374C}
+html.theme-2011 .official-mini :is(button,span){color:#64374C}
+html.theme-2011 .top{background:linear-gradient(110deg,#F1C6D7,#F8E0E8 60%,#FCECF0);color:#60374A;border-bottom:1px solid #DAAEBE;box-shadow:0 5px 22px #9D5B7727}
+html.theme-2011 .brand,html.theme-2011 .desktopNav button{color:#60374A}
+html.theme-2011 .brandSeal{background:linear-gradient(145deg,#FFF9FA,#ECC0D1);color:#9B4B70;border-color:#D69FB8}
+html.theme-2011 .brandCopy small{color:#97647A}
+html.theme-2011 .desktopNav :is(button:hover,button.is-active){background:#FFFFFF96;color:#753B56}
+html.theme-2011 .desktopNav button.is-active{box-shadow:inset 0 -2px #C58C65}
+html.theme-2011 :is(.headerNotice,.mobileMenuButton,.nuBell){color:#753E57;background:#FFFFFF85;border-color:#D7A4B8}
+html.theme-2011 .guest-header-login{background:#FFF9FA;border-color:#D7ACBF;color:#7A425C}
+html.theme-2011 #shade{background:#49303C91}
+html.theme-2011 #drawer{background:linear-gradient(180deg,#FFF9FB,#F8E8EF);border-left-color:#E8BCCB}
+html.theme-2011 #drawer .drawerScroll button:hover{background:#F7DFE8}
+html.theme-2011 .drawerFooter .drawerLogout{background:#9C4E70;color:#FFF9FB}
+html.theme-2011 .siteFooter{background:linear-gradient(120deg,#F2D0DC,#F8E4EA 64%,#F7ECDD);border-top:2px solid #CCA47E;color:#633A4D}
+html.theme-2011 .siteFooter :is(.footer-brand strong,.theme-footer-greeting){color:#69394D}
+/* Home hero: keep exact typography and button layout, transform only mood and art. */
+html.theme-2011 #home{background:linear-gradient(180deg,#FFF8FB,#FFFAFB 38%,#FCECF2)}
+html.theme-2011 .theme-v2-hero{
+ background:radial-gradient(ellipse at 15% 14%,#FFFFFFA8 0%,transparent 42%),radial-gradient(ellipse at 90% 90%,#F1BDD287,transparent 39%),linear-gradient(135deg,#FBE4ED 0%,#F6D3E1 52%,#F2C8D8 100%);
+ color:#593746;box-shadow:0 19px 56px #A6537830;
+}
+html.theme-2011 .theme-v2-hero::before{border-color:#C89B7899}
+html.theme-2011 .theme-v2-hero::after{opacity:.36;background:repeating-linear-gradient(93deg,transparent 0 76px,#FFFFFF51 76px 77px,transparent 77px 148px)}
+html.theme-2011 .theme-v2-edition{color:#865068}
+html.theme-2011 .theme-v2-edition i{background:#B88267;box-shadow:0 0 0 5px #FFFFFF99}
+html.theme-2011 .theme-v2-kicker{color:#9B5974}
+html.theme-2011 .theme-v2-classname{text-shadow:0 6px 24px #BA80952E;color:#60394C}
+html.theme-2011 .theme-v2-word{color:#9B5674}
+html.theme-2011 .theme-v2-number{color:#583248}
+html.theme-2011 .theme-v2-rule{color:#B68464}
+html.theme-2011 .theme-v2-rule::before,html.theme-2011 .theme-v2-rule::after{background:linear-gradient(90deg,transparent,#B9876B)}
+html.theme-2011 .theme-v2-theme{color:#804761}
+html.theme-2011 .theme-v2-shortwish{color:#5B3949}
+html.theme-2011 .theme-v2-greeting{color:#8B5870}
+html.theme-2011 .theme-v2-main-action{background:#9E4E72;color:#FFF9FC;border-color:#954365;box-shadow:0 9px 22px #8E3F6130}
+html.theme-2011 .theme-v2-main-action:hover{background:#8A3F60}
+html.theme-2011 .theme-v2-secondary-action{background:#FFFBF5A8;color:#7A405C;border-color:#BE88A0}
+html.theme-2011 .theme-v2-secondary-action:hover{background:#FFF9FB}
+html.theme-2011 .theme-v2-bottom{color:#9B5E76;border-top-color:#CDA5B6}
+html.theme-2011 .theme-v2-anniversary{color:#8E4C65}
+html.theme-2011 .theme-v2-anniversary small{color:#B88568}
+/* The former rotating emoji/rings are gone. SVG botanicals stay inside the hero,
+   never create a sideways scrollbar, and never intercept touch interaction. */
+html.theme-2011 .theme-v2-art{display:block;position:absolute;border:0;border-radius:0;
+ background:url('./theme-2011-flowers.svg') center/contain no-repeat;pointer-events:none;
+ animation:none!important;transform:none!important;opacity:.81;z-index:1}
+html.theme-2011 .theme-v2-art::before,html.theme-2011 .theme-v2-art::after{content:none!important}
+html.theme-2011 .theme-v2-art span{display:none!important}
+html.theme-2011 .theme-v2-art-a{width:245px;height:355px;left:-29px;top:105px}
+html.theme-2011 .theme-v2-art-b{width:230px;height:330px;right:-25px;bottom:-42px;transform:scaleX(-1)!important;opacity:.66}
+html.theme-2011 .theme-v2-content{z-index:3}
+/* Pale botanical details on home cards, advisor section and login. */
+html.theme-2011 .home-content{background:linear-gradient(180deg,#FFFAFB,#FFF8F9)}
+html.theme-2011 :is(.surface-panel,.shortcut,.branch-tile,.news-card){border-color:#E9C9D5;box-shadow:0 8px 24px #9D577114}
+html.theme-2011 :is(.surface-panel,.shortcut){background-color:#FFFCFD}
+html.theme-2011 :is(.shortcut:hover,.news-card:hover){box-shadow:0 10px 25px #A95D7F25}
+html.theme-2011 .trust-strip{background:#F4D8E3;color:#6E4055}
+html.theme-2011 .trust-strip :is(strong,small){color:#6E4055}
+html.theme-2011 .page-ribbon{background:linear-gradient(115deg,#DFA8BF,#F5D7E3);border-bottom-color:#CCA079;color:#573747}
+html.theme-2011 .page-ribbon :is(h1,p,small){color:#573747}
+html.theme-2011 .branch-banner{background:linear-gradient(115deg,#F2CBDA,#E4A9C0)}
+html.theme-2011 .branch-banner-copy :is(h1,p,small){color:#573747}
+html.theme-2011 .branch-subnav button.active{background:#97516F;color:#FFF}
+html.theme-2011 :is(.news-tabs button.active,.news-kind-tabs button.active,.hero-primary){background:#9B506F;color:#FFF9FB;border-color:#9B506F}
+html.theme-2011 .content-page-head{background:linear-gradient(115deg,#F9E3EC,#FFF8F5)}
+html.theme-2011 .homeEventDate{background:#FAE8EF;color:#82445F}
+html.theme-2011 .theme-advisor-panel{background:linear-gradient(112deg,#FFFBFC,#F8E4EC);border-color:#E5BDCC;box-shadow:0 13px 35px #A95D7C25}
+html.theme-2011 .theme-advisor-panel::before{color:#B9869A}
+html.theme-2011 .theme-advisor-panel::after{content:"";position:absolute;right:0;bottom:0;width:154px;height:205px;
+ background:url('./theme-2011-flowers.svg') center/contain no-repeat;opacity:.17;pointer-events:none}
+html.theme-2011 .theme-advisor-portrait{background:radial-gradient(circle at 50% 35%,#FFF7F9,#EFC6D5 66%,#D89AB2)}
+html.theme-2011 .theme-advisor-panel h2{color:#8B4866}
+html.theme-2011 .theme-advisor-letter{position:relative;z-index:1;background:#FFFDFD}
+html.theme-2011 .theme-advisor-letter[open] summary{background:#FBEAF0}
+html.theme-2011 .student-auth-gate{background:radial-gradient(circle at 5% 14%,#F4D3E388,transparent 34%),linear-gradient(132deg,#FFF9FB,#F6E0E9 60%,#FBEFF0)}
+html.theme-2011 .student-auth-card{border-color:#E8C0CE;box-shadow:0 19px 55px #A45B792D;background:#FFFCFD}
+html.theme-2011 .theme-auth-heading{background:radial-gradient(circle at 97% 10%,#FFFFFFA4,transparent 50%),linear-gradient(134deg,#F7D8E5,#F0BFD2);color:#693D51;overflow:hidden}
+html.theme-2011 .theme-auth-heading::before{content:"";z-index:0;left:-55px;top:-48px;width:195px;height:280px;opacity:.44;
+ background:url('./theme-2011-flowers.svg') center/contain no-repeat;transform:none;font-size:0}
+html.theme-2011 .theme-auth-heading::after{content:"";position:absolute;right:-40px;bottom:-48px;width:155px;height:228px;opacity:.48;z-index:0;pointer-events:none;
+ background:url('./theme-2011-flowers.svg') center/contain no-repeat;transform:scaleX(-1)}
+html.theme-2011 .theme-auth-heading>*{position:relative;z-index:1}
+html.theme-2011 .theme-auth-heading .theme-eyebrow{color:#8C4E6B}
+html.theme-2011 .theme-auth-flower{font-size:25px;color:#B98169}
+html.theme-2011 .theme-auth-heading strong span{color:#955372}
+html.theme-2011 .theme-auth-heading strong em{color:#623A4D}
+html.theme-2011 .theme-auth-heading h2{color:#8B4966}
+html.theme-2011 .theme-auth-heading p,html.theme-2011 .theme-auth-date{color:#684253}
+html.theme-2011 .theme-auth-line{background:linear-gradient(90deg,transparent,#AD768A,transparent)}
+html.theme-2011 .theme-login-form-block{background:#FFFCFD}
+html.theme-2011 .student-auth-mark{background:#A75678;color:#FFF6F9}
+html.theme-2011 .student-auth-card h1{color:#633A4D}
+html.theme-2011 .student-auth-form button{background:#9F4B6F;color:#FFF9FC}
+html.theme-2011 .student-auth-form button:hover{background:#87405D}
+html.theme-2011 .student-auth-form input:focus{border-color:#B86C8C;outline-color:#EFC6D6}
+html.theme-2011 .student-guest-entry{color:#79445E;background:#FFF2F6;border-color:#DDB5C5}
+@media(max-width:700px){
+ html.theme-2011 .theme-v2-art-a{width:115px;height:174px;left:-7px;top:83px;opacity:.57}
+ html.theme-2011 .theme-v2-art-b{width:115px;height:166px;right:-6px;bottom:-9px;opacity:.57}
+ html.theme-2011 .theme-v2-number{font-size:clamp(40px,11.6vw,75px)}
+ html.theme-2011 .theme-auth-heading::before{width:94px;height:150px;left:-17px;top:-15px;opacity:.27}
+ html.theme-2011 .theme-auth-heading::after{width:90px;height:135px;right:-24px;bottom:-12px;opacity:.28}
+ html.theme-2011 .theme-advisor-panel::after{width:80px;height:110px;opacity:.12}
+}
+@media(max-width:360px){
+ html.theme-2011 .theme-v2-art-a{width:91px;height:139px;left:-7px;top:91px}
+ html.theme-2011 .theme-v2-art-b{width:88px;height:135px;right:-7px;bottom:-8px}
+}
+@media(prefers-reduced-motion:reduce){html.theme-2011 .theme-v2-art{animation:none!important}}

@@ -22,7 +22,7 @@ function bindWords(){
   const portrait=$('themeAdvisorPortrait');
   if(portrait){const old=portrait.querySelector('img');if(old)old.remove();if(/^https:\/\//i.test(String(config.photoUrl||''))){const img=document.createElement('img');img.src=config.photoUrl;img.alt='Ảnh cô cố vấn học tập được quản trị viên cho phép công khai';img.loading='lazy';img.onerror=()=>img.remove();portrait.prepend(img);}}
 }
-function apply(value){config={...defaults,...value};const active=typeof value?.active==='boolean'?value.active:isActive(config);document.documentElement.classList.toggle('theme-2011',!!active);bindWords();}
+function apply(value){config={...defaults,...value};const active=typeof value?.active==='boolean'?value.active:isActive(config);document.documentElement.classList.toggle('theme-2011',!!active);const bar=document.querySelector('meta[name="theme-color"]');if(bar)bar.content=active?'#F1C6D7':'#FFF9F1';bindWords();}
 async function load(){const api=String(window.QLNH_GATEWAY_URL||'').replace(/\/+$/,'');if(!/^https:\/\//i.test(api)){apply(defaults);return;}
  try{const ctrl=new AbortController();const timeout=setTimeout(()=>ctrl.abort(),6500);
  let result;try{const resp=await fetch(api+'/api/guest/data?action=theme2011',{cache:'no-store',credentials:'omit',signal:ctrl.signal});if(!resp.ok)throw Error('Theme endpoint unavailable');result=await resp.json();}finally{clearTimeout(timeout);}
