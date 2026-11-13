@@ -10,7 +10,7 @@
   const iosTip=document.getElementById('pushIosTip');
   const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(/Macintosh/.test(navigator.userAgent)&&navigator.maxTouchPoints>1);
   const isStandalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
-  const tagNames={Lop:'qlnh_news_lop',ChiDoan:'qlnh_news_doan',ChiHoi:'qlnh_news_hoi',Activity:'qlnh_activity',Reminder:'qlnh_reminder',News:'qlnh_news_feed',Notice:'qlnh_notice',CongressDoan:'qlnh_congress_doan',CongressHoi:'qlnh_congress_hoi',Election:'qlnh_election'};
+  const tagNames={Lop:'qlnh_news_lop',ChiDoan:'qlnh_news_doan',ChiHoi:'qlnh_news_hoi',Activity:'qlnh_activity',Reminder:'qlnh_reminder',News:'qlnh_news_feed',Notice:'qlnh_notice',CongressDoan:'qlnh_congress_doan',CongressHoi:'qlnh_congress_hoi',Election:'qlnh_election',Fund:'qlnh_fund'};
   let sdk=null;const PUSH_NEWS_TAG=tagNames.News,PUSH_NOTICE_TAG=tagNames.Notice;
   const LAST_SID='qlnh_push_bound_subscription_v19_1';
   const CONSENT_KEY='qlnh_push_consent_v19_1';

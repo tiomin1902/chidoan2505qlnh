@@ -33,7 +33,7 @@
  async function loadApp(privateMode){
    const load=async src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=()=>reject(Error('Không tải được '+src));document.body.append(script);});
    if(!baseLoaded){
-     for(const src of ['./config.js','./app.js?v=16.3.1','./news.js?v=16.3.2','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=19.2.0','./v17-student.js?v=19.2.0','./qlnh-deeplink.js?v=19.2.0'])await load(src);
+     for(const src of ['./config.js','./app.js?v=16.3.1','./news.js?v=16.3.2','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=19.2.0','./v17-student.js?v=19.2.0','./qlnh-deeplink.js?v=19.2.0','./fund-student.js?v=19.4.0'])await load(src);
      baseLoaded=true;
    }
    if(privateMode&&!privateLoaded){
@@ -70,6 +70,7 @@
    else if(typeof refresh==='function')await refresh(false,true);
    if(typeof window.QLNH_REFRESH_NEWS==='function')await window.QLNH_REFRESH_NEWS();
    window.QLNH_V17_REFRESH?.();
+   if(new URL(location.href).searchParams.has('fund')&&typeof window.nav==='function')window.nav('funds');
    const v17Target=new URL(location.href).searchParams.get('v17');
    if(['documents','exams'].includes(v17Target)&&typeof window.nav==='function')window.nav(v17Target);
    if(pendingTarget&&!deepLink&&typeof window.nav==='function'&&!new URL(location.href).searchParams.has('qlnh_doc'))window.nav(pendingTarget);
@@ -78,7 +79,7 @@
    try{await window.QLNH_V192_HANDLE_URL?.(location.href);}catch(e){console.warn('Không mở được nội dung trực tiếp:',e);}
  }
  function requestStudentLogin(page){
-   pendingTarget=typeof page==='string'&&['activities','attendance','pushPrefs','notificationCenter','ballot','doan','hoi','exams','documents'].includes(page)?page:'home';
+   pendingTarget=typeof page==='string'&&['activities','attendance','pushPrefs','notificationCenter','ballot','doan','hoi','exams','documents','funds'].includes(page)?page:'home';
    const dialog=$('guestAuthDialog');if(dialog){dialog.hidden=false;$('guestAuthConfirm')?.focus();}
  }
  window.QLNH_GUEST_REQUIRE_LOGIN=requestStudentLogin;
