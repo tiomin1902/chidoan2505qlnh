@@ -12,7 +12,7 @@ const newestRank=x=>{const d=Date.parse(x?.createdAt||x?.created||x?.updatedAt||
 const metaLine=(label,value)=>hasInfo(value)?`<span class="metaLine"><b>${html(label)}</b>${html(value)}</span>`:'';
 
 function closeMenu(){const d=$('drawer'),shade=$('shade'),btn=$('menuBtn');d?.classList.remove('open');document.body.classList.remove('qlnh-drawer-open');if(shade)shade.hidden=true;btn?.setAttribute('aria-expanded','false');}
-function nav(page){if(window.QLNH_GUEST&&!['home','class','doan','hoi','news','newsDetail'].includes(page)){window.QLNH_GUEST_REQUIRE_LOGIN?.(page);return;}document.querySelectorAll('.page').forEach(n=>n.classList.toggle('current',n.id===page));document.body.setAttribute('data-current-page',page);closeMenu();window.scrollTo({top:0,behavior:'smooth'});window.QLNH_V17_PAGE?.(page);window.QLNH_FUND_PAGE?.(page)}
+function nav(page){if(window.QLNH_GUEST&&!['home','class','doan','hoi','news','newsDetail'].includes(page)){window.QLNH_GUEST_REQUIRE_LOGIN?.(page);return;}document.querySelectorAll('.page').forEach(n=>n.classList.toggle('current',n.id===page));document.body.setAttribute('data-current-page',page);closeMenu();window.scrollTo({top:0,behavior:'smooth'});window.QLNH_V17_PAGE?.(page);window.QLNH_FUND_PAGE?.(page);if(page==='attendance'&&window.QLNH_STUDENT)renderAttendance(true)}
 $('menuBtn').onclick=()=>{$('drawer').classList.add('open');document.body.classList.add('qlnh-drawer-open');$('shade').hidden=false;$('menuBtn').setAttribute('aria-expanded','true');$('closeBtn')?.focus();};$('closeBtn').onclick=closeMenu;$('shade').onclick=closeMenu;document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{if(window.QLNH_GUEST&&b.dataset.guestPrivate){window.QLNH_GUEST_REQUIRE_LOGIN?.(b.dataset.page);return;}nav(b.dataset.page)});
 // V15: no public JSONP or unauthenticated POST. All data uses secure Worker.
 function jsonp(action,params={}){return window.QLNH.data(action,params)}
@@ -56,7 +56,79 @@ function render(){if(!state)return;const c=state.config||{};
  $('hoiDescription').textContent=bool(c.ch_hienMoTa===undefined?true:c.ch_hienMoTa)?(c.ch_moTa||''):'';
  document.getElementById('doanIntroPanel').hidden=!bool(c.cd_hienMoTa===undefined?true:c.cd_hienMoTa)||!String(c.cd_moTa||'').trim();
  document.getElementById('hoiIntroPanel').hidden=!bool(c.ch_hienMoTa===undefined?true:c.ch_hienMoTa)||!String(c.ch_moTa||'').trim();
- if(window.QLNH_GUEST){$('doanCongress').replaceChildren();$('hoiCongress').replaceChildren();$('homeEvents').textContent='Đăng nhập để xem hoạt động';}else{renderCongress('ChiDoan','doanCongress');renderCongress('ChiHoi','hoiCongress');renderActivities();renderHomeEvents();}$('syncTime').textContent='Cập nhật: '+viTime(new Date());}
+ if(window.QLNH_GUEST){$('doanCongress').replaceChildren();$('hoiCongress').replaceChildren();$('homeEvents').textContent='Đăng nhập để xem hoạt động';}else{renderCongress('ChiDoan','doanCongress');renderCongress('ChiHoi','hoiCongress');renderActivities();renderHomeEvents();if(document.body.dataset.currentPage==='attendance')renderAttendance();}$('syncTime').textContent='Cập nhật: '+viTime(new Date());}
+
+// ============================================================
+// ĐIỂM DANH BẰNG ẢNH XÁC THỰC — V21.2
+// Camera điện thoại dùng capture=user; ảnh được nén trước khi gửi.
+// ============================================================
+let attendanceMineCache = null;
+let attendanceRenderSeq = 0;
+function attendanceHumanTime(value){
+ const d=new Date(value);return Number.isFinite(d.getTime())?new Intl.DateTimeFormat('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',dateStyle:'short',timeStyle:'short'}).format(d):'Chưa cập nhật';
+}
+function attendanceStatus(session){
+ const now=nuServerNow(),start=Date.parse(session.startsAt),end=Date.parse(session.endsAt);
+ if(!session.enabled)return ['Đã tạm đóng','closed',false];
+ if(!Number.isFinite(start)||!Number.isFinite(end))return ['Chưa thiết lập thời gian','closed',false];
+ if(now<start)return ['Sắp mở','closed',false];
+ if(now>=end)return ['Đã kết thúc','closed',false];
+ return ['Đang mở điểm danh','open',true];
+}
+async function attendanceCompress(file){
+ if(!file||!/^image\//i.test(file.type||''))throw Error('Vui lòng chọn một tệp hình ảnh.');
+ const image=await new Promise((resolve,reject)=>{const url=URL.createObjectURL(file),img=new Image();img.onload=()=>{URL.revokeObjectURL(url);resolve(img)};img.onerror=()=>{URL.revokeObjectURL(url);reject(Error('Không đọc được ảnh.'))};img.src=url;});
+ const scale=Math.min(1,1600/Math.max(image.naturalWidth,image.naturalHeight));
+ const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));canvas.height=Math.max(1,Math.round(image.naturalHeight*scale));
+ const ctx=canvas.getContext('2d',{alpha:false});if(!ctx)throw Error('Thiết bị không hỗ trợ xử lý ảnh.');ctx.drawImage(image,0,0,canvas.width,canvas.height);
+ let blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',0.78));
+ if(!blob)throw Error('Không thể xử lý ảnh.');
+ if(blob.size>5*1024*1024)blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',0.58));
+ if(!blob||blob.size>5*1024*1024)throw Error('Ảnh sau khi nén vẫn vượt quá 5 MB.');
+ const dataUrl=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result));r.onerror=()=>reject(Error('Không đọc được ảnh đã chọn.'));r.readAsDataURL(blob)});
+ return {dataUrl,mimeType:'image/jpeg',size:blob.size};
+}
+async function renderAttendance(force=false){
+ const root=$('attendanceList');if(!root||!state)return;
+ if(window.QLNH_GUEST||!window.QLNH_STUDENT){root.innerHTML='<div class="attendance-empty"><strong>Đăng nhập để điểm danh</strong><p>Vui lòng đăng nhập tài khoản sinh viên để xem các buổi điểm danh và gửi ảnh xác thực.</p></div>';return;}
+ const seq=++attendanceRenderSeq;root.innerHTML='<p class="loadingLine">Đang tải trạng thái điểm danh…</p>';
+ try{
+  const mine=await window.QLNH.data('attendanceMine');if(seq!==attendanceRenderSeq)return;
+  if(!mine?.success)throw Error(mine?.message||'Không tải được trạng thái điểm danh');
+  attendanceMineCache=Array.isArray(mine.items)?mine.items:[];
+  const records=new Map(attendanceMineCache.map(x=>[String(x.sessionId),x]));
+  const sessions=(state.attendanceSessions||[]).slice().sort((a,b)=>(Date.parse(b.startsAt)||0)-(Date.parse(a.startsAt)||0));
+  if(!sessions.length){root.innerHTML='<div class="attendance-empty"><strong>Chưa có buổi điểm danh</strong><p>Các buổi điểm danh sẽ xuất hiện tại đây khi Ban quản trị công bố.</p></div>';return;}
+  root.innerHTML=sessions.map(session=>{
+   const st=attendanceStatus(session),record=records.get(String(session.id));
+   let statusHtml='';
+   if(record?.status==='approved')statusHtml='<span class="att-status approved">✓ Đã xác nhận</span>';
+   else if(record?.status==='pending')statusHtml='<span class="att-status pending">◷ Chờ Admin xác minh</span>';
+   else if(record?.status==='rejected')statusHtml='<span class="att-status rejected">Ảnh chưa được duyệt</span>';
+   else statusHtml=`<span class="att-status ${st[1]}">${html(st[0])}</span>`;
+   const canSend=st[2]&&record?.status!=='approved'&&record?.status!=='pending';
+   const meta=`<div class="att-meta"><span><b>Thời gian</b>${html(attendanceHumanTime(session.startsAt))} – ${html(attendanceHumanTime(session.endsAt))}</span>${session.location?`<span><b>Địa điểm</b>${html(session.location)}</span>`:''}</div>`;
+   const note=session.note?`<p class="att-note">${html(session.note)}</p>`:'';
+   const rejection=record?.status==='rejected'?`<p class="att-rejection"><b>Lý do từ chối:</b> ${html(record.rejectionReason||'Vui lòng gửi ảnh khác rõ hơn.')}</p>`:'';
+   const form=canSend?`<div class="att-submit" data-att-session="${html(session.id)}"><label class="att-file-label">${record?.status==='rejected'?'Chụp hoặc chọn ảnh mới':'Chụp ảnh xác nhận có mặt'}<input type="file" accept="image/*" capture="user" data-att-file></label><small>Ảnh cần thấy khuôn mặt và bối cảnh buổi học/sự kiện. Ảnh sẽ được nén trước khi tải lên.</small><div class="att-preview" data-att-preview hidden></div>${session.requiresCode?'<label class="att-code-label">Mã xác thực tại buổi điểm danh<input type="text" maxlength="40" data-att-code autocomplete="off" placeholder="Nhập mã đang hiển thị tại sự kiện"></label>':''}<button type="button" class="att-send" data-att-send disabled>GỬI ẢNH XÁC THỰC</button><p class="att-feedback" data-att-feedback role="status"></p></div>`:'';
+   const pending=record?.status==='pending'?`<p class="att-pending-note">Ảnh đã được gửi lúc ${html(attendanceHumanTime(record.submittedAt))}. Kết quả sẽ cập nhật sau khi Admin kiểm tra.</p>`:'';
+   const approved=record?.status==='approved'?`<p class="att-approved-note">Hệ thống đã ghi nhận bạn có mặt tại buổi này.</p>`:'';
+   return `<article class="att-session"><div class="att-session-top"><div><span class="att-kicker">${session.kind==='DaiHoi'?'ĐẠI HỘI':'HOẠT ĐỘNG / SỰ KIỆN'}</span><h2>${html(session.title)}</h2></div>${statusHtml}</div>${meta}${note}${rejection}${pending}${approved}${form}</article>`;
+  }).join('');
+  root.querySelectorAll('[data-att-session]').forEach(box=>{
+   const input=box.querySelector('[data-att-file]'),preview=box.querySelector('[data-att-preview]'),send=box.querySelector('[data-att-send]'),feedback=box.querySelector('[data-att-feedback]');
+   let selected=null;
+   input.onchange=async()=>{selected=null;send.disabled=true;preview.hidden=true;preview.replaceChildren();feedback.textContent='';const file=input.files?.[0];if(!file)return;
+    try{feedback.textContent='Đang xử lý ảnh…';selected=await attendanceCompress(file);const img=document.createElement('img');img.src=selected.dataUrl;img.alt='Ảnh xem trước xác thực điểm danh';preview.append(img);preview.hidden=false;send.disabled=false;feedback.textContent='Ảnh đã sẵn sàng. Kiểm tra ảnh trước khi gửi.';}
+    catch(e){feedback.textContent=e.message;feedback.className='att-feedback error';}
+   };
+   send.onclick=async()=>{if(!selected)return;send.disabled=true;input.disabled=true;feedback.className='att-feedback';feedback.textContent='Đang gửi ảnh và lưu xác thực…';
+    try{const result=await window.QLNH.uploadAttendancePhoto({sessionId:box.dataset.attSession,verificationCode:box.querySelector('[data-att-code]')?.value.trim()||'',imageBase64:selected.dataUrl.split(',')[1],mimeType:selected.mimeType,fileName:'attendance.jpg'});if(!result?.success)throw Error(result?.message||'Không gửi được ảnh');feedback.className='att-feedback success';feedback.textContent=result.message||'Đã gửi ảnh. Đang chờ Admin xác minh.';await renderAttendance(true);}
+    catch(e){feedback.className='att-feedback error';feedback.textContent=e.message||String(e);send.disabled=false;input.disabled=false;}
+   };
+  });
+ }catch(e){if(seq===attendanceRenderSeq)root.innerHTML=`<div class="attendance-empty error">Chưa tải được trạng thái điểm danh: ${html(e.message||String(e))}</div>`;}
+}
 
 function countdown(t){const ms=Date.parse(t)-nuServerNow();if(!Number.isFinite(ms))return '<span class="muted">Chưa xác định thời gian đại hội</span>';if(ms<=0)return '<span class="muted">Đã đến thời gian diễn ra đại hội</span>';let s=Math.floor(ms/1000);const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600);s%=3600;const m=Math.floor(s/60),sec=s%60;return [[d,'NGÀY'],[h,'GIỜ'],[m,'PHÚT'],[sec,'GIÂY']].map(([v,l])=>`<div class="digit">${String(v).padStart(2,'0')}<small>${l}</small></div>`).join('')}
 function table(columns,rows){return `<div class="scroll"><table><thead><tr>${columns.map(x=>`<th>${html(x[0])}</th>`).join('')}</tr></thead><tbody>${rows.length?rows.map(r=>`<tr>${columns.map(([,key])=>`<td>${html(key==='time'?viTime(r[key]):r[key])}</td>`).join('')}</tr>`).join(''):`<tr><td colspan="${columns.length}">Chưa có dữ liệu</td></tr>`}</tbody></table></div>`}
