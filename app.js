@@ -68,11 +68,13 @@ function attendanceHumanTime(value){
  const d=new Date(value);return Number.isFinite(d.getTime())?new Intl.DateTimeFormat('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',dateStyle:'short',timeStyle:'short'}).format(d):'Chưa cập nhật';
 }
 function attendanceStatus(session){
- const now=nuServerNow(),start=Date.parse(session.startsAt),end=Date.parse(session.endsAt);
+ const now=nuServerNow(),start=Date.parse(session.startsAt),hasEnd=String(session.endsAt??'').trim()!=='',end=hasEnd?Date.parse(session.endsAt):Infinity;
+ // Chỉ cần giờ bắt đầu. Bỏ trống giờ kết thúc nghĩa là mở vô thời hạn
+ // cho đến khi Admin tắt công tắc DANG_MO.
  if(!session.enabled)return ['Đã tạm đóng','closed',false];
- if(!Number.isFinite(start)||!Number.isFinite(end))return ['Chưa thiết lập thời gian','closed',false];
+ if(!Number.isFinite(start)||(hasEnd&&!Number.isFinite(end)))return ['Chưa thiết lập thời gian','closed',false];
  if(now<start)return ['Sắp mở','closed',false];
- if(now>=end)return ['Đã kết thúc','closed',false];
+ if(hasEnd&&now>=end)return ['Đã kết thúc','closed',false];
  return ['Đang mở điểm danh','open',true];
 }
 async function attendanceCompress(file){
@@ -107,7 +109,8 @@ async function renderAttendance(force=false){
    else if(record?.status==='rejected')statusHtml='<span class="att-status rejected">Ảnh chưa được duyệt</span>';
    else statusHtml=`<span class="att-status ${st[1]}">${html(st[0])}</span>`;
    const canSend=st[2]&&record?.status!=='approved'&&record?.status!=='pending';
-   const meta=`<div class="att-meta"><span><b>Thời gian</b>${html(attendanceHumanTime(session.startsAt))} – ${html(attendanceHumanTime(session.endsAt))}</span>${session.location?`<span><b>Địa điểm</b>${html(session.location)}</span>`:''}</div>`;
+   const endLabel=String(session.endsAt??'').trim()?attendanceHumanTime(session.endsAt):'Không đặt giờ kết thúc · Admin sẽ đóng thủ công';
+   const meta=`<div class="att-meta"><span><b>Thời gian</b>${html(attendanceHumanTime(session.startsAt))} – ${html(endLabel)}</span>${session.location?`<span><b>Địa điểm</b>${html(session.location)}</span>`:''}</div>`;
    const note=session.note?`<p class="att-note">${html(session.note)}</p>`:'';
    const rejection=record?.status==='rejected'?`<p class="att-rejection"><b>Lý do từ chối:</b> ${html(record.rejectionReason||'Vui lòng gửi ảnh khác rõ hơn.')}</p>`:'';
    const form=canSend?`<div class="att-submit" data-att-session="${html(session.id)}"><label class="att-file-label">${record?.status==='rejected'?'Chụp hoặc chọn ảnh mới':'Chụp ảnh xác nhận có mặt'}<input type="file" accept="image/*" capture="user" data-att-file></label><small>Ảnh cần thấy khuôn mặt và bối cảnh buổi học/sự kiện. Ảnh sẽ được nén trước khi tải lên.</small><div class="att-preview" data-att-preview hidden></div>${session.requiresCode?'<label class="att-code-label">Mã xác thực tại buổi điểm danh<input type="text" maxlength="40" data-att-code autocomplete="off" placeholder="Nhập mã đang hiển thị tại sự kiện"></label>':''}<button type="button" class="att-send" data-att-send disabled>GỬI ẢNH XÁC THỰC</button><p class="att-feedback" data-att-feedback role="status"></p></div>`:'';
