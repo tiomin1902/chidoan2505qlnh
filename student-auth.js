@@ -34,11 +34,11 @@
  async function loadApp(privateMode){
    const load=async src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=()=>reject(Error('Không tải được '+src));document.body.append(script);});
    if(!baseLoaded){
-     for(const src of ['./config.js','./app.js?v=21.2.0','./news.js?v=19.7.0','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=19.2.0','./v17-student.js?v=19.7.0','./qlnh-deeplink.js?v=19.2.0','./fund-student.js?v=19.7.0'])await load(src);
+     for(const src of ['./config.js','./app.js?v=21.3.0','./news.js?v=19.7.0','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=19.2.0','./v17-student.js?v=19.7.0','./qlnh-deeplink.js?v=21.3.0','./fund-student.js?v=19.7.0'])await load(src);
      baseLoaded=true;
    }
    if(privateMode&&!privateLoaded){
-     for(const src of ['./push-config.js','./push.js?v=19.1.0','./notification-center.js?v=19.7.0'])await load(src);
+     for(const src of ['./push-config.js','./push.js?v=21.3.0','./notification-center.js?v=21.3.0'])await load(src);
      privateLoaded=true;
    }
  }
@@ -65,7 +65,7 @@
    try{localStorage.removeItem(GUEST_PREF);}catch(_){}
    const n=$('studentAccountName');if(n)n.textContent=student.name||student.mssv;
    await loadApp(true);
-   const deepLink=!!new URL(location.href).searchParams.toString().match(/(?:^|&)(activity|series|vote|congress|proposal|results)=/);
+   const deepLink=!!new URL(location.href).searchParams.toString().match(/(?:^|&)(activity|series|vote|congress|proposal|results|attendance)=/);
    if(deepLink&&typeof v8DeepLinkDone!=='undefined')v8DeepLinkDone=false;
    if(typeof window.refresh==='function')await window.refresh(false,true);
    else if(typeof refresh==='function')await refresh(false,true);

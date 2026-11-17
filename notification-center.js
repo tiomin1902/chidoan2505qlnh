@@ -18,7 +18,7 @@
    local.hidden=[...entries].filter(([,state])=>state==='hidden').map(([id])=>id);
    persist();
  }}catch(e){console.warn('Sử dụng trạng thái thông báo lưu trên thiết bị',e);}}
- const labels={qlnh_news_feed:'Bản tin',qlnh_notice:'Thông báo chung',qlnh_news_lop:'Lớp',qlnh_news_doan:'Chi đoàn',qlnh_news_hoi:'Chi hội',qlnh_activity:'Hoạt động',qlnh_reminder:'Nhắc lịch',qlnh_congress_doan:'Đại hội Chi đoàn',qlnh_congress_hoi:'Đại hội Chi hội',qlnh_election:'Bầu cử',doc:'Tài liệu',doc_batch:'Tài liệu',withdrawn:'Tài liệu',exam:'Lịch thi',exam_batch:'Lịch thi',exam_group:'Kỳ thi',reminder:'Nhắc thi',report:'Phản ánh thi'};
+ const labels={qlnh_news_feed:'Bản tin',qlnh_notice:'Thông báo chung',qlnh_news_lop:'Lớp',qlnh_news_doan:'Chi đoàn',qlnh_news_hoi:'Chi hội',qlnh_activity:'Hoạt động',qlnh_attendance:'Điểm danh',qlnh_reminder:'Nhắc lịch',qlnh_congress_doan:'Đại hội Chi đoàn',qlnh_congress_hoi:'Đại hội Chi hội',qlnh_election:'Bầu cử',doc:'Tài liệu',doc_batch:'Tài liệu',withdrawn:'Tài liệu',exam:'Lịch thi',exam_batch:'Lịch thi',exam_group:'Kỳ thi',reminder:'Nhắc thi',report:'Phản ánh thi'};
  function selected(){try{return JSON.parse(localStorage.getItem('qlnh_device_push_choices')||'{}');}catch(e){return {}}}
  function visible(){return items.filter(n=>!local.hidden.includes(n.id)).slice().sort((a,b)=>(Date.parse(b.time)||0)-(Date.parse(a.time)||0));}
  function render(){const shown=visible(),unread=shown.filter(x=>!local.read.includes(x.id)).length;
