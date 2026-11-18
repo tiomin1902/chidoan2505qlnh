@@ -1,53 +1,46 @@
-/* LỚP 2505QLNH · Public site audio control V20.9. No private auth data. */
+/* LỚP 2505QLNH – V22.0.1 playlist. Public audio only. */
 (()=>{'use strict';
  const KEY='qlnh_site_music_choice_v1',VOLKEY='qlnh_site_music_volume_v1';
- let config=null,lastSrc='',isPending=false,loading=false;
+ const gateway=String(window.QLNH_GATEWAY_URL||'').replace(/\/+$/,'');
  const root=document.createElement('div');root.id='qlnhMusicWidget';root.className='qlnh-music-widget';root.hidden=true;
- root.innerHTML=`<div class="qlnh-music-panel" id="qlnhMusicPanel" hidden><strong id="qlnhMusicTitle">Âm nhạc website</strong><p>Nhạc do lớp lựa chọn. Bạn có thể tắt bất cứ lúc nào.</p><label class="qlnh-music-volume">Âm lượng <input type="range" id="qlnhMusicVolume" min="0" max="100" step="1" value="35" aria-label="Điều chỉnh âm lượng nhạc nền"></label><p class="qlnh-music-status" id="qlnhMusicStatus" role="status"></p></div><div class="qlnh-music-actions"><button id="qlnhMusicSettings" class="qlnh-music-settings" type="button" aria-label="Tùy chỉnh nhạc nền" aria-expanded="false" aria-controls="qlnhMusicPanel">♫</button><button id="qlnhMusicToggle" class="qlnh-music-toggle" type="button" aria-pressed="false" aria-label="Phát nhạc nền"><span class="qlnh-music-note" aria-hidden="true">♪</span><span id="qlnhMusicToggleLabel">Bật nhạc</span></button></div><audio id="qlnhMusicAudio" preload="none" playsinline></audio>`;
- document.body.append(root);
- const byId=id=>document.getElementById(id),audio=byId('qlnhMusicAudio'),play=byId('qlnhMusicToggle'),settings=byId('qlnhMusicSettings'),panel=byId('qlnhMusicPanel'),slider=byId('qlnhMusicVolume'),status=byId('qlnhMusicStatus'),label=byId('qlnhMusicToggleLabel');
- const stored=(key)=>{try{return localStorage.getItem(key)}catch(e){return null}};
- const save=(key,value)=>{try{localStorage.setItem(key,value)}catch(e){}};
- const enabledChoice=()=>stored(KEY);
- function applyVisual(){const playing=!audio.paused;play.setAttribute('aria-pressed',playing?'true':'false');label.textContent=playing?'Tắt nhạc':'Bật nhạc';play.setAttribute('aria-label',playing?'Tắt nhạc nền':'Phát nhạc nền');}
- function say(value){status.textContent=value||'';}
+ root.innerHTML=`<div class="qlnh-music-panel" id="qlnhMusicPanel" hidden><strong id="qlnhMusicTitle">Âm nhạc website</strong><p>Nhạc do lớp lựa chọn. Bạn có thể tắt bất cứ lúc nào.</p><label class="qlnh-music-volume">Âm lượng <input type="range" id="qlnhMusicVolume" min="0" max="100" step="1" value="35" aria-label="Điều chỉnh âm lượng nhạc nền"></label><button id="qlnhMusicNext" class="qlnh-music-settings" type="button" aria-label="Bài tiếp theo">Bài tiếp theo</button><p class="qlnh-music-status" id="qlnhMusicStatus" role="status"></p></div><div class="qlnh-music-actions"><button id="qlnhMusicSettings" class="qlnh-music-settings" type="button" aria-label="Tùy chỉnh nhạc nền" aria-expanded="false" aria-controls="qlnhMusicPanel">♫</button><button id="qlnhMusicToggle" class="qlnh-music-toggle" type="button" aria-pressed="false" aria-label="Phát nhạc nền"><span class="qlnh-music-note" aria-hidden="true">♪</span><span id="qlnhMusicToggleLabel">Bật nhạc</span></button></div><audio id="qlnhMusicAudio" preload="none" playsinline></audio>`;
+ document.body.append(root);const $=id=>document.getElementById(id),audio=$('qlnhMusicAudio'),play=$('qlnhMusicToggle'),panel=$('qlnhMusicPanel'),settings=$('qlnhMusicSettings'),slider=$('qlnhMusicVolume'),status=$('qlnhMusicStatus');
+ const stored=k=>{try{return localStorage.getItem(k)}catch(e){return null}},save=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+ let tracks=[],bag=[],current=null,config=null,revision='',loading=false,generation=0,playingAttempt=0,failed=new Set(),wantPlayback=false;
+ function say(v){status.textContent=v||'';}
+ function visual(){const p=!audio.paused;play.setAttribute('aria-pressed',String(p));play.setAttribute('aria-label',p?'Tắt nhạc nền':'Phát nhạc nền');$('qlnhMusicToggleLabel').textContent=p?'Tắt nhạc':'Bật nhạc';}
+ function shuffle(a){const b=a.slice();for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+ function resetBag(exclude){bag=shuffle(tracks.filter(t=>!failed.has(t.id)).map(t=>t.id));if(bag.length>1&&bag[0]===exclude)[bag[0],bag[1]]=[bag[1],bag[0]];}
+ function find(id){return tracks.find(t=>t.id===id&&!failed.has(id));}
+ function chooseNext(manual=false){
+  const valid=tracks.filter(t=>!failed.has(t.id));if(!valid.length)return null;
+  if(config.mode==='shuffle'){
+   if(!bag.length){if(!config.repeat&&!manual&&current)return null;resetBag(current?.id);}
+   while(bag.length){const t=find(bag.shift());if(t&&(!manual||valid.length===1||t.id!==current?.id))return t;}
+   if(manual){resetBag(current?.id);return find(bag.shift())||null;}return null;
+  }
+  if(config.mode==='single'&&!manual)return config.repeat?(find(current?.id)||valid[0]):null;
+  const i=valid.findIndex(t=>t.id===current?.id);return i+1<valid.length?valid[i+1]:config.repeat||manual?valid[0]:null;
+ }
+ function select(t){if(!t)return false;generation++;audio.pause();current=t;audio.loop=config.mode==='single'&&config.repeat;audio.src=t.source;$('qlnhMusicTitle').textContent=t.title;audio.load();visual();return true;}
+ async function start(user=false){if(!current||!config)return;wantPlayback=true;const g=generation,p=++playingAttempt;try{await audio.play();if(g!==generation||p!==playingAttempt)return;if(user)save(KEY,'on');say('Đang phát · '+current.title);}catch(e){if(g!==generation||p!==playingAttempt)return;if(e?.name==='NotAllowedError')say('Chạm “Bật nhạc” để nghe.');else if(e?.name!=='AbortError')say('Không phát được bài nhạc. Có thể chọn bài tiếp theo.');}finally{visual();}}
+ function next(manual=false){const t=chooseNext(manual);if(!t){audio.pause();say('Đã hết danh sách nhạc.');visual();return;}select(t);if((wantPlayback&&stored(KEY)!=='off')||manual)start(manual);}
  function configure(result){
-   const gateway=String(window.QLNH_GATEWAY_URL||'').replace(/\/+$/,'');
-   const managed=result?.managed===true;
-   const source=managed && /^https:\/\//i.test(gateway)
-     ?gateway+'/api/guest/music.mp3?rev='+encodeURIComponent(String(result.revision||0))
-     :String(result?.url||'');
-   if(result?.success!==true||result.enabled!==true||!/^https:\/\//i.test(source)){audio.pause();audio.removeAttribute('src');lastSrc='';config=null;root.hidden=true;applyVisual();return;}
-   const previous=config;config={...result,playbackSource:source};root.hidden=false;
-   byId('qlnhMusicTitle').textContent=String(config.title||'Giai điệu tri ân');
-   if(lastSrc!==source){audio.pause();lastSrc=source;audio.src=source;audio.load();}
-   audio.loop=config.loop!==false;
-   const preference=stored(VOLKEY),vol=preference!==null?Number(preference):Math.round((Number.isFinite(Number(config.volume))?Number(config.volume):.35)*100);
-   const bounded=Math.min(100,Math.max(0,Number.isFinite(vol)?vol:35));slider.value=String(bounded);audio.volume=bounded/100;
-   if(!previous||previous.playbackSource!==config.playbackSource){
-     if(enabledChoice()==='off'){say('Bạn đã tắt nhạc trên thiết bị này.');return;}
-     if(config.autoplayTry===true || enabledChoice()==='on')start(false);
-   }
+  const old=result?.tracks;const raw=Array.isArray(old)?old:(result?.enabled?[{id:'legacy',managed:result.managed,title:result.title,url:result.url}]:[]);
+  const list=raw.map(t=>({id:String(t.id||''),title:String(t.title||'Nhạc nền'),source:t.managed===true?gateway+'/api/guest/music.mp3?track='+encodeURIComponent(t.id)+'&rev='+encodeURIComponent(String(result.revision||0)):String(t.url||'')})).filter(t=>/^[A-Za-z0-9_-]{2,80}$/.test(t.id)&&/^https:\/\/[^\s<>"']+$/i.test(t.source));
+  if(result?.success!==true||result.enabled!==true||!list.length){generation++;wantPlayback=false;audio.pause();audio.removeAttribute('src');audio.load();current=null;config=null;tracks=[];failed.clear();root.hidden=true;visual();return;}
+  const signature=JSON.stringify([result.revision,result.mode,result.repeat,list]);const changed=signature!==revision;const wasPlaying=!audio.paused;const previous=current;config={mode:['shuffle','order','single'].includes(result.mode)?result.mode:'single',repeat:Array.isArray(old)?result.repeat!==false:result.loop!==false,autoplayTry:result.autoplayTry===true};tracks=list;root.hidden=false;
+  const preference=stored(VOLKEY),v=preference!==null?Number(preference):Number(result.volume)*100;slider.value=String(Math.min(100,Math.max(0,Number.isFinite(v)?v:35)));audio.volume=Number(slider.value)/100;
+  $('qlnhMusicNext').disabled=list.length<2;
+  if(!changed&&previous)return;revision=signature;failed.clear();resetBag(previous?.id);
+  const retained=previous&&list.find(t=>t.id===previous.id&&t.source===previous.source);
+  if(retained){current=retained;bag=bag.filter(x=>x!==retained.id);audio.loop=config.mode==='single'&&config.repeat;return;}
+  if(!select(chooseNext(true)))return;
+  if(stored(KEY)!=='off'&&(config.autoplayTry||stored(KEY)==='on'||wasPlaying))start();else say('Chạm “Bật nhạc” để nghe.');
  }
- async function start(byUser){if(!config||isPending)return;isPending=true;
-   try{await audio.play();if(byUser)save(KEY,'on');say('Đang phát · '+String(config.title||'Nhạc nền'));}
-   catch(e){if(byUser){say('Không phát được nhạc. Nếu dùng file tải lên, kiểm tra Apps Script và Cloudflare Worker đã cập nhật V21.0.');}else{say('Chạm “Bật nhạc” để nghe (trình duyệt có thể chặn tự phát).');}}
-   finally{isPending=false;applyVisual();}
- }
- function stop(){audio.pause();save(KEY,'off');say('Đã tắt nhạc trên thiết bị này.');applyVisual();}
- play.addEventListener('click',()=>{if(audio.paused){start(true);}else stop();});
- settings.addEventListener('click',()=>{panel.hidden=!panel.hidden;settings.setAttribute('aria-expanded',String(!panel.hidden));});
- slider.addEventListener('input',()=>{audio.volume=Math.max(0,Math.min(1,Number(slider.value)/100));save(VOLKEY,String(slider.value));});
- audio.addEventListener('play',applyVisual);audio.addEventListener('pause',applyVisual);
- audio.addEventListener('error',()=>{say('Không tải được MP3. Kiểm tra cổng phát nhạc hoặc quyền chia sẻ của tệp đã tải lên.');applyVisual();});
- async function refresh(){if(loading)return;loading=true;try{
-   const gateway=String(window.QLNH_GATEWAY_URL||'').replace(/\/+$/,'');if(!/^https:\/\//i.test(gateway))return;
-   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),7000);
-   try{const response=await fetch(gateway+'/api/guest/data?action=music',{cache:'no-store',credentials:'omit',signal:controller.signal});
-     if(!response.ok)throw Error('Không tải được cấu hình nhạc');configure(await response.json());}
-   finally{clearTimeout(timer);}
- }catch(e){if(!config)root.hidden=true;console.warn('Không đồng bộ nhạc nền:',e);}finally{loading=false;}}
- document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
- setInterval(()=>{if(!document.hidden)refresh();},180000);
- refresh();
+ play.onclick=()=>{if(audio.paused){failed.clear();if(!current&&tracks.length)select(tracks[0]);start(true);}else{playingAttempt++;wantPlayback=false;audio.pause();save(KEY,'off');say('Đã tắt nhạc trên thiết bị này.');visual();}};
+ $('qlnhMusicNext').onclick=()=>{failed.clear();next(true);};settings.onclick=()=>{panel.hidden=!panel.hidden;settings.setAttribute('aria-expanded',String(!panel.hidden));};slider.oninput=()=>{audio.volume=Number(slider.value)/100;save(VOLKEY,slider.value);};audio.addEventListener('play',visual);audio.addEventListener('pause',visual);audio.addEventListener('ended',()=>next(false));
+ audio.addEventListener('error',()=>{if(!current||!config||audio.currentSrc!==current.source)return;failed.add(current.id);if(wantPlayback&&stored(KEY)!=='off'){const t=chooseNext(true);if(t){select(t);start();return;}}say('Không tải được bài nhạc. Hãy thử lại.');visual();});
+ async function refresh(){if(loading||!/^https:\/\//i.test(gateway))return;loading=true;const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),7000);try{const response=await fetch(gateway+'/api/guest/data?action=music',{cache:'no-store',credentials:'omit',signal:ctrl.signal});if(!response.ok)throw Error('Không tải được nhạc');configure(await response.json());}catch(e){if(!config)root.hidden=true;}finally{clearTimeout(timer);loading=false;}}
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});setInterval(()=>{if(!document.hidden)refresh();},180000);refresh();
 })();

@@ -5,7 +5,15 @@
  const $=x=>document.getElementById(x);const gate=$('studentAuthGate'),msg=$('studentAuthMessage');
  const loginForm=$('studentLoginForm'),changeForm=$('studentPasswordForm');
  const btn=$('studentLogoutBtn');
- let token='',me=null,baseLoaded=false,privateLoaded=false,restoring=false,pendingTarget=null;
+ let token='',me=null,baseLoaded=false,privateLoaded=false,restoring=false,pendingTarget=null,aclPollBusy=false;
+ const pagePerm={class:'class',doan:'doan',hoi:'hoi',activities:'activities',attendance:'attendance',ballot:'ballot',voteStandalone:'ballot',news:'news',newsDetail:'news',pushPrefs:'notifications',notificationCenter:'notifications',exams:'exams',documents:'documents',funds:'funds'};
+ window.QLNH_ACL_HAS=k=>!me||!Array.isArray(me.allowed)||me.allowed.includes(k);
+ window.QLNH_ACL_PAGE=page=>!pagePerm[page]||window.QLNH_ACL_HAS(pagePerm[page]);
+ function applyAcl(){for(const n of document.querySelectorAll('[data-page]')){const deny=!window.QLNH_ACL_PAGE(n.dataset.page);n.classList.toggle('qlnh-acl-hidden',deny);}for(const [id,perm] of [['homeEvents','activities'],['homeNotices','news'],['v17Upcoming','exams']]){const n=$(id);if(n)n.classList.toggle('qlnh-acl-hidden',!window.QLNH_ACL_HAS(perm));}}
+ const accessSig=x=>JSON.stringify(Array.isArray(x?.allowed)?[...x.allowed].sort():null);
+ async function checkAcl(){if(!token||!me||me.mustChange||document.hidden||aclPollBusy)return;aclPollBusy=true;try{const next=(await request('/api/me')).student;if(next&&accessSig(next)!==accessSig(me)){location.reload();}}catch(e){if(e.status===401){token='';me=null;storageDrop();location.reload();}}finally{aclPollBusy=false;}}
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkAcl();});setInterval(checkAcl,45000);
+ window.addEventListener('qlnh-acl-denied',checkAcl);
  window.QLNH_GUEST=false;
  const loadStatus=$('studentAuthLoadingStatus'),loadActions=$('studentAuthLoadingActions');
  function say(v,error=false){msg.textContent=v;msg.style.color=error?'#B42318':'#485268';}
@@ -18,7 +26,7 @@
    const headers={};if(data!==undefined)headers['content-type']='application/json';if(credential)headers.authorization='Bearer '+credential;
    let response;try{response=await fetch(API+path,{method,headers,body:data===undefined?undefined:JSON.stringify(data),cache:'no-store',credentials:'omit'});}catch(e){throw Error('Không thể kết nối máy chủ. Kiểm tra mạng và địa chỉ Worker.');}
    const json=await response.json().catch(()=>({message:'Phản hồi máy chủ không hợp lệ'}));
-   if(!response.ok){const err=new Error(json.message||'Yêu cầu thất bại');err.status=response.status;throw err;}
+   if(!response.ok){if(response.status===403&&credential&&/Không được cấp quyền|không được cấp quyền/i.test(String(json.message||'')))window.dispatchEvent(new Event('qlnh-acl-denied'));const err=new Error(json.message||'Yêu cầu thất bại');err.status=response.status;throw err;}
    return json;
  }
  window.QLNH={
@@ -34,7 +42,7 @@
  async function loadApp(privateMode){
    const load=async src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=()=>reject(Error('Không tải được '+src));document.body.append(script);});
    if(!baseLoaded){
-     for(const src of ['./config.js','./app.js?v=21.3.0','./news.js?v=19.7.0','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=19.2.0','./v17-student.js?v=19.7.0','./qlnh-deeplink.js?v=21.3.0','./fund-student.js?v=19.7.0'])await load(src);
+     for(const src of ['./config.js','./app.js?v=22.0.2','./news.js?v=19.7.0','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=19.2.0','./v17-student.js?v=19.7.0','./qlnh-deeplink.js?v=21.3.0','./fund-student.js?v=19.7.0'])await load(src);
      baseLoaded=true;
    }
    if(privateMode&&!privateLoaded){
@@ -59,18 +67,19 @@
    if(typeof window.QLNH_REFRESH_NEWS==='function')await window.QLNH_REFRESH_NEWS();
  }
  async function openApp(student){
+   if(!Object.prototype.hasOwnProperty.call(student,'allowed'))student=(await request('/api/me')).student;
    me=student;window.QLNH_STUDENT=student;window.QLNH_GUEST=false;
    document.documentElement.classList.remove('qlnh-session-pending','qlnh-guest');
    document.documentElement.classList.add('qlnh-authenticated');gate.hidden=true;btn.hidden=false;
    try{localStorage.removeItem(GUEST_PREF);}catch(_){}
    const n=$('studentAccountName');if(n)n.textContent=student.name||student.mssv;
-   await loadApp(true);
+   await loadApp(true);applyAcl();
    const deepLink=!!new URL(location.href).searchParams.toString().match(/(?:^|&)(activity|series|vote|congress|proposal|results|attendance)=/);
    if(deepLink&&typeof v8DeepLinkDone!=='undefined')v8DeepLinkDone=false;
    if(typeof window.refresh==='function')await window.refresh(false,true);
    else if(typeof refresh==='function')await refresh(false,true);
-   if(typeof window.QLNH_REFRESH_NEWS==='function')await window.QLNH_REFRESH_NEWS();
-   window.QLNH_V17_REFRESH?.();
+   if(window.QLNH_ACL_HAS('news')&&typeof window.QLNH_REFRESH_NEWS==='function')await window.QLNH_REFRESH_NEWS();
+   if(window.QLNH_ACL_HAS('exams')||window.QLNH_ACL_HAS('documents'))window.QLNH_V17_REFRESH?.();
    if(new URL(location.href).searchParams.has('fund')&&typeof window.nav==='function')window.nav('funds');
    const v17Target=new URL(location.href).searchParams.get('v17');
    if(['documents','exams'].includes(v17Target)&&typeof window.nav==='function')window.nav(v17Target);
