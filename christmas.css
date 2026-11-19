@@ -1,0 +1,94 @@
+/* CIVIC ATELIER CHRISTMAS LODGE 2026 — scoped, no business layout overrides. */
+html.theme-christmas{--x-pine:#24583f;--x-pine-rgb:36,88,63;--x-deep:#173f30;--x-deep-rgb:23,63,48;--x-pine-mid:#47845c;--x-pine-mid-rgb:71,132,92;--x-red:#a52738;--x-red-rgb:165,39,56;--x-gold:#e4bc67;--x-gold-rgb:228,188,103;--x-gold-ink:#79551b;--x-gold-ink-rgb:121,85,27;--x-cream:#fff8eb;--x-cream-rgb:255,248,235;--x-surface:#fffcf6;--x-surface-rgb:255,252,246;--x-soft:#edf3ea;--x-soft-rgb:237,243,234;--x-beige:#f1e6d5;--x-beige-rgb:241,230,213;--x-line:#d8d9ca;--x-line-rgb:216,217,202;--x-text:#26382d;--x-text-rgb:38,56,45;--x-muted:#53665a;--x-muted-rgb:83,102,90;
+--red:var(--x-red);--red-bright:#b93643;--red-dark:#8c2433;--red-wine:#8c2433;--gold:var(--x-gold-ink);--yellow:var(--x-gold);--cream:var(--x-surface);--ivory:var(--x-cream);--surface:#fff;--ink:var(--x-text);--navy:var(--x-pine);--navy-dark:var(--x-deep);--sky:var(--x-pine-mid);--blue-light:var(--x-soft);--line:var(--x-line);--muted:var(--x-muted);--shadow:0 12px 36px #173f3012;--v17-wine:var(--x-red);--v17-ink:var(--x-text);--v17-cream:var(--x-surface);--v17-stroke:var(--x-line);--v17-muted:var(--x-muted);accent-color:var(--x-pine);color-scheme:light}
+html.theme-christmas body{background:linear-gradient(180deg,#fff8eb,#fffcf6 48%,#f1e6d5);color:var(--x-text)}
+html.theme-christmas body:before{background:radial-gradient(circle at 0 20%,#e4bc6727,transparent 35%),radial-gradient(circle at 100% 70%,#47845c14,transparent 40%)}
+html.theme-christmas .official-mini{background:var(--x-deep);color:#fff8eb}
+html.theme-christmas .top{background:linear-gradient(110deg,#fff8eb,#edf3ea);color:var(--x-deep);border-color:var(--x-line)}
+html.theme-christmas :is(.brand,.brand strong,.brandName,.headerTools,.headerTools button){color:var(--x-deep)}
+html.theme-christmas .brandSeal{background:#fff8eb;color:var(--x-red);border-color:#c9b681;position:relative}
+html.theme-christmas .brandSeal:after{content:'';position:absolute;width:22px;height:12px;top:-5px;right:-6px;background:#b93643;border-bottom:4px solid #fff8eb;border-radius:70% 70% 15% 15%;transform:rotate(23deg);pointer-events:none}
+html.theme-christmas #drawer{background:#fffcf6;color:var(--x-text)}
+html.theme-christmas #drawer button{color:var(--x-text);border-color:var(--x-line)}
+html.theme-christmas #drawer button:hover,html.theme-christmas #drawer button.active{background:var(--x-soft);color:var(--x-pine)}
+html.theme-christmas :is(.branch-banner,.branch-banner-doan,.branch-banner-hoi){background:linear-gradient(110deg,#173f30,#47845c);color:#fff8eb}
+html.theme-christmas .branch-banner-copy :is(h1,p,small),html.theme-christmas .branch-kicker{color:#fff8eb}
+html.theme-christmas .branch-banner-image:after{background:linear-gradient(90deg,#24583f,transparent 70%)}
+html.theme-christmas .branch-banner-image img{filter:none}
+html.theme-christmas .branch-banner-wave,html.theme-christmas .branch-banner-hoi .branch-banner-wave{background:var(--x-surface);border-color:var(--x-gold)}
+html.theme-2011 .branch-banner-wave,html.theme-2011 .branch-banner-hoi .branch-banner-wave{background:#fff9f1;border-color:#d8b47b}
+html.theme-2011 .branch-banner-image:after,html.theme-2011 .branch-banner-hoi .branch-banner-image:after{background:linear-gradient(90deg,#e4a9c0,transparent 75%)}
+html.theme-christmas .branch-subnav{background:var(--x-surface);border-color:var(--x-line)}
+html.theme-christmas .branch-subnav button{background:var(--x-surface);color:var(--x-pine);border-color:var(--x-line)}
+html.theme-christmas .branch-subnav button:hover,html.theme-christmas .branch-subnav button.active{background:var(--x-soft);color:var(--x-red)}
+html.theme-christmas :is(.section-title h2,.panel-heading h2,.content-page-head h1,.page-ribbon h1,.news-article-heading h1){color:var(--x-pine)}
+html.theme-christmas :is(.infoCard,.surface-panel,.news-card,.activity-card,.fund-card,.v17-card,.guest-auth-modal,.student-auth-card){background:var(--x-surface);color:var(--x-text);border-color:var(--x-line)}
+html.theme-christmas :is(input,textarea,select){color:var(--x-text);border-color:var(--x-line);accent-color:var(--x-pine)}
+html.theme-christmas :is(button,a,input,select,summary):focus-visible{outline-color:var(--x-pine-mid)}
+html.theme-christmas .siteFooter{background:var(--x-deep);color:var(--x-cream);border-color:var(--x-gold)}
+html.theme-christmas .siteFooter :is(strong,span,button,small,a){color:var(--x-cream)}
+html.theme-christmas .siteFooter button:hover{color:var(--x-gold)}
+html.theme-christmas .v17-bottom-nav{background:var(--x-surface);border-color:var(--x-line);color:var(--x-pine)}
+html.theme-christmas .v17-bottom-nav button{color:var(--x-pine)}
+html.theme-christmas .v17-bottom-nav button.active{color:var(--x-red);background:var(--x-soft)}
+html.theme-christmas .student-auth-gate{background:radial-gradient(ellipse at 20% 20%,#e4bc6740,transparent 50%),linear-gradient(130deg,#edf3ea,#fff8eb)}
+html.theme-christmas .student-auth-card{width:min(100%,1080px);max-width:1080px;display:grid;grid-template-columns:1.15fr 1fr;align-items:stretch;padding:0;overflow:hidden;border-radius:22px;box-shadow:0 24px 65px #173f3020}
+html.theme-christmas .theme-login-form-block{padding:clamp(20px,4vw,42px);min-width:0;align-self:center}
+html.theme-christmas .student-auth-form button{background:var(--x-pine);color:#fff}
+html.theme-christmas .student-auth-mark{background:var(--x-red);color:white;box-shadow:none}
+html.theme-christmas .student-auth-card h1{color:var(--x-deep)}
+html.theme-christmas .student-auth-card p{color:var(--x-muted)}
+html.theme-christmas .student-guest-entry{color:var(--x-pine);border-color:var(--x-pine);background:var(--x-soft)}
+.xmas-scene{display:none;position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#173f30,#24583f 62%,#47845c);color:#fff8eb}
+html.theme-christmas .xmas-scene{display:grid}
+.xmas-scene h2{font-family:Georgia,serif;font-size:clamp(32px,4.4vw,68px);letter-spacing:-.035em;line-height:1.02;color:#fff8eb!important;margin:10px 0 14px;text-wrap:balance}
+.xmas-scene .xmas-kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#f7d88c;font-weight:700}
+.xmas-scene p{color:#fff1cf!important;font-size:14px;line-height:1.6;margin:0;max-width:33ch}
+.xmas-home{max-width:1220px;margin:14px auto 18px;grid-template-columns:1fr 1.1fr;min-height:310px;border-radius:20px;box-shadow:0 12px 30px #173f3022}
+.xmas-copy{padding:50px clamp(25px,4vw,60px);align-self:center;z-index:1}
+.xmas-art{position:relative;min-height:310px;align-self:stretch;background: url('./christmas-lodge.svg') center bottom/contain no-repeat;pointer-events:none}
+.xmas-login{grid-template-rows:auto 1fr;min-height:460px}
+.xmas-login .xmas-copy{padding:34px 28px 0;text-align:center;justify-self:center}
+.xmas-login .xmas-copy p{margin:auto}.xmas-login .xmas-art{min-height:260px}
+.xmas-flame{position:absolute;left:22.7%;bottom:19%;width:7%;height:15%;background:radial-gradient(ellipse at bottom,#ffefd0,#ffa63e 35%,#e65d28 62%,transparent 72%);border-radius:65% 35% 60% 40%;transform-origin:bottom center;animation:x-fire 1s ease-in-out infinite alternate;filter:drop-shadow(0 0 12px #ffb648)}
+@keyframes x-fire{0%{transform:scale(.85,1.05) skewX(-8deg);opacity:.8}100%{transform:scale(1.12,.86) skewX(8deg);opacity:1}}
+.xmas-scene .xmas-art:after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 25% 78%,#ffb55b25,transparent 22%);animation:x-fire-glow 2s ease-in-out infinite alternate}
+@keyframes x-fire-glow{to{opacity:.45}}
+.xmas-lights{display:none;position:fixed;inset:0 0 auto;height:19px;z-index:60;pointer-events:none;overflow:hidden;justify-content:space-around;align-items:flex-start;border-top:2px solid #426049}
+html.theme-christmas .xmas-lights{display:flex}
+.xmas-light{width:7px;height:12px;border-radius:40% 40% 60% 60%;margin-top:var(--drop);position:relative;background:var(--bulb);color:var(--bulb);box-shadow:0 0 7px currentColor,0 0 13px currentColor;animation:x-twinkle var(--cycle) ease-in-out infinite;animation-delay:var(--delay)}
+.xmas-light:before{content:'';position:absolute;width:5px;height:3px;top:-2px;left:1px;background:#425746;border-radius:1px}
+@keyframes x-twinkle{0%,100%{opacity:1}50%{opacity:.32;box-shadow:0 0 2px currentColor}}
+.xmas-snow{position:fixed;inset:0;z-index:42;pointer-events:none;overflow:hidden;contain:strict}
+.xmas-flake{position:absolute;left:var(--left);top:-14px;width:var(--size);height:var(--size);border-radius:50%;background:#fff;border:1px solid #b7ccd438;opacity:var(--op);box-shadow:0 0 2px #718f9b40;animation:x-snow var(--dur) linear infinite;animation-delay:var(--delay)}
+@keyframes x-snow{from{transform:translate3d(0,-10vh,0)}to{transform:translate3d(var(--drift),115vh,0)}}
+.xmas-santa{position:fixed;left:0;top:85px;width:min(600px,42vw);aspect-ratio:3.2;z-index:45;pointer-events:none;will-change:transform;overflow:visible;transform:translateX(-110%)}
+.xmas-santa canvas,.xmas-santa img{width:100%;height:100%;object-fit:contain;display:block}
+.xmas-santa.fly{animation:x-fly var(--flight) linear forwards}
+@keyframes x-fly{0%{transform:translate3d(-105%,0,0)}30%{transform:translate3d(calc(30vw - 70%),-18px,0)}65%{transform:translate3d(calc(65vw - 35%),8px,0)}100%{transform:translate3d(105vw,-10px,0)}}
+.xmas-controls{display:none;gap:8px;flex-wrap:wrap;font-size:12px;margin:12px auto;padding:0 16px;max-width:1220px}
+html.theme-christmas .xmas-controls{display:flex}
+.xmas-controls button{border:1px solid var(--x-line);background:var(--x-surface);color:var(--x-pine);border-radius:8px;padding:7px 11px;min-height:36px}
+.xmas-controls button:hover{background:var(--x-soft)}
+.xmas-footer{display:none;color:#fff8eb!important}html.theme-christmas .xmas-footer{display:inline}
+html.theme-christmas.xmas-static :is(.xmas-light,.xmas-flame,.xmas-art:after){animation:none!important}html.theme-christmas.xmas-static .xmas-snow{display:none}
+html.theme-christmas.xmas-paused :is(.xmas-light,.xmas-flame,.xmas-flake,.xmas-art:after){animation-play-state:paused!important}
+html.theme-christmas .xmas-count{color:#f7d88c!important;font-variant-numeric:tabular-nums;margin-top:16px;font-size:14px}
+html.theme-christmas .xmas-greeting{font-size:12px;color:#f7d88c;margin-top:12px;min-height:18px}
+html.theme-christmas .xmas-gift-button{margin-top:14px;padding:7px 11px;color:#173f30;background:#f7d88c;border:0;border-radius:7px;font-weight:700}
+@media(max-width:720px){html.theme-christmas .student-auth-gate{padding:12px 12px 22px;align-items:flex-start}html.theme-christmas .student-auth-card{display:block;max-width:470px}html.theme-christmas .theme-login-form-block{padding:20px}.xmas-login{min-height:0;grid-template-columns:1fr 1fr;grid-template-rows:1fr}.xmas-login .xmas-copy{padding:22px 4px 22px 18px;text-align:left}.xmas-login .xmas-copy p{font-size:11px}.xmas-login .xmas-copy h2{font-size:27px;margin:6px 0}.xmas-login .xmas-kicker{font-size:9px;letter-spacing:.11em}.xmas-login .xmas-art{min-height:138px;background-size:auto 100%;background-position:62% bottom}.xmas-home{margin:10px 12px 14px;min-height:0;grid-template-columns:1fr;grid-template-rows:auto 170px;border-radius:15px}.xmas-home .xmas-copy{padding:24px 22px 0;text-align:center}.xmas-home h2{font-size:39px;margin:7px 0}.xmas-home p{margin:auto}.xmas-home .xmas-art{min-height:170px;background-size:auto 100%;background-position:center bottom}.xmas-santa{width:min(78vw,350px);top:74px}.xmas-lights{height:15px}.xmas-light{width:6px;height:9px}.xmas-controls button{min-height:44px}.xmas-flame{display:none}}
+@media(prefers-reduced-motion:reduce){.xmas-light,.xmas-flame,.xmas-art:after{animation:none!important}.xmas-snow,.xmas-santa{display:none!important}}
+/* SVG source groups allow independent decoration controls; no untrusted markup. */
+.xmas-art:has(svg){background:none}.xmas-art svg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;overflow:visible}.xmas-art:has(svg) .xmas-flame{display:none}.xmas-scene[data-fire=false] .xmas-fire-art,.xmas-scene[data-stockings=false] .xmas-stockings-art,.xmas-scene[data-snowman=false] .xmas-snowman-art,.xmas-scene[data-tree=false] .xmas-tree-art,.xmas-scene[data-gifts=false] .xmas-gifts-art{display:none}.xmas-scene[data-fire=false] .xmas-art:after{display:none}.xmas-fire-path{transform-box:fill-box;transform-origin:center bottom;animation:x-fire 1.2s ease-in-out infinite alternate}.xmas-stockings-art{transform-box:fill-box;transform-origin:center top;animation:x-stockings 3s ease-in-out infinite alternate}.xmas-snowman-art{transform-box:fill-box;transform-origin:center bottom;animation:x-snowman 5s ease-in-out infinite}.xmas-snowman-art circle:nth-of-type(3),.xmas-snowman-art circle:nth-of-type(4){transform-box:fill-box;transform-origin:center;animation:x-blink 6s infinite}.xmas-tree-art circle{animation:x-twinkle 3.6s ease-in-out infinite alternate}.xmas-tree-art circle:nth-child(2n){animation-delay:-2s}@keyframes x-stockings{from{transform:rotate(-1deg)}to{transform:rotate(1deg)}}@keyframes x-snowman{0%,85%,100%{transform:rotate(0)}92%{transform:rotate(2deg)}}@keyframes x-blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.1)}}
+html.theme-christmas.xmas-static .xmas-art *{animation:none!important}html.theme-christmas.xmas-paused .xmas-art *{animation-play-state:paused!important}html.theme-christmas.xmas-paused .xmas-snow{visibility:hidden}
+@media(prefers-reduced-motion:reduce){.xmas-art *{animation:none!important}}
+/* Reserve the light strip, instead of letting bulbs obscure university identity. */
+html.theme-christmas .official-mini{height:52px;padding-top:17px}html.theme-christmas .top{top:17px}html.theme-christmas .xmas-lights{height:17px;background:linear-gradient(180deg,#173f30 0%,#173f30eb 45%,#173f30d8 100%);z-index:92}
+html.theme-christmas .xmas-scene h2{font-family:Georgia,'Times New Roman',serif!important;font-weight:600!important;letter-spacing:-.045em}
+html.theme-christmas :is(.branch-banner h1,.section-title h2,.page-ribbon h1,.hero-copy h1){font-family:Georgia,'Times New Roman',serif!important}
+html.theme-christmas .organization-content{background:var(--x-surface)}
+.xmas-login-toggle{margin-top:10px;background:#fff8eb13;color:#fff8eb;border:1px solid #e4bc6777;border-radius:6px;padding:5px 9px;font-size:11px;min-height:30px}
+html.theme-christmas #guestAuthDialog:not([hidden])~.xmas-lights{visibility:hidden}
+html.theme-christmas .xmas-paused .xmas-santa{visibility:hidden}
+@media(max-width:720px){html.theme-christmas .official-mini{height:40px;padding-top:14px}html.theme-christmas .top{top:14px}html.theme-christmas .xmas-lights{height:14px}.xmas-santa{top:92px}.xmas-login-toggle{min-height:34px;margin-top:8px}.xmas-login .xmas-copy h2{font-size:26px}.xmas-login .xmas-copy{padding-top:16px;padding-bottom:15px}}
+html.theme-christmas.xmas-no-lights .official-mini{height:35px;padding-top:0}html.theme-christmas.xmas-no-lights .top{top:0}@media(max-width:720px){html.theme-christmas.xmas-no-lights .official-mini{height:26px}}

@@ -1,0 +1,360 @@
+/* Scoped visual rules derived from legacy CSS. Semantic state selectors excluded; explicit fixes in christmas.css. */
+/* grand-civic-v14.css */
+html.theme-christmas{--red:var(--x-red);--red-bright:var(--x-red);--red-dark:var(--x-red);--red-wine:var(--x-deep);--gold:var(--x-beige);--yellow:var(--x-beige);--ivory:var(--x-cream);--ink:var(--x-deep);--navy:var(--x-pine);--navy-dark:var(--x-deep);--sky:var(--x-pine-mid);--blue-light:var(--x-soft);--line:var(--x-beige);--muted:var(--x-pine-mid);--shadow:0 15px 42px rgba(var(--x-deep-rgb),0.086);}
+html.theme-christmas body:before{background:radial-gradient(circle at 5% 50%,rgba(var(--x-beige-rgb),0.322),transparent 35%),radial-gradient(circle at 100% 10%,var(--x-cream),transparent 35%);}
+html.theme-christmas button:focus-visible,
+html.theme-christmas a:focus-visible,
+html.theme-christmas input:focus-visible,
+html.theme-christmas summary:focus-visible,
+html.theme-christmas select:focus-visible{outline:3px solid var(--x-gold);}
+html.theme-christmas .message.green{color:var(--x-text);}
+html.theme-christmas .message.red{color:var(--x-red);}
+html.theme-christmas .official-mini{background:var(--x-red);color:var(--x-muted);}
+html.theme-christmas .official-mini button{color:var(--x-muted);}
+html.theme-christmas .top{background:linear-gradient(105deg,var(--x-red),var(--x-red) 64%,var(--x-deep));box-shadow:0 5px 20px rgba(var(--x-deep-rgb),0.145);}
+html.theme-christmas .brand{color:var(--x-muted);}
+html.theme-christmas .brandSeal{color:var(--x-muted);border:1px solid rgba(var(--x-line-rgb),0.561);background:linear-gradient(135deg,var(--x-red),var(--x-red));}
+html.theme-christmas .brandCopy small{color:var(--x-muted);}
+html.theme-christmas .desktopNav button{color:var(--x-muted);}
+html.theme-christmas .desktopNav button:hover,
+html.theme-christmas .desktopNav button.is-active{background:rgba(var(--x-red-rgb),0.322);}
+html.theme-christmas .desktopNav button.is-active{box-shadow:inset 0 -2px var(--x-beige);}
+html.theme-christmas .headerNotice,
+html.theme-christmas .mobileMenuButton{color:var(--x-muted);}
+html.theme-christmas #shade{background:rgba(var(--x-deep-rgb),0.569);}
+html.theme-christmas #drawer{box-shadow:-12px 0 65px rgba(var(--x-deep-rgb),0.212);}
+html.theme-christmas .drawerHeader button{background:var(--x-surface);}
+html.theme-christmas #drawer>button{color:var(--x-text);}
+html.theme-christmas #drawer>button:hover{background:var(--x-cream);}
+html.theme-christmas .home-page{background:linear-gradient(90deg,var(--x-cream),#fffdf7 48%,var(--x-cream));}
+html.theme-christmas .patriotic-hero{background:radial-gradient(ellipse at 15% 55%,#fffdf7 0 20%,var(--x-cream) 51%,var(--x-beige) 85%);}
+html.theme-christmas .patriotic-hero:before{background:linear-gradient(94deg,#fffaf0 0,rgba(var(--x-surface-rgb),0.929) 28%,rgba(var(--x-cream-rgb),0.227) 58%,transparent 75%);}
+html.theme-christmas .ornament-circle{border:1px solid rgba(var(--x-gold-rgb),0.400);background:repeating-conic-gradient(from 0deg,rgba(var(--x-gold-rgb),0.149) 0deg 1.5deg,transparent 1.5deg 13deg);}
+html.theme-christmas .ornament-radiant{background:repeating-conic-gradient(rgba(var(--x-beige-rgb),0.082) 0deg 2deg,transparent 3deg 17deg);}
+html.theme-christmas .hero-overline{color:var(--x-red);}
+html.theme-christmas .hero-copy h1{color:var(--x-red);}
+html.theme-christmas .hero-understroke{border-bottom:3px solid var(--x-red);}
+html.theme-christmas .hero-slogan{color:var(--x-text);}
+html.theme-christmas .hero-desc{color:var(--x-text);}
+html.theme-christmas .hero-primary{background:linear-gradient(180deg,var(--x-red),var(--x-red));border:1px solid var(--x-red);box-shadow:0 9px 19px rgba(var(--x-red-rgb),0.165);}
+html.theme-christmas .hero-outline{border:1px solid var(--x-beige);background:rgba(var(--x-cream-rgb),0.933);color:var(--x-text);}
+html.theme-christmas .hero-actions button:hover{box-shadow:0 8px 22px rgba(var(--x-red-rgb),0.180);}
+html.theme-christmas .hero-photo{background:linear-gradient(125deg,var(--x-beige),var(--x-gold));}
+html.theme-christmas .hero-photo:after{background:linear-gradient(90deg,var(--x-cream) 0,rgba(var(--x-cream-rgb),0.000) 40%),linear-gradient(0deg,rgba(var(--x-beige-rgb),0.341),transparent 42%);}
+html.theme-christmas .hero-photo-fallback{color:var(--x-text);}
+html.theme-christmas .hero-photo-label{border:1px solid var(--x-gold);color:var(--x-text);}
+html.theme-christmas .hero-wave-one{background:linear-gradient(13deg,var(--x-red),var(--x-red) 42%,var(--x-red) 80%);box-shadow:0 -8px 0 rgba(var(--x-gold-rgb),0.667);}
+html.theme-christmas .hero-wave-two{background:linear-gradient(5deg,var(--x-red),var(--x-red) 65%,var(--x-red));border-top:2px solid var(--x-gold);}
+html.theme-christmas .home-content{background:linear-gradient(180deg,var(--x-cream),#fffaf2 32%,var(--x-cream));}
+html.theme-christmas .home-alert{background:linear-gradient(90deg,var(--x-cream),#fffaf3);border:1px solid var(--x-line);box-shadow:0 12px 32px rgba(var(--x-red-rgb),0.141);color:var(--x-text);}
+html.theme-christmas .home-alert strong{color:var(--x-red);}
+html.theme-christmas .shortcut{background:linear-gradient(155deg,#fff,var(--x-cream));color:var(--x-text);border:1px solid var(--x-line);box-shadow:0 7px 22px rgba(var(--x-red-rgb),0.106);}
+html.theme-christmas .shortcut:hover{box-shadow:0 15px 29px rgba(var(--x-red-rgb),0.169);border-color:var(--x-red);}
+html.theme-christmas .shortcut-icon{color:var(--x-red);}
+html.theme-christmas .surface-panel{border:1px solid var(--x-line);}
+html.theme-christmas .panel-heading{border-bottom:1px solid var(--x-line);}
+html.theme-christmas .panel-heading h2{color:var(--x-red);}
+html.theme-christmas .panel-heading svg{color:var(--x-red);}
+html.theme-christmas .mini-link{color:var(--x-red);}
+html.theme-christmas .homeEventItem{border-bottom:1px solid var(--x-cream);}
+html.theme-christmas .homeEventDate{background:var(--x-cream);color:var(--x-red);}
+html.theme-christmas .homeEventItem h3{color:var(--x-red);}
+html.theme-christmas .homeEventItem button:hover{background:var(--x-red);}
+html.theme-christmas .news-highlight .news-card{border-bottom:1px solid var(--x-cream);}
+html.theme-christmas .news-highlight .news-card-meta{color:var(--x-red);}
+html.theme-christmas .news-highlight .news-card-bottom{color:var(--x-muted);}
+html.theme-christmas .news-highlight .news-card-arrow{color:var(--x-red);}
+html.theme-christmas .news-highlight .news-important{color:var(--x-red);}
+html.theme-christmas .branch-tile{box-shadow:0 8px 22px rgba(var(--x-line-rgb),0.129);}
+html.theme-christmas .branch-tile:hover{box-shadow:0 14px 28px rgba(var(--x-line-rgb),0.212);}
+html.theme-christmas .branch-tile-doan{background:linear-gradient(130deg,var(--x-pine),var(--x-deep) 75%);}
+html.theme-christmas .branch-tile-hoi{color:var(--x-pine);background:linear-gradient(135deg,var(--x-soft),var(--x-soft));}
+html.theme-christmas .branch-tile-event{color:var(--x-red);background:linear-gradient(130deg,var(--x-beige),var(--x-cream));}
+html.theme-christmas .trust-strip{background:linear-gradient(125deg,var(--x-red),var(--x-red) 54%,var(--x-red));color:var(--x-muted);}
+html.theme-christmas .trust-strip:after{border:1px solid rgba(var(--x-gold-rgb),0.310);}
+html.theme-christmas .trust-strip small{color:var(--x-muted);}
+html.theme-christmas .trust-strip button{border:1px solid var(--x-line);color:var(--x-muted);}
+html.theme-christmas .branch-banner-doan{background:linear-gradient(110deg,var(--x-deep),var(--x-pine));}
+html.theme-christmas .branch-banner-hoi{background:linear-gradient(110deg,var(--x-soft),var(--x-pine-mid));color:var(--x-pine);}
+html.theme-christmas .branch-kicker svg{color:var(--x-gold-ink);}
+html.theme-christmas .branch-banner-copy>p{color:var(--x-muted);}
+html.theme-christmas .branch-banner-hoi .branch-banner-copy>p{color:var(--x-pine);}
+html.theme-christmas .branch-banner-image:after{background:linear-gradient(90deg,var(--x-deep),transparent 57%);}
+html.theme-christmas .branch-banner-hoi .branch-banner-image:after{background:linear-gradient(90deg,var(--x-soft),transparent 65%);}
+html.theme-christmas .branch-banner-wave{border-top:3px solid var(--x-gold);background:linear-gradient(30deg,var(--x-deep),var(--x-pine));}
+html.theme-christmas .branch-banner-hoi .branch-banner-wave{border-color:var(--x-gold);background:linear-gradient(30deg,var(--x-pine-mid),var(--x-soft));}
+html.theme-christmas .branch-subnav{box-shadow:0 6px 15px rgba(var(--x-deep-rgb),0.043);}
+html.theme-christmas .branch-subnav button{color:var(--x-muted);}
+html.theme-christmas .branch-subnav button:hover{color:var(--x-pine);border-bottom-color:var(--x-pine-mid);}
+html.theme-christmas .hoi-page .branch-subnav button:hover{color:var(--x-pine);border-bottom-color:var(--x-pine-mid);}
+html.theme-christmas .page-ribbon{background:linear-gradient(115deg,var(--x-cream),#fffdfa);border-bottom:2px solid var(--x-beige);}
+html.theme-christmas .page-ribbon small{color:var(--x-red);}
+html.theme-christmas .page-ribbon h1{color:var(--x-red);}
+html.theme-christmas .section-title span{color:var(--x-red);}
+html.theme-christmas .section-title h2{color:var(--x-text);}
+html.theme-christmas .infoCard{box-shadow:0 5px 14px rgba(var(--x-deep-rgb),0.035);}
+html.theme-christmas .infoCard small{color:var(--x-muted);}
+html.theme-christmas .infoCard strong{color:var(--x-text);}
+html.theme-christmas .doan-page .infoCard{border-left:3px solid var(--x-pine);}
+html.theme-christmas .hoi-page .infoCard{border-left:3px solid var(--x-pine-mid);}
+html.theme-christmas .org-intro h2{color:var(--x-pine);}
+html.theme-christmas .org-intro p{color:var(--x-muted);}
+html.theme-christmas .content-page-head{background:linear-gradient(112deg,var(--x-cream),#fffdfa);border-bottom:2px solid var(--x-gold);}
+html.theme-christmas .content-page-head>span{color:var(--x-red);}
+html.theme-christmas .content-page-head h1{color:var(--x-red);}
+html.theme-christmas .content-page-head>p{color:var(--x-muted);}
+html.theme-christmas .itemCard,
+html.theme-christmas .seriesCard{box-shadow:0 9px 30px rgba(var(--x-deep-rgb),0.082);}
+html.theme-christmas .eventDate{background:var(--x-surface);color:var(--x-red);}
+html.theme-christmas .eventDate small{color:var(--x-text);}
+html.theme-christmas .soloTop h2,
+html.theme-christmas .seriesCard h2{color:var(--x-text);}
+html.theme-christmas .tag{color:var(--x-pine);}
+html.theme-christmas .metaLine{color:var(--x-muted);}
+html.theme-christmas .metaLine b{color:var(--x-muted);}
+html.theme-christmas .activityDescription{color:var(--x-muted);}
+html.theme-christmas .activityNote{background:var(--x-cream);border-left:3px solid var(--x-gold);color:var(--x-text);}
+html.theme-christmas .eventRegistration>summary,
+html.theme-christmas .seriesCollapse>summary{background:linear-gradient(130deg,var(--x-red),var(--x-red));}
+html.theme-christmas .regForm label{color:var(--x-muted);}
+html.theme-christmas .regForm button.action,
+html.theme-christmas .action{background:var(--x-red);}
+html.theme-christmas .regForm button.action:hover,
+html.theme-christmas .action:hover{background:var(--x-red);}
+html.theme-christmas .registrantDetails summary{color:var(--x-pine);}
+html.theme-christmas .seriesChip{color:var(--x-red);background:var(--x-cream);}
+html.theme-christmas .seriesForm{border:1px solid var(--x-cream);}
+html.theme-christmas .seriesSelect input{accent-color:var(--x-red);}
+html.theme-christmas .seriesForm>.seriesPicked,
+html.theme-christmas .seriesForm>.seriesNote{color:var(--x-muted);}
+html.theme-christmas .seriesTrack span{background:var(--x-red);}
+html.theme-christmas .seriesNumbers{color:var(--x-muted);}
+html.theme-christmas .digit{color:var(--x-red);background:var(--x-cream);border:1px solid var(--x-line);}
+html.theme-christmas .digit small{color:var(--x-muted);}
+html.theme-christmas .scroll th{color:var(--x-pine);}
+html.theme-christmas .v8-tied{background:var(--x-cream);}
+html.theme-christmas .congress .panel,
+html.theme-christmas .ballotStandaloneInner{box-shadow:0 8px 24px rgba(var(--x-deep-rgb),0.055);}
+html.theme-christmas .congress .panel h2{color:var(--x-pine);}
+html.theme-christmas .hoi-page .congress .panel h2{color:var(--x-pine);}
+html.theme-christmas .congress .eyebrow{color:var(--x-gold-ink);}
+html.theme-christmas .congressDetails strong{color:var(--x-muted);}
+html.theme-christmas .congress .timerHeading{color:var(--x-pine);}
+html.theme-christmas .news-tabs button,
+html.theme-christmas .news-kind-tabs button{color:var(--x-muted);}
+html.theme-christmas .news-tabs button.active,
+html.theme-christmas .news-kind-tabs button.active{background:var(--x-red);}
+html.theme-christmas .news-count{color:var(--x-muted);}
+html.theme-christmas .news-page .news-card,
+html.theme-christmas #newsListCards .news-card{box-shadow:0 5px 16px rgba(var(--x-deep-rgb),0.063);}
+html.theme-christmas .news-page .news-card:hover,
+html.theme-christmas #newsListCards .news-card:hover{box-shadow:0 12px 26px rgba(var(--x-deep-rgb),0.106);}
+html.theme-christmas .news-page .news-card-meta{color:var(--x-red);}
+html.theme-christmas .news-page .news-important{background:var(--x-cream);}
+html.theme-christmas .news-page .news-card h3{color:var(--x-text);}
+html.theme-christmas .news-page .news-excerpt{color:var(--x-muted);}
+html.theme-christmas .news-page .news-card-bottom{color:var(--x-muted);}
+html.theme-christmas .news-bottom button{color:var(--x-red);}
+html.theme-christmas .news-back{color:var(--x-red);}
+html.theme-christmas .news-article-heading h1{color:var(--x-text);}
+html.theme-christmas .news-article-heading p{color:var(--x-muted);}
+html.theme-christmas .news-article-unit{color:var(--x-red)!important;}
+html.theme-christmas .news-attachment-name small{color:var(--x-muted);}
+html.theme-christmas .news-share{border:1px solid var(--x-red);color:var(--x-red);}
+html.theme-christmas .push-bell{background:var(--x-cream);}
+html.theme-christmas .push-panel-top p{color:var(--x-muted);}
+html.theme-christmas .push-buttons .push-secondary,
+html.theme-christmas .push-buttons .push-plain{color:var(--x-muted);}
+html.theme-christmas .push-small,
+html.theme-christmas .push-ios-tip{color:var(--x-muted);}
+html.theme-christmas .siteFooter{background:var(--x-red);color:var(--x-muted);}
+@media(max-width:700px){
+html.theme-christmas .patriotic-hero:before{background:linear-gradient(180deg,#fff9ef 0,rgba(var(--x-surface-rgb),0.929) 45%,rgba(var(--x-surface-rgb),0.067) 74%);}
+html.theme-christmas .hero-photo:after{background:linear-gradient(180deg,rgba(var(--x-cream-rgb),0.651),transparent 40%),linear-gradient(0deg,rgba(var(--x-red-rgb),0.200),transparent 70%);}
+html.theme-christmas .branch-banner-image:after{background:linear-gradient(90deg,rgba(var(--x-deep-rgb),0.627),rgba(var(--x-deep-rgb),0.133));}
+html.theme-christmas .branch-banner-hoi .branch-banner-image:after{background:linear-gradient(90deg,rgba(var(--x-soft-rgb),0.600),rgba(var(--x-soft-rgb),0.133));}
+}
+html.theme-christmas .install-panel{background:linear-gradient(135deg,var(--x-cream),#fffdfa);border:1px solid var(--x-line);}
+html.theme-christmas .install-panel strong{color:var(--x-red);}
+html.theme-christmas .install-panel p{color:var(--x-muted);}
+html.theme-christmas .install-panel button{background:var(--x-red);}
+html.theme-christmas .install-panel>span{color:var(--x-muted);}
+html.theme-christmas .news-page .content-page-head{background:linear-gradient(118deg,var(--x-cream) 0%,var(--x-cream) 45%,#fffefa 100%);border-bottom:1px solid var(--x-line);}
+html.theme-christmas .news-page .content-page-head::after{background:linear-gradient(90deg,transparent,var(--x-gold) 45%,var(--x-red));}
+html.theme-christmas .news-page .content-page-head h1{color:var(--x-red);}
+html.theme-christmas .news-page .news-tabs button,
+html.theme-christmas .news-page .news-kind-tabs button{color:var(--x-muted);}
+html.theme-christmas .news-page .news-tabs button:hover,
+html.theme-christmas .news-page .news-kind-tabs button:hover{background:var(--x-cream);color:var(--x-red);}
+html.theme-christmas .news-page .news-tabs button.active,
+html.theme-christmas .news-page .news-kind-tabs button.active{background:var(--x-red);}
+html.theme-christmas .news-page .news-search{color:var(--x-text);}
+html.theme-christmas .news-page .news-search:focus-visible{border-color:var(--x-beige);}
+html.theme-christmas .news-page .news-count{color:var(--x-muted);}
+html.theme-christmas .news-page #newsListCards .news-card::before{background:linear-gradient(90deg,var(--x-red),var(--x-red) 40%,var(--x-gold) 88%);}
+html.theme-christmas .news-page #newsListCards .news-card:hover{border-color:var(--x-line);}
+html.theme-christmas .news-page #newsListCards .news-class{background:var(--x-surface);border:1px solid var(--x-line);color:var(--x-red);}
+html.theme-christmas .news-page #newsListCards .news-important{background:var(--x-cream);color:var(--x-text);border:1px solid var(--x-line);}
+html.theme-christmas .news-page #newsListCards .news-card h3{color:var(--x-text);}
+html.theme-christmas .news-page #newsListCards .news-excerpt{color:var(--x-muted);}
+html.theme-christmas .news-page #newsListCards .news-card-bottom time{color:var(--x-muted);}
+html.theme-christmas .news-page #newsListCards .news-card-arrow{background:var(--x-cream);color:var(--x-red);}
+html.theme-christmas .news-page #newsListCards .news-loading,
+html.theme-christmas .news-page #newsListCards .news-empty{color:var(--x-muted)
+;}
+html.theme-christmas .v103-results-intro{color:var(--x-muted);}
+html.theme-christmas .v103-public-round{box-shadow:0 5px 16px rgba(var(--x-deep-rgb),0.043);}
+html.theme-christmas .v103-public-round:first-of-type{border-top:3px solid var(--x-gold);}
+html.theme-christmas .v103-public-round-top h3{color:var(--x-pine);}
+html.theme-christmas .v103-round-overline{color:var(--x-text);}
+html.theme-christmas .v103-vote-total{color:var(--x-pine);}
+html.theme-christmas .v103-finished{color:var(--x-muted);}
+html.theme-christmas .hoi-page .v103-public-round-top h3{color:var(--x-pine);}
+html.theme-christmas .nuBell{border:1px solid var(--x-line);color:var(--x-text);}
+html.theme-christmas #nuBellCount{background:var(--x-beige);}
+html.theme-christmas .nuRegistrantList{border:1px solid var(--x-line);color:var(--x-text);}
+html.theme-christmas .nuRegistrantList li{border-bottom:1px solid var(--x-cream);}
+html.theme-christmas .nuSoloCountdown{border:1px solid var(--x-line);}
+html.theme-christmas .nuInboxToolbar button,
+html.theme-christmas .nuInboxActions button{background:var(--x-cream);border:1px solid var(--x-line);color:var(--x-text);}
+html.theme-christmas .nuInboxItem p{color:var(--x-muted);}
+html.theme-christmas .nuInboxActions button.nuSecondary{color:var(--x-muted);}
+html.theme-christmas .att-session{box-shadow:0 8px 28px rgba(var(--x-deep-rgb),0.039);}
+html.theme-christmas .att-kicker{color:var(--x-text);}
+html.theme-christmas .att-session h2{color:var(--x-text);}
+html.theme-christmas .att-meta span{color:var(--x-muted);}
+html.theme-christmas .att-meta b{color:var(--x-muted);}
+html.theme-christmas .att-note{color:var(--x-muted);}
+html.theme-christmas .att-submit{border:1px solid var(--x-cream);}
+html.theme-christmas .att-file-label{border:1px dashed var(--x-gold);color:var(--x-text);}
+html.theme-christmas .att-submit>small{color:var(--x-muted);}
+html.theme-christmas .att-code-label{color:var(--x-muted);}
+html.theme-christmas .att-send{background:linear-gradient(120deg,var(--x-pine),var(--x-pine));}
+html.theme-christmas .att-feedback{color:var(--x-muted);}
+html.theme-christmas .attendance-empty strong{color:var(--x-pine);}
+html.theme-christmas .attendance-empty p{color:var(--x-muted);}
+/* v17.css */
+html.theme-christmas{--v17-wine:var(--x-red);--v17-stroke:var(--x-beige);}
+html.theme-christmas .v17-drawer-caption{color:var(--x-text);}
+html.theme-christmas .hero-understroke{background:var(--x-gold);}
+html.theme-christmas .hero-photo:after{background:linear-gradient(0deg,rgba(var(--x-deep-rgb),0.267),transparent 55%)!important;}
+html.theme-christmas .v17-shortcuts .shortcut:hover{border-color:var(--x-gold);box-shadow:0 6px 20px rgba(var(--x-deep-rgb),0.059);}
+html.theme-christmas .news-highlight .news-card h3{color:var(--x-text);}
+html.theme-christmas .v17-upcoming{border:1px solid var(--x-line);box-shadow:0 8px 22px rgba(var(--x-deep-rgb),0.063);}
+html.theme-christmas .v17-upcoming p{color:var(--x-text);}
+html.theme-christmas .v17-kicker{color:var(--x-text);}
+html.theme-christmas .v17-tag{border:1px solid var(--x-line);color:var(--x-text);}
+html.theme-christmas .v17-tag.warn{border-color:var(--x-line);color:var(--x-text);background:var(--x-cream);}
+html.theme-christmas .v17-page-head>span{color:var(--x-text);}
+html.theme-christmas .v17-tabs button{border:1px solid var(--x-line);color:var(--x-text);}
+html.theme-christmas .v17-card,
+html.theme-christmas .v17-form,
+html.theme-christmas .v17-doc-detail{box-shadow:0 8px 25px rgba(var(--x-deep-rgb),0.047);}
+html.theme-christmas .v17-card h3,
+html.theme-christmas .v17-doc-detail h2{color:var(--x-text);}
+html.theme-christmas .v17-sbd{color:var(--x-text);}
+html.theme-christmas .v17-meta span{color:var(--x-text);}
+html.theme-christmas .v17-search input,
+html.theme-christmas .v17-form input,
+html.theme-christmas .v17-form textarea,
+html.theme-christmas .v17-form select{border:1px solid var(--x-line);}
+html.theme-christmas .v17-form-actions button.v17-secondary{border:1px solid var(--x-line);}
+html.theme-christmas .v17-docitem h3{color:var(--x-text);}
+@media(max-width:700px){
+html.theme-christmas.qlnh-authenticated .v17-bottom-nav{border-top:1px solid var(--x-line);}
+html.theme-christmas .v17-bottom-nav button{color:var(--x-text);}
+html.theme-christmas .v17-bottom-nav button span{color:var(--x-text);}
+}
+html.theme-christmas .v19-student-group{border:1px solid var(--x-line);}
+html.theme-christmas .v19-student-heading>span{color:var(--x-text);}
+html.theme-christmas .v19-student-heading h2{color:var(--x-text);}
+html.theme-christmas .v19-student-heading p{color:var(--x-muted);}
+/* fund-student.css */
+html.theme-christmas #fundStudentRoot{color:var(--x-text);}
+html.theme-christmas .fund-student-tabs button{color:var(--x-pine);}
+html.theme-christmas .fund-student-tabs button.selected{background:var(--x-deep);}
+html.theme-christmas .fund-student-metrics>div,
+html.theme-christmas .fund-personal{border:1px solid var(--x-line);}
+html.theme-christmas .fund-student-metrics small,
+html.theme-christmas .fund-personal small{color:var(--x-muted);}
+html.theme-christmas .fund-student-select select,
+html.theme-christmas .fund-student-controls select,
+html.theme-christmas .fund-student-controls input,
+html.theme-christmas .fund-student-report textarea{color:var(--x-text);}
+html.theme-christmas .fund-student-person small,
+html.theme-christmas .fund-student-item small{color:var(--x-muted);}
+html.theme-christmas .fund-state{color:var(--x-muted);}
+html.theme-christmas .fund-state.partial{background:var(--x-cream);color:var(--x-text);}
+html.theme-christmas .fund-in{color:var(--x-pine);}
+html.theme-christmas .fund-out{color:var(--x-red);}
+html.theme-christmas .fund-student-report button{background:var(--x-deep);}
+html.theme-christmas .fund-student-replies>div{border-left:3px solid var(--x-beige);}
+html.theme-christmas .fund-student-updated,
+html.theme-christmas .fund-student-footnote{color:var(--x-muted);}
+html.theme-christmas .fund-student-updated button{color:var(--x-pine);}
+html.theme-christmas .fund-student-activity{border:1px solid var(--x-line);}
+html.theme-christmas .fund-student-activity summary{background:var(--x-cream);color:var(--x-text);}
+html.theme-christmas .fund-student-activity summary small{color:var(--x-muted);}
+html.theme-christmas .fund-student-activity-rows small{color:var(--x-muted);}
+html.theme-christmas .fund-personal{background:linear-gradient(135deg,#fffefb,var(--x-cream));border:2px solid var(--x-line);box-shadow:0 6px 20px rgba(var(--x-beige-rgb),0.047);}
+html.theme-christmas .fund-personal-head>small{color:var(--x-text);}
+html.theme-christmas .fund-personal-caption{color:var(--x-text);}
+html.theme-christmas .fund-personal-name{color:var(--x-muted);}
+html.theme-christmas .fund-personal-totals>div{border:1px solid var(--x-line);}
+html.theme-christmas .fund-personal-totals strong{color:var(--x-text);}
+html.theme-christmas .fund-personal-note{color:var(--x-red);}
+/* site-music.css */
+html.theme-christmas .qlnh-music-toggle{border:1px solid var(--x-line)!important;color:var(--x-text)!important;box-shadow:0 4px 22px rgba(var(--x-line-rgb),0.169);}
+html.theme-christmas .qlnh-music-toggle[aria-pressed="true"]{background:var(--x-cream)!important;border-color:var(--x-line)!important;}
+html.theme-christmas .qlnh-music-settings{border:1px solid var(--x-line)!important;color:var(--x-text)!important;box-shadow:0 4px 18px rgba(var(--x-line-rgb),0.122);}
+html.theme-christmas .qlnh-music-panel{color:var(--x-text);border:1px solid var(--x-line);box-shadow:0 13px 40px rgba(var(--x-deep-rgb),0.161);}
+html.theme-christmas .qlnh-music-panel p{color:var(--x-text);}
+html.theme-christmas .qlnh-music-volume input{accent-color:var(--x-line);}
+/* site-motion.css */
+
+/* qlnh-document-viewer.css */
+html.theme-christmas #qlnhDocReader{color:var(--x-text);}
+html.theme-christmas #qlnhDocReader .qdr-head{border-bottom:1px solid var(--x-line);}
+html.theme-christmas #qlnhDocReader .qdr-head button{background:var(--x-cream);border:1px solid var(--x-line);color:var(--x-text);}
+html.theme-christmas #qlnhDocReader .qdr-counter{color:var(--x-muted);}
+html.theme-christmas #qlnhDocReader .qdr-page{box-shadow:0 2px 12px rgba(var(--x-deep-rgb),0.125);color:var(--x-muted);}
+html.theme-christmas #qlnhDocReader .qdr-loading{color:var(--x-muted);}
+html.theme-christmas #qlnhDocReader .qdr-footer{border-top:1px solid var(--x-line);}
+html.theme-christmas #qlnhDocReader .qdr-footer button{border:1px solid var(--x-line);color:var(--x-text);}
+html.theme-christmas #qlnhDocReader .qdr-sep{background:var(--x-beige);}
+html.theme-christmas .v192-highlight{outline:3px solid var(--x-gold);}
+/* inline-style-1 */
+html.theme-christmas .student-auth-gate{background:radial-gradient(circle at 100% 0%,var(--x-beige) 0,transparent 35%),linear-gradient(155deg,#fffef7 0%,#fffaf0 58%,var(--x-cream) 100%);color:var(--x-text);}
+html.theme-christmas .student-auth-card{border:1px solid var(--x-line);box-shadow:0 24px 55px rgba(var(--x-red-rgb),0.094);}
+html.theme-christmas .student-auth-mark{background:var(--x-red);box-shadow:0 6px 18px rgba(var(--x-red-rgb),0.200);}
+html.theme-christmas .student-auth-card p{color:var(--x-muted);}
+html.theme-christmas .student-auth-form label{color:var(--x-muted);}
+html.theme-christmas .student-auth-form input{color:var(--x-text);}
+html.theme-christmas .student-auth-form input:focus{outline:3px solid var(--x-line);border-color:var(--x-gold);}
+html.theme-christmas .student-auth-form button{background:var(--x-red);}
+html.theme-christmas #drawer > button.drawerLogout{color:var(--x-red);border-top:1px solid var(--x-line);}
+html.theme-christmas #drawer > button.drawerLogout:hover{background:var(--x-surface);}
+html.theme-christmas #drawer > button.drawerLogout svg{color:var(--x-red);}
+html.theme-christmas .student-auth-loading{color:var(--x-text);}
+html.theme-christmas .student-auth-loading-mark{background:var(--x-red);box-shadow:0 10px 24px rgba(var(--x-red-rgb),0.145);}
+html.theme-christmas .student-auth-loading p{color:var(--x-muted);}
+html.theme-christmas .student-auth-loading-actions button{color:var(--x-muted);}
+html.theme-christmas .guest-header-login{border:1px solid var(--x-gold);background:var(--x-cream);color:var(--x-text);}
+html.theme-christmas .student-guest-entry{border:1px solid var(--x-gold);color:var(--x-text);}
+html.theme-christmas .student-guest-entry:hover{background:var(--x-cream);}
+html.theme-christmas.qlnh-guest .drawerGuestLogin{color:var(--x-text);border-top:1px solid var(--x-line);}
+html.theme-christmas.qlnh-guest .guestMenuLabel{color:var(--x-text);}
+html.theme-christmas #guestAuthDialog{background:rgba(var(--x-deep-rgb),0.580);}
+html.theme-christmas .guest-auth-modal{box-shadow:0 18px 65px rgba(var(--x-deep-rgb),0.231);color:var(--x-text);}
+html.theme-christmas .guest-auth-actions button{border:1px solid var(--x-gold);color:var(--x-text);}
+html.theme-christmas .guest-auth-actions button:first-child{background:var(--x-beige);border-color:var(--x-beige);}
+html.theme-christmas #drawer .drawerHeader{background:var(--x-surface);border-bottom:1px solid var(--x-line);}
+html.theme-christmas #drawer .drawerScroll>button{color:var(--x-text);}
+html.theme-christmas #drawer .drawerScroll>button:hover,
+html.theme-christmas #drawer .drawerScroll>button:focus-visible{background:var(--x-cream);}
+html.theme-christmas #drawer .drawerScroll>button svg{color:var(--x-red);}
+html.theme-christmas #drawer .drawerFooter{border-top:1px solid var(--x-line);background:var(--x-surface);box-shadow:0 -8px 20px rgba(var(--x-deep-rgb),0.047);}
+html.theme-christmas #drawer .drawerFooter>.drawerLogout{color:var(--x-red);border:1px solid var(--x-line);}
+html.theme-christmas #drawer .drawerFooter>.drawerGuestLogin{color:var(--x-text);border:1px solid var(--x-line);}
+html.theme-christmas #drawer .drawerFooter>.drawerLogout svg{color:var(--x-red);}
+/* inline-style-2 */

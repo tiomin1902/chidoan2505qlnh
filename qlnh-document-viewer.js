@@ -7,7 +7,7 @@
  let opened=null,pdfLibPromise=null;
  const loadLib=()=>{if(!pdfLibPromise)pdfLibPromise=import(PDFJS).then(mod=>{mod.GlobalWorkerOptions.workerSrc=PDFWORKER;return mod;}).catch(e=>{pdfLibPromise=null;throw e;});return pdfLibPromise;};
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const css=document.createElement('link');css.rel='stylesheet';css.href='./qlnh-document-viewer.css?v=19.2.0';document.head.append(css);
+ const css=document.createElement('link');css.rel='stylesheet';css.href='./qlnh-document-viewer.css?v=19.2.0';const themeCSS=document.querySelector('link[href*="christmas-colors.css"]');if(themeCSS)themeCSS.before(css);else document.head.append(css);
  const setText=(el,text)=>{if(el)el.textContent=text;};
  const stopKeys=e=>{if(opened&&e.key==='Escape'){e.preventDefault();opened.close();}};
  window.QLNH_V192_VIEW_DOCUMENT=async(blob,meta={})=>{

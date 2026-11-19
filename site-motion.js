@@ -58,7 +58,7 @@ function writeIntro(){
  // Preserve the sentence in accessible text before animation and avoid blank first paint.
  window.setTimeout(tick,210);
 }
-function apply(incoming){config=safe(incoming);const economy=config.performance==='economy'||(config.performance==='auto'&&((navigator.deviceMemory||8)<=2||(navigator.hardwareConcurrency||8)<=2));if(economy){config.scroll=false;config.flowers=false;config.typewriter=false;config.intensity='low';}else if(config.performance==='smooth'){config.scroll=false;config.flowers=false;config.intensity='low';}root.classList.toggle('qlnh-motion-active',config.enabled&&!reduced());
+function apply(incoming){config=safe(incoming);window.QLNH_MOTION_PUBLIC=config;window.dispatchEvent(new CustomEvent('qlnh:motion',{detail:config}));const economy=config.performance==='economy'||(config.performance==='auto'&&((navigator.deviceMemory||8)<=2||(navigator.hardwareConcurrency||8)<=2));if(economy){config.scroll=false;config.flowers=false;config.typewriter=false;config.intensity='low';}else if(config.performance==='smooth'){config.scroll=false;config.flowers=false;config.intensity='low';}root.classList.toggle('qlnh-motion-active',config.enabled&&!reduced());
  root.classList.toggle('qlnh-motion-scroll',config.enabled&&config.scroll&&!reduced());
  root.classList.toggle('qlnh-motion-flowers',config.enabled&&config.flowers&&!reduced());
  root.classList.toggle('qlnh-motion-low',config.intensity==='low');root.classList.toggle('qlnh-motion-high',config.intensity==='high');

@@ -25,7 +25,7 @@ function bindWords(){
   const portrait=$('themeAdvisorPortrait');
   if(portrait){const old=portrait.querySelector('img');if(old)old.remove();if(/^https:\/\//i.test(String(config.photoUrl||''))){const img=document.createElement('img');img.src=config.photoUrl;img.alt='Ảnh cô cố vấn học tập được quản trị viên cho phép công khai';img.loading='lazy';img.onerror=()=>img.remove();portrait.prepend(img);}}
 }
-function apply(value){config={...defaults,...value};const active=typeof value?.active==='boolean'?value.active:isActive(config);document.documentElement.classList.toggle('theme-2011',!!active);const bar=document.querySelector('meta[name="theme-color"]');if(bar)bar.content=active?'#F1C6D7':'#FFF9F1';bindWords();document.documentElement.classList.remove('qlnh-theme-preload');}
+function apply(value){config={...defaults,...value};const active=typeof value?.active==='boolean'?value.active:isActive(config);if(window.QLNH_SEASON)window.QLNH_SEASON.setTeacher(active);else{document.documentElement.classList.toggle('theme-2011',!!active);const bar=document.querySelector('meta[name="theme-color"]');if(bar)bar.content=active?'#F1C6D7':'#FFF9F1';}bindWords();document.documentElement.classList.remove('qlnh-theme-preload');}
 async function load(){const api=String(window.QLNH_GATEWAY_URL||'').replace(/\/+$/,'');if(!/^https:\/\//i.test(api)){apply(config);return;}
  try{const ctrl=new AbortController();const timeout=setTimeout(()=>ctrl.abort(),6500);
  let result;try{const resp=await fetch(api+'/api/guest/data?action=theme2011',{cache:'no-store',credentials:'omit',signal:ctrl.signal});if(!resp.ok)throw Error('Theme endpoint unavailable');result=await resp.json();}finally{clearTimeout(timeout);}
@@ -35,6 +35,7 @@ async function load(){const api=String(window.QLNH_GATEWAY_URL||'').replace(/\/+
  apply(result);
  }catch(e){console.warn('Chưa đồng bộ được chủ đề 20/11; tiếp tục dùng cấu hình công khai đã lưu hoặc lịch mặc định.',e);apply(config);}
 }
+window.addEventListener('qlnh:season',bindWords);
 window.QLNH_THEME2011_SET_PUBLIC_CONFIG=c=>{appConfig=c&&typeof c==='object'?c:null;bindWords();};
 $('themeGoAdvisor')?.addEventListener('click',()=>{if(typeof window.nav==='function')window.nav('class');else document.querySelector('[data-page="class"]')?.click();setTimeout(()=>$('advisorSpotlight')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}),70);});
 $('themeMenuAdvisor')?.addEventListener('click',()=>setTimeout(()=>$('advisorSpotlight')?.scrollIntoView({behavior:'smooth',block:'start'}),80));

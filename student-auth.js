@@ -42,7 +42,7 @@
  async function loadApp(privateMode){
    const load=async src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=()=>reject(Error('Không tải được '+src));document.body.append(script);});
    if(!baseLoaded){
-     for(const src of ['./config.js','./app.js?v=22.0.2','./news.js?v=19.7.0','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=19.2.0','./v17-student.js?v=19.7.0','./qlnh-deeplink.js?v=21.3.0','./fund-student.js?v=19.7.0'])await load(src);
+     for(const src of ['./config.js','./app.js?v=22.0.2','./news.js?v=19.7.0','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=23.0.0','./v17-student.js?v=19.7.0','./qlnh-deeplink.js?v=21.3.0','./fund-student.js?v=19.7.0'])await load(src);
      baseLoaded=true;
    }
    if(privateMode&&!privateLoaded){
