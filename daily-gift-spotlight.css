@@ -21,3 +21,6 @@
 @media(max-width:720px){.dgs-gift,.dgs-drop{width:clamp(220px,78vw,330px)!important;max-width:min(88vw,62dvh)!important}.dgs-opened .dgs-gift{width:clamp(110px,34vw,150px)!important}.dgs-dialog::backdrop{backdrop-filter:blur(2px)}}
 @media(max-height:450px){.dgs-gift,.dgs-drop{width:min(215px,51dvh)!important}.dgs-skip{bottom:8px;padding:8px 18px!important}}
 @media(prefers-reduced-motion:reduce){.dgs-opened .dgs-svg-lid,.dgs-opened .dgs-halo{animation:none!important}.dgs-dialog::backdrop{backdrop-filter:none!important}}html.xmas-static .dgs-opened .dgs-svg-lid,html.xmas-static .dgs-opened .dgs-halo{animation:none!important}
+
+/* V23.6: no blur, opacity reduction or composited glow on the HD flight. */
+.dgs-flight{filter:none!important;opacity:1!important;image-rendering:auto!important;max-width:none!important;object-fit:contain;backface-visibility:hidden;}
