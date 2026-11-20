@@ -24,8 +24,21 @@
 
 /* V23.6: no blur, opacity reduction or composited glow on the HD flight. */
 .dgs-flight{filter:none!important;opacity:1!important;image-rendering:auto!important;max-width:none!important;object-fit:contain;backface-visibility:hidden;}
-
-/* V23.7 hotfix: keep visible keyboard focus without a rectangular frame around the gift. */
-.dgs-dialog .dgs-gift:focus{outline:none!important;box-shadow:none!important}
-.dgs-dialog .dgs-gift:focus-visible:not(:disabled){filter:drop-shadow(0 0 10px #ffdf88bb) drop-shadow(0 0 20px #ffe4a366)!important}
-@media(forced-colors:active){.dgs-dialog .dgs-gift:focus-visible{outline:2px solid Highlight!important;outline-offset:3px}}
+/* V23.7.1: remove rectangle from gift button, keep keyboard focus on the art. */
+html body .dgs-dialog button.dgs-gift,
+html body .dgs-dialog button.dgs-gift:focus,
+html body .dgs-dialog button.dgs-gift:focus-visible,
+html body .dgs-dialog button.dgs-gift:active {
+  outline: none !important;
+  outline-offset: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  -webkit-tap-highlight-color: transparent;
+}
+html body .dgs-dialog button.dgs-gift:focus-visible:not(:disabled) svg {
+  filter: drop-shadow(0 0 9px #ffdf8899);
+}
+@media (forced-colors: active) {
+  html body .dgs-dialog button.dgs-gift:focus-visible { outline: 2px solid Highlight !important; outline-offset: 3px !important; }
+}

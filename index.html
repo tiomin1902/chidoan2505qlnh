@@ -133,7 +133,7 @@ body.qlnh-drawer-open{overflow:hidden}
 body.qlnh-drawer-open .v17-bottom-nav{display:none!important}
 @media(max-width:560px){.top{padding:0 14px}.brand{min-width:0}.brandCopy strong{font-size:clamp(17px,5vw,22px)}.brandCopy small{font-size:7px}.brandSeal{width:36px;height:36px;flex-shrink:0}.headerTools{gap:4px}.headerNotice,.mobileMenuButton{height:38px;width:38px}}
 </style><link rel="stylesheet" href="./fund-student.css?v=19.7.0"><link rel="stylesheet" href="./site-music.css?v=23.4.0"><link rel="stylesheet" href="./site-motion.css?v=21.1.0"><style>.qlnh-acl-hidden{display:none!important}</style>
-<link rel="stylesheet" href="./christmas-colors.css?v=23.2.0"><link rel="stylesheet" href="./christmas.css?v=23.6.0"><link rel="stylesheet" href="./daily-gift-spotlight.css?v=23.6.0"><style id="qlnh-v237-school-marquee">
+<link rel="stylesheet" href="./christmas-colors.css?v=23.2.0"><link rel="stylesheet" href="./christmas.css?v=23.6.0"><link rel="stylesheet" href="./daily-gift-spotlight.css?v=23.7.1"><style id="qlnh-v237-school-marquee">
 .official-mini .official-mini-inner>span:first-child{flex:1 1 auto;min-width:0;max-width:none;overflow:visible;text-overflow:clip;white-space:nowrap}
 .official-mini .official-mini-inner>span:first-child>svg,.official-mini .official-mini-inner>button{flex-shrink:0}
 .official-mini .school-window{display:block;flex:1 1 auto;min-width:0;overflow:hidden;white-space:nowrap;cursor:default}
@@ -146,7 +146,27 @@ body.qlnh-drawer-open .v17-bottom-nav{display:none!important}
 .official-mini .school-window.is-paused .school-track,.official-mini .school-window:hover .school-track,.official-mini .school-window:focus-visible .school-track{animation-play-state:paused}
 @keyframes qlnhSchoolRoll{to{transform:translateX(calc(-1 * var(--school-distance,600px)))}}
 @media(prefers-reduced-motion:reduce){.official-mini .school-window.is-overflow{overflow-x:auto;scrollbar-width:none}.official-mini .school-window.is-overflow .school-track{animation:none}.official-mini .school-window.is-overflow .school-copy{display:none}}
-</style></head>
+</style><style id="qlnh-v2371-gift-focus">
+/* V23.7.1: remove rectangle from gift button, keep keyboard focus on the art. */
+html body .dgs-dialog button.dgs-gift,
+html body .dgs-dialog button.dgs-gift:focus,
+html body .dgs-dialog button.dgs-gift:focus-visible,
+html body .dgs-dialog button.dgs-gift:active {
+  outline: none !important;
+  outline-offset: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  -webkit-tap-highlight-color: transparent;
+}
+html body .dgs-dialog button.dgs-gift:focus-visible:not(:disabled) svg {
+  filter: drop-shadow(0 0 9px #ffdf8899);
+}
+@media (forced-colors: active) {
+  html body .dgs-dialog button.dgs-gift:focus-visible { outline: 2px solid Highlight !important; outline-offset: 3px !important; }
+}
+</style>
+</head>
 <body data-current-page="home"><div id="studentAuthGate" class="student-auth-gate"><div id="studentAuthLoading" class="student-auth-loading" role="status" aria-live="polite">
 <span class="student-auth-loading-mark">25</span><strong>LỚP 2505QLNH</strong>
 <p id="studentAuthLoadingStatus">Đang mở cổng thông tin của bạn…</p>
