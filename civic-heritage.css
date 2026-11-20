@@ -1,0 +1,85 @@
+/* V24.0 Default theme only. All business logic stays in existing scripts. */
+html.theme-civic-heritage{--red:#9d1523;--red-bright:#be2430;--red-dark:#650f20;--red-wine:#500d19;--gold:#b68a47;--yellow:#f4d99a;--cream:#fffaf0;--ivory:#f7eddc;--surface:#fffdf7;--ink:#302523;--navy:#762331;--navy-dark:#54131e;--sky:#a95b55;--blue-light:#f6e7df;--line:#dfc8a6;--muted:#70625b;--shadow:0 8px 24px #6a371615;--v17-wine:#8b1425;--v17-ink:#302523;--v17-cream:#fffaf0;--v17-stroke:#dfc8a6;--v17-muted:#70625b;--serif:Georgia,'Times New Roman',serif;}
+html.theme-civic-heritage body{background:#f6efe1;color:var(--ink)}
+html.theme-civic-heritage body:before{background:radial-gradient(ellipse at 0 24%,#e6c68b30,transparent 33%),radial-gradient(ellipse at 100% 85%,#f0d8a94b,transparent 45%)}
+html.theme-civic-heritage .official-mini{background:#590d19;color:#fff0ca;height:35px}
+html.theme-civic-heritage .official-mini button{color:#fff0ca}
+html.theme-civic-heritage .top{height:72px;gap:12px;background:linear-gradient(117deg,#630d19,#aa1521 55%,#740b18);border-bottom:1px solid #d8b46b;box-shadow:0 3px 12px #55101a28}
+html.theme-civic-heritage .desktopNav{display:none!important}
+html.theme-civic-heritage #menuBtn{display:grid!important;flex:0 0 42px}
+html.theme-civic-heritage .headerTools{margin-left:auto;gap:9px;min-width:0}
+html.theme-civic-heritage .brand{min-width:0;flex:0 1 auto}
+html.theme-civic-heritage .brandSeal{background:#ffffff0e;border-color:#e6c480;color:#ffe6a1}
+html.theme-civic-heritage .brandCopy strong{color:#fff1cc;font-size:clamp(17px,2.1vw,28px)}
+html.theme-civic-heritage .brandCopy small{color:#f3d5a0}
+html.theme-civic-heritage #drawer{background:linear-gradient(155deg,#fff9ed,#f8ead5);border-left:1px solid #d1ac72}
+html.theme-civic-heritage #drawer button{color:#681522}
+html.theme-civic-heritage .drawerHeader{border-color:#d6b77e}
+.civic-slogan{display:none}
+html.theme-civic-heritage.qlnh-authenticated .civic-slogan,html.theme-civic-heritage.qlnh-guest .civic-slogan{display:flex;align-items:center;gap:14px;justify-content:center;padding:9px max(16px,calc((100vw - 1300px)/2));background:linear-gradient(90deg,#ebd7af,#fff6e6 50%,#ebd7af);color:#97121f;border-bottom:1px solid #cfa868;font-size:14px;font-weight:800;letter-spacing:.055em;min-height:40px;overflow:hidden}
+html.theme-civic-heritage .civic-slogan svg{flex:none;color:#a01c23}
+html.theme-civic-heritage .civic-slogan-window{min-width:0;max-width:100%;overflow:hidden;white-space:nowrap;text-align:center;cursor:default}
+html.theme-civic-heritage .civic-slogan-track{display:flex;width:max-content;align-items:center;gap:42px}
+html.theme-civic-heritage .civic-slogan-copy{display:none}
+html.theme-civic-heritage .civic-slogan-window.is-rolling{cursor:pointer}
+html.theme-civic-heritage .civic-slogan-window.is-rolling .civic-slogan-copy{display:block}
+html.theme-civic-heritage .civic-slogan-window.is-rolling .civic-slogan-track{animation:civicRoll var(--civic-duration,22s) linear infinite}
+html.theme-civic-heritage .civic-slogan-window.is-paused .civic-slogan-track,html.theme-civic-heritage .civic-slogan-window:focus-visible .civic-slogan-track{animation-play-state:paused}
+@keyframes civicRoll{to{transform:translateX(calc(-1 * var(--civic-distance,550px)))}}
+html.theme-civic-heritage .hero-wrap{max-width:1360px;padding:0 22px;margin:12px auto 0}
+html.theme-civic-heritage .patriotic-hero{isolation:isolate;background:#810d1a url('./civic-heritage-art.svg?v=24.0.0') center/cover no-repeat;min-height:410px!important;display:flex!important;flex-direction:row!important;border-radius:16px!important;border:1px solid #c89a58;box-shadow:0 12px 28px #6a1b1b24;overflow:hidden}
+html.theme-civic-heritage .hero-copy{width:54%!important;align-items:flex-start!important;text-align:left!important;padding:40px 25px 48px 5.1%!important;justify-content:center;min-width:0;z-index:7;background:linear-gradient(90deg,#620a16a9,#7b0d1880 60%,transparent)}
+html.theme-civic-heritage .hero-copy h1{font-size:clamp(30px,3.9vw,57px)!important;color:#ffe8ae!important;text-shadow:0 3px 2px #3f0811,0 0 22px #e5bd6b42;letter-spacing:-.035em!important;font-style:italic;margin-bottom:8px!important}
+html.theme-civic-heritage .hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(42px,5.7vw,84px)!important;letter-spacing:-.055em!important;white-space:nowrap!important}
+html.theme-civic-heritage .hero-overline{color:#f8d99a;letter-spacing:.10em;font-size:10px;line-height:1.7;margin-bottom:11px}
+html.theme-civic-heritage .hero-understroke{background:linear-gradient(90deg,#fff1bd,#c9963f,transparent);width:210px;height:2px}
+html.theme-civic-heritage .hero-slogan{color:#ffebbc!important;font-size:clamp(16px,1.6vw,23px)!important;line-height:1.45}
+html.theme-civic-heritage .hero-desc{color:#fff5e5!important;max-width:440px!important;font-size:13px!important;line-height:1.65}
+html.theme-civic-heritage .hero-actions{justify-content:flex-start;gap:9px}
+html.theme-civic-heritage .hero-primary{background:linear-gradient(120deg,#fff0c2,#d6a755);border-color:#e6c688;color:#5e1120;box-shadow:0 4px 15px #23080c26}
+html.theme-civic-heritage .hero-outline{background:#5d101d91;color:#fff1c6;border-color:#e1b77b}
+html.theme-civic-heritage .hero-visual{position:absolute!important;inset:0 0 0 49%!important;width:auto!important;height:auto!important;min-height:0!important;mask-image:linear-gradient(90deg,transparent,#000 20%,#000 93%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 20%,#000 93%,transparent);z-index:1;}
+html.theme-civic-heritage .hero-photo{background:transparent;inset:0;}
+html.theme-civic-heritage .hero-photo img{object-position:center 52%;opacity:.88}
+html.theme-civic-heritage .hero-photo:after{background:linear-gradient(0deg,#9d2331b3,transparent 30%,transparent 65%,#f3d8a13c),linear-gradient(90deg,#9b1524a8,transparent 35%)!important}
+html.theme-civic-heritage .hero-photo-fallback{display:none}
+html.theme-civic-heritage .hero-visual:has(.hasBanner){mask-image:linear-gradient(90deg,transparent,#000 12%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%)}
+html.theme-civic-heritage .hero-wave-one{display:block!important;position:absolute;z-index:4;inset:auto -9% -58px -8%;height:118px;border-radius:50% 65% 0 0;transform:rotate(-3deg);background:linear-gradient(167deg,#be2731,#7c0c1b 58%,#470710);border-top:3px solid #eac77c;pointer-events:none}
+html.theme-civic-heritage .hero-wave-two{display:none!important}
+html.theme-civic-heritage .home-content{max-width:1360px;padding:0 33px 34px;background:transparent;margin:auto}
+html.theme-civic-heritage .home-shortcuts.v17-shortcuts{position:relative;z-index:8;padding:13px;margin:-23px 0 19px;gap:10px;background:linear-gradient(150deg,#fff8e9,#f6e7cd);border:1px solid #e4c799;border-radius:17px;box-shadow:0 8px 22px #79532118}
+html.theme-civic-heritage .v17-shortcuts .shortcut{background:linear-gradient(160deg,#fffdf5,#f8ebd5);border:1px solid #d9b987;border-radius:11px;min-height:91px;color:#512825;font-family:var(--sans);font-size:12px;box-shadow:0 3px 5px #8e613a10}
+html.theme-civic-heritage .v17-shortcut-ico{color:#a01826;font-size:28px}
+html.theme-civic-heritage .home-overview-grid{grid-template-columns:1fr 1fr!important;align-items:start;gap:18px}
+html.theme-civic-heritage .home-overview-grid #v17Upcoming{grid-column:1/-1;order:-1;margin:0}
+html.theme-civic-heritage .home-overview-grid .surface-panel{min-width:0;overflow:hidden;border:1px solid #dfc69d;padding:0 16px 15px;border-radius:14px;background:#fffaf1;box-shadow:var(--shadow)}
+html.theme-civic-heritage .home-overview-grid .panel-heading{margin:0 -16px 14px;padding:14px 16px;background:linear-gradient(115deg,#b0212a,#76101c);border-bottom:2px solid #d8b36c;min-height:54px}
+html.theme-civic-heritage .home-overview-grid .panel-heading h2,html.theme-civic-heritage .home-overview-grid .panel-heading svg,html.theme-civic-heritage .home-overview-grid .mini-link{color:#fff1cc}
+html.theme-civic-heritage .home-overview-grid .panel-heading h2{font-size:19px}
+html.theme-civic-heritage .news-highlight .news-grid{grid-template-columns:1fr!important;grid-template-rows:auto!important}
+html.theme-civic-heritage .news-highlight .news-card:first-child{grid-row:auto;min-height:130px!important;flex-direction:row}
+html.theme-civic-heritage .news-highlight .news-card:first-child .news-image{width:112px;height:auto;min-height:100%}
+html.theme-civic-heritage .news-highlight .news-card:first-child .news-card-body{padding:12px}
+html.theme-civic-heritage .news-highlight .news-card:first-child h3{font-size:19px}
+html.theme-civic-heritage .page-ribbon,html.theme-civic-heritage .v17-page-head{background:linear-gradient(115deg,#fff5e4,#e9d3a9);border-bottom:1px solid #c6a064}
+html.theme-civic-heritage .v17-page-head h1,html.theme-civic-heritage .page-ribbon h1,html.theme-civic-heritage .section-title{color:#8b1425}
+html.theme-civic-heritage .v17-card,html.theme-civic-heritage .v17-docitem,html.theme-civic-heritage .v17-doc-detail,html.theme-civic-heritage .panel,html.theme-civic-heritage .push-panel,html.theme-civic-heritage .surface-panel{background:#fffaf1;border-color:#dfc8a6}
+html.theme-civic-heritage .student-auth-gate{background:linear-gradient(120deg,#590c18d9,#9d1922a5),url('./civic-heritage-art.svg?v=24.0.0') center/cover}
+html.theme-civic-heritage .student-auth-card{background:#fff9ed;border-color:#dbb779;box-shadow:0 24px 55px #3f070936}
+html.theme-civic-heritage .student-auth-mark,html.theme-civic-heritage .student-auth-form button{background:#8b1425}
+html.theme-civic-heritage .student-auth-card h1{color:#671521}
+html.theme-civic-heritage .siteFooter{background:linear-gradient(120deg,#590c18,#8f1725 65%,#640d19);border-top:3px solid #d9b56f;color:#ffefd0}
+html.theme-civic-heritage #qlnhMusicWidget{--music-surface:#fff8e9;--music-soft:#f2e2c7;--music-primary:#8b1425;--music-ink:#49232a;--music-border:#d3b277}
+html.theme-civic-heritage .v17-bottom-nav{background:#fff6e8!important;border-color:#d8b77b!important}
+html.theme-civic-heritage .v17-bottom-nav button{color:#8b1425}
+@media(max-width:990px){html.theme-civic-heritage .home-overview-grid{grid-template-columns:1fr!important}html.theme-civic-heritage .hero-copy{width:60%!important}html.theme-civic-heritage .hero-visual{left:48%!important}}
+@media(max-width:700px){html.theme-civic-heritage .top{height:62px;padding:0 12px;gap:8px}html.theme-civic-heritage .brandCopy strong{font-size:17px}html.theme-civic-heritage .brandCopy small{font-size:7px;letter-spacing:.05em}html.theme-civic-heritage .headerTools{gap:5px}html.theme-civic-heritage #menuBtn{width:37px;height:40px;flex-basis:37px}html.theme-civic-heritage .civic-slogan{padding:8px 13px!important;gap:10px!important;min-height:37px!important;font-size:12px!important}html.theme-civic-heritage .civic-slogan-window{flex:1;text-align:left}html.theme-civic-heritage .hero-wrap{padding:0;margin:0 auto}html.theme-civic-heritage .patriotic-hero{min-height:0!important;display:block!important;border-radius:0!important;border-width:0 0 1px;background-position:64% center;background-size:auto 100%}html.theme-civic-heritage .hero-copy{width:100%!important;padding:27px 17px 22px!important;background:linear-gradient(90deg,#640b18f0,#810e1abc 53%,#810e1a30)!important;align-items:flex-start!important;text-align:left!important}html.theme-civic-heritage .hero-copy h1{font-size:29px!important}html.theme-civic-heritage .hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(41px,12vw,66px)!important}html.theme-civic-heritage .hero-overline{font-size:8px;max-width:95%}html.theme-civic-heritage .hero-slogan{font-size:16px!important;max-width:95%}html.theme-civic-heritage .hero-desc{font-size:12px!important;max-width:92%!important}html.theme-civic-heritage .hero-actions button{min-height:40px;white-space:normal;padding:8px 10px;font-size:10px}html.theme-civic-heritage .hero-visual{position:relative!important;inset:auto!important;width:100%!important;height:147px!important;min-height:147px!important;mask-image:linear-gradient(180deg,transparent,#000 15%,#000 89%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 15%,#000 89%,transparent)}html.theme-civic-heritage .hero-photo img{object-position:50% 49%}html.theme-civic-heritage .hero-wave-one{height:70px;bottom:-41px;inset-inline:-13%}html.theme-civic-heritage .home-content{padding:0 12px 25px}html.theme-civic-heritage .home-shortcuts.v17-shortcuts{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:9px;margin:-12px 0 14px;border-radius:13px}html.theme-civic-heritage .v17-shortcuts .shortcut{min-height:80px;padding:8px 4px;font-size:11px;gap:5px;overflow-wrap:anywhere}html.theme-civic-heritage .home-overview-grid .panel-heading{padding:12px 12px}html.theme-civic-heritage .home-overview-grid .panel-heading h2{font-size:16px}html.theme-civic-heritage .home-overview-grid .mini-link{font-size:11px}html.theme-civic-heritage .siteFooter{padding-bottom:calc(95px + env(safe-area-inset-bottom))}}
+@media(max-width:360px){html.theme-civic-heritage .brandSeal{width:30px;height:30px}html.theme-civic-heritage .brandCopy strong{font-size:15px}html.theme-civic-heritage .brandCopy small{font-size:6px}html.theme-civic-heritage .headerTools{gap:3px}html.theme-civic-heritage .hero-actions button{font-size:10px}html.theme-civic-heritage .v17-shortcuts .shortcut{font-size:10px}}
+@media(prefers-reduced-motion:reduce){html.theme-civic-heritage .civic-slogan-window{white-space:normal}html.theme-civic-heritage .civic-slogan-window .civic-slogan-track{width:auto;animation:none!important}html.theme-civic-heritage .civic-slogan-window .civic-slogan-copy{display:none!important}html.theme-civic-heritage .civic-slogan-label{overflow-wrap:anywhere}}
+
+/* Editorial display font, scoped to default; overrides existing global typography reset. */
+html.theme-civic-heritage .hero-copy h1,html.theme-civic-heritage .hero-copy h1 .v17-hero-line,html.theme-civic-heritage .hero-slogan,html.theme-civic-heritage .brandCopy strong,html.theme-civic-heritage .footer-brand strong,html.theme-civic-heritage .panel-heading h2,html.theme-civic-heritage .page-ribbon h1,html.theme-civic-heritage .v17-page-head h1{font-family:'Playfair Display',Georgia,'Times New Roman',serif!important;}
+html.theme-civic-heritage .hero-copy h1 .v17-hero-line{font-style:italic;text-shadow:0 2px 0 #5a101b,0 4px 8px #47061070;}
+html.theme-civic-heritage .hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(40px,5.7vw,84px)!important;letter-spacing:-.045em!important;}
+html.theme-civic-heritage .hero-copy h1{font-weight:700;}
+@media(max-width:700px){html.theme-civic-heritage .patriotic-hero{background-image:url('./civic-heritage-mobile.svg?v=24.0.0');background-size:cover;background-position:center bottom;}html.theme-civic-heritage .hero-copy{background:linear-gradient(90deg,#610a16b0,#7b0d1860 65%,transparent)!important;}html.theme-civic-heritage .hero-visual{height:130px!important;min-height:130px!important;}html.theme-civic-heritage .hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(39px,11.6vw,65px)!important;}}
