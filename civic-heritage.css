@@ -27,7 +27,7 @@ html.theme-civic-heritage .civic-slogan-window.is-rolling .civic-slogan-track{an
 html.theme-civic-heritage .civic-slogan-window.is-paused .civic-slogan-track,html.theme-civic-heritage .civic-slogan-window:focus-visible .civic-slogan-track{animation-play-state:paused}
 @keyframes civicRoll{to{transform:translateX(calc(-1 * var(--civic-distance,550px)))}}
 html.theme-civic-heritage .hero-wrap{max-width:1360px;padding:0 22px;margin:12px auto 0}
-html.theme-civic-heritage .patriotic-hero{isolation:isolate;background:#810d1a url('./civic-hero-desktop.webp?v=24.1.0') center/cover no-repeat;min-height:410px!important;display:flex!important;flex-direction:row!important;border-radius:16px!important;border:1px solid #c89a58;box-shadow:0 12px 28px #6a1b1b24;overflow:hidden}
+html.theme-civic-heritage .patriotic-hero{isolation:isolate;background:#810d1a url('./civic-hero-desktop.webp?v=24.2.0') center/cover no-repeat;min-height:410px!important;display:flex!important;flex-direction:row!important;border-radius:16px!important;border:1px solid #c89a58;box-shadow:0 12px 28px #6a1b1b24;overflow:hidden}
 html.theme-civic-heritage .hero-copy{width:54%!important;align-items:flex-start!important;text-align:left!important;padding:40px 25px 48px 5.1%!important;justify-content:center;min-width:0;z-index:7;background:linear-gradient(90deg,#620a16a9,#7b0d1880 60%,transparent)}
 html.theme-civic-heritage .hero-copy h1{font-size:clamp(30px,3.9vw,57px)!important;color:#ffe8ae!important;text-shadow:0 3px 2px #3f0811,0 0 22px #e5bd6b42;letter-spacing:-.035em!important;font-style:italic;margin-bottom:8px!important}
 html.theme-civic-heritage .hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(42px,5.7vw,84px)!important;letter-spacing:-.055em!important;white-space:nowrap!important}
@@ -64,7 +64,7 @@ html.theme-civic-heritage .news-highlight .news-card:first-child h3{font-size:19
 html.theme-civic-heritage .page-ribbon,html.theme-civic-heritage .v17-page-head{background:linear-gradient(115deg,#fff5e4,#e9d3a9);border-bottom:1px solid #c6a064}
 html.theme-civic-heritage .v17-page-head h1,html.theme-civic-heritage .page-ribbon h1,html.theme-civic-heritage .section-title{color:#8b1425}
 html.theme-civic-heritage .v17-card,html.theme-civic-heritage .v17-docitem,html.theme-civic-heritage .v17-doc-detail,html.theme-civic-heritage .panel,html.theme-civic-heritage .push-panel,html.theme-civic-heritage .surface-panel{background:#fffaf1;border-color:#dfc8a6}
-html.theme-civic-heritage .student-auth-gate{background:linear-gradient(120deg,#590c18d9,#9d1922a5),url('./civic-hero-desktop.webp?v=24.1.0') center/cover}
+html.theme-civic-heritage .student-auth-gate{background:linear-gradient(120deg,#590c18d9,#9d1922a5),url('./civic-hero-desktop.webp?v=24.2.0') center/cover}
 html.theme-civic-heritage .student-auth-card{background:#fff9ed;border-color:#dbb779;box-shadow:0 24px 55px #3f070936}
 html.theme-civic-heritage .student-auth-mark,html.theme-civic-heritage .student-auth-form button{background:#8b1425}
 html.theme-civic-heritage .student-auth-card h1{color:#671521}
@@ -82,12 +82,12 @@ html.theme-civic-heritage .hero-copy h1,html.theme-civic-heritage .hero-copy h1 
 html.theme-civic-heritage .hero-copy h1 .v17-hero-line{font-style:italic;text-shadow:0 2px 0 #5a101b,0 4px 8px #47061070;}
 html.theme-civic-heritage .hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(40px,5.7vw,84px)!important;letter-spacing:-.045em!important;}
 html.theme-civic-heritage .hero-copy h1{font-weight:700;}
-@media(max-width:700px){html.theme-civic-heritage .patriotic-hero{background-image:url('./civic-hero-mobile.webp?v=24.1.0');background-size:cover;background-position:center bottom;}html.theme-civic-heritage .hero-copy{background:linear-gradient(90deg,#610a16b0,#7b0d1860 65%,transparent)!important;}html.theme-civic-heritage .hero-visual{height:130px!important;min-height:130px!important;}html.theme-civic-heritage .hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(39px,11.6vw,65px)!important;}}
+@media(max-width:700px){html.theme-civic-heritage .patriotic-hero{background-image:url('./civic-hero-mobile.webp?v=24.2.0');background-size:cover;background-position:center bottom;}html.theme-civic-heritage .hero-copy{background:linear-gradient(90deg,#610a16b0,#7b0d1860 65%,transparent)!important;}html.theme-civic-heritage .hero-visual{height:130px!important;min-height:130px!important;}html.theme-civic-heritage .hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(39px,11.6vw,65px)!important;}}
 
 /* V24.1: one composite illustration; no overlap with the legacy photo. */
 .civic-drawer-kicker{display:none}
 html.theme-civic-heritage .civic-old-glyph{display:none}
-html.theme-civic-heritage .patriotic-hero{background:#77101b url('./civic-hero-desktop.webp?v=24.1.0') center/cover no-repeat!important;min-height:440px!important;border-radius:18px!important;box-shadow:0 16px 36px #6a1b1b24}
+html.theme-civic-heritage .patriotic-hero{background:#77101b url('./civic-hero-desktop.webp?v=24.2.0') center/cover no-repeat!important;min-height:440px!important;border-radius:18px!important;box-shadow:0 16px 36px #6a1b1b24}
 html.theme-civic-heritage .hero-copy{width:53%!important;padding:36px 20px 38px 5%!important;background:linear-gradient(90deg,#49081233,#57081015,transparent)!important;min-width:0;gap:0}
 html.theme-civic-heritage .hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(36px,5.25vw,78px)!important;letter-spacing:-.038em!important}
 html.theme-civic-heritage .hero-copy h1{font-size:clamp(28px,3.5vw,52px)!important;text-shadow:0 2px 8px #40080d80}
@@ -115,7 +115,7 @@ html.theme-civic-heritage #menuBtn,html.theme-civic-heritage .nuBell{border-radi
 html.theme-civic-heritage .nuBell:before{content:"";width:22px;height:22px;background:currentColor;mask:var(--civic-bell) center/contain no-repeat;-webkit-mask:var(--civic-bell) center/contain no-repeat;display:block;margin:auto}
 html.theme-civic-heritage .civic-slogan{background:linear-gradient(90deg,#f5e7cc,#fff9eb 50%,#f5e7cc);border-bottom:1px solid #d8b16d;box-shadow:0 2px 6px #63451a0a}
 html.theme-civic-heritage #drawer{width:min(380px,90vw);background:#fff9ed;border-left:1px solid #c69a50;box-shadow:-16px 0 44px #31080e40}
-html.theme-civic-heritage #drawer .drawerHeader{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;min-height:154px;padding:calc(18px + env(safe-area-inset-top,0px)) 20px 17px;background:linear-gradient(90deg,#590b17 0%,#650b17d9 30%,#650b1720 88%),url('./civic-menu-artwork.webp?v=24.1.0') right center/auto 100% no-repeat,#650b17;border-bottom:2px solid #cfaa66;gap:5px;color:#ffe8b5}
+html.theme-civic-heritage #drawer .drawerHeader{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;min-height:154px;padding:calc(18px + env(safe-area-inset-top,0px)) 20px 17px;background:linear-gradient(90deg,#590b17 0%,#650b17d9 30%,#650b1720 88%),url('./civic-menu-artwork.webp?v=24.2.0') right center/auto 100% no-repeat,#650b17;border-bottom:2px solid #cfaa66;gap:5px;color:#ffe8b5}
 html.theme-civic-heritage #drawer .drawerHeader strong{font-family:Georgia,'Times New Roman',serif;font-size:23px;line-height:1.2;color:#ffeac0;max-width:100%;text-shadow:0 2px 8px #3d0611}
 html.theme-civic-heritage .civic-drawer-kicker{display:block;color:#f9d898;font-size:9px;font-weight:750;letter-spacing:.09em;text-shadow:0 1px 5px #400710}
 html.theme-civic-heritage #drawer #closeBtn{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:13px;background:#580c16a3;color:#ffebc9;border:1px solid #ecc17c80;border-radius:11px;width:38px;height:38px;line-height:1}
@@ -139,7 +139,7 @@ html.theme-civic-heritage :is(.hero-actions button,.shortcut,#drawer button,#men
  html.theme-civic-heritage .hero-copy{width:100%!important;padding:24px 18px 18px!important;background:linear-gradient(140deg,#650c17,#a01c29)!important;position:relative;z-index:2;order:0}
  html.theme-civic-heritage .hero-copy h1 .v17-hero-line:nth-child(2){font-size:clamp(36px,11vw,64px)!important}
  html.theme-civic-heritage .hero-actions button{min-height:42px;padding:9px 11px;font-size:11px}
- html.theme-civic-heritage .patriotic-hero .hero-visual{display:block!important;order:1;position:relative!important;inset:auto!important;width:100%!important;min-height:0!important;height:auto!important;aspect-ratio:1.62;background:#78121e url('./civic-hero-mobile.webp?v=24.1.0') center 58%/cover no-repeat;mask-image:none!important;-webkit-mask-image:none!important;flex:none!important}
+ html.theme-civic-heritage .patriotic-hero .hero-visual{display:block!important;order:1;position:relative!important;inset:auto!important;width:100%!important;min-height:0!important;height:auto!important;aspect-ratio:1.62;background:#78121e url('./civic-hero-mobile.webp?v=24.2.0') center 58%/cover no-repeat;mask-image:none!important;-webkit-mask-image:none!important;flex:none!important}
  html.theme-civic-heritage .patriotic-hero .hero-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#a01c29,transparent 21%);pointer-events:none;z-index:1}
  html.theme-civic-heritage .patriotic-hero:has(#banner.hasBanner) .hero-visual{left:auto!important;background:none}
  html.theme-civic-heritage .patriotic-hero:has(#banner.hasBanner) .hero-visual:before{display:none}
@@ -173,8 +173,8 @@ html.theme-civic-heritage #drawer .drawerHeader{min-height:168px}
 html.theme-civic-heritage #drawer .civic-drawer-emblem{display:grid;place-items:center;width:31px;height:31px;border:1px solid #edc88f;border-radius:9px;color:#ffecc4;margin-bottom:4px;background:#5d0b1680}
 html.theme-civic-heritage #drawer .civic-drawer-emblem svg{width:20px;height:20px}
 html.theme-civic-heritage #drawer .drawerScroll>button.civic-current{background:#f1d9cc;color:#921525;box-shadow:inset 3px 0 #a21927;font-weight:800}
-html.theme-civic-heritage .top{background:linear-gradient(90deg,#550a16b8,#8b15258f 70%,#6c0a17d9),url('./civic-silk-texture.webp?v=24.1.0') center/cover}
-html.theme-civic-heritage .siteFooter{background:linear-gradient(105deg,#550a16dc,#8e1522ad 70%,#600b16d9),url('./civic-silk-texture.webp?v=24.1.0') center/cover}
+html.theme-civic-heritage .top{background:linear-gradient(90deg,#550a16b8,#8b15258f 70%,#6c0a17d9),url('./civic-silk-texture.webp?v=24.2.0') center/cover}
+html.theme-civic-heritage .siteFooter{background:linear-gradient(105deg,#550a16dc,#8e1522ad 70%,#600b16d9),url('./civic-silk-texture.webp?v=24.2.0') center/cover}
 html.theme-civic-heritage .civic-art-credit{display:block;color:#ead2ab;font-size:11px;margin-top:9px}
 html.theme-civic-heritage .v17-bottom-nav button .civic-legacy-nav-ico{display:none}
 html.theme-civic-heritage .v17-bottom-nav button:before{content:"";width:22px;height:22px;background:currentColor;mask:var(--civic-icon) center/contain no-repeat;-webkit-mask:var(--civic-icon) center/contain no-repeat}
@@ -184,3 +184,21 @@ html.theme-civic-heritage #qlnhMusicToggle span:first-child{font-size:0!importan
 @media(max-width:700px){html.theme-civic-heritage .patriotic-hero .hero-visual{aspect-ratio:1.46;background-position:center 50%}html.theme-civic-heritage .patriotic-hero .hero-visual:before{background:linear-gradient(180deg,#a01c29,transparent 13%)}html.theme-civic-heritage #qlnhMusicWidget .music234-actions{gap:5px}html.theme-civic-heritage #qlnhMusicWidget .music234-toggle{padding:0 8px!important;min-height:39px!important;font-size:11px!important}html.theme-civic-heritage #qlnhMusicSettings{width:39px!important;height:39px!important}}
 
 html.theme-civic-heritage{--civic-note:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M9%2018V5l12-2v13M9%209l12-2%22%2F%3E%3Cellipse%20cx%3D%226%22%20cy%3D%2218%22%20rx%3D%223%22%20ry%3D%223%22%2F%3E%3Cellipse%20cx%3D%2218%22%20cy%3D%2216%22%20rx%3D%223%22%20ry%3D%223%22%2F%3E%3C%2Fsvg%3E");}
+
+/* V24.3 — animated fabric, built from V24.2 corrected artwork.
+   Static originals remain the reduced-motion fallback. Only built-in Civic artwork changes. */
+@media (prefers-reduced-motion: no-preference) {
+  @media (min-width:701px) {
+    html.theme-civic-heritage .patriotic-hero:not(:has(#banner.hasBanner)) {
+      background-image: url('./civic-hero-desktop-wave.webp?v=24.3.0') !important;
+    }
+  }
+  @media (max-width:700px) {
+    html.theme-civic-heritage .patriotic-hero:not(:has(#banner.hasBanner)) .hero-visual {
+      background-image: url('./civic-hero-mobile-wave.webp?v=24.3.0') !important;
+    }
+  }
+  html.theme-civic-heritage #drawer .drawerHeader {
+    background-image: linear-gradient(90deg,#590b17 0%,#650b17d9 30%,#650b1720 88%),url('./civic-menu-artwork-wave.webp?v=24.3.0');
+  }
+}
