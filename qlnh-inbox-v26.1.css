@@ -1,0 +1,266 @@
+/* LỚP 2505QLNH · V26.1 · Inbox visual refinement.
+   Strictly scoped to notification pages. No new app-wide design system. */
+#notificationCenter .content-page-head,
+#notificationCenter .content-page-body{
+  box-sizing:border-box;
+  width:min(100%,960px);
+  max-width:960px;
+  margin-inline:auto;
+}
+#notificationCenter .content-page-body{padding-block:16px 44px;}
+#notificationCenter .nuInboxToolbar{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  align-items:flex-end;
+  gap:10px;
+  margin:0 0 18px;
+  padding:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+#notificationCenter .nuInboxToolbar label{
+  flex:0 1 auto;
+  display:grid;
+  gap:6px;
+  margin:0;
+  min-width:130px;
+  color:var(--muted,#687b72);
+  font-size:12px;
+  font-weight:650;
+}
+#notificationCenter .nuInboxToolbar label:has(#nuInboxSearch){flex:1 1 260px;}
+#notificationCenter .nuInboxToolbar label:has(#nuInboxFilter){flex:0 0 146px;}
+#notificationCenter .nuInboxToolbar input,
+#notificationCenter .nuInboxToolbar select{
+  box-sizing:border-box;
+  width:100%;
+  min-height:42px;
+  background:var(--surface,#fffdf8);
+  color:var(--ink,var(--text,#254b3e));
+  border:1px solid var(--line,#d6dfd3);
+  border-radius:12px;
+  padding:9px 13px;
+  font:inherit;
+  font-size:14px;
+  box-shadow:none;
+}
+#notificationCenter .nuInboxToolbar button{
+  box-sizing:border-box;
+  align-self:flex-end;
+  min-height:42px;
+  margin:0;
+  padding:8px 13px;
+  border:1px solid var(--line,#d6dfd3);
+  border-radius:12px;
+  background:var(--surface,#fffdf8);
+  color:var(--ink,var(--text,#254b3e));
+  font:inherit;
+  font-size:13px;
+  font-weight:600;
+  white-space:normal;
+  box-shadow:none;
+  cursor:pointer;
+}
+#notificationCenter .nuInboxToolbar button:hover{filter:brightness(.985);}
+#notificationCenter #nuFeedList{display:grid;gap:9px;min-width:0;}
+#notificationCenter .nuInboxItem{
+  min-width:0;
+  margin:0;
+  border:1px solid var(--line,#d7dfd3);
+  border-radius:15px;
+  background:var(--surface,#fffdf8);
+  box-shadow:0 2px 10px rgba(26,53,39,.035);
+  overflow:hidden;
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+#notificationCenter .nuInboxItem.nuUnread{
+  border-left:3px solid var(--gold-dark,#b78b3e);
+  background:var(--surface,#fffdf8);
+}
+#notificationCenter .nuInboxItem.is-open{
+  border-color:var(--gold-dark,#b78b3e);
+  box-shadow:0 8px 20px rgba(25,49,33,.07);
+}
+#notificationCenter .nuInboxHeadButton{
+  box-sizing:border-box;
+  width:100%;
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:0;
+  padding:13px 16px;
+  border:0!important;
+  border-radius:0;
+  outline-offset:-2px;
+  background:transparent!important;
+  color:var(--ink,var(--text,#244638))!important;
+  text-align:left;
+  box-shadow:none!important;
+  cursor:pointer;
+  font:inherit;
+}
+#notificationCenter .nuInboxHeadButton:hover{background:rgba(120,120,90,.035)!important;}
+#notificationCenter .nuInboxHeadButton:focus-visible{outline:2px solid var(--gold-dark,#b78b3e);}
+#notificationCenter .nuInboxHeadButton[aria-expanded="true"]{border-bottom:0!important;}
+#notificationCenter .nuInboxMarker{
+  display:grid;
+  place-items:center;
+  flex:none;
+  width:32px;height:32px;
+  background:var(--surface-secondary,#f0f4ef);
+  border-radius:10px;
+  color:var(--muted,#718477);
+  font:700 13px/1 Arial,sans-serif;
+}
+#notificationCenter .nuUnread .nuInboxMarker{
+  background:color-mix(in srgb,var(--gold-dark,#b78b3e) 15%,transparent);
+  color:var(--gold-dark,#a27c29);
+}
+#notificationCenter .nuInboxHead{
+  min-width:0;
+  flex:1 1 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  gap:5px;
+}
+#notificationCenter .nuInboxTitle{
+  display:block;
+  margin:0;
+  min-width:0;
+  color:inherit;
+  font-size:14px;
+  font-weight:650;
+  line-height:1.45;
+  letter-spacing:0;
+  text-transform:none;
+  overflow-wrap:anywhere;
+}
+#notificationCenter .nuUnread .nuInboxTitle{font-weight:760;}
+#notificationCenter .nuInboxMeta{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  flex-wrap:wrap;
+  color:var(--muted,#738378);
+  font-size:11px;
+  font-weight:500;
+  line-height:1.4;
+}
+#notificationCenter .nuInboxDate::before{content:'·';margin-right:7px;color:var(--muted,#879388)}
+#notificationCenter .nuInboxCaret{
+  flex:none;
+  display:grid;
+  place-items:center;
+  width:28px;height:28px;
+  font-size:22px;
+  line-height:1;
+  border-radius:8px;
+  color:var(--muted,#748578);
+  transition:transform .16s ease;
+}
+#notificationCenter .nuInboxHeadButton[aria-expanded="true"] .nuInboxCaret{transform:rotate(180deg);}
+#notificationCenter .nuInboxBody{
+  box-sizing:border-box;
+  min-width:0;
+  margin:0 16px 14px 60px;
+  padding:13px 0 0;
+  border-top:1px solid var(--line,#e0e5dd);
+  background:transparent;
+}
+#notificationCenter .nuInboxBody[hidden]{display:none!important;}
+#notificationCenter .nuInboxMessage{
+  font-size:13.5px;
+  line-height:1.75;
+  color:var(--ink,var(--text,#344d40));
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  margin:0 0 12px;
+  padding:0;
+}
+#notificationCenter .nuInboxFooter{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+#notificationCenter .nuInboxPrimary{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-height:36px;
+  margin:0;
+  padding:7px 13px;
+  border:1px solid var(--line,#d7dfd3);
+  border-radius:10px;
+  background:var(--surface-secondary,#edf1ea);
+  color:var(--ink,var(--text,#234639));
+  font:inherit;font-size:12px;font-weight:700;
+  box-shadow:none;
+  cursor:pointer;
+}
+#notificationCenter .nuInboxMore{margin-left:auto;position:relative;}
+#notificationCenter .nuInboxMoreToggle{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  min-height:36px;
+  padding:7px 11px;
+  color:var(--muted,#708275);
+  font-size:12px;font-weight:600;
+  cursor:pointer;
+  border-radius:9px;
+}
+#notificationCenter .nuInboxMoreToggle::-webkit-details-marker{display:none;}
+#notificationCenter .nuInboxMoreToggle:hover{background:rgba(120,120,90,.06);}
+#notificationCenter .nuInboxMoreChoices{
+  display:flex;flex-wrap:wrap;gap:7px;
+  padding:8px 0 0;
+}
+#notificationCenter .nuInboxAux{
+  display:inline-flex;min-height:32px;
+  padding:6px 10px;margin:0;
+  background:transparent;
+  border:1px solid var(--line,#d9dfd6);
+  border-radius:9px;
+  color:var(--muted,#68776a);
+  font:inherit;font-size:12px;
+  box-shadow:none;cursor:pointer;
+}
+#notificationCenter .nuInboxEmpty{
+  margin:0;padding:28px 18px;border:1px dashed var(--line,#d5ddd4);
+  border-radius:14px;text-align:center;color:var(--muted,#6b786d);
+  background:var(--surface,#fffdf8);
+}
+/* Public announcement page uses the same compact card language. */
+#notices .content-page-head,#notices .content-page-body{
+  box-sizing:border-box;width:min(100%,960px);max-width:960px;margin-inline:auto;
+}
+#notices .qlnh-notices-toolbar{
+  margin:0 0 16px;border:0;background:transparent;padding:0;box-shadow:none;gap:10px;
+}
+#notices .qlnh-notice-item{border-radius:15px;box-shadow:0 2px 10px rgba(26,53,39,.035);}
+#notices .qlnh-notice-toggle{min-height:70px;padding:13px 16px!important;gap:12px!important;}
+#notices .qlnh-notice-title{font-size:14px;line-height:1.45;}
+#notices .qlnh-notice-meta{font-size:11px;}
+#notices .qlnh-notice-body{padding:14px 17px;font-size:13.5px;}
+@media(max-width:700px){
+  #notificationCenter .content-page-body,#notices .content-page-body{padding-left:12px;padding-right:12px;}
+  #notificationCenter .nuInboxToolbar label:has(#nuInboxSearch){flex:1 1 100%;}
+  #notificationCenter .nuInboxToolbar label:has(#nuInboxFilter){flex:1 1 120px;}
+  #notificationCenter .nuInboxToolbar button{flex:1 1 120px;font-size:12px;}
+  #notificationCenter .nuInboxHeadButton{min-height:66px;padding:12px 12px;gap:9px;}
+  #notificationCenter .nuInboxMarker{width:29px;height:29px;border-radius:9px;}
+  #notificationCenter .nuInboxTitle{font-size:13.5px;}
+  #notificationCenter .nuInboxMeta{font-size:10.5px;}
+  #notificationCenter .nuInboxBody{margin-left:50px;margin-right:13px;}
+  #notificationCenter .nuInboxFooter{align-items:flex-start;}
+}
+@media(prefers-reduced-motion:reduce){
+  #notificationCenter .nuInboxItem,#notificationCenter .nuInboxCaret{transition:none!important;}
+}
