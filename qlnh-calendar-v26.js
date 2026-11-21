@@ -24,7 +24,7 @@
    const page=el('section','page qv26-page');page.id='qlnhCalendar';page.innerHTML='<div class="content-page-head"><span>2505QLNH · LỊCH & NHẮC HẸN</span><h1>Lịch lớp và lịch cá nhân</h1><p>Theo dõi hoạt động và tạo nhắc hẹn cá nhân, giống cách sử dụng lịch điện tử.</p></div><div class="content-page-body"><div id="qv26CalendarRoot" class="qv26-shell">Đang tải lịch…</div></div>';document.querySelector('#siteMain')?.append(page);
    // Alias the familiar navigation key; no extra top-level admin screen or new design language.
    page.id='calendar';
-   const attendanceMenu=[...document.querySelectorAll('#drawer [data-page="attendance"]')][0];if(attendanceMenu){const b=attendanceMenu.cloneNode(true);b.dataset.page='calendar';b.textContent='Lịch & Nhắc hẹn';b.onclick=()=>window.nav?.('calendar');attendanceMenu.parentNode.insertBefore(b,attendanceMenu);}
+   if(!document.querySelector('#drawer [data-page="calendar"]')){const attendanceMenu=document.querySelector('#drawer [data-page="attendance"]');if(attendanceMenu){const b=attendanceMenu.cloneNode(true);b.dataset.page='calendar';b.textContent='Lịch & Nhắc hẹn';b.onclick=()=>window.nav?.('calendar');attendanceMenu.parentNode.insertBefore(b,attendanceMenu);}}
    const area=$('attendanceList');if(area){const section=el('div','qv26-att-section');section.id='qv26AttendancePanel';area.before(section);}
    if(new URL(location.href).searchParams.get('v26')==='calendar')setTimeout(()=>window.nav?.('calendar'),600);
  }
