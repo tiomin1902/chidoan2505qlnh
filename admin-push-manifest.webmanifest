@@ -1,0 +1,24 @@
+{
+  "id": "/chidoan2505qlnh/admin-push-setup.html",
+  "name": "2505QLNH · Thông báo quản trị",
+  "short_name": "QLNH Admin Push",
+  "lang": "vi",
+  "description": "Liên kết thiết bị và xác minh Web Push dành cho Admin lớp 2505QLNH",
+  "start_url": "/chidoan2505qlnh/admin-push-setup.html",
+  "scope": "/chidoan2505qlnh/",
+  "display": "standalone",
+  "background_color": "#f3f5f8",
+  "theme_color": "#172c49",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

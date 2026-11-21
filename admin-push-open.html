@@ -1,0 +1,11 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#172c49"><title>2505QLNH · Thông báo quản trị</title>
+<style>body{font:16px/1.65 system-ui,-apple-system,sans-serif;background:#f3f5f8;color:#19304c;margin:0;padding:24px}main{max-width:510px;margin:10vh auto;background:white;border:1px solid #dde3ed;border-radius:20px;padding:25px;box-shadow:0 8px 24px #152c4510}h1{font-size:24px;margin:0 0 12px}p{color:#54657b}a{display:block;text-align:center;background:#172c49;color:white;text-decoration:none;padding:15px;border-radius:11px;font-weight:700;margin-top:20px}small{color:#69788c}</style></head><body><main><h1>Thông báo quản trị 2505QLNH</h1><p>Có công việc cần xử lý. Để xem dữ liệu, bạn phải đăng nhập bằng tài khoản Admin có quyền phù hợp.</p><a id="go" href="./">Mở trang quản trị</a><p><small>Không hiển thị dữ liệu sinh viên hoặc quyền Admin trên trang này.</small></p></main>
+<script src="./config.js"></script><script>
+(()=>{'use strict';let url;try{url=new URL(String(window.CLASS_API_URL||''));}catch{return;}
+if(url.protocol!=='https:'||url.hostname!=='script.google.com'||!/^\/macros\/s\/[^/]+\/exec$/.test(url.pathname))return;
+const q=new URLSearchParams(location.search),type=q.get('qlnhTask')||'',id=q.get('qlnhRecord')||'';
+if(/^[a-z][a-z0-9._-]{2,63}$/.test(type))url.searchParams.set('qlnhTask',type);
+if(/^[A-Za-z0-9_:.@-]{1,100}$/.test(id))url.searchParams.set('qlnhRecord',id);
+document.getElementById('go').href=url.href;
+})();
+</script></body></html>
