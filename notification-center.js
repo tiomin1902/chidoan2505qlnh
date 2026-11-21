@@ -31,7 +31,7 @@
   n.setAttribute('aria-hidden','true');n.innerHTML=svgPaths[kind]||svgPaths.bell;return n;
  }
  const el=(tag,cls,content)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(content!==undefined)n.textContent=txt(content);return n;};
- let items=[],expanded='',query='',filter='all',local={read:[],hidden:[]};
+ let items=[],expanded='',menuFor='',query='',filter='all',local={read:[],hidden:[]};
  try{const saved=JSON.parse(localStorage.getItem(key)||'{}');local={read:Array.isArray(saved.read)?saved.read:[],hidden:Array.isArray(saved.hidden)?saved.hidden:[]};}catch(_){}
  const read=id=>local.read.includes(id),hidden=id=>local.hidden.includes(id);
  function persist(){try{localStorage.setItem(key,JSON.stringify({read:local.read.slice(-500),hidden:local.hidden.slice(-500)}));}catch(_){}}
@@ -70,7 +70,7 @@
   const matched=shown.filter(n=>(filter==='all'||(filter==='read')===read(n.id))&&(!query||txt(n.title+' '+n.body).toLocaleLowerCase('vi').includes(query)));
   if(!matched.length){list.append(el('p','nuInboxEmpty',shown.length?'Không có thông báo phù hợp.':'Bạn chưa có thông báo nào.'));return;}
   for(const n of matched){
-   const unread=!read(n.id);const article=el('article','nuInboxItem'+(unread?' nuUnread':'')+(expanded===n.id?' is-open':''));article.dataset.id=n.id;
+   const unread=!read(n.id);const article=el('article','nuInboxItem'+(unread?' nuUnread':'')+(expanded===n.id?' is-open':'')+(menuFor===n.id?' has-open-menu':''));article.dataset.id=n.id;
    const button=el('button','nuInboxHeadButton');button.type='button';button.setAttribute('aria-expanded',String(expanded===n.id));button.setAttribute('aria-label',txt(n.title)+' – '+(expanded===n.id?'thu gọn':'mở để đọc'));
    const marker=el('span','nuInboxMarker');marker.setAttribute('aria-hidden','true');
    const k=/attendance/i.test(n.target)?'camera':/activity|exam|reminder/i.test(n.target)?'calendar':/doc|news|notice/i.test(n.target)?'file':'bell';marker.append(icon(k));
@@ -91,22 +91,45 @@
     };
     footer.append(link);
    }
-   const more=el('details','nuInboxMore');const toggle=el('summary','nuInboxMoreToggle','⋯');toggle.setAttribute('aria-label','Tùy chọn thông báo');toggle.title='Tùy chọn';
-   const choices=el('div','nuInboxMoreChoices');const mark=el('button','nuInboxAux',unread?'Đánh dấu đã đọc':'Đánh dấu chưa đọc');mark.type='button';
-   mark.onclick=()=>{setRead(n.id,unread);render();};
-   const hide=el('button','nuInboxAux nuInboxHide','Ẩn khỏi danh sách');hide.type='button';
-   hide.onclick=()=>{if(!hidden(n.id))local.hidden.push(n.id);persist();syncState(n.id,'hidden');if(expanded===n.id)expanded='';render();};
-   choices.append(mark,hide);more.append(toggle,choices);footer.append(more);body.append(footer);
+   // Separate action from the disclosure button; do not nest buttons or force a text label into 40px.
+   const headRow=el('div','nuInboxHeadRow');
+   const more=el('div','nuInboxMore');
+   const toggle=el('button','nuInboxMoreToggle','⋯');toggle.type='button';
+   toggle.setAttribute('aria-label','Tùy chọn thông báo');toggle.title='Tùy chọn thông báo';
+   toggle.setAttribute('aria-haspopup','menu');toggle.setAttribute('aria-expanded',String(menuFor===n.id));
+   const choices=el('div','nuInboxMoreChoices');choices.setAttribute('role','menu');choices.hidden=menuFor!==n.id;
+   const mark=el('button','nuInboxAux',unread?'Đánh dấu đã đọc':'Đánh dấu chưa đọc');mark.type='button';mark.setAttribute('role','menuitem');
+   mark.onclick=(event)=>{event.stopPropagation();setRead(n.id,unread);menuFor='';render();};
+   const hide=el('button','nuInboxAux nuInboxHide','Ẩn khỏi danh sách');hide.type='button';hide.setAttribute('role','menuitem');
+   hide.onclick=(event)=>{event.stopPropagation();if(!hidden(n.id))local.hidden.push(n.id);persist();syncState(n.id,'hidden');if(expanded===n.id)expanded='';menuFor='';render();};
+   choices.append(mark,hide);
+   toggle.onclick=(event)=>{
+    event.stopPropagation();menuFor=menuFor===n.id?'':n.id;render();
+    const open=menuFor===n.id;
+    const current=list.querySelector('.nuInboxItem[data-id="'+CSS.escape(n.id)+'"] .nuInboxMoreToggle');
+    if(open){
+     requestAnimationFrame(()=>{
+      const panel=current?.nextElementSibling;
+      if(panel){panel.classList.toggle('flip-up',panel.getBoundingClientRect().bottom>window.innerHeight-8&&current.getBoundingClientRect().top>170);}
+     });
+    }
+    current?.focus({preventScroll:true});
+   };
+   more.append(toggle,choices);headRow.append(button,more);
    button.onclick=()=>{
-    expanded=expanded===n.id?'':n.id;
+    expanded=expanded===n.id?'':n.id;menuFor='';
     if(expanded&&!read(n.id)){setRead(n.id,true);}
     render();
-    const newButton=[...list.querySelectorAll('.nuInboxItem')].find(x=>x.dataset.id===n.id)?.querySelector('.nuInboxHeadButton');
-    newButton?.focus({preventScroll:true});
    };
-   article.append(button,body);list.append(article);
+   article.append(headRow,body);list.append(article);
   }
  }
+ document.addEventListener('click',event=>{
+  if(menuFor&&!event.target.closest('.nuInboxMore')){menuFor='';render();}
+ });
+ document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&menuFor){event.preventDefault();const id=menuFor;menuFor='';render();const t=[...list.querySelectorAll('.nuInboxItem')].find(x=>x.dataset.id===id)?.querySelector('.nuInboxMoreToggle');t?.focus({preventScroll:true});}
+ });
  async function refresh(){try{
   const r=await window.QLNH.data('notificationFeed',{limit:100});
   if(r.success&&Array.isArray(r.items)){items=r.items;render();}

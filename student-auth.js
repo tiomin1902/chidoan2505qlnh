@@ -42,11 +42,11 @@
  async function loadApp(privateMode){
    const load=async src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=()=>reject(Error('Không tải được '+src));document.body.append(script);});
    if(!baseLoaded){
-     for(const src of ['./config.js','./app.js?v=22.0.2','./qlnh-v28-interface.js?v=28.0.0','./news.js?v=25.0.0','./qlnh-notices-v25.js?v=25.0.0','./qlnh-calendar-v26.js?v=28.0.0','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=23.0.0','./v17-student.js?v=19.7.0','./qlnh-deeplink.js?v=21.3.0','./fund-student.js?v=19.7.0'])await load(src);
+     for(const src of ['./config.js','./app.js?v=22.0.2','./qlnh-v28-interface.js?v=28.1.0','./news.js?v=25.0.0','./qlnh-notices-v25.js?v=25.0.0','./qlnh-calendar-v26.js?v=28.0.0','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=23.0.0','./v17-student.js?v=19.7.0','./qlnh-deeplink.js?v=21.3.0','./fund-student.js?v=19.7.0'])await load(src);
      baseLoaded=true;
    }
    if(privateMode&&!privateLoaded){
-     for(const src of ['./push-config.js','./push.js?v=21.3.0','./notification-center.js?v=28.0.0'])await load(src);
+     for(const src of ['./push-config.js','./push.js?v=21.3.0','./notification-center.js?v=28.1.0'])await load(src);
      privateLoaded=true;
    }
  }

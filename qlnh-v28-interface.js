@@ -7,6 +7,9 @@
  const opener=document.getElementById('menuBtn');
  const close=document.getElementById('closeBtn');
  if(!drawer||!opener||!close)return;
+ // Avoid double handlers if a cached loader invokes the bundle again.
+ if(drawer.dataset.v281MenuReady==='1')return;
+ drawer.dataset.v281MenuReady='1';
  const groupButtons=[...drawer.querySelectorAll('.qlnh-v28-groupToggle')];
  const groups=[...drawer.querySelectorAll('.qlnh-v28-group')];
  let lastFocus=null;
@@ -16,10 +19,11 @@
      const toggle=group.querySelector('.qlnh-v28-groupToggle');
      const body=group.querySelector('.qlnh-v28-subitems');
      if(toggle)toggle.setAttribute('aria-expanded',String(opened));
-     if(body)body.hidden=!opened;
+     if(body){body.hidden=!opened;body.setAttribute('aria-hidden',String(!opened));}
    }
  }
- groupButtons.forEach(button=>button.addEventListener('click',()=>{
+ groupButtons.forEach(button=>button.addEventListener('click',(event)=>{
+   event.preventDefault();
    const group=button.closest('.qlnh-v28-group');
    setGroup(button.getAttribute('aria-expanded')==='true'?'':group?.dataset.group||'');
  }));

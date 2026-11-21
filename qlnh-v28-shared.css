@@ -152,6 +152,9 @@ html.qlnh-v28-ui #drawer .qlnh-v28-unread-count{
 html.qlnh-v28-ui #drawer .qlnh-v28-unread-count[hidden]{display:none;}
 html.qlnh-v28-ui #drawer .qlnh-v28-subitems{padding:4px 0 7px 28px;margin:0;}
 html.qlnh-v28-ui #drawer .qlnh-v28-subitems[hidden]{display:none;}
+/* A single expanded-state contract at every breakpoint. */
+html.qlnh-v28-ui #drawer .qlnh-v28-groupToggle[aria-expanded="true"] + .qlnh-v28-subitems:not([hidden]){display:block;visibility:visible;opacity:1;height:auto;max-height:none;}
+html.qlnh-v28-ui.qlnh-guest #drawer .qlnh-v28-account-inbox{display:none;}
 html.qlnh-v28-ui #drawer .qlnh-v28-subitems .qlnh-v28-nav-item{min-height:42px;padding:9px 12px;font-size:13px;font-weight:550;}
 html.qlnh-v28-ui #drawer .qlnh-v28-subitems .qlnh-v28-nav-item:before{
   display:block;content:"";width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:var(--v28-line);
@@ -234,10 +237,19 @@ html.qlnh-v28-ui #notificationCenter :is(.nuInboxPrimary,.nuInboxAux,.nuInboxMor
   font:650 12px/1.4 'Be Vietnam Pro',sans-serif;cursor:pointer;text-decoration:none;
 }
 html.qlnh-v28-ui #notificationCenter .nuInboxPrimary{background:var(--v28-accent);color:#fff;border-color:var(--v28-accent);}
-html.qlnh-v28-ui #notificationCenter .nuInboxMore{position:relative;margin-left:auto;}
-html.qlnh-v28-ui #notificationCenter .nuInboxMoreToggle{list-style:none;width:40px;height:39px;padding:0;background:var(--v28-surface);font-size:19px;}
-html.qlnh-v28-ui #notificationCenter .nuInboxMoreToggle::-webkit-details-marker{display:none;}
-html.qlnh-v28-ui #notificationCenter .nuInboxMoreChoices{display:flex;gap:7px;flex-wrap:wrap;padding:8px 0 0;}
+/* Icon-only per-notification actions, anchored in the header rather than a narrow footer. */
+html.qlnh-v28-ui #notificationCenter .nuInboxHeadRow{display:flex;align-items:stretch;min-width:0;position:relative;border-radius:15px 15px 0 0;}
+html.qlnh-v28-ui #notificationCenter .nuInboxHeadRow .nuInboxHeadButton{flex:1 1 auto;width:auto;min-width:0;}
+html.qlnh-v28-ui #notificationCenter .nuInboxMore{display:flex;align-items:center;position:relative;flex:0 0 44px;margin:0 12px 0 0;}
+html.qlnh-v28-ui #notificationCenter .nuInboxMoreToggle{display:grid;place-items:center;flex:none;width:44px;height:44px;min-width:44px;min-height:44px;padding:0;margin:0;background:var(--v28-surface);font:700 24px/1 Arial,sans-serif;white-space:nowrap;letter-spacing:0;}
+html.qlnh-v28-ui #notificationCenter .nuInboxMoreToggle[aria-expanded="true"]{background:var(--v28-spot);color:var(--v28-accent);}
+html.qlnh-v28-ui #notificationCenter .nuInboxMoreChoices{box-sizing:border-box;position:absolute;top:calc(100% + 4px);right:0;min-width:205px;max-width:min(280px,calc(100vw - 35px));padding:7px;display:grid;gap:4px;flex-wrap:nowrap;background:var(--v28-surface);border:1px solid var(--v28-line);border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.14);z-index:15;}
+html.qlnh-v28-ui #notificationCenter .nuInboxMoreChoices[hidden]{display:none;}
+html.qlnh-v28-ui #notificationCenter .nuInboxMoreChoices.flip-up{top:auto;bottom:calc(100% + 4px);}
+html.qlnh-v28-ui #notificationCenter .nuInboxMoreChoices .nuInboxAux{box-sizing:border-box;width:100%;min-height:41px;justify-content:flex-start;text-align:left;padding:10px 12px;border:0;white-space:normal;font-size:12px;}
+html.qlnh-v28-ui #notificationCenter .nuInboxItem.has-open-menu{position:relative;z-index:20;overflow:visible;}
+html.qlnh-v28-ui #notificationCenter .nuInboxItem:not(.has-open-menu){position:relative;z-index:auto;}
+html.qlnh-v28-ui #notificationCenter .nuInboxMoreToggle:focus-visible{outline:2px solid var(--v28-focus);outline-offset:2px;}
 html.qlnh-v28-ui #notificationCenter .nuInboxAux{background:var(--v28-surface);font-size:11.5px;}
 html.qlnh-v28-ui #notificationCenter .nuInboxEmpty{margin:0;padding:28px;border:1px dashed var(--v28-line);border-radius:14px;background:var(--v28-surface);color:var(--v28-muted);text-align:center;}
 /* The public announcements remain a distinct data source but reuse compact visuals. */
@@ -281,7 +293,7 @@ html.qlnh-v28-ui #drawer #nuBellCount{
 /* One visually available notification shortcut in the hamburger at any time:
    guest = published announcements; authenticated = personal inbox. */
 html.qlnh-v28-ui #drawer .qlnh-v28-guest-notices{display:none;}
-html.qlnh-v28-ui.qlnh-guest #drawer .qlnh-v28-guest-notices{display:flex;}
+
 html.qlnh-v28-ui.qlnh-guest #drawer .qlnh-v28-account-inbox{display:none;}
 html.qlnh-v28-ui #notificationCenter .qlnh-v28-public-link{
   display:inline-flex;align-items:center;min-height:30px;padding:0;margin:9px 0 0;
