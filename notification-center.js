@@ -5,7 +5,7 @@
  if(!list||!window.QLNH)return;
  const user=String(window.QLNH_STUDENT?.mssv||'device'),key='qlnh_inbox_state_v16_'+user;
  const text=(t)=>String(t??'');const escape=(s)=>text(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- let items=[],local={read:[],hidden:[]};
+ let items=[],local={read:[],hidden:[]},expanded='',q='',stateFilter='all';
  try{const saved=JSON.parse(localStorage.getItem(key)||'{}');local={read:Array.isArray(saved.read)?saved.read:[],hidden:Array.isArray(saved.hidden)?saved.hidden:[]};}catch(e){}
  function persist(){try{localStorage.setItem(key,JSON.stringify({read:local.read.slice(-500),hidden:local.hidden.slice(-500)}));}catch(e){}}
  async function syncState(id,state){try{await window.QLNH.request('/api/notification-state',{method:'POST',data:{id,state}});}catch(e){console.warn('Chưa đồng bộ trạng thái thông báo',e);}}
@@ -23,25 +23,32 @@
  function visible(){return items.filter(n=>!local.hidden.includes(n.id)).slice().sort((a,b)=>(Date.parse(b.time)||0)-(Date.parse(a.time)||0));}
  function render(){const shown=visible(),unread=shown.filter(x=>!local.read.includes(x.id)).length;
    count.textContent=unread>99?'99+':String(unread);count.hidden=!unread;list.replaceChildren();
-   if(!shown.length){const p=document.createElement('p');p.className='loadingLine';p.textContent='Chưa có thông báo nào để hiển thị.';list.append(p);return;}
-   shown.forEach(n=>{
+   const displayed=shown.filter(n=>(stateFilter==='all'||(stateFilter==='read')===local.read.includes(n.id))&&(!q||text(n.title+' '+n.body).toLocaleLowerCase('vi').includes(q)));
+   if(!displayed.length){const p=document.createElement('p');p.className='loadingLine';p.textContent=shown.length?'Không có thông báo phù hợp.':'Chưa có thông báo nào để hiển thị.';list.append(p);return;}
+   displayed.forEach(n=>{
      const article=document.createElement('article');article.className='nuInboxItem'+(local.read.includes(n.id)?'':' nuUnread');
-     const head=document.createElement('div');head.className='nuInboxHead';
+     const toggle=document.createElement('button');toggle.type='button';toggle.className='nuInboxHeadButton';toggle.setAttribute('aria-expanded',String(expanded===n.id));
+     const head=document.createElement('span');head.className='nuInboxHead';
      const title=document.createElement('strong');title.textContent=n.title;
      const meta=document.createElement('small');const d=new Date(n.time);meta.textContent=(labels[n.target]||'Thông báo')+' · '+(Number.isFinite(d.getTime())?window.QLNH_FORMAT_TIME(n.time):'');
-     head.append(title,meta);
-     const body=document.createElement('p');body.textContent=n.body;
+     head.append(title,meta);toggle.append(head);
+     const content=document.createElement('div');content.className='nuInboxBody';content.hidden=expanded!==n.id;
+     const paragraph=document.createElement('p');paragraph.textContent=n.body;content.append(paragraph);
      const actions=document.createElement('div');actions.className='nuInboxActions';
-     const open=document.createElement('button');open.type='button';open.textContent='Xem chi tiết';open.onclick=()=>{if(!local.read.includes(n.id))local.read.push(n.id);persist();syncState(n.id,'read');render();Promise.resolve(window.QLNH_V192_OPEN_NOTIFICATION?.(n.url)).then(ok=>{if(!ok)console.warn('Liên kết thông báo không hợp lệ');}).catch(console.warn);};
-     const mark=document.createElement('button');mark.type='button';mark.textContent=local.read.includes(n.id)?'Đánh dấu chưa đọc':'Đã đọc';mark.className='nuSecondary';mark.onclick=()=>{if(local.read.includes(n.id))local.read=local.read.filter(x=>x!==n.id);else local.read.push(n.id);persist();syncState(n.id,local.read.includes(n.id)?'read':'unread');render();};
-     const hide=document.createElement('button');hide.type='button';hide.textContent='Xóa khỏi danh sách';hide.className='nuSecondary';hide.onclick=()=>{local.hidden.push(n.id);persist();syncState(n.id,'hidden');render();};
-     actions.append(open,mark,hide);article.append(head,body,actions);list.append(article);
+     const open=document.createElement('button');open.type='button';open.textContent='Mở nội dung liên quan';open.onclick=()=>{if(!local.read.includes(n.id))local.read.push(n.id);persist();syncState(n.id,'read');render();Promise.resolve(window.QLNH_V192_OPEN_NOTIFICATION?.(n.url)).then(ok=>{if(!ok)console.warn('Liên kết thông báo không hợp lệ');}).catch(console.warn);};
+     const mark=document.createElement('button');mark.type='button';mark.textContent=local.read.includes(n.id)?'Đánh dấu chưa đọc':'Đánh dấu đã đọc';mark.className='nuSecondary';mark.onclick=()=>{if(local.read.includes(n.id))local.read=local.read.filter(x=>x!==n.id);else local.read.push(n.id);persist();syncState(n.id,local.read.includes(n.id)?'read':'unread');render();};
+     const hide=document.createElement('button');hide.type='button';hide.textContent='Ẩn khỏi danh sách';hide.className='nuSecondary';hide.onclick=()=>{local.hidden.push(n.id);persist();syncState(n.id,'hidden');render();};
+     actions.append(open,mark,hide);content.append(actions);article.append(toggle,content);list.append(article);
+     toggle.onclick=()=>{expanded=expanded===n.id?'':n.id;if(expanded&&!local.read.includes(n.id)){local.read.push(n.id);persist();syncState(n.id,'read');}render();};
    });
  }
  async function refresh(){try{const res=await window.QLNH.data('notificationFeed',{limit:100});if(res.success&&Array.isArray(res.items)){items=res.items;render();}}
   catch(e){if(!items.length){list.textContent='Không tải được thông báo: '+(e.message||'Lỗi kết nối');}}}
  const markAll=document.getElementById('nuMarkAll');if(markAll)markAll.onclick=()=>{const ids=visible().map(x=>x.id);ids.forEach(id=>{if(!local.read.includes(id))local.read.push(id);});persist();render();if(ids.length)window.QLNH.request('/api/notification-state/batch',{method:'POST',data:{ids:ids.slice(0,100),state:'read'}}).catch(e=>console.warn('Chưa đồng bộ trạng thái đã đọc',e));};
- const filter=document.getElementById('nuShowPrefs');if(filter)filter.onclick=()=>nav('pushPrefs');
+ const prefsButton=document.getElementById('nuShowPrefs');if(prefsButton)prefsButton.onclick=()=>nav('pushPrefs');
+ const inboxSearch=document.getElementById('nuInboxSearch'),inboxFilter=document.getElementById('nuInboxFilter');
+ if(inboxSearch)inboxSearch.oninput=()=>{q=inboxSearch.value.trim().toLocaleLowerCase('vi');render();};
+ if(inboxFilter)inboxFilter.onchange=()=>{stateFilter=inboxFilter.value;render();};
  window.addEventListener('qlnh-prefs-changed',render);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
  initState().then(refresh);setInterval(()=>{if(!document.hidden)refresh();},60000);

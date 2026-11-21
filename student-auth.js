@@ -6,7 +6,7 @@
  const loginForm=$('studentLoginForm'),changeForm=$('studentPasswordForm');
  const btn=$('studentLogoutBtn');
  let token='',me=null,baseLoaded=false,privateLoaded=false,restoring=false,pendingTarget=null,aclPollBusy=false;
- const pagePerm={class:'class',doan:'doan',hoi:'hoi',activities:'activities',attendance:'attendance',ballot:'ballot',voteStandalone:'ballot',news:'news',newsDetail:'news',pushPrefs:'notifications',notificationCenter:'notifications',exams:'exams',documents:'documents',funds:'funds'};
+ const pagePerm={class:'class',doan:'doan',hoi:'hoi',activities:'activities',attendance:'attendance',calendar:'attendance',ballot:'ballot',voteStandalone:'ballot',news:'news',notices:'news',newsDetail:'news',pushPrefs:'notifications',notificationCenter:'notifications',exams:'exams',documents:'documents',funds:'funds'};
  window.QLNH_ACL_HAS=k=>!me||!Array.isArray(me.allowed)||me.allowed.includes(k);
  window.QLNH_ACL_PAGE=page=>!pagePerm[page]||window.QLNH_ACL_HAS(pagePerm[page]);
  function applyAcl(){for(const n of document.querySelectorAll('[data-page]')){const deny=!window.QLNH_ACL_PAGE(n.dataset.page);n.classList.toggle('qlnh-acl-hidden',deny);}for(const [id,perm] of [['homeEvents','activities'],['homeNotices','news'],['v17Upcoming','exams']]){const n=$(id);if(n)n.classList.toggle('qlnh-acl-hidden',!window.QLNH_ACL_HAS(perm));}}
@@ -42,7 +42,7 @@
  async function loadApp(privateMode){
    const load=async src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=()=>reject(Error('Không tải được '+src));document.body.append(script);});
    if(!baseLoaded){
-     for(const src of ['./config.js','./app.js?v=22.0.2','./news.js?v=19.7.0','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=23.0.0','./v17-student.js?v=19.7.0','./qlnh-deeplink.js?v=21.3.0','./fund-student.js?v=19.7.0'])await load(src);
+     for(const src of ['./config.js','./app.js?v=22.0.2','./news.js?v=25.0.0','./qlnh-notices-v25.js?v=25.0.0','./qlnh-calendar-v26.js?v=26.0.0','./grand-civic-v14.js?v=16.3.1','./qlnh-document-viewer.js?v=23.0.0','./v17-student.js?v=19.7.0','./qlnh-deeplink.js?v=21.3.0','./fund-student.js?v=19.7.0'])await load(src);
      baseLoaded=true;
    }
    if(privateMode&&!privateLoaded){

@@ -3,7 +3,7 @@
 'use strict';
 const U={Lop:'LỚP',ChiDoan:'CHI ĐOÀN',ChiHoi:'CHI HỘI'};
 const K={BanTin:'BẢN TIN',ThongBao:'THÔNG BÁO'};
-let unit='all',kind='all',q='',page=1,more=false,searchTimer=0,loadedHome=false,lastList=[];
+let unit='all',kind='BanTin',q='',page=1,more=false,searchTimer=0,loadedHome=false,lastList=[];
 const $n=id=>document.getElementById(id);
 const dateTime=v=>window.QLNH_FORMAT_TIME(v,'');
 const safeURL=url=>typeof url==='string'&&url.length<=2000&&(/^(https:\/\/[^\s]+)$/i.test(url)||/^\/(?!\/)[^\s]*$/.test(url));
@@ -25,8 +25,8 @@ function card(item){
 function openCard(item){if(item.openMode==='LINK'&&safeURL(item.mainUrl))goLink(item.mainUrl);else openDetail(item.id,true);}
 async function loadHome(){
  const box=$n('newsHomeCards');if(!box)return;
- try{const r=await jsonp('newsList',{unit:'all',kind:'all',limit:6,page:1,home:1});if(!r.success)throw Error(r.message||'Không tải được bản tin');
- box.replaceChildren(...(r.items||[]).slice().sort((a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0)).map(card));if(!r.items.length)box.append(el('p','news-empty','Hiện chưa có bản tin hoặc thông báo được công bố.'));
+ try{const r=await jsonp('newsList',{unit:'all',kind:'BanTin',limit:6,page:1,home:1});if(!r.success)throw Error(r.message||'Không tải được bản tin');
+ box.replaceChildren(...(r.items||[]).slice().sort((a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0)).map(card));if(!r.items.length)box.append(el('p','news-empty','Hiện chưa có bản tin được công bố.'));
  loadedHome=true;
  }catch(e){box.replaceChildren(el('p','news-empty','Chưa thể tải bản tin công khai: '+(e?.message||'Lỗi kết nối')+'. Hãy thử tải lại trang.'));}
 }
