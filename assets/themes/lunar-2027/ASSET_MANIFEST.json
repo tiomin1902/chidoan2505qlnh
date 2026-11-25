@@ -1,0 +1,68 @@
+[
+  {
+    "file": "coin.webp",
+    "source": "Original procedural VTK render, render_lunar.py",
+    "type": "raster 3D render (not animated mesh)",
+    "bytes": 5092
+  },
+  {
+    "file": "dao.webp",
+    "source": "Original procedural VTK render, render_lunar.py",
+    "type": "raster 3D render (not animated mesh)",
+    "bytes": 36238
+  },
+  {
+    "file": "drum.webp",
+    "source": "Original procedural VTK render, render_lunar.py",
+    "type": "raster 3D render (not animated mesh)",
+    "bytes": 12490
+  },
+  {
+    "file": "envelope.webp",
+    "source": "Original procedural VTK render, render_lunar.py",
+    "type": "raster 3D render (not animated mesh)",
+    "bytes": 7942
+  },
+  {
+    "file": "flower.webp",
+    "source": "Original procedural VTK render, render_lunar.py",
+    "type": "raster 3D render (not animated mesh)",
+    "bytes": 6722
+  },
+  {
+    "file": "gate.webp",
+    "source": "Original procedural VTK render, render_lunar.py",
+    "type": "raster 3D render (not animated mesh)",
+    "bytes": 14580
+  },
+  {
+    "file": "goat-gift.webp",
+    "source": "Original procedural VTK render, render_lunar.py",
+    "type": "raster 3D render (not animated mesh)",
+    "bytes": 22012
+  },
+  {
+    "file": "goat-wave.webp",
+    "source": "Original procedural VTK render, render_lunar.py",
+    "type": "raster 3D render (not animated mesh)",
+    "bytes": 21546
+  },
+  {
+    "file": "goat-welcome.webp",
+    "source": "Original procedural VTK render, render_lunar.py",
+    "type": "raster 3D render (not animated mesh)",
+    "bytes": 21624
+  },
+  {
+    "file": "lantern.webp",
+    "source": "Original procedural VTK render, render_lunar.py",
+    "type": "raster 3D render (not animated mesh)",
+    "bytes": 15320
+  },
+  {
+    "file": "mai.webp",
+    "source": "Original procedural VTK render, render_lunar.py",
+    "type": "raster 3D render (not animated mesh)",
+    "bytes": 42514
+  }
+]
