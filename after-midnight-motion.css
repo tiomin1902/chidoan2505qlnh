@@ -1,0 +1,65 @@
+/* V36: retained show and letter mechanics, no legacy cover layout. */
+html.theme-newyear .ny31-hero[hidden],html.theme-newyear .ny31-show[hidden]{display:none!important}
+html.theme-newyear .ny31-show{background:#090909!important;color:#F6F5F1!important;--ny-gold:#A8ABB2;--ny-ink:#F6F5F1}
+html.theme-newyear .ny31-show[open]{display:grid}
+html.theme-newyear .ny31-show .ny31-top{flex-wrap:wrap}
+html.theme-newyear .ny31-show .ny31-top span{font-size:11px;color:#dcdcdc;letter-spacing:.13em}
+html.theme-newyear .ny31-show .ny31-content{text-shadow:0 2px 16px #000}
+html.theme-newyear .ny31-scene-title{font:700 clamp(26px,6vw,66px)/1.12 Georgia,serif;color:#e8e8e8;text-shadow:0 4px 20px #b8b8b860;margin:12px 0}
+html.theme-newyear .ny31-scene-sub{font-size:clamp(15px,3vw,24px);line-height:1.5;max-width:650px;margin:14px auto;color:#f1f1f1}
+html.theme-newyear .ny31-progress{height:3px;background:#ffffff2a;position:absolute;bottom:calc(20px + env(safe-area-inset-bottom));left:7%;right:7%;border-radius:5px;overflow:hidden}
+html.theme-newyear .ny31-progress i{display:block;height:100%;background:#dcdcdc;width:0}
+html.theme-newyear .ny31-envelope{position:relative;width:min(260px,72vw);aspect-ratio:1.55;margin:22px auto 26px;perspective:700px;filter:drop-shadow(0 12px 30px #c7c7c744)}
+html.theme-newyear .ny31-envelope img{position:absolute;width:100%;height:100%;object-fit:contain;inset:0}
+html.theme-newyear .ny31-envelope .ny31-flap{transform-origin:50% 0;transition:transform .75s ease-in-out;z-index:3}
+html.theme-newyear .ny31-envelope .ny31-seal{position:absolute;top:49%;left:50%;translate:-50% -50%;width:52px;height:52px;display:grid;place-items:center;color:#e6e6e6;background:radial-gradient(circle at 40% 30%,#c54e42,#7d182a);box-shadow:inset 0 0 0 3px #b55c40,0 4px 7px #0005;border-radius:50%;z-index:4;font:700 14px Georgia;transition:opacity .3s}
+html.theme-newyear .ny31-envelope.open .ny31-flap{transform:rotateX(180deg)}
+html.theme-newyear .ny31-envelope.open .ny31-seal{opacity:0}
+html.theme-newyear .ny31-letter{overflow-wrap:anywhere;white-space:normal}
+html.theme-newyear .ny31-letter h2{font:italic 500 clamp(30px,5vw,54px)/1.15 var(--ed-serif)!important;color:#B5122D!important;border-bottom:1px solid #090909;padding-bottom:16px}
+html.theme-newyear .ny31-letter p{white-space:pre-wrap;line-height:1.8}
+html.theme-newyear .ny31-letter .ny31-sign{text-align:right;font-style:italic;color:#575757}
+html.theme-newyear .ny31-letter small{color:#575757;letter-spacing:.14em;font-size:11px}
+html.theme-newyear .ny31-show .ny31-scene-title,html.theme-newyear .ny31-show .ny31-scene-sub{animation:ny31-enter .65s ease-out both}
+@keyframes ny31-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+html.theme-newyear .ny31-scene-photo{display:block;max-height:35vh;max-width:100%;object-fit:contain;margin:0 auto 12px;animation:ny31-enter .8s both}
+html.theme-newyear .ny31-film{display:flex;overflow:hidden;gap:12px;padding:12px;border-block:5px dashed #a7a7a7;background:#14101c;max-width:100%;justify-content:center}
+html.theme-newyear .ny31-film figure{flex:1 0 30%;max-width:230px;margin:0;color:#fff;font-size:12px;animation:ny31-enter .75s both}
+html.theme-newyear .ny31-film img{width:100%;height:120px;object-fit:cover}
+html.theme-newyear .ny31-story,html.theme-newyear .ny31-wish{border:1px solid #b0b0b066;background:linear-gradient(145deg,#353535,#101c37);border-radius:16px;padding:20px;color:#F6F5F1;text-align:left}
+html.theme-newyear .ny31-story{max-width:520px;margin:12px auto;font-size:18px}
+html.theme-newyear .ny31-story h3{font:700 32px Georgia;color:#e4e4e4}
+html.theme-newyear .ny31-wish-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0!important;align-items:stretch;text-align:left}
+html.theme-newyear .ny31-wish span{color:#dfdfdf;font-size:28px}
+html.theme-newyear .ny31-wish p{color:#F6F5F1!important;margin:0 0 12px;overflow-wrap:anywhere}
+html.theme-newyear .ny31-wish-form{display:grid;gap:10px;margin:16px auto;max-width:500px;text-align:left}
+html.theme-newyear .ny31-wish-form textarea{background:#f5f5f5;color:#18243e;border-radius:10px;padding:12px;font:16px system-ui;width:100%;box-sizing:border-box}
+html.theme-newyear .ny31-hero button[hidden]{display:none!important}
+html.theme-newyear .ny31-show button:disabled{opacity:.45;cursor:default}
+html.theme-newyear .ny31-show .ny31-top button{font-size:12px;padding:8px 10px}
+html.theme-newyear .ny31-show .ny31-content>button{margin:4px}
+.theme-newyear .ny31-show .ny33-city{background-image:linear-gradient(0deg,#090909d9,#09090954 45%,#090909a0),var(--ny33-city-primary);background-size:cover;background-position:center}
+.theme-newyear .ny31-show[data-scene^=journey] .ny33-city{background-image:linear-gradient(0deg,#090909d9,#09090965),var(--ny33-city-secondary)}
+.theme-newyear .ny31-show:is([data-scene=quiet],[data-scene=envelope],[data-scene=wishes]) .ny33-city{opacity:.18}
+.theme-newyear .ny31-show .ny31-stage{z-index:0!important}
+.theme-newyear .ny31-show .ny31-scene-title{color:#F6F5F1!important;font:italic 500 clamp(35px,8vw,100px)/1.08 var(--ed-serif)!important;text-shadow:none}
+html.theme-newyear .ny31-show .ny31-year{justify-content:center;font-size:clamp(95px,28vmin,235px)!important}
+html.theme-newyear .ny31-show[data-scene^=count] .ny31-year{font:900 clamp(120px,35vmin,290px)/1 Arial!important;color:#F6F5F1!important;letter-spacing:-.06em!important;border:1px solid #A8ABB2;padding:12px!important}
+.theme-newyear .ny31-show .ny31-progress i{background:#B5122D!important}
+.theme-newyear .ny31-show .ny31-progress{background:#a8abb255!important}
+.theme-newyear .ny31-envelope .ny31-seal{background:radial-gradient(circle at 35% 30%,#d73650,#7b0d22)!important;color:#F6F5F1!important;box-shadow:inset 0 0 0 2px #a8abb280!important}
+.theme-newyear .ny33-paper-slip{position:absolute;left:8%;right:8%;top:10%;height:70%;background:#F6F5F1;color:#090909;padding:14px;display:flex;align-items:center;justify-content:center;font:italic 20px var(--ed-serif);z-index:2;transform:translateY(10%);transition:transform .85s ease;clip-path:inset(0 0 12% 0);opacity:0}
+.theme-newyear .ny31-envelope.open .ny33-paper-slip{transform:translateY(-70%);opacity:1}
+html.theme-newyear .ny31-letter :is(p,small){color:#090909!important}
+.theme-newyear .ny31-letter p:first-of-type::first-letter{float:left;font:italic 500 3.2em/.85 var(--ed-serif);color:#B5122D;margin:4px 8px 0 0}
+html.theme-newyear .ny31-wish{grid-column:span 3;background:transparent!important;border:0!important;border-top:1px solid #a8abb255!important;color:#F6F5F1!important;min-width:0;padding:20px 12px!important}
+html.theme-newyear .ny31-wish:nth-child(3n/**/+1){grid-column:span 6}
+.theme-newyear .ny31-wish:nth-child(3n/**/+1) p{font:italic 500 clamp(24px,5vw,48px)/1.18 var(--ed-serif)!important}
+.theme-newyear .ny31-wish:nth-child(3n/**/+2) p{font:800 clamp(17px,3vw,29px)/1.25 var(--ed-sans)!important}
+.theme-newyear .ny31-wish:nth-child(3n/**/+3) p{font:italic 500 clamp(17px,3vw,30px)/1.25 var(--ed-serif)!important;color:#F1788B!important}
+.theme-newyear .ny31-wish small{color:#A8ABB2!important}
+.theme-newyear .ny31-wish-form{background:#171717!important;border:1px solid #a8abb255!important;color:#F6F5F1!important}
+.theme-newyear .ny31-wish-form textarea{background:#F6F5F1!important;color:#090909!important;border-radius:0!important}
+html.theme-newyear .ny33-wish-sent{background:#090909e8;color:#F6F5F1;padding:24px;border-block:1px solid #A8ABB2;animation:ny31-enter .5s both;overflow-wrap:anywhere}
+html.theme-newyear .ny33-wish-sent p{font:italic 500 28px var(--ed-serif)}
+html.theme-newyear .ny31-show .ny31-letter{text-shadow:none}

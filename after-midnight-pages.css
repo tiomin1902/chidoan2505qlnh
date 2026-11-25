@@ -1,0 +1,119 @@
+/* V36: functional views, consolidated selected rules; all scoped to New Year. */
+.theme-newyear :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner){border-radius:0!important;background:#14263c!important;color:#F6F5F1!important;border:0!important;border-bottom:4px solid #8e8e8e!important;box-shadow:none!important;padding:clamp(24px,4vw,52px)!important}
+.theme-newyear :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner) :is(h1,h2){color:#f5f5f5!important;font:400 italic clamp(30px,4vw,54px)/1.06 var(--ed-serif)!important;letter-spacing:-.04em}
+.theme-newyear :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner) :is(p,small,span){color:#d8d8d8}
+.theme-newyear :is(.surface-panel,.panel,.attendancePanel,.infoCard,.seriesCard,.congress,.regForm,.org-intro,.v17-card,.v17-doc-detail,.push-panel,.student-auth-card,.qv26-shell,.qv26-calendar,.qv26-agenda,.fund-student-activity,.fund-student-report){background:#F6F5F1!important;color:#090909!important;border:1px solid #c9c9c9!important;border-radius:0!important;box-shadow:none!important;min-width:0}
+.theme-newyear :is(.panel-heading,.section-title,.news-article-heading) :is(h1,h2,h3){font:400 clamp(24px,3.2vw,40px)/1.12 var(--ed-serif)!important;color:#B5122D!important;letter-spacing:-.025em}
+.theme-newyear .panel-heading{border-bottom:1px solid #b7b7b7!important;padding-bottom:12px!important;align-items:center}
+.theme-newyear .panel-heading svg{color:#B5122D!important}
+.theme-newyear .mini-link{background:transparent!important;color:#5c5c5c!important;border:0!important;border-radius:0!important;min-height:44px;white-space:normal}
+.theme-newyear .home-alert{background:#B5122D!important;color:#F6F5F1!important;border-radius:0!important;border-left:5px solid #b5b5b5!important}
+.theme-newyear .homeEventItem{border:0!important;border-bottom:1px solid #c9c9c9!important;background:#F6F5F1!important;border-radius:0!important;color:#090909!important}
+.theme-newyear .eventDate{background:#172b40!important;color:#f5f5f5!important;border-radius:0!important;border:0!important}
+.theme-newyear #v17Upcoming{background:#B5122D!important;color:#F6F5F1!important;border:1px solid #ababab!important;border-radius:0!important}
+.theme-newyear #class .personnelGrid{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))!important;gap:16px!important}
+.theme-newyear #class .personnelGrid>*{border-radius:0!important;border:1px solid #c9c9c9!important;background:#F6F5F1!important;color:#090909!important;box-shadow:none!important}
+.theme-newyear #class .org-intro{padding:clamp(20px,4vw,46px)!important;font-size:17px;line-height:1.75}
+.theme-newyear .branch-banner-hoi{background:#B5122D!important}
+.theme-newyear .branch-subnav{background:#F6F5F1!important;border-bottom:1px solid #979797!important;border-radius:0!important}
+.theme-newyear .branch-subnav button{min-height:44px;color:#B5122D!important;background:transparent!important;border-radius:0!important}
+.theme-newyear #activityList>*{border-radius:0!important;border:1px solid #c9c9c9!important;border-left:4px solid #B5122D!important;background:#F6F5F1!important;color:#090909!important;box-shadow:none!important}
+.theme-newyear #attendanceList{border:2px dashed #8e8e8e!important;padding:clamp(16px,4vw,38px)!important;background:#F6F5F1!important}
+.theme-newyear #ballotContent{padding:clamp(18px,4vw,42px)!important}
+.theme-newyear #ballotTitle{font-family:var(--ed-serif)!important;color:#B5122D!important}
+.theme-newyear .qv26-day{border-radius:0!important;background:#F6F5F1!important;color:#090909!important;border-color:#d1d1d1!important}
+.theme-newyear .qv26-today{outline:2px solid #B5122D;outline-offset:-2px}
+.theme-newyear .qv26-selected{background:#B5122D!important;color:white!important}
+.theme-newyear .qv26-month{font:400 30px var(--ed-serif)!important;color:#B5122D!important}
+.theme-newyear :is(.qv26-event-row,.qv26-rem-row){border-radius:0!important;border-left:3px solid #8e8e8e!important;background:#F6F5F1!important;color:#090909!important}
+.theme-newyear :is(.news-page,.news-detail-page,.nuInboxPage){background:#F6F5F1!important;color:#090909!important;border-radius:0!important;box-shadow:none!important}
+.theme-newyear .news-grid{gap:14px!important}
+.theme-newyear .news-grid>*:not(p){border-radius:0!important;border:1px solid #c9c9c9!important;background:#F6F5F1!important;color:#090909!important;box-shadow:none!important}
+.theme-newyear .news-grid :is(h2,h3){font:400 clamp(20px,2.5vw,29px)/1.15 var(--ed-serif)!important;color:#090909!important}
+.theme-newyear #newsDetailBody{max-width:760px;margin:auto;color:#090909!important;font-size:17px;line-height:1.8}
+.theme-newyear :is(.news-tabs,.news-kind-tabs,.v17-tabs,.fund-student-tabs){border-radius:0!important;background:#EAE7E1!important;border:1px solid #c9c9c9!important}
+.theme-newyear :is(.news-tabs,.news-kind-tabs,.v17-tabs,.fund-student-tabs) button{min-height:44px;border-radius:0!important;color:#090909!important}
+.theme-newyear :is(.news-tabs,.news-kind-tabs,.v17-tabs,.fund-student-tabs) button:is(.active,.selected,[aria-selected=true],[aria-pressed=true]){background:#B5122D!important;color:#F6F5F1!important}
+.theme-newyear :is(#qlnhNoticeList,#nuFeedList)>*{background:#F6F5F1!important;color:#090909!important;border-radius:0!important;border:0!important;border-bottom:1px solid #c9c9c9!important;box-shadow:none!important}
+.theme-newyear :is(.qlnh-notices-toolbar,.nuInboxToolbar,.qlnh-v28-inbox-summary){background:#EAE7E1!important;color:#090909!important;border-radius:0!important;border-color:#c9c9c9!important}
+.theme-newyear .push-options label{background:#F6F5F1!important;border-bottom:1px solid #c9c9c9!important;min-height:48px;color:#090909!important}
+.theme-newyear .v17-card :is(h2,h3,strong){font-family:var(--ed-serif)!important;color:#090909!important}
+.theme-newyear #v17ExamsList .v17-card{border-top:4px solid #B5122D!important;padding:20px!important}
+.theme-newyear #v17DocList>*{border-radius:0!important;background:#F6F5F1!important;color:#090909!important;border:0!important;border-bottom:1px solid #c9c9c9!important}
+.theme-newyear #qlnhDocReader{background:#151515!important;color:#F6F5F1!important}
+.theme-newyear .fund-personal{background:#14263c!important;color:#F6F5F1!important;border-radius:0!important;border:1px solid #ababab!important}
+.theme-newyear .fund-personal :is(.fund-balance,.fund-personal-name){font-family:var(--ed-serif)!important;color:#d7d7d7!important}
+.theme-newyear .fund-student-item{background:#F6F5F1!important;color:#090909!important;border-bottom:1px solid #c9c9c9!important;border-radius:0!important}
+.theme-newyear .fund-in{color:#176b47!important}
+.theme-newyear .fund-out{color:#a5223b!important}
+.theme-newyear :is(.page,.student-auth-card,#guestAuthDialog,.push-panel,.qv26-dialog) :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]),select,textarea){background:#F6F5F1!important;color:#090909!important;border:1px solid #aaaaaa!important;border-radius:3px!important;min-height:44px;font-size:16px!important;max-width:100%}
+.theme-newyear :is(.page,.student-auth-card,#guestAuthDialog,.push-panel) :is(input,textarea)::placeholder{color:#636363!important}
+.theme-newyear :is(.page,.student-auth-card) :is(.primary,.btnPrimary,.v17-btn-primary,.qv26-primary,button[type=submit]){background:#B5122D!important;color:#F6F5F1!important;border-color:#B5122D!important;border-radius:0!important;min-height:44px}
+.theme-newyear :is(button,a,input,textarea,select):focus-visible{outline:3px solid #7e7e7e!important;outline-offset:2px}
+.theme-newyear #studentAuthGate{background:#151515!important}
+.theme-newyear .student-auth-card{border-top:5px solid #B5122D!important;padding:28px!important}
+.theme-newyear .student-auth-card :is(h1,h2){font:400 32px var(--ed-serif)!important;color:#B5122D!important}
+html.theme-newyear .page:not(#home) :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner){background:#090909!important;color:#fff!important;border:0!important;border-bottom:3px solid #B5122D!important;padding:clamp(22px,4vw,56px)!important}
+html.theme-newyear .page:not(#home) :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner) :is(h1,h2){font:italic 500 clamp(32px,5vw,66px)/1.08 var(--ed-serif)!important;letter-spacing:-.05em;color:#F6F5F1!important}
+html.theme-newyear .page:not(#home) :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner) :is(p,small,span){color:#d6d7da!important}
+html.theme-newyear #doan .branch-banner{background:#B5122D!important}
+html.theme-newyear #hoi .branch-banner{background:#F6F5F1!important;border-bottom:1px solid #090909!important}
+html.theme-newyear #hoi .branch-banner :is(h1,h2,p,small,span){color:#090909!important}
+html.theme-newyear #activityList>*{border:0!important;border-bottom:1px solid #a8abb2!important;padding:clamp(14px,2vw,26px)!important}
+html.theme-newyear #activityList>*:first-child{border-top:4px solid #B5122D!important}
+html.theme-newyear #attendanceList{border:0!important;border-block:1px dashed #a8abb2!important;background:#F6F5F1!important}
+html.theme-newyear #attendanceList>*{border-radius:0!important}
+html.theme-newyear #ballotContent{background:#F6F5F1!important;border:1px solid #a8abb2!important;border-top:4px solid #090909!important}
+html.theme-newyear #ballotContent label{min-height:44px}
+html.theme-newyear :is(.news-page,.news-detail-page,.nuInboxPage){background:#F6F5F1!important;color:#090909!important}
+html.theme-newyear .news-grid>*:not(p){border:0!important;border-top:1px solid #090909!important}
+html.theme-newyear #newsDetailBody{font:400 17px/1.85 var(--ed-sans)!important}
+html.theme-newyear #newsDetailBody h1{font:italic 500 clamp(34px,5vw,64px)/1.08 var(--ed-serif)!important}
+html.theme-newyear :is(#qlnhNoticeList,#nuFeedList)>*{border-bottom:1px solid #a8abb2!important}
+html.theme-newyear .qv26-month{font:italic 500 34px/1.1 var(--ed-serif)!important;color:#090909!important}
+html.theme-newyear .qv26-day{background:#F6F5F1!important;color:#090909!important;border-color:#d3d1cd!important}
+html.theme-newyear .qv26-selected{background:#B5122D!important;color:#fff!important}
+html.theme-newyear #v17ExamsList .v17-card{border:0!important;border-top:3px solid #B5122D!important;border-bottom:1px solid #a8abb2!important}
+html.theme-newyear #v17DocList>*{border-bottom:1px solid #a8abb2!important}
+html.theme-newyear .fund-personal{background:#090909!important;color:#F6F5F1!important;border:0!important}
+html.theme-newyear .fund-personal :is(.fund-balance,.fund-personal-name){color:#F6F5F1!important}
+html.theme-newyear .student-auth-card{border-top:4px solid #B5122D!important;background:#F6F5F1!important}
+html.theme-newyear .siteFooter{background:#090909!important;color:#F6F5F1!important;border-top:3px solid #B5122D!important}
+html.theme-newyear .siteFooter :is(a,small,p){color:#d1d1d4!important}
+html.theme-newyear #activities .itemCard{display:grid;grid-template-columns:clamp(64px,11vw,132px) minmax(0,1fr) minmax(160px,27%);gap:clamp(12px,2vw,30px);border:0!important;border-top:1px solid #090909!important;border-radius:0!important;background:#F6F5F1!important;box-shadow:none!important;padding:20px 0!important;align-items:start}
+html.theme-newyear #activities .eventDate{background:transparent!important;border:0!important;color:#090909!important;font:800 clamp(33px,6vw,74px)/.95 var(--ed-sans)!important;text-align:left!important;min-width:0;min-height:0;box-shadow:none!important}
+html.theme-newyear #activities .eventDate small{color:#B5122D!important;font:600 10px/1.4 var(--ed-sans)!important;letter-spacing:.1em}
+html.theme-newyear #activities .eventMain h2{font:italic 500 clamp(22px,3vw,38px)/1.16 var(--ed-serif)!important;color:#090909!important;overflow-wrap:anywhere}
+html.theme-newyear #activities .eventRegistration{background:#090909!important;color:#F6F5F1!important;border-radius:0!important;border:0!important;padding:14px!important;min-width:0}
+html.theme-newyear #activities .eventRegistration summary{color:#F6F5F1!important;font-weight:700;cursor:pointer}
+html.theme-newyear #activities .eventRegistration :is(label,p,small){color:#F6F5F1!important}
+html.theme-newyear #activities .eventRegistration input{background:#F6F5F1!important;color:#090909!important;width:100%;min-width:0}
+html.theme-newyear #activities .eventRegistration button{background:#B5122D!important;color:white!important;width:100%;min-height:44px}
+html.theme-newyear #attendance .att-session{position:relative;background:#090909!important;color:#F6F5F1!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:clamp(20px,3vw,38px)!important;margin-bottom:24px;overflow:hidden}
+html.theme-newyear #attendance .att-session :is(h2,h3){font:italic 500 clamp(24px,4vw,44px)/1.14 var(--ed-serif)!important;color:#F6F5F1!important;overflow-wrap:anywhere}
+html.theme-newyear #attendance .att-kicker{color:#A8ABB2!important;letter-spacing:.16em}
+html.theme-newyear #attendance .att-session-top{border-bottom:1px dashed #A8ABB2!important;padding-bottom:16px;gap:12px;flex-wrap:wrap}
+html.theme-newyear #attendance .att-meta{border-bottom:1px solid #a8abb255!important;padding-block:16px}
+html.theme-newyear #attendance .att-session :is(.att-note,.att-meta,.att-meta b,.att-meta span){color:#F6F5F1!important}
+html.theme-newyear #attendance .att-submit{background:#F6F5F1!important;color:#090909!important;padding:18px!important;border:0!important;border-radius:0!important;border-top:3px solid #B5122D!important;min-width:0}
+html.theme-newyear #attendance .att-submit :is(label,small,p){color:#090909!important}
+html.theme-newyear #attendance .att-submit .att-send{min-height:48px;background:#B5122D!important;color:white!important;border:0!important;border-radius:0!important;width:100%}
+html.theme-newyear #attendance .att-submit .att-send:disabled{background:#D1CFCA!important;color:#565656!important;opacity:1}
+html.theme-newyear #attendance .att-preview img{max-width:100%;max-height:45vh;object-fit:contain}
+html.theme-newyear #attendance .att-status{border-radius:0!important;white-space:normal!important;overflow-wrap:anywhere}
+html.theme-newyear #attendance .att-status.approved{background:#D6EDE1!important;color:#22543D!important}
+html.theme-newyear #attendance .att-status.pending{background:#FFF0D0!important;color:#754900!important}
+html.theme-newyear #attendance .att-status.rejected{background:#FBE2E7!important;color:#87152C!important}
+html.theme-newyear #voteStandalone .ballotStandaloneInner{max-width:880px;margin:auto;background:#F6F5F1!important;color:#090909!important;border:0!important;box-shadow:none!important;padding:clamp(14px,4vw,48px)!important}
+html.theme-newyear #voteStandalone :is(input[type=checkbox],input[type=radio]),html.theme-newyear #ballot :is(input[type=checkbox],input[type=radio]){accent-color:#B5122D;min-width:20px;min-height:20px}
+html.theme-newyear :is(#ballot,#voteStandalone) label{overflow-wrap:anywhere}
+html.theme-newyear #calendar .qv26-shell{background:#F6F5F1!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+html.theme-newyear #calendar .qv26-day{border-radius:0!important;min-width:0;min-height:44px}
+html.theme-newyear #documents .v17-docitem{border:0!important;border-top:1px solid #a8abb2!important;background:#F6F5F1!important;box-shadow:none!important;border-radius:0!important;padding:18px 0!important;gap:14px}
+html.theme-newyear #documents .v17-docicon{background:#090909!important;color:#F6F5F1!important;border-radius:0!important}
+html.theme-newyear #exams .v17-card{border:0!important;border-top:1px solid #090909!important;background:#F6F5F1!important;box-shadow:none!important;border-radius:0!important}
+html.theme-newyear #funds .fund-personal{background:#090909!important;color:#F6F5F1!important;border-radius:0!important;box-shadow:none!important}
+html.theme-newyear #funds .fund-personal :is(.fund-balance,.fund-personal-caption,.fund-personal-name,.fund-personal-note){color:#F6F5F1!important}
+html.theme-newyear #funds .fund-balance{font:800 clamp(30px,5vw,65px)/1.1 var(--ed-sans)!important;overflow-wrap:anywhere}
+html.theme-newyear #funds .fund-student-item{border-radius:0!important;border-bottom:1px solid #a8abb2!important;box-shadow:none!important}
+@media(max-width:700px){html.theme-newyear #activities .itemCard{grid-template-columns:68px minmax(0,1fr);gap:12px}html.theme-newyear #activities .eventSide{grid-column:1/-1}html.theme-newyear #attendance .att-session-top{flex-direction:column;align-items:flex-start}}
