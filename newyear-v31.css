@@ -1,6 +1,33 @@
 /* V31 — scoped, additive. No business logic or global theme modifications. */
-html.theme-newyear{color-scheme:dark;--ny-bg:#081128;--ny-panel:#152342;--ny-gold:#f6db9c;--ny-ink:#f8faff;--ny-muted:#c0cbe1;--ny-edge:#ad86475c}
-html.theme-newyear body{background:radial-gradient(ellipse at 50% 0,#25365e 0,#081128 45%,#080e20 100%)!important;color:var(--ny-ink)}
+/* V32 — Mục 0: hệ thiết kế Tết Dương lịch. Các module tiếp theo dùng chung token này. */
+html.theme-newyear {
+  color-scheme: dark;
+  --ny-night-950:#050A1A; --ny-night-900:#081128; --ny-night-800:#0E1A3A; --ny-night-700:#17274F;
+  --ny-red-600:#C8102E; --ny-red-700:#A30D26; --ny-red-900:#5E0A19;
+  --ny-gold-300:#FFE3A1; --ny-gold-400:#F2C45A; --ny-gold-600:#B8892E; --ny-gold-ink:#805819;
+  --ny-ivory-50:#FFFBF0; --ny-ivory-100:#FFF4DC; --ny-ink-900:#1B2540;
+  --ny-ok:#2E9E6B; --ny-warn:#E0A526; --ny-err:#D6455D; --ny-info:#4A86D8;
+  --ny-ok-ink:#176B47; --ny-warn-ink:#805819; --ny-err-ink:#A5223B; --ny-info-ink:#285FA8;
+  --ny-muted-dark:#C0CBE1; --ny-muted-light:#505B70;
+  --ny-font-body:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif;
+  --ny-font-display:'Cormorant Garamond','Playfair Display',Georgia,'Times New Roman',serif;
+  --ny-text-xs:12px; --ny-text-sm:14px; --ny-text-md:16px; --ny-text-lg:18px;
+  --ny-text-xl:22px; --ny-text-2xl:28px; --ny-text-3xl:36px; --ny-text-4xl:48px;
+  --ny-display:clamp(72px,15vw,140px); --ny-leading:1.55; --ny-heading-leading:1.15;
+  --ny-space-1:4px; --ny-space-2:8px; --ny-space-3:12px; --ny-space-4:16px;
+  --ny-space-6:24px; --ny-space-8:32px; --ny-space-12:48px; --ny-space-16:64px;
+  --ny-radius-sm:10px; --ny-radius-md:16px; --ny-radius-lg:24px; --ny-radius-pill:999px;
+  --ny-ease:cubic-bezier(.22,.8,.2,1); --ny-fast:160ms; --ny-normal:280ms; --ny-slow:520ms; --ny-scene:900ms;
+  --ny-surface-0:radial-gradient(ellipse at 50% 0%,#17274F 0%,#081128 48%,#050A1A 100%);
+  --ny-surface-1:var(--ny-ivory-50); --ny-surface-2:linear-gradient(135deg,var(--ny-red-600),var(--ny-red-900));
+  --ny-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 12px 32px rgba(3,8,24,.35);
+  --ny-focus:0 0 0 2px var(--ny-night-950),0 0 0 5px var(--ny-gold-400);
+  /* Tương thích các selector V31.1; chưa thay cấu trúc hay logic. */
+  --ny-bg:var(--ny-night-900); --ny-panel:var(--ny-night-700); --ny-gold:var(--ny-gold-300);
+  --ny-ink:var(--ny-ivory-50); --ny-muted:var(--ny-muted-dark); --ny-edge:#ad86475c;
+}
+
+html.theme-newyear body{background:var(--ny-surface-0)!important;color:var(--ny-ink)}
 html.theme-newyear .top,html.theme-newyear .siteFooter,html.theme-newyear .drawer,html.theme-newyear #drawer{background:#101d3d!important;color:var(--ny-ink)!important;border-color:var(--ny-edge)!important}
 html.theme-newyear .brand,html.theme-newyear .brandCopy strong,html.theme-newyear .mobileMenuButton{color:var(--ny-gold)!important}
 html.theme-newyear .brandCopy small{color:var(--ny-muted)!important}
@@ -18,7 +45,7 @@ html.theme-newyear #qlnhMusicWidget{--music-surface:#14213d;--music-soft:#263552
 @media(max-width:600px){.ny31-hero{margin:8px auto 14px;width:calc(100% - 16px);padding:45px 12px 24px;min-height:370px;border-radius:16px}.ny31-ring{width:95vw;top:40%}.ny31-flag{width:58px;top:4%;left:3%}.ny31-flag.right{right:3%}.ny31-lotus{width:27%}.ny31-ribbon{bottom:-12%;opacity:.55}.ny31-year{font-size:clamp(78px,24vw,125px)}.ny31-count{gap:5px}.ny31-unit{padding:8px 2px}.ny31-actions button{flex:1 1 140px}.ny31-show{padding-left:12px;padding-right:12px}.ny31-show .ny31-top span{letter-spacing:.05em}.ny31-show .ny31-top button{padding:8px 10px}.ny31-letter p{font-size:15px}}
 @media(prefers-reduced-motion:reduce){.ny31-ring,.ny31-flag,.ny31-scene-title,.ny31-scene-sub{animation:none!important}.ny31-envelope *{transition:none!important}}
 
-html.theme-newyear :is(.panel,.surface-panel,.attendancePanel,.student-auth-card){color:#1c2c46;background:#fffaf0;border-color:#d8c49d}
+html.theme-newyear :is(.panel,.surface-panel,.attendancePanel,.student-auth-card){color:var(--ny-ink-900);background:var(--ny-surface-1);border-color:#d8c49d}
 html.theme-newyear #drawer :is(button,a){color:#f8faff}
 html.theme-newyear #drawer :is(button,a):hover{background:#24375d}
 .ny31-hero .ny31-lotus{width:min(18%,175px)}

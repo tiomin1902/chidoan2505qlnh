@@ -11,3 +11,6 @@
 - Chợ Bến Thành: Jean-Marie Hullot, CC BY 3.0 — https://commons.wikimedia.org/wiki/File:Ben_Thanh_Market.jpg ; https://creativecommons.org/licenses/by/3.0/ ; khi chỉnh sửa cần ghi rõ đã chỉnh sửa và giữ ghi công.
 
 Tải ảnh thủ công từ trang nguồn, kiểm tra quyền và tách nền bằng mask nếu cần. Công cụ `CongCu/nhap_anh_that_v311.py` nhập ảnh từ máy cục bộ, nén WebP, cập nhật danh mục thực tế; không làm giả công trình hoặc giả lập tải ảnh. Ảnh GitHub Pages là công khai, tuyệt đối không dùng ảnh nội bộ nếu chưa có quyền công bố.
+
+## V32
+`ny32-editorial.svg`, `lotus.svg`, `ring.svg`, `ribbon.svg`, `vietnam-flag.svg`, `envelope-body.svg`, `envelope-flap.svg`: đồ họa vector tự thiết kế bằng mã cho V32; hoa văn cách điệu, không phải hiện vật hoặc địa danh thật. Cờ mẫu 3:2, ngôi sao giữa. Không tải ảnh ngoài.
