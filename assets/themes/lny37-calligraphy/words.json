@@ -1,0 +1,250 @@
+[
+  {
+    "id": "tam",
+    "text": "Tâm",
+    "meaning": "Giữ lòng sáng",
+    "category": "Phẩm chất",
+    "blessing": "Mong bạn giữ lòng chân thành, bình thản và yêu thương.",
+    "asset": "words/tam.webp"
+  },
+  {
+    "id": "tri",
+    "text": "Trí",
+    "meaning": "Khai mở tri thức",
+    "category": "Học tập",
+    "blessing": "Chúc năm mới học tập tiến bộ, trí tuệ sáng suốt và tự tin theo đuổi ước mơ.",
+    "asset": "words/tri.webp"
+  },
+  {
+    "id": "duc",
+    "text": "Đức",
+    "meaning": "Rèn luyện nhân cách",
+    "category": "Phẩm chất",
+    "blessing": "Mong bạn luôn giữ lòng nhân hậu và sống có trách nhiệm.",
+    "asset": "words/duc.webp"
+  },
+  {
+    "id": "tin",
+    "text": "Tín",
+    "meaning": "Giữ chữ tín",
+    "category": "Phẩm chất",
+    "blessing": "Chúc bạn giữ lời hứa, xây dựng niềm tin và tình bạn bền lâu.",
+    "asset": "words/tin.webp"
+  },
+  {
+    "id": "nhan-kien-tri",
+    "text": "Nhẫn",
+    "meaning": "Bền chí, kiên trì",
+    "category": "Phẩm chất",
+    "blessing": "Chúc bạn bình tâm trước khó khăn và bền bỉ tiến về phía trước.",
+    "asset": "words/nhan-kien-tri.webp"
+  },
+  {
+    "id": "dung",
+    "text": "Dũng",
+    "meaning": "Can đảm tiến bước",
+    "category": "Phẩm chất",
+    "blessing": "Mong bạn vững lòng trước thử thách và mạnh dạn theo đuổi điều đúng đắn.",
+    "asset": "words/dung.webp"
+  },
+  {
+    "id": "an",
+    "text": "An",
+    "meaning": "Bình an",
+    "category": "Bình an",
+    "blessing": "Mong mỗi ngày đều bình an, mỗi hành trình đều vững lòng.",
+    "asset": "words/an.webp"
+  },
+  {
+    "id": "phuc",
+    "text": "Phúc",
+    "meaning": "Hạnh phúc",
+    "category": "Gia đình",
+    "blessing": "Chúc bạn và gia đình một năm mới đầy niềm vui, phúc lành và hạnh phúc.",
+    "asset": "words/phuc.webp"
+  },
+  {
+    "id": "thanh",
+    "text": "Thành",
+    "meaning": "Thành công",
+    "category": "Học tập",
+    "blessing": "Chúc những cố gắng của bạn đơm hoa kết trái trong năm mới.",
+    "asset": "words/thanh.webp"
+  },
+  {
+    "id": "hoa",
+    "text": "Hòa",
+    "meaning": "Hòa thuận",
+    "category": "Gia đình",
+    "blessing": "Mong gia đình êm ấm, mọi người luôn thấu hiểu và yêu thương.",
+    "asset": "words/hoa.webp"
+  },
+  {
+    "id": "loc",
+    "text": "Lộc",
+    "meaning": "May mắn",
+    "category": "Tài lộc",
+    "blessing": "Chúc năm mới nhiều cơ hội tốt, công việc và học tập thuận lợi.",
+    "asset": "words/loc.webp"
+  },
+  {
+    "id": "hieu",
+    "text": "Hiếu",
+    "meaning": "Biết ơn, hiếu kính",
+    "category": "Gia đình",
+    "blessing": "Mong năm mới luôn giữ trọn lòng biết ơn, yêu thương và kính trọng ông bà, cha mẹ.",
+    "asset": "words/hieu.webp"
+  },
+  {
+    "id": "tho",
+    "text": "Thọ",
+    "meaning": "Sức khỏe, trường thọ",
+    "category": "Bình an",
+    "blessing": "Kính chúc ông bà và người thân dồi dào sức khỏe, an vui mỗi ngày.",
+    "asset": "words/tho.webp"
+  },
+  {
+    "id": "tai",
+    "text": "Tài",
+    "meaning": "Tài năng, phát triển",
+    "category": "Học tập",
+    "blessing": "Chúc bạn phát huy năng lực, không ngừng học hỏi và trưởng thành.",
+    "asset": "words/tai.webp"
+  },
+  {
+    "id": "nghia",
+    "text": "Nghĩa",
+    "meaning": "Nghĩa tình, đạo lý",
+    "category": "Gia đình",
+    "blessing": "Mong bạn luôn gìn giữ tình nghĩa và trân trọng những người đồng hành.",
+    "asset": "words/nghia.webp"
+  },
+  {
+    "id": "nhan",
+    "text": "Nhân",
+    "meaning": "Nhân ái, bao dung",
+    "category": "Phẩm chất",
+    "blessing": "Chúc bạn luôn có lòng bao dung và sẻ chia điều tốt đẹp.",
+    "asset": "words/nhan.webp"
+  },
+  {
+    "id": "duyen",
+    "text": "Duyên",
+    "meaning": "Nhân duyên tốt đẹp",
+    "category": "Gia đình",
+    "blessing": "Mong bạn gặp những người tử tế và có thêm nhiều tình bạn đẹp.",
+    "asset": "words/duyen.webp"
+  },
+  {
+    "id": "thien",
+    "text": "Thiện",
+    "meaning": "Điều lành, lòng tốt",
+    "category": "Phẩm chất",
+    "blessing": "Mong mỗi việc thiện nhỏ góp thêm niềm vui cho cuộc đời.",
+    "asset": "words/thien.webp"
+  },
+  {
+    "id": "tinh",
+    "text": "Tĩnh",
+    "meaning": "Bình tâm, tĩnh tại",
+    "category": "Bình an",
+    "blessing": "Chúc bạn giữ tâm an nhiên giữa những bộn bề.",
+    "asset": "words/tinh.webp"
+  },
+  {
+    "id": "dat",
+    "text": "Đạt",
+    "meaning": "Thành tựu, tiến bộ",
+    "category": "Học tập",
+    "blessing": "Chúc bạn từng bước tiến gần hơn đến mục tiêu của mình.",
+    "asset": "words/dat.webp"
+  },
+  {
+    "id": "hung",
+    "text": "Hưng",
+    "meaning": "Hưng thịnh, phát triển",
+    "category": "Tài lộc",
+    "blessing": "Mong năm mới mở ra những cơ hội phát triển tốt đẹp.",
+    "asset": "words/hung.webp"
+  },
+  {
+    "id": "vuong",
+    "text": "Vượng",
+    "meaning": "Thịnh vượng",
+    "category": "Tài lộc",
+    "blessing": "Chúc gia đình đủ đầy, an vui và công việc thuận lợi.",
+    "asset": "words/vuong.webp"
+  },
+  {
+    "id": "xuan",
+    "text": "Xuân",
+    "meaning": "Khởi đầu, sức sống",
+    "category": "Bình an",
+    "blessing": "Mong mùa xuân mang đến hy vọng và sức sống mới.",
+    "asset": "words/xuan.webp"
+  },
+  {
+    "id": "binh-an",
+    "text": "Bình An",
+    "meaning": "Cuộc sống an lành",
+    "category": "Bình an",
+    "blessing": "Chúc bạn và người thân bình an trong mọi hành trình.",
+    "asset": "words/binh-an.webp"
+  },
+  {
+    "id": "nhu-y",
+    "text": "Như Ý",
+    "meaning": "Mọi điều thuận ý",
+    "category": "Tài lộc",
+    "blessing": "Chúc bạn có một năm mới thuận lợi và nhiều niềm vui.",
+    "asset": "words/nhu-y.webp"
+  },
+  {
+    "id": "cat-tuong",
+    "text": "Cát Tường",
+    "meaning": "May mắn, tốt lành",
+    "category": "Tài lộc",
+    "blessing": "Mong những điều tốt lành đến với bạn và gia đình.",
+    "asset": "words/cat-tuong.webp"
+  },
+  {
+    "id": "thanh-cong",
+    "text": "Thành Công",
+    "meaning": "Đạt được mục tiêu",
+    "category": "Học tập",
+    "blessing": "Chúc bạn kiên trì theo đuổi mục tiêu và gặt hái thành quả xứng đáng.",
+    "asset": "words/thanh-cong.webp"
+  },
+  {
+    "id": "an-nhien",
+    "text": "An Nhiên",
+    "meaning": "Bình thản, thanh thản",
+    "category": "Bình an",
+    "blessing": "Mong bạn sống thong dong, giữ lòng bình thản và niềm vui.",
+    "asset": "words/an-nhien.webp"
+  },
+  {
+    "id": "hanh-phuc",
+    "text": "Hạnh Phúc",
+    "meaning": "Niềm vui, sự đủ đầy",
+    "category": "Gia đình",
+    "blessing": "Chúc bạn tìm thấy hạnh phúc trong những điều giản dị.",
+    "asset": "words/hanh-phuc.webp"
+  },
+  {
+    "id": "thuan-hoa",
+    "text": "Thuận Hòa",
+    "meaning": "Hòa thuận, êm ấm",
+    "category": "Gia đình",
+    "blessing": "Mong gia đình luôn hòa thuận, cùng nhau vun đắp yêu thương.",
+    "asset": "words/thuan-hoa.webp"
+  },
+  {
+    "id": "doan-vien",
+    "text": "Đoàn Viên",
+    "meaning": "Gia đình sum họp",
+    "category": "Gia đình",
+    "blessing": "Mong mỗi mùa xuân đến, mái nhà luôn đầy tiếng cười và những người thương lại được ở bên nhau.",
+    "asset": "words/doan-vien.webp"
+  }
+]

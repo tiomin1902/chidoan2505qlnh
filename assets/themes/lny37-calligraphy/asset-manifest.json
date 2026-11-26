@@ -1,0 +1,164 @@
+{
+  "version": "37.1.2",
+  "artwork": "Digital calligraphic lettering: rasterized Z003 Medium Italic (URW Base35) with original hand-drawn missing Vietnamese marks and ink grain. Not hand-brushed by an artisan.",
+  "font_source": "https://github.com/ArtifexSoftware/urw-base35-fonts",
+  "font_license": "AGPL-3 with font exception in installed Debian package; raster outputs only, no font programs included.",
+  "existing_decorations": "Reuses V37.1.1 AI-generated art: mai-canopy.webp, dao-canopy.webp, ong-full.webp, goat.webp; no external images.",
+  "files": [
+    {
+      "file": "words/tam.webp",
+      "word": "Tâm",
+      "bytes": 49028
+    },
+    {
+      "file": "words/tri.webp",
+      "word": "Trí",
+      "bytes": 31256
+    },
+    {
+      "file": "words/duc.webp",
+      "word": "Đức",
+      "bytes": 45142
+    },
+    {
+      "file": "words/tin.webp",
+      "word": "Tín",
+      "bytes": 36456
+    },
+    {
+      "file": "words/nhan-kien-tri.webp",
+      "word": "Nhẫn",
+      "bytes": 71442
+    },
+    {
+      "file": "words/dung.webp",
+      "word": "Dũng",
+      "bytes": 66780
+    },
+    {
+      "file": "words/an.webp",
+      "word": "An",
+      "bytes": 31812
+    },
+    {
+      "file": "words/phuc.webp",
+      "word": "Phúc",
+      "bytes": 56276
+    },
+    {
+      "file": "words/thanh.webp",
+      "word": "Thành",
+      "bytes": 73036
+    },
+    {
+      "file": "words/hoa.webp",
+      "word": "Hòa",
+      "bytes": 46874
+    },
+    {
+      "file": "words/loc.webp",
+      "word": "Lộc",
+      "bytes": 34168
+    },
+    {
+      "file": "words/hieu.webp",
+      "word": "Hiếu",
+      "bytes": 55924
+    },
+    {
+      "file": "words/tho.webp",
+      "word": "Thọ",
+      "bytes": 41832
+    },
+    {
+      "file": "words/tai.webp",
+      "word": "Tài",
+      "bytes": 38080
+    },
+    {
+      "file": "words/nghia.webp",
+      "word": "Nghĩa",
+      "bytes": 81686
+    },
+    {
+      "file": "words/nhan.webp",
+      "word": "Nhân",
+      "bytes": 70376
+    },
+    {
+      "file": "words/duyen.webp",
+      "word": "Duyên",
+      "bytes": 74396
+    },
+    {
+      "file": "words/thien.webp",
+      "word": "Thiện",
+      "bytes": 64184
+    },
+    {
+      "file": "words/tinh.webp",
+      "word": "Tĩnh",
+      "bytes": 51938
+    },
+    {
+      "file": "words/dat.webp",
+      "word": "Đạt",
+      "bytes": 44858
+    },
+    {
+      "file": "words/hung.webp",
+      "word": "Hưng",
+      "bytes": 65292
+    },
+    {
+      "file": "words/vuong.webp",
+      "word": "Vượng",
+      "bytes": 73298
+    },
+    {
+      "file": "words/xuan.webp",
+      "word": "Xuân",
+      "bytes": 56294
+    },
+    {
+      "file": "words/binh-an.webp",
+      "word": "Bình An",
+      "bytes": 89772
+    },
+    {
+      "file": "words/nhu-y.webp",
+      "word": "Như Ý",
+      "bytes": 76060
+    },
+    {
+      "file": "words/cat-tuong.webp",
+      "word": "Cát Tường",
+      "bytes": 106730
+    },
+    {
+      "file": "words/thanh-cong.webp",
+      "word": "Thành Công",
+      "bytes": 130008
+    },
+    {
+      "file": "words/an-nhien.webp",
+      "word": "An Nhiên",
+      "bytes": 106822
+    },
+    {
+      "file": "words/hanh-phuc.webp",
+      "word": "Hạnh Phúc",
+      "bytes": 119244
+    },
+    {
+      "file": "words/thuan-hoa.webp",
+      "word": "Thuận Hòa",
+      "bytes": 118484
+    },
+    {
+      "file": "words/doan-vien.webp",
+      "word": "Đoàn Viên",
+      "bytes": 111636
+    }
+  ]
+}
