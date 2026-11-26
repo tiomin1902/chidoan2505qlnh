@@ -162,3 +162,8 @@ html.theme-lunar #home .lny37-tile:hover{background:#fbe6b4;}
 .lny371-feature-symbol svg{width:32px;height:32px;}
 @media(max-width:800px){html.theme-lunar #home .lny37-hero{grid-template-columns:1fr}.lny371-dinner-scene .dinner-table{left:18%;width:64%;height:34%;bottom:0}.lny371-dinner-scene .lny371-rig{height:calc(var(--dh)*.85)}html.theme-lunar #home .lny37-clock,html.theme-lunar #home .lny37-calendar{padding:12px 9px}html.theme-lunar #home .lny37-clock .clock-digits{gap:4px}html.theme-lunar #home .lny37-clock .clock-digits>span{min-width:24px}html.theme-lunar #home .lny37-clock .clock-digits b,html.theme-lunar #home .lny37-clock .clock-digits strong{font-size:19px}html.theme-lunar #home .lny37-clock .clock-digits small{font-size:10px}}
 @media(max-width:359px){html.theme-lunar #home .lny37-strip{grid-template-columns:1fr!important;}}
+
+/* V38: purely decorative scenery, no festival interactions */
+html.theme-lunar .lny371-stage .lny371-actor{cursor:default;pointer-events:none;touch-action:auto;}
+html.theme-lunar .lny37-hero-copy .lny37-slogan{margin-bottom:12px;}
+html.theme-lunar .lny37-controls{justify-content:flex-end;font-size:13px;}

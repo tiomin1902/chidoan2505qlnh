@@ -1,0 +1,138 @@
+/* V33 AFTER MIDNIGHT — chỉ áp dụng Tết Dương lịch; không thay đổi nghiệp vụ. */
+html.theme-newyear{--ed-paper:#F6F5F1;--ed-ink:#090909;--ed-red:#B5122D;--ed-night:#090909;--ed-gold:#A8ABB2;--ed-line:#cbc9c5;--ed-serif:'Playfair Display',Georgia,'Times New Roman',serif;--ed-sans:'Be Vietnam Pro',Arial,sans-serif;--ny-night-950:#090909;--ny-night-900:#151515;--ny-night-800:#242424;--ny-gold-300:#A8ABB2;--ny-gold-400:#A8ABB2;--ny-gold-ink:#4e4e52;--ny-ivory-50:#F6F5F1;--ny-ink-900:#090909;--ny-edge:#a8abb244;--ny-info:#4a86d8;--ny-info-ink:#285fa8;--ny-warn:#e0a526;--ny-warn-ink:#805819;--ny33-city-primary:url('./assets/themes/newyear-2027/saigon-landmark.jpg');--ny33-city-secondary:url('./assets/themes/newyear-2027/saigon-bitexco.jpg');color-scheme:light}
+html.theme-newyear body{background:#F6F5F1!important;color:#090909!important}
+/* Masthead: three columns, original brand and menu hooks retained. */
+html.theme-newyear.qlnh-v28-ui .top{position:relative;display:grid!important;grid-template-columns:1fr minmax(0,2.5fr) 1fr;align-items:center;gap:8px;padding:16px clamp(12px,4vw,56px)!important;background:#F6F5F1!important;color:#090909!important;border:0!important;border-bottom:1px solid #090909!important;box-shadow:none!important;min-height:86px}
+html.theme-newyear.qlnh-v28-ui .top::before{content:'ẤN BẢN ĐẶC BIỆT\A 2027';white-space:pre;font:600 clamp(9px,1.4vw,15px)/1.7 var(--ed-sans);letter-spacing:.1em;color:#B5122D;grid-column:1;grid-row:1;align-self:center}
+html.theme-newyear .top .brand{grid-column:2;grid-row:1;justify-content:center;min-width:0;gap:8px;text-align:center!important;background:none!important;color:#090909!important;border:0!important;max-width:100%;padding:0!important}
+html.theme-newyear .top .brandSeal{display:grid!important;background:transparent!important;color:#090909!important;border:0!important;width:26px!important;height:26px!important;flex:0 0 26px!important}
+html.theme-newyear .top .brandCopy{min-width:0;align-items:center;text-align:center!important;max-width:100%}
+html.theme-newyear .top .brandCopy strong{font:italic 500 clamp(22px,4.2vw,56px)/1.12 var(--ed-serif)!important;letter-spacing:-.055em!important;color:#090909!important;white-space:nowrap}
+html.theme-newyear .top .brandCopy small{color:#454545!important;font:500 9px/1.4 var(--ed-sans)!important;letter-spacing:.14em!important;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html.theme-newyear .top .headerTools{grid-column:3;grid-row:1;justify-self:end}
+html.theme-newyear.qlnh-v28-ui #menuBtn{background:transparent!important;border:0!important;color:#090909!important;box-shadow:none!important;border-radius:0!important;min-width:44px;min-height:44px}
+html.theme-newyear:not(.qlnh-authenticated):not(.qlnh-guest) .top{display:none!important}
+html.theme-newyear .civic-slogan{background:#B5122D!important;color:#fff!important}
+/* Cinematic cover / live index. Entire row is a spread, not a bordered hero. */
+html.theme-newyear #home>.ny31-hero{display:grid!important;grid-template-columns:minmax(0,7fr) minmax(250px,3fr)!important;align-items:stretch;gap:0!important;width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;background:#F6F5F1!important;overflow:visible;isolation:isolate;border:0!important;box-shadow:none!important;text-align:left}
+.theme-newyear .ny33-cinema{position:relative;isolation:isolate;min-width:0;overflow:hidden;min-height:490px;display:flex;align-items:flex-end;padding:clamp(26px,4.5vw,70px);background:#090909}
+.theme-newyear .ny33-city{position:absolute;inset:0;background-image:linear-gradient(90deg,#090909e8 0%,#09090978 44%,#09090912 75%),linear-gradient(0deg,#090909 2%,transparent 55%),var(--ny33-city-primary);background-position:center,center,center 57%;background-size:cover;background-repeat:no-repeat;z-index:0}
+.theme-newyear .ny33-cinema .ny31-stage{z-index:-1!important}.theme-newyear .ny31-stage canvas{z-index:1;opacity:1!important}
+.theme-newyear .ny33-cinema .ny31-copy{position:relative;max-width:100%;text-shadow:none!important;z-index:2;padding:0!important}
+.theme-newyear .ny33-cinema .ny31-kicker{font:600 10px/1.5 var(--ed-sans)!important;letter-spacing:.19em;color:#d8d9df;border-bottom:1px solid #a8abb280;padding-bottom:10px}
+.theme-newyear .ny33-cinema .ny31-greeting{font:italic 500 clamp(24px,3.2vw,50px)/1.15 var(--ed-serif)!important;color:#F6F5F1;text-shadow:none!important;margin-top:22px}
+html.theme-newyear .ny31-hero .ny31-year,.theme-newyear .ny31-show .ny31-year{display:flex;align-items:baseline;justify-content:flex-start;gap:0;font-size:clamp(112px,16vw,242px)!important;letter-spacing:-.11em!important;line-height:.9;color:#F6F5F1!important;background:none!important;filter:none!important;text-shadow:none!important;padding:0 .12em .08em 0!important;margin:12px 0 20px!important;white-space:nowrap;overflow:visible}
+.theme-newyear .ny33-twenty{font:italic 500 .98em/.9 var(--ed-serif);color:#F6F5F1;letter-spacing:-.12em}
+.theme-newyear .ny33-seven{font:900 .9em/.9 Arial,sans-serif;color:#E64560;letter-spacing:-.12em;padding-right:.1em}
+.theme-newyear .ny31-copy .ny31-tag{color:#fff!important;font:600 10px/1.5 var(--ed-sans)!important;letter-spacing:.18em}
+.theme-newyear .ny31-copy p{margin:10px 0 18px!important;color:#F6F5F1!important;max-width:38ch!important;font:italic 500 clamp(15px,1.6vw,21px)/1.5 var(--ed-serif)!important}
+/* BD time line: day dominant, no boxes, genuine year progress */
+html.theme-newyear .ny33-cinema .ny31-count{display:grid;grid-template-columns:1.5fr repeat(3,1fr);max-width:520px;gap:0;margin:20px 0 0!important;border:0!important;align-items:end;width:100%}
+html.theme-newyear .ny33-cinema .ny31-unit{background:transparent!important;border:0!important;padding:2px 6px 8px 0!important;box-shadow:none!important;text-align:left}
+html.theme-newyear .ny33-cinema .ny31-unit b{font:800 clamp(23px,4vw,56px)/1 var(--ed-sans)!important;letter-spacing:-.055em;color:#F6F5F1!important;font-variant-numeric:tabular-nums}
+html.theme-newyear .ny33-cinema .ny31-unit:first-child b{font-size:clamp(38px,6vw,90px)!important}
+html.theme-newyear .ny33-cinema .ny31-unit:last-child b{color:#F06B80!important}
+.theme-newyear .ny33-cinema .ny31-unit small{font:500 9px/1.2 var(--ed-sans)!important;letter-spacing:.12em;color:#BFC0C5!important;margin-top:5px}
+.theme-newyear .ny33-time-progress{height:2px;background:#a8abb250;max-width:520px;margin-top:8px}.theme-newyear .ny33-time-progress i{display:block;height:100%;background:#E64560}.theme-newyear .ny33-time-label{display:flex;justify-content:space-between;max-width:520px;margin:6px 0 12px;color:#c9c9cc;font:500 10px var(--ed-sans)}
+.theme-newyear .ny31-note{color:#c9c9cc!important}.theme-newyear .ny31-actions{justify-content:flex-start!important;margin-left:0!important}
+html.theme-newyear :is(.ny31-show,.ny31-hero) button{border:1px solid #a8abb280!important;border-radius:0!important;background:#151515!important;color:#F6F5F1!important;min-height:44px}
+html.theme-newyear :is(.ny31-show,.ny31-hero) button.ny31-primary{background:#B5122D!important;color:white!important;border-color:#B5122D!important}
+.theme-newyear .ny33-rail{padding:clamp(24px,3vw,50px) clamp(18px,3vw,42px);align-self:stretch;min-width:0;border-left:1px solid #090909;display:flex;flex-direction:column;justify-content:center;background:#F6F5F1;color:#090909}
+.theme-newyear .ny33-rail-kicker{color:#B5122D;letter-spacing:.19em;font:600 10px var(--ed-sans)}.theme-newyear .ny33-rail h2{font:italic 500 clamp(28px,4vw,52px)/1.1 var(--ed-serif);letter-spacing:-.05em;margin:10px 0 24px;color:#090909}
+html.theme-newyear .ny33-rail .home-shortcuts{display:flex!important;flex-direction:column;gap:0!important;margin:0!important;padding:0!important;counter-reset:ny33-index}
+html.theme-newyear .ny33-rail .home-shortcuts::before{display:none!important}
+html.theme-newyear .ny33-rail .home-shortcuts .shortcut{counter-increment:ny33-index;position:relative;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;min-height:58px!important;gap:12px!important;padding:12px 18px 12px 32px!important;background:#F6F5F1!important;background-image:none!important;border:0!important;border-top:1px solid #a8abb2!important;color:#090909!important;text-align:left!important;width:100%;box-shadow:none!important}
+html.theme-newyear .ny33-rail .home-shortcuts .shortcut::before{content:counter(ny33-index,decimal-leading-zero)!important;position:absolute;left:0;top:50%;transform:translateY(-50%);font:600 10px var(--ed-sans);color:#B5122D;opacity:1!important}
+html.theme-newyear .ny33-rail .home-shortcuts .shortcut::after{content:'↗'!important;display:block!important;position:absolute;right:0;top:50%;bottom:auto;transform:translateY(-50%);width:auto;height:auto;opacity:1;background:none;mask-image:none;border:0;font:400 16px Arial;color:#B5122D}
+html.theme-newyear .ny33-rail .home-shortcuts .shortcut span:last-child{font:500 clamp(16px,1.65vw,23px)/1.3 var(--ed-serif)!important;color:#090909!important;max-width:100%}
+html.theme-newyear .ny33-rail .home-shortcuts .v17-shortcut-ico{display:none!important}
+html.theme-newyear .ny33-rail .home-shortcuts .shortcut:hover{background:#e7e3dd!important;outline:0!important}
+html.theme-newyear.qlnh-guest .ny33-rail,html.theme-newyear:not(.qlnh-authenticated) .ny33-rail{display:none!important}
+html.theme-newyear.qlnh-guest #home>.ny31-hero,html.theme-newyear:not(.qlnh-authenticated) #home>.ny31-hero{grid-template-columns:1fr!important}
+/* Body: type-led editorial and current data, no decorative stock photos. */
+html.theme-newyear #home .home-content{padding:clamp(18px,4vw,56px)!important;max-width:1440px!important}
+.theme-newyear .home-overview-grid{border-top:1px solid #090909;padding-top:24px;gap:clamp(16px,3vw,40px)!important}
+.theme-newyear .home-overview-grid :is(.surface-panel,.panel){border:0!important;background:transparent!important;padding:0!important}
+.theme-newyear .home-overview-grid .panel-heading{border-bottom:1px solid #090909!important}
+.theme-newyear .home-overview-grid .panel-heading h2{font:italic 500 clamp(26px,3vw,46px)/1.15 var(--ed-serif)!important;color:#090909!important}
+.theme-newyear .home-overview-grid .news-highlight{border-left:1px solid #a8abb2!important;padding-left:clamp(15px,3vw,40px)!important}
+.theme-newyear .branch-tiles{gap:0!important;border-block:1px solid #090909}.theme-newyear .branch-tile{background:#F6F5F1!important;color:#090909!important;border:0!important;border-bottom:1px solid #a8abb2!important;min-height:80px!important}.theme-newyear .branch-tile :is(strong,small){color:#090909!important}.theme-newyear .branch-tile strong{font:italic 500 clamp(26px,3vw,44px) var(--ed-serif)!important}
+/* Menu: art column + original single scroll area (no duplicate navigation). */
+html.theme-newyear.qlnh-v28-ui #drawer{width:min(850px,94vw)!important;background:#F6F5F1!important;color:#090909!important;border:0!important;display:flex;flex-direction:column;padding-left:min(34%,280px)!important}
+html.theme-newyear.qlnh-v28-ui #drawer::before{content:'20\A 27.';white-space:pre;position:absolute;left:0;top:0;bottom:0;width:min(34%,280px);background-image:linear-gradient(0deg,#0909098c,#09090950),var(--ny33-city-secondary);background-size:cover;background-position:40% center;color:#F6F5F1;padding:40px 16px;font:italic 500 clamp(64px,9vw,115px)/.9 var(--ed-serif);letter-spacing:-.08em;box-sizing:border-box;pointer-events:none}
+html.theme-newyear.qlnh-v28-ui #drawer .drawerHeader,html.theme-newyear.qlnh-v28-ui #drawer .drawerScroll,html.theme-newyear.qlnh-v28-ui #drawer .drawerFooter{background:#F6F5F1!important;color:#090909!important;border-color:#a8abb2!important}
+html.theme-newyear.qlnh-v28-ui #drawer .drawerHeader strong{color:#090909!important;font:italic 500 31px var(--ed-serif)!important}
+html.theme-newyear.qlnh-v28-ui #drawer .qlnh-v28-menu-kicker{color:#B5122D!important}
+html.theme-newyear.qlnh-v28-ui #drawer :is(.qlnh-v28-nav-item,.qlnh-v28-groupToggle){background:transparent!important;color:#090909!important;border:0!important;border-radius:0!important;min-height:48px!important;font:500 15px var(--ed-sans)!important}
+html.theme-newyear.qlnh-v28-ui #drawer :is(.qlnh-v28-nav-item,.qlnh-v28-groupToggle):is(:hover,.active,.current,[aria-current=page]){color:#B5122D!important;background:#ebe7e2!important}
+html.theme-newyear.qlnh-v28-ui #closeBtn{color:#090909!important;background:transparent!important;border:1px solid #a8abb2!important}
+/* Page-specific rhythm — maintain existing dynamic IDs and renderers. */
+html.theme-newyear .page:not(#home) :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner){background:#090909!important;color:#fff!important;border:0!important;border-bottom:3px solid #B5122D!important;padding:clamp(22px,4vw,56px)!important}
+html.theme-newyear .page:not(#home) :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner) :is(h1,h2){font:italic 500 clamp(32px,5vw,66px)/1.08 var(--ed-serif)!important;letter-spacing:-.05em;color:#F6F5F1!important}
+html.theme-newyear .page:not(#home) :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner) :is(p,small,span){color:#d6d7da!important}
+html.theme-newyear #doan .branch-banner{background:#B5122D!important}html.theme-newyear #hoi .branch-banner{background:#F6F5F1!important;border-bottom:1px solid #090909!important}html.theme-newyear #hoi .branch-banner :is(h1,h2,p,small,span){color:#090909!important}
+html.theme-newyear #activityList>*{border:0!important;border-bottom:1px solid #a8abb2!important;padding:clamp(14px,2vw,26px)!important}
+html.theme-newyear #activityList>*:first-child{border-top:4px solid #B5122D!important}
+html.theme-newyear #attendanceList{border:0!important;border-block:1px dashed #a8abb2!important;background:#F6F5F1!important}
+html.theme-newyear #attendanceList>*{border-radius:0!important}
+html.theme-newyear #ballotContent{background:#F6F5F1!important;border:1px solid #a8abb2!important;border-top:4px solid #090909!important}
+html.theme-newyear #ballotContent label{min-height:44px}
+html.theme-newyear :is(.news-page,.news-detail-page,.nuInboxPage){background:#F6F5F1!important;color:#090909!important}
+html.theme-newyear .news-grid>*:not(p){border:0!important;border-top:1px solid #090909!important}
+html.theme-newyear #newsDetailBody{font:400 17px/1.85 var(--ed-sans)!important}
+html.theme-newyear #newsDetailBody h1{font:italic 500 clamp(34px,5vw,64px)/1.08 var(--ed-serif)!important}
+html.theme-newyear :is(#qlnhNoticeList,#nuFeedList)>*{border-bottom:1px solid #a8abb2!important}
+html.theme-newyear .qv26-month{font:italic 500 34px/1.1 var(--ed-serif)!important;color:#090909!important}
+html.theme-newyear .qv26-day{background:#F6F5F1!important;color:#090909!important;border-color:#d3d1cd!important}
+html.theme-newyear .qv26-selected{background:#B5122D!important;color:#fff!important}
+html.theme-newyear #v17ExamsList .v17-card{border:0!important;border-top:3px solid #B5122D!important;border-bottom:1px solid #a8abb2!important}
+html.theme-newyear #v17DocList>*{border-bottom:1px solid #a8abb2!important}
+html.theme-newyear .fund-personal{background:#090909!important;color:#F6F5F1!important;border:0!important}
+html.theme-newyear .fund-personal :is(.fund-balance,.fund-personal-name){color:#F6F5F1!important}
+html.theme-newyear .student-auth-card{border-top:4px solid #B5122D!important;background:#F6F5F1!important}
+html.theme-newyear .siteFooter{background:#090909!important;color:#F6F5F1!important;border-top:3px solid #B5122D!important}
+html.theme-newyear .siteFooter :is(a,small,p){color:#d1d1d4!important}
+html.theme-newyear #qlnhMusicWidget{--music-surface:#090909;--music-soft:#222;--music-primary:#A8ABB2;--music-border:#A8ABB2;--music-ink:#F6F5F1;--music-accent:#F6F5F1}
+html.theme-newyear :is(button,a,input,textarea,select):focus-visible{outline:3px solid #B5122D!important;outline-offset:2px}
+/* Ambient background on non-home pages, never takes pointer events or obscures forms. */
+.theme-newyear .ny33-ambient{position:fixed;top:0;left:0;right:0;height:180px;pointer-events:none;z-index:2;opacity:.18;mask-image:linear-gradient(#000 0%,transparent 100%);display:none}.theme-newyear.ny33-inner-page .ny33-ambient{display:block}.theme-newyear .ny33-ambient canvas{display:block;width:100%;height:100%}
+/* Show, shared letter, typography wishes. */
+html.theme-newyear .ny31-show{background:#090909!important;color:#F6F5F1!important;--ny-gold:#A8ABB2;--ny-ink:#F6F5F1}
+.theme-newyear .ny31-show .ny33-city{background-image:linear-gradient(0deg,#090909d9,#09090954 45%,#090909a0),var(--ny33-city-primary);background-size:cover;background-position:center}
+.theme-newyear .ny31-show[data-scene^=journey] .ny33-city{background-image:linear-gradient(0deg,#090909d9,#09090965),var(--ny33-city-secondary)}
+.theme-newyear .ny31-show:is([data-scene=quiet],[data-scene=envelope],[data-scene=wishes]) .ny33-city{opacity:.18}
+.theme-newyear .ny31-show .ny31-stage{z-index:0!important}.theme-newyear .ny31-show .ny31-scene-title{color:#F6F5F1!important;font:italic 500 clamp(35px,8vw,100px)/1.08 var(--ed-serif)!important;text-shadow:none}
+html.theme-newyear .ny31-show .ny31-year{justify-content:center;font-size:clamp(95px,28vmin,235px)!important}
+html.theme-newyear .ny31-show[data-scene^=count] .ny31-year{font:900 clamp(120px,35vmin,290px)/1 Arial!important;color:#F6F5F1!important;letter-spacing:-.06em!important;border:1px solid #A8ABB2;padding:12px!important}
+.theme-newyear .ny31-show .ny31-progress i{background:#B5122D!important}.theme-newyear .ny31-show .ny31-progress{background:#a8abb255!important}
+.theme-newyear .ny31-envelope .ny31-seal{background:radial-gradient(circle at 35% 30%,#d73650,#7b0d22)!important;color:#F6F5F1!important;box-shadow:inset 0 0 0 2px #a8abb280!important}
+.theme-newyear .ny33-paper-slip{position:absolute;left:8%;right:8%;top:10%;height:70%;background:#F6F5F1;color:#090909;padding:14px;display:flex;align-items:center;justify-content:center;font:italic 20px var(--ed-serif);z-index:2;transform:translateY(10%);transition:transform .85s ease;clip-path:inset(0 0 12% 0);opacity:0}
+.theme-newyear .ny31-envelope.open .ny33-paper-slip{transform:translateY(-70%);opacity:1}
+html.theme-newyear .ny31-letter{background:#F6F5F1!important;color:#090909!important;border:1px solid #a8abb2!important;box-shadow:none!important;padding:clamp(22px,5vw,56px)!important}
+html.theme-newyear .ny31-letter h2{font:italic 500 clamp(30px,5vw,54px)/1.15 var(--ed-serif)!important;color:#B5122D!important;border-bottom:1px solid #090909;padding-bottom:16px}
+html.theme-newyear .ny31-letter :is(p,small){color:#090909!important}.theme-newyear .ny31-letter p:first-of-type::first-letter{float:left;font:italic 500 3.2em/.85 var(--ed-serif);color:#B5122D;margin:4px 8px 0 0}
+html.theme-newyear .ny31-wish-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0!important;align-items:stretch;text-align:left}
+html.theme-newyear .ny31-wish{grid-column:span 3;background:transparent!important;border:0!important;border-top:1px solid #a8abb255!important;color:#F6F5F1!important;min-width:0;padding:20px 12px!important}
+html.theme-newyear .ny31-wish:nth-child(3n+1){grid-column:span 6}.theme-newyear .ny31-wish:nth-child(3n+1) p{font:italic 500 clamp(24px,5vw,48px)/1.18 var(--ed-serif)!important}.theme-newyear .ny31-wish:nth-child(3n+2) p{font:800 clamp(17px,3vw,29px)/1.25 var(--ed-sans)!important}.theme-newyear .ny31-wish:nth-child(3n+3) p{font:italic 500 clamp(17px,3vw,30px)/1.25 var(--ed-serif)!important;color:#F1788B!important}
+html.theme-newyear .ny31-wish p{color:#F6F5F1!important;margin:0 0 12px;overflow-wrap:anywhere}.theme-newyear .ny31-wish small{color:#A8ABB2!important}.theme-newyear .ny31-wish-form{background:#171717!important;border:1px solid #a8abb255!important;color:#F6F5F1!important}.theme-newyear .ny31-wish-form textarea{background:#F6F5F1!important;color:#090909!important;border-radius:0!important}.ny33-wish-sent{background:#090909e8;color:#F6F5F1;padding:24px;border-block:1px solid #A8ABB2;animation:ny31-enter .5s both;overflow-wrap:anywhere}.ny33-wish-sent p{font:italic 500 28px var(--ed-serif)}
+@media(max-width:800px){html.theme-newyear #home>.ny31-hero{grid-template-columns:1fr!important}.theme-newyear .ny33-cinema{min-height:430px;padding:28px 20px}.theme-newyear .ny33-rail{border-left:0;border-top:3px solid #B5122D;padding:24px 20px}.theme-newyear .ny33-rail h2{margin-bottom:16px}.theme-newyear .home-overview-grid .news-highlight{border-left:0!important;padding-left:0!important}.theme-newyear .ny33-cinema .ny33-city{background-position:center,center,58% center}.theme-newyear .ny33-rail .home-shortcuts .shortcut{min-height:52px!important}}
+@media(max-width:600px){html.theme-newyear.qlnh-v28-ui .top{min-height:66px;padding:10px 8px!important;grid-template-columns:minmax(44px,1fr) minmax(0,3fr) 44px;gap:4px}.theme-newyear .top::before{font-size:8px!important;letter-spacing:0!important}.theme-newyear .top .brandSeal{display:none!important}html.theme-newyear .top .brandCopy strong{font-size:clamp(19px,5.5vw,30px)!important}html.theme-newyear .top .brandCopy small{font-size:7px!important;letter-spacing:0!important}.theme-newyear .ny33-cinema{min-height:350px;padding:22px 16px!important}.theme-newyear .ny33-cinema .ny31-greeting{font-size:27px!important;margin-top:14px}.theme-newyear .ny33-cinema .ny31-year{font-size:clamp(98px,29vw,170px)!important;margin:10px 0 15px!important}.theme-newyear .ny33-cinema .ny31-copy p{margin-bottom:12px!important}.theme-newyear .ny33-cinema .ny31-count{margin-top:12px!important}.theme-newyear .ny33-cinema .ny31-unit b{font-size:27px!important}.theme-newyear .ny33-cinema .ny31-unit:first-child b{font-size:50px!important}.theme-newyear .ny33-cinema .ny31-unit small{font-size:8px!important}.theme-newyear .ny31-actions button{flex:0 1 auto!important}.theme-newyear .ny33-rail{padding:20px 16px}.theme-newyear .ny33-rail h2{font-size:34px!important}html.theme-newyear.qlnh-v28-ui #drawer{width:min(100vw,420px)!important;padding-left:0!important;padding-top:84px!important}html.theme-newyear.qlnh-v28-ui #drawer::before{height:84px;width:100%;bottom:auto;font-size:50px;white-space:normal;padding:12px 16px;background-position:center 54%}html.theme-newyear.qlnh-v28-ui #drawer .drawerHeader{min-height:68px;padding-block:8px!important}html.theme-newyear .ny31-wish-grid{grid-template-columns:1fr!important}html.theme-newyear .ny31-wish{grid-column:1!important}}
+@media(prefers-reduced-motion:reduce){.theme-newyear .ny33-ambient{display:none!important}.theme-newyear :is(.ny31-show,.ny31-hero) *{animation:none!important;transition:none!important}}
+/* QA corrections: stretch actual cover and index, keep masthead readable, remove inherited navy. */
+html.theme-newyear #home>.ny31-hero{justify-items:stretch!important;place-items:stretch!important}
+html.theme-newyear .ny33-cinema,html.theme-newyear .ny33-rail{width:100%!important;box-sizing:border-box;justify-self:stretch!important;align-self:stretch!important}
+html.theme-newyear.qlnh-v28-ui .top{height:auto!important;max-height:none!important;min-height:86px;overflow:visible!important}
+html.theme-newyear .top .brandCopy{overflow:visible!important;display:flex!important;flex-direction:column!important;gap:4px}
+html.theme-newyear .top .brandCopy small{display:block!important;line-height:1.4!important}
+html.theme-newyear #siteMain,html.theme-newyear #home,html.theme-newyear #home .home-content{background:#F6F5F1!important;background-image:none!important}
+html.theme-newyear .ny31-year .ny33-twenty{letter-spacing:-.09em}html.theme-newyear .ny31-year .ny33-seven{letter-spacing:-.08em;margin-left:.025em}
+html.theme-newyear .eventDate{background:#090909!important;color:#F6F5F1!important}html.theme-newyear .eventDate small{color:#F6F5F1!important}
+html.theme-newyear .homeEventItem,html.theme-newyear .homeEventItem :is(p,strong),html.theme-newyear .news-grid .news-card,html.theme-newyear .news-grid .news-card :is(h2,h3,p){color:#090909!important}
+html.theme-newyear .home-overview-grid .news-card{background:#F6F5F1!important;min-height:0!important;aspect-ratio:auto!important}
+html.theme-newyear .home-overview-grid .news-card:first-child{min-height:150px!important}
+html.theme-newyear.qlnh-authenticated .v17-bottom-nav{background:#090909!important;border:1px solid #a8abb2!important;left:0;right:0;bottom:0;box-shadow:none!important}
+html.theme-newyear.qlnh-authenticated .v17-bottom-nav button,html.theme-newyear.qlnh-authenticated .v17-bottom-nav button span{color:#F6F5F1!important}
+@media(max-width:600px){html.theme-newyear.qlnh-v28-ui .top{min-height:66px}.theme-newyear .ny33-rail{width:100%!important}.theme-newyear .ny33-rail h2{margin-top:6px}.theme-newyear .ny33-cinema .ny31-year{gap:0!important}.theme-newyear .ny33-city{background-position:center,center,60% 50%}}
+html.theme-newyear.qlnh-v28-ui #drawer::before{background-color:#090909}
+/* Limit ordinary bursts to the upper visual area; exact skyline masking requires actual photo assets. */
+.theme-newyear .ny33-cinema .ny31-stage canvas{mask-image:linear-gradient(#000 0%,#000 54%,transparent 90%)}

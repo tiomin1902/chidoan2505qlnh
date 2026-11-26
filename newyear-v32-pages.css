@@ -1,24 +1,24 @@
 /* V32: ấn bản editorial. Toàn bộ quy tắc chỉ áp dụng theme-newyear; giữ hooks và phân quyền cũ. */
-html.theme-newyear{--ed-paper:#fffaf1;--ed-ink:#19263a;--ed-red:#a51c36;--ed-night:#101d30;--ed-gold:#e3bb7d;--ed-line:#d7c8ad;--ed-serif:'Cormorant Garamond','Baskerville','Georgia','Times New Roman',serif;--ed-sans:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif; color-scheme:light}
-html.theme-newyear body{background:#eee6d8!important;color:var(--ed-ink)!important;font-family:var(--ed-sans)}
-.theme-newyear .top{background:#101d30!important;border-bottom:1px solid #d3a866!important;box-shadow:none!important;padding-block:12px;min-height:64px}
-.theme-newyear .brandCopy strong{font:400 clamp(17px,2.4vw,28px)/1.1 var(--ed-serif)!important;letter-spacing:.035em!important;color:#fff4de!important}
-.theme-newyear .brandCopy small{font-size:10px!important;letter-spacing:.12em;color:#e3bb7d!important}
-.theme-newyear .brandSeal{background:#a51c36!important;border:1px solid #e3bb7d!important;border-radius:50%!important;color:#ffe2aa!important}
-.theme-newyear #menuBtn,.theme-newyear #closeBtn{min-width:44px;min-height:44px;border:1px solid #d3a866!important;border-radius:0!important;background:transparent!important;color:#f6dfb7!important}
-.theme-newyear .civic-slogan{display:flex!important;background:#8c1930!important;color:#fff8eb!important;border:0!important;min-height:32px}
-.theme-newyear #drawer{background:#101d30!important;color:#fffaf1!important;border-right:1px solid #cfa66d!important;box-shadow:10px 0 60px #0004}
-.theme-newyear .drawerHeader{padding:24px 16px!important;border-bottom:1px solid #8d7554!important;background:#172840!important}
+html.theme-newyear{--ed-paper:#f6f6f6;--ed-ink:#19263a;--ed-red:#a51c36;--ed-night:#101d30;--ed-gold:#bfbfbf;--ed-line:#c9c9c9;--ed-serif:'Cormorant Garamond','Baskerville','Georgia','Times New Roman',serif;--ed-sans:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif; color-scheme:light}
+html.theme-newyear body{background:#e7e7e7!important;color:var(--ed-ink)!important;font-family:var(--ed-sans)}
+.theme-newyear .top{background:#101d30!important;border-bottom:1px solid #acacac!important;box-shadow:none!important;padding-block:12px;min-height:64px}
+.theme-newyear .brandCopy strong{font:400 clamp(17px,2.4vw,28px)/1.1 var(--ed-serif)!important;letter-spacing:.035em!important;color:#f5f5f5!important}
+.theme-newyear .brandCopy small{font-size:10px!important;letter-spacing:.12em;color:#bfbfbf!important}
+.theme-newyear .brandSeal{background:#a51c36!important;border:1px solid #bfbfbf!important;border-radius:50%!important;color:#e4e4e4!important}
+.theme-newyear #menuBtn,.theme-newyear #closeBtn{min-width:44px;min-height:44px;border:1px solid #acacac!important;border-radius:0!important;background:transparent!important;color:#e1e1e1!important}
+.theme-newyear .civic-slogan{display:flex!important;background:#8c1930!important;color:#f6f6f6!important;border:0!important;min-height:32px}
+.theme-newyear #drawer{background:#101d30!important;color:#f6f6f6!important;border-right:1px solid #ababab!important;box-shadow:10px 0 60px #0004}
+.theme-newyear .drawerHeader{padding:24px 16px!important;border-bottom:1px solid #787878!important;background:#172840!important}
 .theme-newyear .drawerHeader strong,.theme-newyear .qlnh-v28-groupToggle{font-family:var(--ed-serif)!important;font-size:20px!important;font-weight:400!important}
-.theme-newyear .qlnh-v28-group{border:0!important;border-bottom:1px solid #8e785b66!important;border-radius:0!important;background:transparent!important}
-.theme-newyear #drawer .qlnh-v28-nav-item,.theme-newyear #drawer .qlnh-v28-groupToggle{min-height:48px;color:#fffaf1!important;border-radius:0!important;background:transparent!important}
-.theme-newyear #drawer .qlnh-v28-nav-item:is(:hover,.active,.current,[aria-current=page]){background:#a51c36!important;border-left:3px solid #e3bb7d!important;color:#fff!important}
-.theme-newyear #drawer .qlnh-v28-menu-kicker{color:#e3bb7d!important;letter-spacing:.18em}
+.theme-newyear .qlnh-v28-group{border:0!important;border-bottom:1px solid #7b7b7b66!important;border-radius:0!important;background:transparent!important}
+.theme-newyear #drawer .qlnh-v28-nav-item,.theme-newyear #drawer .qlnh-v28-groupToggle{min-height:48px;color:#f6f6f6!important;border-radius:0!important;background:transparent!important}
+.theme-newyear #drawer .qlnh-v28-nav-item:is(:hover,.active,.current,[aria-current=page]){background:#a51c36!important;border-left:3px solid #bfbfbf!important;color:#fff!important}
+.theme-newyear #drawer .qlnh-v28-menu-kicker{color:#bfbfbf!important;letter-spacing:.18em}
 /* Cover: not a centered poster. Text left, independent illustrated plate right. */
-.theme-newyear .ny31-hero{max-width:1360px;width:calc(100% - 32px);margin:18px auto 24px!important;padding:clamp(26px,5vw,72px)!important;min-height:510px;display:grid;grid-template-columns:1fr .92fr;align-items:center;gap:24px;text-align:left;border-radius:0;box-shadow:none;border:0;background:#101d30;color:#fff7e6}
+.theme-newyear .ny31-hero{max-width:1360px;width:calc(100% - 32px);margin:18px auto 24px!important;padding:clamp(26px,5vw,72px)!important;min-height:510px;display:grid;grid-template-columns:1fr .92fr;align-items:center;gap:24px;text-align:left;border-radius:0;box-shadow:none;border:0;background:#101d30;color:#f6f6f6}
 .theme-newyear .ny31-copy{grid-column:1;grid-row:1;text-align:left;max-width:100%;padding:0;z-index:2}
-.theme-newyear .ny32-cover-art{grid-column:2;grid-row:1;align-self:stretch;min-height:400px;position:relative;background:url('./assets/themes/newyear-2027/ny32-editorial.svg') center/cover no-repeat;border:1px solid #d5b27a;overflow:hidden;isolation:isolate}
-.theme-newyear .ny32-cover-caption{position:absolute;bottom:10px;left:12px;padding:5px 10px;background:#101d30;color:#fff0d7;letter-spacing:.18em;font-size:10px}
+.theme-newyear .ny32-cover-art{grid-column:2;grid-row:1;align-self:stretch;min-height:400px;position:relative;background:url('./assets/themes/newyear-2027/ny32-editorial.svg') center/cover no-repeat;border:1px solid #b5b5b5;overflow:hidden;isolation:isolate}
+.theme-newyear .ny32-cover-caption{position:absolute;bottom:10px;left:12px;padding:5px 10px;background:#101d30;color:#f1f1f1;letter-spacing:.18em;font-size:10px}
 .theme-newyear .ny31-hero .ny31-stage{z-index:0}
 .theme-newyear .ny31-hero .ny31-ring{left:81%;top:40%;width:52%;opacity:.13}
 .theme-newyear .ny31-hero .ny31-ribbon{width:55%;bottom:-27%;opacity:.32}
@@ -27,98 +27,98 @@ html.theme-newyear body{background:#eee6d8!important;color:var(--ed-ink)!importa
 .theme-newyear .ny31-hero .ny31-flag.right,.theme-newyear .ny31-hero .ny31-lotus.right{display:none}
 .theme-newyear .ny31-hero .ny31-lotus{width:min(16%,150px);left:44%;bottom:-22px;z-index:2;filter:none}
 .theme-newyear .ny31-hero .ny31-landmark{opacity:.7;max-height:26%;z-index:1}
-.theme-newyear .ny31-kicker{font-size:10px;letter-spacing:.2em;color:#e8c88e;font-weight:600;border-bottom:1px solid #cfa66d70;padding-bottom:12px;width:fit-content;max-width:100%;overflow-wrap:anywhere}
+.theme-newyear .ny31-kicker{font-size:10px;letter-spacing:.2em;color:#cbcbcb;font-weight:600;border-bottom:1px solid #ababab70;padding-bottom:12px;width:fit-content;max-width:100%;overflow-wrap:anywhere}
 .theme-newyear .ny31-greeting{font:italic 400 clamp(30px,4.7vw,62px)/1.04 var(--ed-serif);text-shadow:none;margin:20px 0 0;letter-spacing:-.045em}
-.theme-newyear .ny31-year{font:400 clamp(96px,14vw,200px)/.85 var(--ed-serif);letter-spacing:-.095em;margin:14px 0 24px;filter:none;background:linear-gradient(165deg,#fff5d6,#e7bd7a 62%,#bd9255);background-clip:text;-webkit-background-clip:text;color:transparent;padding:0 .08em .06em 0}
-.theme-newyear .ny31-tag{font:600 11px/1.4 var(--ed-sans);letter-spacing:.19em;color:#e8c88e}
-.theme-newyear .ny31-copy p{font:400 15px/1.6 var(--ed-sans);max-width:42ch;color:#f7ecdd;margin:8px 0 16px}
-.theme-newyear .ny31-count{max-width:480px;gap:0;margin:20px 0 12px;border-block:1px solid #d3a86680}
-.theme-newyear .ny31-unit{background:transparent;border:0;border-right:1px solid #d3a86655;border-radius:0;box-shadow:none;padding:12px 8px;min-width:0}
-.theme-newyear .ny31-unit:last-child{border-right:0}.theme-newyear .ny31-unit b{font:400 clamp(26px,4vw,48px)/1.08 var(--ed-serif);font-variant-numeric:tabular-nums;color:#f8deb2}
-.theme-newyear .ny31-unit small{font-size:10px;letter-spacing:.13em;color:#e6d5bc}
-.theme-newyear .ny31-actions{justify-content:flex-start;gap:8px}.theme-newyear :is(.ny31-hero,.ny31-show) button{border-radius:0;border:1px solid #d7b578;background:#152840;color:#fff4e1;font:600 13px var(--ed-sans);min-height:44px}
-.theme-newyear :is(.ny31-hero,.ny31-show) button.ny31-primary{background:#a51c36;color:#fffaf1;border-color:#d7b578}
-.theme-newyear .ny31-note{color:#e5d3b7}
+.theme-newyear .ny31-year{font:400 clamp(96px,14vw,200px)/.85 var(--ed-serif);letter-spacing:-.095em;margin:14px 0 24px;filter:none;background:linear-gradient(165deg,#f5f5f5,#c1c1c1 62%,#979797);background-clip:text;-webkit-background-clip:text;color:transparent;padding:0 .08em .06em 0}
+.theme-newyear .ny31-tag{font:600 11px/1.4 var(--ed-sans);letter-spacing:.19em;color:#cbcbcb}
+.theme-newyear .ny31-copy p{font:400 15px/1.6 var(--ed-sans);max-width:42ch;color:#ededed;margin:8px 0 16px}
+.theme-newyear .ny31-count{max-width:480px;gap:0;margin:20px 0 12px;border-block:1px solid #acacac80}
+.theme-newyear .ny31-unit{background:transparent;border:0;border-right:1px solid #acacac55;border-radius:0;box-shadow:none;padding:12px 8px;min-width:0}
+.theme-newyear .ny31-unit:last-child{border-right:0}.theme-newyear .ny31-unit b{font:400 clamp(26px,4vw,48px)/1.08 var(--ed-serif);font-variant-numeric:tabular-nums;color:#e0e0e0}
+.theme-newyear .ny31-unit small{font-size:10px;letter-spacing:.13em;color:#d7d7d7}
+.theme-newyear .ny31-actions{justify-content:flex-start;gap:8px}.theme-newyear :is(.ny31-hero,.ny31-show) button{border-radius:0;border:1px solid #b8b8b8;background:#152840;color:#f5f5f5;font:600 13px var(--ed-sans);min-height:44px}
+.theme-newyear :is(.ny31-hero,.ny31-show) button.ny31-primary{background:#a51c36;color:#f6f6f6;border-color:#b8b8b8}
+.theme-newyear .ny31-note{color:#d5d5d5}
 /* Full show and reading experience */
-.theme-newyear .ny31-show{background:radial-gradient(ellipse at 48% 48%,#26344c,#101d30 65%,#060e1a);color:#fff7e6}
+.theme-newyear .ny31-show{background:radial-gradient(ellipse at 48% 48%,#333333,#101d30 65%,#060e1a);color:#f6f6f6}
 .theme-newyear .ny31-show .ny31-content{max-width:850px;padding:12px;scrollbar-width:thin}
-.theme-newyear .ny31-show .ny31-scene-title{font:400 clamp(36px,8vw,98px)/1 var(--ed-serif);letter-spacing:-.045em;text-shadow:none;color:#f6dba8}
+.theme-newyear .ny31-show .ny31-scene-title{font:400 clamp(36px,8vw,98px)/1 var(--ed-serif);letter-spacing:-.045em;text-shadow:none;color:#dddddd}
 .theme-newyear .ny31-show[data-scene^=count] .ny31-scene-title,.theme-newyear .ny31-show[data-scene=burst] .ny31-scene-title{font-size:clamp(104px,32vmin,280px);font-variant-numeric:tabular-nums}
 .theme-newyear .ny31-show[data-scene^=journey]{background:linear-gradient(140deg,#152b43,#632238)}
-.theme-newyear .ny31-show[data-scene=quiet]{background:radial-gradient(ellipse,#253449,#081321 70%)}
+.theme-newyear .ny31-show[data-scene=quiet]{background:radial-gradient(ellipse,#323232,#081321 70%)}
 .theme-newyear .ny31-show .ny31-top{flex-wrap:wrap;justify-content:center;gap:6px}.theme-newyear .ny31-show .ny31-top span{margin-right:auto}
-.theme-newyear .ny31-show .ny31-progress{background:#92795166;height:4px}.theme-newyear .ny31-progress i{background:linear-gradient(90deg,#aa263d,#f4d18f)}
-.theme-newyear .ny31-envelope{width:min(440px,70vw);margin:24px auto;filter:none}.theme-newyear .ny31-envelope .ny31-seal{background:radial-gradient(circle,#e5bd82,#996329);color:#381b13;box-shadow:inset 0 0 0 3px #f5d5a2}
-.theme-newyear .ny31-letter{border-radius:0!important;box-shadow:inset 0 0 0 7px #e5d2b0;border:1px solid #c49a60;background:#fff9ed;color:#19263a;padding:clamp(22px,5vw,60px);max-width:700px}
+.theme-newyear .ny31-show .ny31-progress{background:#7b7b7b66;height:4px}.theme-newyear .ny31-progress i{background:linear-gradient(90deg,#aa263d,#d4d4d4)}
+.theme-newyear .ny31-envelope{width:min(440px,70vw);margin:24px auto;filter:none}.theme-newyear .ny31-envelope .ny31-seal{background:radial-gradient(circle,#c1c1c1,#6a6a6a);color:#381b13;box-shadow:inset 0 0 0 3px #d8d8d8}
+.theme-newyear .ny31-letter{border-radius:0!important;box-shadow:inset 0 0 0 7px #d4d4d4;border:1px solid #9f9f9f;background:#f6f6f6;color:#19263a;padding:clamp(22px,5vw,60px);max-width:700px}
 .theme-newyear .ny31-letter h2{font:400 italic clamp(29px,5vw,52px)/1.15 var(--ed-serif);color:#8c1930}
-.theme-newyear .ny31-letter p{font:18px/1.8 var(--ed-serif);color:#30281e}.theme-newyear .ny31-letter small{color:#805819}
-.theme-newyear .ny31-wish-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}.theme-newyear .ny31-wish,.theme-newyear .ny31-story{border-radius:0!important;background:#fff9ed!important;color:#182638!important;border:1px solid #c49a60!important;text-align:left;padding:24px!important}
+.theme-newyear .ny31-letter p{font:18px/1.8 var(--ed-serif);color:#30281e}.theme-newyear .ny31-letter small{color:#5c5c5c}
+.theme-newyear .ny31-wish-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}.theme-newyear .ny31-wish,.theme-newyear .ny31-story{border-radius:0!important;background:#f6f6f6!important;color:#182638!important;border:1px solid #9f9f9f!important;text-align:left;padding:24px!important}
 .theme-newyear .ny31-wish p,.theme-newyear .ny31-wish small,.theme-newyear .ny31-story p{color:#182638!important}.theme-newyear .ny31-story h3{font:italic 400 clamp(30px,5vw,58px) var(--ed-serif);color:#a51c36!important}
-.theme-newyear .ny31-wish-form{background:#182a41!important;border:1px solid #b18b58;padding:18px;color:#fff9ed}.theme-newyear .ny31-wish-form textarea{background:#fffaf1!important;color:#182638!important;min-height:100px;font-size:16px}
-.theme-newyear .ny32-character-count{display:block;text-align:right;color:#e6c58d}
+.theme-newyear .ny31-wish-form{background:#182a41!important;border:1px solid #8f8f8f;padding:18px;color:#f6f6f6}.theme-newyear .ny31-wish-form textarea{background:#f6f6f6!important;color:#182638!important;min-height:100px;font-size:16px}
+.theme-newyear .ny32-character-count{display:block;text-align:right;color:#c8c8c8}
 /* Editorial pages: paper, borders, chapter layouts; no data or DOM replacement. */
 .theme-newyear #home .home-content{max-width:1360px;margin:0 auto!important;padding:0 16px 40px!important;color:var(--ed-ink)!important;background:transparent!important}
 .theme-newyear .home-shortcuts{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px!important;background:transparent!important;border:0!important;padding:0!important;margin:0 0 24px!important}
-.theme-newyear .home-shortcuts::before{content:'MỤC LỤC  /  ẤN BẢN 2027';grid-column:1/-1;border-bottom:1px solid #ab8e65;padding:12px 0;color:#702139;font:600 11px var(--ed-sans);letter-spacing:.2em}
-.theme-newyear .home-shortcuts .shortcut{grid-column:span 2;position:relative;display:flex!important;flex-direction:column;align-items:flex-start!important;justify-content:space-between!important;gap:16px!important;min-height:136px;background:#fffaf1!important;color:#19263a!important;border:1px solid #c7b69b!important;border-radius:0!important;box-shadow:none!important;padding:22px!important;text-align:left!important;overflow:hidden;font:400 clamp(20px,2.2vw,30px)/1.12 var(--ed-serif)!important}
-.theme-newyear .home-shortcuts .shortcut:first-child{grid-column:span 4;min-height:180px;background:#a51c36!important;color:#fff4de!important;background-image:linear-gradient(90deg,#8f1a2e 25%,#a51c36aa),url('./assets/themes/newyear-2027/ny32-editorial.svg')!important;background-position:center,right center!important;background-size:cover,auto 170%!important;background-repeat:no-repeat!important}
-.theme-newyear .home-shortcuts .shortcut:nth-child(2){background:#172b40!important;color:#fff4de!important}.theme-newyear .home-shortcuts .shortcut:nth-child(4){background:#e5c58f!important}.theme-newyear .home-shortcuts .shortcut .v17-shortcut-ico{color:inherit!important;background:transparent!important;border:0!important;font-size:28px!important;align-self:flex-end}
-.theme-newyear .home-shortcuts .shortcut:hover{outline:2px solid #b28a49;outline-offset:-3px}
+.theme-newyear .home-shortcuts::before{content:'MỤC LỤC  /  ẤN BẢN 2027';grid-column:1/-1;border-bottom:1px solid #919191;padding:12px 0;color:#702139;font:600 11px var(--ed-sans);letter-spacing:.2em}
+.theme-newyear .home-shortcuts .shortcut{grid-column:span 2;position:relative;display:flex!important;flex-direction:column;align-items:flex-start!important;justify-content:space-between!important;gap:16px!important;min-height:136px;background:#f6f6f6!important;color:#19263a!important;border:1px solid #b8b8b8!important;border-radius:0!important;box-shadow:none!important;padding:22px!important;text-align:left!important;overflow:hidden;font:400 clamp(20px,2.2vw,30px)/1.12 var(--ed-serif)!important}
+.theme-newyear .home-shortcuts .shortcut:first-child{grid-column:span 4;min-height:180px;background:#a51c36!important;color:#f5f5f5!important;background-image:linear-gradient(90deg,#8f1a2e 25%,#a51c36aa),url('./assets/themes/newyear-2027/ny32-editorial.svg')!important;background-position:center,right center!important;background-size:cover,auto 170%!important;background-repeat:no-repeat!important}
+.theme-newyear .home-shortcuts .shortcut:nth-child(2){background:#172b40!important;color:#f5f5f5!important}.theme-newyear .home-shortcuts .shortcut:nth-child(4){background:#c8c8c8!important}.theme-newyear .home-shortcuts .shortcut .v17-shortcut-ico{color:inherit!important;background:transparent!important;border:0!important;font-size:28px!important;align-self:flex-end}
+.theme-newyear .home-shortcuts .shortcut:hover{outline:2px solid #8e8e8e;outline-offset:-3px}
 .theme-newyear .home-overview-grid{display:grid!important;grid-template-columns: minmax(0,5fr) minmax(0,7fr)!important;gap:18px!important;align-items:start}
 .theme-newyear .home-overview-grid>.news-highlight{grid-column:2;grid-row:1/span 2}.theme-newyear .home-overview-grid>.activity-highlight,.theme-newyear #v17Upcoming{grid-column:1}
-.theme-newyear :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner){border-radius:0!important;background:#14263c!important;color:#fff9ed!important;border:0!important;border-bottom:4px solid #b28a49!important;box-shadow:none!important;padding:clamp(24px,4vw,52px)!important}
-.theme-newyear :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner) :is(h1,h2){color:#fff4df!important;font:400 italic clamp(30px,4vw,54px)/1.06 var(--ed-serif)!important;letter-spacing:-.04em}
-.theme-newyear :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner) :is(p,small,span){color:#f1d5aa}
-.theme-newyear :is(.surface-panel,.panel,.attendancePanel,.infoCard,.seriesCard,.congress,.regForm,.org-intro,.v17-card,.v17-doc-detail,.push-panel,.student-auth-card,.qv26-shell,.qv26-calendar,.qv26-agenda,.fund-student-activity,.fund-student-report){background:#fffaf1!important;color:#19263a!important;border:1px solid #d7c8ad!important;border-radius:0!important;box-shadow:none!important;min-width:0}
+.theme-newyear :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner){border-radius:0!important;background:#14263c!important;color:#f6f6f6!important;border:0!important;border-bottom:4px solid #8e8e8e!important;box-shadow:none!important;padding:clamp(24px,4vw,52px)!important}
+.theme-newyear :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner) :is(h1,h2){color:#f5f5f5!important;font:400 italic clamp(30px,4vw,54px)/1.06 var(--ed-serif)!important;letter-spacing:-.04em}
+.theme-newyear :is(.page-ribbon,.content-page-head,.v17-page-head,.branch-banner) :is(p,small,span){color:#d8d8d8}
+.theme-newyear :is(.surface-panel,.panel,.attendancePanel,.infoCard,.seriesCard,.congress,.regForm,.org-intro,.v17-card,.v17-doc-detail,.push-panel,.student-auth-card,.qv26-shell,.qv26-calendar,.qv26-agenda,.fund-student-activity,.fund-student-report){background:#f6f6f6!important;color:#19263a!important;border:1px solid #c9c9c9!important;border-radius:0!important;box-shadow:none!important;min-width:0}
 .theme-newyear :is(.panel-heading,.section-title,.news-article-heading) :is(h1,h2,h3){font:400 clamp(24px,3.2vw,40px)/1.12 var(--ed-serif)!important;color:#8c1930!important;letter-spacing:-.025em}
-.theme-newyear .panel-heading{border-bottom:1px solid #c8b695!important;padding-bottom:12px!important;align-items:center}.theme-newyear .panel-heading svg{color:#a51c36!important}
-.theme-newyear .mini-link{background:transparent!important;color:#805819!important;border:0!important;border-radius:0!important;min-height:44px;white-space:normal}
-.theme-newyear .home-alert{background:#a51c36!important;color:#fffaf1!important;border-radius:0!important;border-left:5px solid #d5b27a!important}
-.theme-newyear .homeEventItem{border:0!important;border-bottom:1px solid #d7c8ad!important;background:#fffaf1!important;border-radius:0!important;color:#19263a!important}
-.theme-newyear .eventDate{background:#172b40!important;color:#fff4de!important;border-radius:0!important;border:0!important}
-.theme-newyear #v17Upcoming{background:#a51c36!important;color:#fffaf1!important;border:1px solid #cfa66d!important;border-radius:0!important}
+.theme-newyear .panel-heading{border-bottom:1px solid #b7b7b7!important;padding-bottom:12px!important;align-items:center}.theme-newyear .panel-heading svg{color:#a51c36!important}
+.theme-newyear .mini-link{background:transparent!important;color:#5c5c5c!important;border:0!important;border-radius:0!important;min-height:44px;white-space:normal}
+.theme-newyear .home-alert{background:#a51c36!important;color:#f6f6f6!important;border-radius:0!important;border-left:5px solid #b5b5b5!important}
+.theme-newyear .homeEventItem{border:0!important;border-bottom:1px solid #c9c9c9!important;background:#f6f6f6!important;border-radius:0!important;color:#19263a!important}
+.theme-newyear .eventDate{background:#172b40!important;color:#f5f5f5!important;border-radius:0!important;border:0!important}
+.theme-newyear #v17Upcoming{background:#a51c36!important;color:#f6f6f6!important;border:1px solid #ababab!important;border-radius:0!important}
 .theme-newyear .branch-tiles{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))!important;gap:12px!important;margin:22px 0!important}
-.theme-newyear .branch-tile{border-radius:0!important;border:1px solid #b28a49!important;min-height:112px;background:#14263c!important;color:#fffaf1!important;box-shadow:none!important}
-.theme-newyear .branch-tile-hoi{background:#a51c36!important}.theme-newyear .branch-tile strong{font:400 30px var(--ed-serif)!important;color:#fffaf1!important}.theme-newyear .branch-tile small{color:#eed7ad!important}
-.theme-newyear :is(.trust-strip,.install-panel,.official-mini){background:#f9efdc!important;color:#19263a!important;border:1px solid #cdbb9d!important;border-radius:0!important}
+.theme-newyear .branch-tile{border-radius:0!important;border:1px solid #8e8e8e!important;min-height:112px;background:#14263c!important;color:#f6f6f6!important;box-shadow:none!important}
+.theme-newyear .branch-tile-hoi{background:#a51c36!important}.theme-newyear .branch-tile strong{font:400 30px var(--ed-serif)!important;color:#f6f6f6!important}.theme-newyear .branch-tile small{color:#d9d9d9!important}
+.theme-newyear :is(.trust-strip,.install-panel,.official-mini){background:#f0f0f0!important;color:#19263a!important;border:1px solid #bdbdbd!important;border-radius:0!important}
 /* Organization: portrait spread; keep true images and data. */
 .theme-newyear #class .personnelGrid{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))!important;gap:16px!important}
-.theme-newyear #class .personnelGrid>*{border-radius:0!important;border:1px solid #d7c8ad!important;background:#fffaf1!important;color:#19263a!important;box-shadow:none!important}
+.theme-newyear #class .personnelGrid>*{border-radius:0!important;border:1px solid #c9c9c9!important;background:#f6f6f6!important;color:#19263a!important;box-shadow:none!important}
 .theme-newyear #class .org-intro{padding:clamp(20px,4vw,46px)!important;font-size:17px;line-height:1.75}
-.theme-newyear .branch-banner-hoi{background:#8c1930!important}.theme-newyear .branch-subnav{background:#fffaf1!important;border-bottom:1px solid #ad946e!important;border-radius:0!important}
+.theme-newyear .branch-banner-hoi{background:#8c1930!important}.theme-newyear .branch-subnav{background:#f6f6f6!important;border-bottom:1px solid #979797!important;border-radius:0!important}
 .theme-newyear .branch-subnav button{min-height:44px;color:#8c1930!important;background:transparent!important;border-radius:0!important}
 /* Activities / attendance / ballot / calendar: ticket and agenda. */
-.theme-newyear #activityList>*{border-radius:0!important;border:1px solid #d7c8ad!important;border-left:4px solid #a51c36!important;background:#fffaf1!important;color:#19263a!important;box-shadow:none!important}
-.theme-newyear #attendanceList{border:2px dashed #b28a49!important;padding:clamp(16px,4vw,38px)!important;background:#fffaf1!important}
+.theme-newyear #activityList>*{border-radius:0!important;border:1px solid #c9c9c9!important;border-left:4px solid #a51c36!important;background:#f6f6f6!important;color:#19263a!important;box-shadow:none!important}
+.theme-newyear #attendanceList{border:2px dashed #8e8e8e!important;padding:clamp(16px,4vw,38px)!important;background:#f6f6f6!important}
 .theme-newyear #ballotContent{padding:clamp(18px,4vw,42px)!important}.theme-newyear #ballotTitle{font-family:var(--ed-serif)!important;color:#8c1930!important}
-.theme-newyear .qv26-day{border-radius:0!important;background:#fffaf1!important;color:#19263a!important;border-color:#dfd0b6!important}.theme-newyear .qv26-today{outline:2px solid #a51c36;outline-offset:-2px}.theme-newyear .qv26-selected{background:#a51c36!important;color:white!important}.theme-newyear .qv26-month{font:400 30px var(--ed-serif)!important;color:#8c1930!important}.theme-newyear :is(.qv26-event-row,.qv26-rem-row){border-radius:0!important;border-left:3px solid #b28a49!important;background:#fffaf1!important;color:#19263a!important}
+.theme-newyear .qv26-day{border-radius:0!important;background:#f6f6f6!important;color:#19263a!important;border-color:#d1d1d1!important}.theme-newyear .qv26-today{outline:2px solid #a51c36;outline-offset:-2px}.theme-newyear .qv26-selected{background:#a51c36!important;color:white!important}.theme-newyear .qv26-month{font:400 30px var(--ed-serif)!important;color:#8c1930!important}.theme-newyear :is(.qv26-event-row,.qv26-rem-row){border-radius:0!important;border-left:3px solid #8e8e8e!important;background:#f6f6f6!important;color:#19263a!important}
 /* News: newspaper-style cards, notices: timeline. */
-.theme-newyear :is(.news-page,.news-detail-page,.nuInboxPage){background:#fffaf1!important;color:#19263a!important;border-radius:0!important;box-shadow:none!important}
-.theme-newyear .news-grid{gap:14px!important}.theme-newyear .news-grid>*:not(p){border-radius:0!important;border:1px solid #d7c8ad!important;background:#fffaf1!important;color:#19263a!important;box-shadow:none!important}
+.theme-newyear :is(.news-page,.news-detail-page,.nuInboxPage){background:#f6f6f6!important;color:#19263a!important;border-radius:0!important;box-shadow:none!important}
+.theme-newyear .news-grid{gap:14px!important}.theme-newyear .news-grid>*:not(p){border-radius:0!important;border:1px solid #c9c9c9!important;background:#f6f6f6!important;color:#19263a!important;box-shadow:none!important}
 .theme-newyear .news-grid :is(h2,h3){font:400 clamp(20px,2.5vw,29px)/1.15 var(--ed-serif)!important;color:#19263a!important}
 .theme-newyear #newsDetailBody{max-width:760px;margin:auto;color:#19263a!important;font-size:17px;line-height:1.8}
-.theme-newyear :is(.news-tabs,.news-kind-tabs,.v17-tabs,.fund-student-tabs){border-radius:0!important;background:#f2e6d4!important;border:1px solid #d7c8ad!important}
+.theme-newyear :is(.news-tabs,.news-kind-tabs,.v17-tabs,.fund-student-tabs){border-radius:0!important;background:#e7e7e7!important;border:1px solid #c9c9c9!important}
 .theme-newyear :is(.news-tabs,.news-kind-tabs,.v17-tabs,.fund-student-tabs) button{min-height:44px;border-radius:0!important;color:#19263a!important}
-.theme-newyear :is(.news-tabs,.news-kind-tabs,.v17-tabs,.fund-student-tabs) button:is(.active,.selected,[aria-selected=true],[aria-pressed=true]){background:#a51c36!important;color:#fffaf1!important}
-.theme-newyear :is(#qlnhNoticeList,#nuFeedList)>*{background:#fffaf1!important;color:#19263a!important;border-radius:0!important;border:0!important;border-bottom:1px solid #d7c8ad!important;box-shadow:none!important}
-.theme-newyear :is(.qlnh-notices-toolbar,.nuInboxToolbar,.qlnh-v28-inbox-summary){background:#f2e6d4!important;color:#19263a!important;border-radius:0!important;border-color:#d7c8ad!important}
-.theme-newyear .push-options label{background:#fffaf1!important;border-bottom:1px solid #d7c8ad!important;min-height:48px;color:#19263a!important}
+.theme-newyear :is(.news-tabs,.news-kind-tabs,.v17-tabs,.fund-student-tabs) button:is(.active,.selected,[aria-selected=true],[aria-pressed=true]){background:#a51c36!important;color:#f6f6f6!important}
+.theme-newyear :is(#qlnhNoticeList,#nuFeedList)>*{background:#f6f6f6!important;color:#19263a!important;border-radius:0!important;border:0!important;border-bottom:1px solid #c9c9c9!important;box-shadow:none!important}
+.theme-newyear :is(.qlnh-notices-toolbar,.nuInboxToolbar,.qlnh-v28-inbox-summary){background:#e7e7e7!important;color:#19263a!important;border-radius:0!important;border-color:#c9c9c9!important}
+.theme-newyear .push-options label{background:#f6f6f6!important;border-bottom:1px solid #c9c9c9!important;min-height:48px;color:#19263a!important}
 /* Academic / library / financial ledger. */
 .theme-newyear .v17-card :is(h2,h3,strong){font-family:var(--ed-serif)!important;color:#19263a!important}.theme-newyear #v17ExamsList .v17-card{border-top:4px solid #a51c36!important;padding:20px!important}
-.theme-newyear #v17DocList>*{border-radius:0!important;background:#fffaf1!important;color:#19263a!important;border:0!important;border-bottom:1px solid #d7c8ad!important}
-.theme-newyear #qlnhDocReader{background:#101d30!important;color:#fffaf1!important}
-.theme-newyear .fund-personal{background:#14263c!important;color:#fffaf1!important;border-radius:0!important;border:1px solid #cfa66d!important}.theme-newyear .fund-personal :is(.fund-balance,.fund-personal-name){font-family:var(--ed-serif)!important;color:#f5d4a0!important}
-.theme-newyear .fund-student-item{background:#fffaf1!important;color:#19263a!important;border-bottom:1px solid #d7c8ad!important;border-radius:0!important}
+.theme-newyear #v17DocList>*{border-radius:0!important;background:#f6f6f6!important;color:#19263a!important;border:0!important;border-bottom:1px solid #c9c9c9!important}
+.theme-newyear #qlnhDocReader{background:#101d30!important;color:#f6f6f6!important}
+.theme-newyear .fund-personal{background:#14263c!important;color:#f6f6f6!important;border-radius:0!important;border:1px solid #ababab!important}.theme-newyear .fund-personal :is(.fund-balance,.fund-personal-name){font-family:var(--ed-serif)!important;color:#d7d7d7!important}
+.theme-newyear .fund-student-item{background:#f6f6f6!important;color:#19263a!important;border-bottom:1px solid #c9c9c9!important;border-radius:0!important}
 .theme-newyear .fund-in{color:#176b47!important}.theme-newyear .fund-out{color:#a5223b!important}
 /* Forms, dialogs and utility chrome */
-.theme-newyear :is(.page,.student-auth-card,#guestAuthDialog,.push-panel,.qv26-dialog) :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]),select,textarea){background:#fffaf1!important;color:#19263a!important;border:1px solid #bda887!important;border-radius:3px!important;min-height:44px;font-size:16px!important;max-width:100%}
-.theme-newyear :is(.page,.student-auth-card,#guestAuthDialog,.push-panel) :is(input,textarea)::placeholder{color:#6d6255!important}
-.theme-newyear :is(.page,.student-auth-card) :is(.primary,.btnPrimary,.v17-btn-primary,.qv26-primary,button[type=submit]){background:#a51c36!important;color:#fffaf1!important;border-color:#a51c36!important;border-radius:0!important;min-height:44px}
-.theme-newyear :is(button,a,input,textarea,select):focus-visible{outline:3px solid #ae7830!important;outline-offset:2px}
+.theme-newyear :is(.page,.student-auth-card,#guestAuthDialog,.push-panel,.qv26-dialog) :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]),select,textarea){background:#f6f6f6!important;color:#19263a!important;border:1px solid #aaaaaa!important;border-radius:3px!important;min-height:44px;font-size:16px!important;max-width:100%}
+.theme-newyear :is(.page,.student-auth-card,#guestAuthDialog,.push-panel) :is(input,textarea)::placeholder{color:#636363!important}
+.theme-newyear :is(.page,.student-auth-card) :is(.primary,.btnPrimary,.v17-btn-primary,.qv26-primary,button[type=submit]){background:#a51c36!important;color:#f6f6f6!important;border-color:#a51c36!important;border-radius:0!important;min-height:44px}
+.theme-newyear :is(button,a,input,textarea,select):focus-visible{outline:3px solid #7e7e7e!important;outline-offset:2px}
 .theme-newyear #studentAuthGate{background:#101d30!important}.theme-newyear .student-auth-card{border-top:5px solid #a51c36!important;padding:28px!important}.theme-newyear .student-auth-card :is(h1,h2){font:400 32px var(--ed-serif)!important;color:#8c1930!important}
-.theme-newyear .siteFooter{background:#101d30!important;color:#fff4de!important;border-top:4px solid #b28a49!important}.theme-newyear .siteFooter a,.theme-newyear .siteFooter small,.theme-newyear .siteFooter p{color:#f0d6ad!important}.theme-newyear .footer-brand{font-family:var(--ed-serif)!important}
-.theme-newyear #qlnhMusicWidget{--music-surface:#14263c;--music-soft:#24384b;--music-primary:#f8d9a4;--music-border:#b28a49;--music-ink:#fffaf1;--music-accent:#f8d9a4}
-.theme-newyear #qlnhMusicWidget :is(.music234-toggle,.music234-play){background:#a51c36!important;color:#fff4de!important;border:1px solid #d7b578!important}.theme-newyear #qlnhMusicWidget .music234-panel{border-radius:0!important}
+.theme-newyear .siteFooter{background:#101d30!important;color:#f5f5f5!important;border-top:4px solid #8e8e8e!important}.theme-newyear .siteFooter a,.theme-newyear .siteFooter small,.theme-newyear .siteFooter p{color:#d9d9d9!important}.theme-newyear .footer-brand{font-family:var(--ed-serif)!important}
+.theme-newyear #qlnhMusicWidget{--music-surface:#14263c;--music-soft:#353535;--music-primary:#dcdcdc;--music-border:#8e8e8e;--music-ink:#f6f6f6;--music-accent:#dcdcdc}
+.theme-newyear #qlnhMusicWidget :is(.music234-toggle,.music234-play){background:#a51c36!important;color:#f5f5f5!important;border:1px solid #b8b8b8!important}.theme-newyear #qlnhMusicWidget .music234-panel{border-radius:0!important}
 .theme-newyear [hidden]{display:none!important}
 @media(max-width:850px){.theme-newyear .ny31-hero{grid-template-columns:1fr 0.8fr;min-height:0;padding:26px!important;gap:16px}.theme-newyear .ny32-cover-art{min-height:330px}.theme-newyear .ny31-year{font-size:clamp(85px,16vw,135px)}.theme-newyear .home-overview-grid{grid-template-columns:1fr!important}.theme-newyear .home-overview-grid>.news-highlight,.theme-newyear .home-overview-grid>.activity-highlight,.theme-newyear #v17Upcoming{grid-column:auto;grid-row:auto}}
 @media(max-width:600px){.theme-newyear .ny31-hero{width:calc(100% - 20px);margin:10px auto 16px!important;padding:24px 18px 18px!important;grid-template-columns:1fr;gap:12px}.theme-newyear .ny31-copy{grid-column:1;grid-row:1}.theme-newyear .ny32-cover-art{grid-column:1;grid-row:2;min-height:200px;max-height:240px;background-position:center 42%;margin-top:4px}.theme-newyear .ny31-greeting{font-size:34px}.theme-newyear .ny31-year{font-size:clamp(102px,30vw,160px);margin:8px 0 20px}.theme-newyear .ny31-hero .ny31-lotus{left:auto;right:0;width:min(30%,100px);bottom:0}.theme-newyear .ny31-hero .ny31-flag{right:var(--flag-mobile-x,3%);top:auto;bottom:2%;width:50px}.theme-newyear .ny31-unit{padding:10px 3px}.theme-newyear .ny31-unit b{font-size:28px}.theme-newyear .ny31-unit small{font-size:9px}.theme-newyear .home-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.theme-newyear .home-shortcuts .shortcut{grid-column:span 1;min-height:110px;padding:16px!important;font-size:20px!important}.theme-newyear .home-shortcuts .shortcut:first-child{grid-column:1/-1;min-height:130px}.theme-newyear .ny31-show{padding-top:calc(108px + env(safe-area-inset-top));padding-bottom:calc(32px + env(safe-area-inset-bottom))}.theme-newyear .ny31-show .ny31-top span{width:100%;text-align:center;margin:0}.theme-newyear .ny31-show .ny31-content{padding:4px}.theme-newyear .ny31-letter{padding:24px}.theme-newyear .ny31-letter p{font-size:17px}}
@@ -129,10 +129,10 @@ html.theme-newyear .ny31-hero .ny32-cover-art{justify-self:stretch;align-self:st
 html.theme-newyear .ny31-hero .ny31-greeting{font-family:var(--ed-serif)!important;font-style:italic!important}
 html.theme-newyear .ny31-hero .ny31-year,html.theme-newyear .ny31-hero .ny31-unit b{font-family:var(--ed-serif)!important;font-weight:400!important}
 html.theme-newyear .home-shortcuts .shortcut span:last-child{font-family:var(--ed-serif)!important;font-size:clamp(20px,2.2vw,30px)!important;line-height:1.12}
-html.theme-newyear .eventDate small{color:#f5d9a8!important}
+html.theme-newyear .eventDate small{color:#dbdbdb!important}
 html.theme-newyear .news-grid .news-card{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:7px!important;padding:16px!important;overflow-wrap:anywhere;min-width:0}
 html.theme-newyear .news-grid .news-card :is(h2,h3,p){margin:0!important}
-html.theme-newyear .civic-slogan .civic-slogan-label{color:#fff9ed!important}
+html.theme-newyear .civic-slogan .civic-slogan-label{color:#f6f6f6!important}
 @media(max-width:600px){html.theme-newyear .ny31-hero .ny32-cover-art{height:180px;min-height:180px;max-height:180px}html.theme-newyear .ny31-hero .ny31-year{font-size:clamp(92px,28vw,140px)!important}html.theme-newyear .home-shortcuts .shortcut span:last-child{font-size:21px!important}}
 /* Index cards, each with a distinct art direction and numbering. */
 html.theme-newyear .home-shortcuts .shortcut::before{content:'01';position:absolute;top:18px;left:22px;font:italic 26px/1 var(--ed-serif);opacity:.6;pointer-events:none}
@@ -145,9 +145,9 @@ html.theme-newyear .home-shortcuts .shortcut:first-child::after{display:none}
 html.theme-newyear .home-shortcuts .shortcut span:last-child{position:relative;z-index:1;max-width:100%;overflow-wrap:anywhere}
 html.theme-newyear .home-shortcuts .shortcut .v17-shortcut-ico{position:relative;z-index:1}
 /* Original application hides bottom nav on desktop. Restore only the existing mobile authenticated navigation. */
-@media(max-width:650px){html.theme-newyear.qlnh-authenticated body:not(.qlnh-drawer-open) .v17-bottom-nav:not([hidden]){display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));background:#101d30!important;border:1px solid #d3a866!important;border-radius:0!important;left:8px;right:8px;bottom:calc(6px + env(safe-area-inset-bottom));padding:7px!important;box-shadow:0 6px 24px #0003}html.theme-newyear .v17-bottom-nav button{min-height:48px;color:#f4d6a0!important}html.theme-newyear .v17-bottom-nav button span{color:#fff4de!important}html.theme-newyear .v17-bottom-nav button:is(.active,.current,[aria-current=page]){background:#a51c36!important}html.theme-newyear.qlnh-authenticated #siteMain{padding-bottom:78px}html.theme-newyear .home-shortcuts .shortcut::before{left:16px;top:12px;font-size:22px}}
-html.theme-newyear.qlnh-authenticated .civic-slogan,html.theme-newyear.qlnh-guest .civic-slogan{display:flex!important;align-items:center;gap:10px;justify-content:center;padding:7px 16px;background:#8c1930!important;color:#fff9ed!important;overflow:hidden;min-height:32px}
-html.theme-newyear .civic-slogan-window{overflow:hidden;min-width:0;max-width:100%;white-space:nowrap}html.theme-newyear .civic-slogan-track{display:flex;width:max-content;max-width:none;align-items:center}html.theme-newyear .civic-slogan svg{flex-shrink:0;color:#f6d7a5}
+@media(max-width:650px){html.theme-newyear.qlnh-authenticated body:not(.qlnh-drawer-open) .v17-bottom-nav:not([hidden]){display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));background:#101d30!important;border:1px solid #acacac!important;border-radius:0!important;left:8px;right:8px;bottom:calc(6px + env(safe-area-inset-bottom));padding:7px!important;box-shadow:0 6px 24px #0003}html.theme-newyear .v17-bottom-nav button{min-height:48px;color:#d8d8d8!important}html.theme-newyear .v17-bottom-nav button span{color:#f5f5f5!important}html.theme-newyear .v17-bottom-nav button:is(.active,.current,[aria-current=page]){background:#a51c36!important}html.theme-newyear.qlnh-authenticated #siteMain{padding-bottom:78px}html.theme-newyear .home-shortcuts .shortcut::before{left:16px;top:12px;font-size:22px}}
+html.theme-newyear.qlnh-authenticated .civic-slogan,html.theme-newyear.qlnh-guest .civic-slogan{display:flex!important;align-items:center;gap:10px;justify-content:center;padding:7px 16px;background:#8c1930!important;color:#f6f6f6!important;overflow:hidden;min-height:32px}
+html.theme-newyear .civic-slogan-window{overflow:hidden;min-width:0;max-width:100%;white-space:nowrap}html.theme-newyear .civic-slogan-track{display:flex;width:max-content;max-width:none;align-items:center}html.theme-newyear .civic-slogan svg{flex-shrink:0;color:#dadada}
 /* Không để style theme lấn điều kiện ẩn của khách và cổng xác thực. */
 html.theme-newyear.qlnh-guest :is(.v17-shortcuts,.v17-bottom-nav,[data-v17-student-only]){display:none!important}
 html.theme-newyear:not(.qlnh-authenticated):not(.qlnh-guest) .civic-slogan{display:none!important}
