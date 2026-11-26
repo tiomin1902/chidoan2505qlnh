@@ -1,0 +1,982 @@
+{
+  "version": "37.1.1",
+  "assets": [
+    {
+      "file": "anh-armR.webp",
+      "bytes": 12454,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        226,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "anh-full.webp",
+      "bytes": 32504,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        226,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "anh-head.webp",
+      "bytes": 16652,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        226,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "anh-torso.webp",
+      "bytes": 26580,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        226,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "ba-armR.webp",
+      "bytes": 11018,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        191,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "ba-full.webp",
+      "bytes": 28416,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        191,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "ba-head.webp",
+      "bytes": 18084,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        191,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "ba-torso.webp",
+      "bytes": 18414,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        191,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "bac-gai-armR.webp",
+      "bytes": 11742,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        209,
+        315
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "bac-gai-full.webp",
+      "bytes": 30180,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        209,
+        315
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "bac-gai-head.webp",
+      "bytes": 19854,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        209,
+        315
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "bac-gai-torso.webp",
+      "bytes": 19338,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        209,
+        315
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "bac-trai-armR.webp",
+      "bytes": 10642,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        198,
+        320
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "bac-trai-full.webp",
+      "bytes": 28604,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        198,
+        320
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "bac-trai-head.webp",
+      "bytes": 19686,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        198,
+        320
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "bac-trai-torso.webp",
+      "bytes": 17682,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        198,
+        320
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-gai-armL.webp",
+      "bytes": 13412,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        261,
+        290
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-gai-armR.webp",
+      "bytes": 15170,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        261,
+        290
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-gai-full.webp",
+      "bytes": 36640,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        261,
+        290
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-gai-head.webp",
+      "bytes": 23152,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        261,
+        290
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-gai-legL.webp",
+      "bytes": 12488,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        261,
+        290
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-gai-legR.webp",
+      "bytes": 14176,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        261,
+        290
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-gai-torso.webp",
+      "bytes": 17646,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        261,
+        290
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-lon-armL.webp",
+      "bytes": 11734,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        257,
+        296
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-lon-armR.webp",
+      "bytes": 13222,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        257,
+        296
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-lon-full.webp",
+      "bytes": 36954,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        257,
+        296
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-lon-head.webp",
+      "bytes": 22056,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        257,
+        296
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-lon-legL.webp",
+      "bytes": 15066,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        257,
+        296
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-lon-legR.webp",
+      "bytes": 12010,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        257,
+        296
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-lon-torso.webp",
+      "bytes": 16902,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        257,
+        296
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-nho-armL.webp",
+      "bytes": 11130,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        203,
+        293
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-nho-armR.webp",
+      "bytes": 10316,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        203,
+        293
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-nho-full.webp",
+      "bytes": 29830,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        203,
+        293
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-nho-head.webp",
+      "bytes": 19208,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        203,
+        293
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-nho-legL.webp",
+      "bytes": 12012,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        203,
+        293
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-nho-legR.webp",
+      "bytes": 10540,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        203,
+        293
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-nho-torso.webp",
+      "bytes": 13326,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        203,
+        293
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-trai-armL.webp",
+      "bytes": 10562,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        196,
+        291
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-trai-armR.webp",
+      "bytes": 9522,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        196,
+        291
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-trai-full.webp",
+      "bytes": 28828,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        196,
+        291
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-trai-head.webp",
+      "bytes": 17704,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        196,
+        291
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-trai-legL.webp",
+      "bytes": 10542,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        196,
+        291
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-trai-legR.webp",
+      "bytes": 11018,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        196,
+        291
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "be-trai-torso.webp",
+      "bytes": 14240,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        196,
+        291
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "boy-body.webp",
+      "bytes": 8138,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        100,
+        206
+      ]
+    },
+    {
+      "file": "boy-hand.webp",
+      "bytes": 3266,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        100,
+        206
+      ]
+    },
+    {
+      "file": "boy-head.webp",
+      "bytes": 5464,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        100,
+        206
+      ]
+    },
+    {
+      "file": "cha-armR.webp",
+      "bytes": 11986,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        203,
+        327
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "cha-full.webp",
+      "bytes": 28608,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        203,
+        327
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "cha-head.webp",
+      "bytes": 19276,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        203,
+        327
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "cha-torso.webp",
+      "bytes": 19396,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        203,
+        327
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "chi-armR.webp",
+      "bytes": 10858,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        228,
+        309
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "chi-full.webp",
+      "bytes": 32910,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        228,
+        309
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "chi-head.webp",
+      "bytes": 22362,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        228,
+        309
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "chi-torso.webp",
+      "bytes": 23066,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        228,
+        309
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "chu-armR.webp",
+      "bytes": 14454,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        235,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "chu-full.webp",
+      "bytes": 32298,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        235,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "chu-head.webp",
+      "bytes": 21232,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        235,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "chu-torso.webp",
+      "bytes": 19146,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        235,
+        314
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "cooking.webp",
+      "bytes": 29530,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        317,
+        226
+      ]
+    },
+    {
+      "file": "courtyard-day.webp",
+      "bytes": 589916,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "courtyard-night.webp",
+      "bytes": 402320,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "dao-canopy.webp",
+      "bytes": 29538,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        477,
+        307
+      ]
+    },
+    {
+      "file": "di-armR.webp",
+      "bytes": 12168,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        224,
+        311
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "di-full.webp",
+      "bytes": 29602,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        224,
+        311
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "di-head.webp",
+      "bytes": 20600,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        224,
+        311
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "di-torso.webp",
+      "bytes": 19414,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        224,
+        311
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "dinner-table.svg",
+      "bytes": 7729,
+      "source": "SVG nguyên bản vẽ bằng mã trong bản nâng cấp",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "role": "mâm cơm đoàn viên"
+    },
+    {
+      "file": "girl.webp",
+      "bytes": 10540,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        111,
+        189
+      ]
+    },
+    {
+      "file": "goat.webp",
+      "bytes": 17064,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        228,
+        203
+      ]
+    },
+    {
+      "file": "grandparents.webp",
+      "bytes": 28340,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        366,
+        204
+      ]
+    },
+    {
+      "file": "mai-canopy.webp",
+      "bytes": 25630,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        541,
+        204
+      ]
+    },
+    {
+      "file": "mai-front.webp",
+      "bytes": 29766,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        320,
+        376
+      ]
+    },
+    {
+      "file": "me-armR.webp",
+      "bytes": 11694,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        244,
+        322
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "me-full.webp",
+      "bytes": 29868,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        244,
+        322
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "me-head.webp",
+      "bytes": 22466,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        244,
+        322
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "me-torso.webp",
+      "bytes": 19072,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        244,
+        322
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "ong-armR.webp",
+      "bytes": 11246,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        187,
+        323
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "ong-full.webp",
+      "bytes": 26786,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        187,
+        323
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "ong-head.webp",
+      "bytes": 16658,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        187,
+        323
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "ong-torso.webp",
+      "bytes": 18878,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        187,
+        323
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "pot-lid.webp",
+      "bytes": 4134,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        155,
+        42
+      ]
+    },
+    {
+      "file": "rig.json",
+      "bytes": 5192,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh."
+    },
+    {
+      "file": "sinh-vien-armR.webp",
+      "bytes": 14458,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        232,
+        318
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "sinh-vien-full.webp",
+      "bytes": 36244,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        232,
+        318
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "sinh-vien-head.webp",
+      "bytes": 18190,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        232,
+        318
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "sinh-vien-torso.webp",
+      "bytes": 28368,
+      "source": "Bảng 15 chibi do ImageGen tạo; cắt alpha, phân vùng và pivot thủ công",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        232,
+        318
+      ],
+      "role": "nhân vật độc lập, ảnh tĩnh hoặc lớp hoạt hình"
+    },
+    {
+      "file": "stove-lid.webp",
+      "bytes": 2380,
+      "source": "Cắt vật phẩm từ minh họa ImageGen, không chứa UI",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        154,
+        38
+      ],
+      "role": "nồi và nắp"
+    },
+    {
+      "file": "stove-pot.webp",
+      "bytes": 13636,
+      "source": "Cắt vật phẩm từ minh họa ImageGen, không chứa UI",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        162,
+        179
+      ],
+      "role": "nồi và nắp"
+    },
+    {
+      "file": "traveller-body.webp",
+      "bytes": 9960,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        105,
+        243
+      ]
+    },
+    {
+      "file": "traveller-head.webp",
+      "bytes": 4808,
+      "source": "Tài nguyên V37.1 trước đó hoặc chỉnh sửa hình minh họa sinh trong cuộc trò chuyện",
+      "rights": "Tài nguyên tạo cho dự án; không phải tài nguyên có giấy phép bên thứ ba được xác minh.",
+      "size": [
+        105,
+        243
+      ]
+    }
+  ]
+}
