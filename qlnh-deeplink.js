@@ -8,6 +8,7 @@
   async function handle(raw){
     const u=normalize(raw||location.href);if(!u)return false;
     if(!window.QLNH?.authToken||window.QLNH_GUEST)return false;
+    if(u.searchParams.get('v40-inbox')==='1'){window.nav?.('notificationCenter');return true;}
     const attId=u.searchParams.get('attendance');if(validId(attId)&&typeof window.QLNH_ATTENDANCE_OPEN==='function'){await window.QLNH_ATTENDANCE_OPEN(attId);return true;}
     const docId=u.searchParams.get('qlnh_doc'),examId=u.searchParams.get('qlnh_exam');
     if(validId(docId)){
